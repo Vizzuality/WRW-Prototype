@@ -1,2 +1,44 @@
 body {
   background: #fff; }
+
+.container {
+  max-width: 50em;
+  margin: 0 auto; }
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+#gridbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+#gridbox .cell {
+  position: relative;
+  font-size: 0;
+  margin: 0;
+  margin: 2% 0;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 33%;
+      -ms-flex: 0 0 33%;
+          flex: 0 0 33%;
+  font-size: 1.6rem;
+  background: #666;
+  color: white; }
+
+@media screen and (max-width: 750px) {
+  #gridbox .cell {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100%;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    margin-bottom: 7%; } }
