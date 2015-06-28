@@ -13,12 +13,9 @@
 
 #gridbox .cell {
   position: relative;
-  font-size: 0; margin: 0;
+  margin: 0;
   margin: 2% 0;
   flex: 0 0 33%;
-  font-size: 1.6rem;
-  background: #666;
-  color: white;
 }
 
 @media screen and (max-width: 750px) {

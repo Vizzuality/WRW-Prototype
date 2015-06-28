@@ -1,0 +1,14 @@
+// Grid
+$gutter-width: 1.5rem !default;
+$element-top-margin: $gutter-width/3 !default;
+$element-bottom-margin: ($gutter-width*2)/3 !default;
+
+// Cards
+$card-padding: 20px;
+
+// Cards, Insights
+$insights--card-title-margin: 0;
+$insights--card-sub-title-margin: 0px 0px 5px;
+$insights--card-border-color: rgba(#CACCD0, 0.54);
+$insights--card-shadow-color: rgba(#000000, 0.50);
+$insights--card-stars-color: #A9B0B6;
