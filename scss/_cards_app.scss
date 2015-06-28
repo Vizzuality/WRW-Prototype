@@ -1,0 +1,33 @@
+.card.app {
+  width: 320px;
+  height: 210px;
+
+  .card-image {
+    height: 180px;
+
+    img {
+      width: 320px;
+      height: 180px;
+    }
+  }
+
+  .card-caption,
+  .card-info-stars {
+    display: inline-block;
+    width: 75px;
+  }
+
+  .card-caption {
+    height: 30px;
+    width: 240px;
+    margin-top: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    color: $app--card-title-color;
+  }
+
+  .card-info-stars {
+    color: $app--card-stars-color;
+    text-align: right;
+  }
+}

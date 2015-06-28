@@ -189,7 +189,30 @@
     margin-top: 10px;
     text-align: center;
     font-size: 17px;
-    font-weight: bold; }
+    font-weight: bold;
+    color: #393F44; }
+
+.card.app {
+  width: 320px;
+  height: 210px; }
+  .card.app .card-image {
+    height: 180px; }
+    .card.app .card-image img {
+      width: 320px;
+      height: 180px; }
+  .card.app .card-caption, .card.app .card-info-stars {
+    display: inline-block;
+    width: 75px; }
+  .card.app .card-caption {
+    height: 30px;
+    width: 240px;
+    margin-top: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #393F44; }
+  .card.app .card-info-stars {
+    color: #A9B0B6;
+    text-align: right; }
 
 a, a:visited {
   color: #3BB2D0; }

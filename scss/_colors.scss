@@ -7,7 +7,22 @@ $card-bg-color: white;
 // Cards, Insights
 $insights--card-sub-title-color: #C3C8CC;
 $insights--card-title-color: #393F44;
+$insights--card-border-color: rgba(#CACCD0, 0.54);
+$insights--card-shadow-color: rgba(#000000, 0.20);
+$insights--card-stars-color: #A9B0B6;
 
 // Cards, Data
 $data--card-sub-title-color: #6C7379;
 $data--card-title-color: $link-color;
+$data--card-border-color: rgba(#CACCD0, 0.54);
+$data--card-shadow-color: rgba(#000000, 0.20);
+$data--card-stars-color: #A9B0B6;
+$data--card-download-color-1: #C32D7B;
+$data--card-download-color-2: #65B60D;
+
+// Cards, Category
+$category--card-title-color: #393F44;
+
+// Cards, App
+$app--card-title-color: #393F44;
+$app--card-stars-color: #A9B0B6;
