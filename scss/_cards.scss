@@ -176,3 +176,32 @@
     margin: $data--card-sub-title-margin;
   }
 }
+
+.card.category {
+  width: 331px;
+  height: 256px;
+  background-image: url(../img/category-photo-frame.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  .card-image {
+    height: 226px;
+
+    img {
+      width: 312px;
+      height: 204px;
+      position: relative;
+      top: 10px;
+      left: 9px;
+    }
+  }
+
+  .card-caption {
+    height: 30px;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+  }
+}

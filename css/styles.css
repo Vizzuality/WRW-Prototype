@@ -169,5 +169,27 @@
     color: #6C7379;
     margin: 5px 0px 0px; }
 
+.card.category {
+  width: 331px;
+  height: 256px;
+  background-image: url(../img/category-photo-frame.png);
+  background-size: 100%;
+  background-repeat: no-repeat; }
+  .card.category .card-image {
+    height: 226px; }
+    .card.category .card-image img {
+      width: 312px;
+      height: 204px;
+      position: relative;
+      top: 10px;
+      left: 9px; }
+  .card.category .card-caption {
+    height: 30px;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold; }
+
 a, a:visited {
   color: #3BB2D0; }
