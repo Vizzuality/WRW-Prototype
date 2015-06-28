@@ -1,15 +1,19 @@
-.footer-container {
+.header-container {
   width: 100%;
-  height: $page--footer-height;
-  border-top: 1px solid $footer--border-color;
+  height: $page--header-height;
+
+  margin-bottom: 60px;
+
+  background: #C32D7B;
+  background-image: url(../img/header-bg.png), linear-gradient(-49deg, #C32D7B 0%, #C90E39 100%);
+  background-size: 100% 100px;
+  background-repeat: no-repeat;
 }
 
-.footer {
+.header {
   width: $page--width;
   height: 100%;
   margin: 0 auto;
-
-  font-weight: lighter;
 
   display: flex;
   flex-flow: row wrap;
@@ -17,39 +21,21 @@
   align-items: center;
 }
 
-.footer a {
-  color: $footer--link-color;
+a.header-title-link {
+  color: $header--title-link-color;
   text-decoration: none;
 }
 
-.footer a:hover {
-  color: $footer--link-hover-color;
-}
-
-.footer-links {
-  list-style-type: none;
-
+.header-title {
   margin: 0;
-  padding: 0;
-  width: 500px;
+  padding-left: 72px;
+  height: 52px;
 
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  font-size: 19px;
+  line-height: 50px;
+  text-transform: uppercase;
 
-  position: relative;
-
-  li {
-    font-size: 15px;
-    display: inline-block;
-  }
-
-  a {
-    color: $footer--link-list-color;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: $footer--link-hover-color;
-  }
+  background-image: url(../img/wri-logo.png);
+  background-repeat: no-repeat;
+  background-size: 52px 52px;
 }

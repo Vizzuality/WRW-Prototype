@@ -3,6 +3,10 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
+body {
+  margin: 0;
+  padding: 0; }
+
 .container {
   width: 1040px;
   margin: 0 auto; }
@@ -40,7 +44,53 @@ section {
   color: #C32D7B; }
 
 .section-header-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px; }
+
+.header-container {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 60px;
+  background: #C32D7B;
+  background-image: url(../img/header-bg.png), linear-gradient(-49deg, #C32D7B 0%, #C90E39 100%);
+  background-size: 100% 100px;
+  background-repeat: no-repeat; }
+
+.header {
+  width: 1040px;
+  height: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+a.header-title-link {
+  color: white;
   text-decoration: none; }
+
+.header-title {
+  margin: 0;
+  padding-left: 72px;
+  height: 52px;
+  font-size: 19px;
+  line-height: 50px;
+  text-transform: uppercase;
+  background-image: url(../img/wri-logo.png);
+  background-repeat: no-repeat;
+  background-size: 52px 52px; }
 
 .footer-container {
   width: 100%;
@@ -126,6 +176,57 @@ section {
     -webkit-flex: 0 0 100%;
         -ms-flex: 0 0 100%;
             flex: 0 0 100%; } }
+
+.hero {
+  width: 100%;
+  height: 430px;
+  padding: 30px;
+  position: relative;
+  background: url(../img/hero-1.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-weight: lighter;
+  color: white; }
+  .hero a {
+    color: white; }
+
+.hero-sub-title {
+  font-size: 13px;
+  text-transform: uppercase; }
+
+.hero-title {
+  font-size: 48px;
+  width: 600px;
+  position: absolute;
+  bottom: 100px; }
+
+.hero-info {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  left: 30px; }
+
+.hero-info-source, .hero-info-stars {
+  height: 40px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .hero-info-source img, .hero-info-stars img {
+    width: 38px;
+    height: 38px;
+    margin-right: 10px; }
+
+.hero-info-stars {
+  position: absolute;
+  right: 0; }
 
 .card {
   position: relative;
