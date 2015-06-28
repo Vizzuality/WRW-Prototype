@@ -104,3 +104,6 @@
     color: #C3C8CC;
     margin: 0px 0px 5px;
     text-transform: uppercase; }
+
+a, a:visited {
+  color: #3BB2D0; }
