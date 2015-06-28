@@ -1,11 +1,19 @@
 $pink: #C32D7B;
 $light-blue: #3BB2D0;
+$light-grey: #E3E4E6;
 
 // Base Links
 $link-color: $light-blue;
+$link-color-grey: #999BA1;
 
 // Sections
 $section--header-color: $pink;
+
+// Footer
+$footer--border-color: $light-grey;
+$footer--link-color: black;
+$footer--link-list-color: $link-color-grey;
+$footer--link-hover-color: $link-color;
 
 // Cards
 $card-bg-color: white;

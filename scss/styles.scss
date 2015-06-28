@@ -3,16 +3,14 @@
   box-sizing: border-box;
 }
 
-.container {
-  width: 1040px;
-  margin: 0 auto;
-}
-
 @import
   "settings",
   "colors",
 
   "layout",
+
+  "header",
+  "footer",
 
   "grid",
 
@@ -21,8 +19,3 @@
   "cards_data",
   "cards_category",
   "cards_app";
-
-a,
-a:visited {
-  color: $link-color;
-}

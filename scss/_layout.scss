@@ -1,3 +1,17 @@
+.container {
+  width: $page--width;
+  margin: 0 auto;
+}
+
+a,
+a:visited {
+  color: $link-color;
+}
+
+section {
+  margin-bottom: 65px;
+}
+
 .section-header {
   display: flex;
   flex-direction: row;
