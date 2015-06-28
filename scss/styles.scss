@@ -1,10 +1,18 @@
 * {
   font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 1040px;
+  margin: 0 auto;
 }
 
 @import
   "settings",
   "colors",
+
+  "layout",
 
   "grid",
 

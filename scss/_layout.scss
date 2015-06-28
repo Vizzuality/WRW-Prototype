@@ -1,0 +1,20 @@
+.section-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-header h3 {
+  display: inline-block;
+
+  margin: 0 0 15px 0;
+
+  font-weight: lighter;
+  font-size: 28px;
+  color: $section--header-color;
+}
+
+.section-header-link {
+  text-decoration: none;
+}

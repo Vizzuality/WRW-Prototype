@@ -1,6 +1,6 @@
 .card.insight {
   height: 340px;
-  width: 320px;
+  width: $card--large-width;
   box-shadow: 0 1px 5px $insights--card-shadow-color;
 
   .card-image {
