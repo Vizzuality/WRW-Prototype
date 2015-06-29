@@ -1,6 +1,8 @@
 $pink: #C32D7B;
 $light-blue: #3BB2D0;
 $light-grey: #E3E4E6;
+$grey: #393F44;
+$dark-grey: #A9B0B6;
 
 // Base Links
 $link-color: $light-blue;
@@ -18,28 +20,38 @@ $footer--link-color: black;
 $footer--link-list-color: $link-color-grey;
 $footer--link-hover-color: $link-color;
 
+// Tables
+$table--row-background-1: #F4F5F6;
+$table--row-background-2: #FFFFFF;
+$table--color: $grey;
+$table--header-color: $dark-grey;
+$table--header-border-color: $light-grey;
+$table--stars-color: $dark-grey;
+$table--download-color-1: #C32D7B;
+$table--download-color-2: #65B60D;
+
 // Cards
 $card-bg-color: white;
 
 // Cards, Insights
 $insights--card-sub-title-color: #C3C8CC;
-$insights--card-title-color: #393F44;
+$insights--card-title-color: $grey;
 $insights--card-border-color: rgba(#CACCD0, 0.54);
 $insights--card-shadow-color: rgba(#000000, 0.20);
-$insights--card-stars-color: #A9B0B6;
+$insights--card-stars-color: $dark-grey;
 
 // Cards, Data
 $data--card-sub-title-color: #6C7379;
 $data--card-title-color: $link-color;
 $data--card-border-color: rgba(#CACCD0, 0.54);
 $data--card-shadow-color: rgba(#000000, 0.20);
-$data--card-stars-color: #A9B0B6;
+$data--card-stars-color: $dark-grey;
 $data--card-download-color-1: #C32D7B;
 $data--card-download-color-2: #65B60D;
 
 // Cards, Category
-$category--card-title-color: #393F44;
+$category--card-title-color: $grey;
 
 // Cards, App
-$app--card-title-color: #393F44;
-$app--card-stars-color: #A9B0B6;
+$app--card-title-color: $grey;
+$app--card-stars-color: $dark-grey;
