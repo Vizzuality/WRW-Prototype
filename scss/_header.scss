@@ -39,3 +39,23 @@ a.header-title-link {
   background-repeat: no-repeat;
   background-size: 52px 52px;
 }
+
+.header-links {
+  list-style-type: none;
+  width: 500px;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-links li {
+  display: inline-block;
+}
+
+.header-links a {
+  color: $header--link-color;
+  font-weight: lighter;
+  text-decoration: none;
+}
