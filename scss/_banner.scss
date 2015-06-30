@@ -1,0 +1,35 @@
+.banner {
+  position: relative;
+  height: 280px;
+}
+
+.banner-image {
+  width: 100%;
+  float: left;
+}
+
+.banner-header {
+  color: $banner--header-color;
+
+  font-size: 38px;
+  font-weight: lighter;
+  line-height: 42px;
+  text-shadow: 0px 2px 4px rgba(0,0,0,0.50);
+  text-align: center;
+
+  width: 360px;
+}
+
+.banner-header,
+.banner-button {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 20px;
+}
+
+.banner-button {
+  top: 175px;
+}
