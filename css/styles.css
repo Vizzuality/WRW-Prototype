@@ -580,7 +580,20 @@ a.header-title-link {
   font-weight: lighter;
   color: white;
   letter-spacing: 3px;
-  line-height: 16px; }
+  line-height: 16px;
+  position: relative; }
+  .title-sub-text:before, .title-sub-text:after {
+    content: '';
+    width: 100px;
+    height: 1px;
+    position: absolute;
+    bottom: 6px;
+    opacity: 0.5;
+    background: white; }
+  .title-sub-text:before {
+    left: -110px; }
+  .title-sub-text:after {
+    right: -110px; }
 
 .insights--title {
   background-image: url(../img/insights-header-1.png);
