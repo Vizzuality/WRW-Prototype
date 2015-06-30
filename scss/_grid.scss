@@ -1,11 +1,20 @@
 .gridbox {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .gridbox .cell {
   flex: 0 0 $card--large-width;
+}
+
+.gridbox .cell {
+  margin-right: 40px;
+}
+
+.gridbox .cell:nth-child(3n+3) {
+  margin-right: 0;
 }
 
 @media screen and (max-width: 750px) {

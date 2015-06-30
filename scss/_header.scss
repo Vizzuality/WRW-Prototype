@@ -10,6 +10,12 @@
   background-repeat: no-repeat;
 }
 
+.insights--header-container {
+  opacity: 0.73;
+  background-image: linear-gradient(-180deg, rgba(0,0,0,0.84) 0%,
+  rgba(0,0,0,0.42) 85%);
+}
+
 .header {
   width: $page--width;
   height: 100%;
