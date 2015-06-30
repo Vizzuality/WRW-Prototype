@@ -57,7 +57,7 @@
 .about-header {
   font-size: 11px;
   font-weight: normal;
-  color: #C3C8CC;
+  color: $insights--about-header-color;
   letter-spacing: 1.69px;
   line-height: 13px;
   text-transform: uppercase;
@@ -65,9 +65,37 @@
 }
 
 .about-text {
-  background: #F4F5F6;
-  color: #6C7379;
+  background: $insights--about-background-color;
+  color: $insights--about-color;
   line-height: 27px;
   font-size: 18px;
   font-weight: lighter;
+}
+
+.insights--results-header {
+  font-size: 14px;
+  color: $insights--filters-color;
+  line-height: 10px;
+}
+
+.insights--results-filters {
+  list-style-type: none;
+}
+
+.insights--results-filters li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.insights--results-filters a {
+  color: $insights--filters-color;
+  line-height: 27px;
+}
+
+.insights--results-filters .button {
+  background-color: $insights--filters-button-background-color;
+  background-image: none;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
 }

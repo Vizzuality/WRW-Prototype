@@ -275,8 +275,14 @@ a.header-title-link {
   color: #FFFFFF;
   letter-spacing: 1.07px;
   line-height: 17px;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.24);
-  border: 0; }
+  border: 0;
+  display: inline-block; }
+
+.button-small {
+  font-size: 12px;
+  height: 30px;
+  padding: 0 10px;
+  line-height: 27px; }
 
 .button-large {
   width: 225px;
@@ -359,7 +365,8 @@ a.header-title-link {
   top: 20px; }
 
 .banner-button {
-  top: 175px; }
+  top: 175px;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.24); }
 
 .card {
   position: relative;
@@ -609,3 +616,26 @@ a.header-title-link {
   line-height: 27px;
   font-size: 18px;
   font-weight: lighter; }
+
+.insights--results-header {
+  font-size: 14px;
+  color: #393F44;
+  line-height: 10px; }
+
+.insights--results-filters {
+  list-style-type: none; }
+
+.insights--results-filters li {
+  display: inline-block;
+  margin-left: 10px; }
+
+.insights--results-filters a {
+  color: #393F44;
+  line-height: 27px; }
+
+.insights--results-filters .button {
+  background-color: #00A6DE;
+  background-image: none;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase; }
