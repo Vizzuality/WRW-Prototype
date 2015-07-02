@@ -55,15 +55,39 @@
 }
 
 @media screen and (max-width : 760px) {
+  .footer-container {
+    background: #F4F5F6;
+    height: 300px;
+  }
+
   .footer {
     width: 100%;
-    margin: 0 20px;
+    height: auto;
+    margin: 30px 20px;
+    font-size: 17px;
 
     flex-direction: row;
+    align-items: flex-start;
     justify-content: flex-start;
   }
 
+  .footer a:first-of-type {
+    width: 50%;
+    display: block;
+  }
+
   .footer-links {
-    width: auto;
+    width: 185px;
+    display: block;
+  }
+
+  .footer-links li {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 17px;
+  }
+
+  .footer-link:last-of-type {
+    display: none;
   }
 }
