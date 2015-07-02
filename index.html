@@ -28,6 +28,8 @@
           <h1 class="header-title">World Resources Watch</h1>
         </a>
 
+        <button class="header-menu-label js--header-open-menu">Menu</button>
+
         <ul class="header-links">
           <li><a href="#">Insights</a></li>
           <li><a href="#">Explore</a></li>
@@ -424,6 +426,23 @@
         <a href="#">Contact</a>
       </footer>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var mobileMenuLink = document.querySelector(".js--header-open-menu");
+        mobileMenuLink.onclick = function() {
+          var headerEl = document.querySelector('.header-container');
+
+          if (headerEl.classList.contains("header-mobile")) {
+            mobileMenuLink.innerHTML = "Menu";
+            headerEl.classList.remove('header-mobile');
+          } else {
+            mobileMenuLink.innerHTML = "Close";
+            headerEl.classList.add('header-mobile');
+          }
+        };
+      });
+    </script>
 
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
