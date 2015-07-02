@@ -14,12 +14,10 @@
   .card-caption,
   .card-info-stars {
     display: inline-block;
-    width: 75px;
   }
 
   .card-caption {
     height: 30px;
-    width: 240px;
     margin-top: 10px;
     font-size: 17px;
     font-weight: bold;
@@ -29,5 +27,28 @@
   .card-info-stars {
     color: $app--card-stars-color;
     text-align: right;
+  }
+}
+
+.card-caption-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+@media screen and (max-width : 760px) {
+  .card.app {
+    width: 100%;
+  }
+
+  .card.app .card-image {
+    overflow: hidden;
+  }
+
+  .card.app .card-image img {
+    width: 100%;
+    height: auto;
   }
 }

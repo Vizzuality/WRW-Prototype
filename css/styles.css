@@ -48,6 +48,13 @@ section {
   text-transform: uppercase;
   font-size: 12px; }
 
+@media screen and (max-width: 760px) {
+  .container {
+    width: 100%; }
+  section {
+    margin-bottom: 30px;
+    padding: 0 20px; } }
+
 .header-container {
   width: 100%;
   height: 100px;
@@ -138,7 +145,8 @@ a.header-title-link {
 @media screen and (max-width: 760px) {
   .header-container {
     height: 80px;
-    background-size: auto 80px; }
+    background-size: auto 80px;
+    margin-bottom: 0; }
   .header {
     width: 100%;
     padding-right: 20px; }
@@ -233,6 +241,22 @@ a.header-title-link {
     text-decoration: none; }
   .footer-links a:hover {
     color: #3BB2D0; }
+
+@media screen and (max-width: 760px) {
+  .footer {
+    width: 100%;
+    margin: 0 20px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+  .footer-links {
+    width: auto; } }
 
 .gridbox {
   display: -webkit-box;
@@ -391,6 +415,14 @@ a.header-title-link {
   position: absolute;
   right: 0; }
 
+@media screen and (max-width: 760px) {
+  .hero {
+    background-size: auto 100%; }
+  .hero-title {
+    width: auto;
+    position: relative;
+    bottom: -120px; } }
+
 .banner {
   position: relative;
   height: 280px; }
@@ -419,6 +451,18 @@ a.header-title-link {
 .banner-button {
   top: 175px;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.24); }
+
+@media screen and (max-width: 760px) {
+  .banner {
+    overflow: hidden; }
+  .banner-image {
+    width: auto;
+    height: 100%; }
+  .banner-header {
+    width: 350px;
+    top: 0; }
+  .banner-button {
+    top: 190px; } }
 
 .card {
   position: relative;
@@ -486,6 +530,10 @@ a.header-title-link {
     color: #C3C8CC;
     margin: 0px 0px 5px;
     text-transform: uppercase; }
+
+@media screen and (max-width: 760px) {
+  .card.insight {
+    width: 100%; } }
 
 .card.data {
   height: 310px;
@@ -582,11 +630,9 @@ a.header-title-link {
       width: 320px;
       height: 180px; }
   .card.app .card-caption, .card.app .card-info-stars {
-    display: inline-block;
-    width: 75px; }
+    display: inline-block; }
   .card.app .card-caption {
     height: 30px;
-    width: 240px;
     margin-top: 10px;
     font-size: 17px;
     font-weight: bold;
@@ -594,6 +640,37 @@ a.header-title-link {
   .card.app .card-info-stars {
     color: #A9B0B6;
     text-align: right; }
+
+.card-caption-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap; }
+
+@media screen and (max-width: 760px) {
+  .card.app {
+    width: 100%; }
+  .card.app .card-image {
+    overflow: hidden; }
+  .card.app .card-image img {
+    width: 100%;
+    height: auto; } }
 
 .title {
   width: 100%;

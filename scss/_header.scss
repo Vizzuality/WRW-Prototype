@@ -83,6 +83,7 @@ a.header-title-link {
   .header-container {
     height: $responsive-page--header-height;
     background-size: auto $responsive-page--header-height;
+    margin-bottom: 0;
   }
 
   .header {

@@ -81,3 +81,9 @@
     text-transform: uppercase;
   }
 }
+
+@media screen and (max-width : 760px) {
+  .card.insight {
+    width: 100%;
+  }
+}
