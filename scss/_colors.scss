@@ -44,6 +44,13 @@ $insights--card-border-color: rgba(#CACCD0, 0.54);
 $insights--card-shadow-color: rgba(#000000, 0.20);
 $insights--card-stars-color: $dark-grey;
 
+// Cards, Dashboard
+$dashboard--card-border-color: rgba(#CACCD0, .85);
+$dashboard--card-shadow-color: rgba(#000000, 0.20);
+$dashboard--card-relevant-1-background: linear-gradient(45deg, #C4256B 0%, #C90E39 100%);
+$dashboard--card-relevant-2-background: linear-gradient(45deg, #3BB2D0 0%, #3DC3E5 100%);
+$dashboard--card-relevant-title-color: #fff;
+
 // Cards, Data
 $data--card-sub-title-color: #6C7379;
 $data--card-title-color: $link-color;

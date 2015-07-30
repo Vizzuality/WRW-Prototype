@@ -80,6 +80,20 @@
     margin: $insights--card-sub-title-margin;
     text-transform: uppercase;
   }
+
+  .card-graph {
+    padding: $card-padding;
+    padding-bottom: $card-padding * 2;
+
+    .card-sub-title {
+      font-weight: bold;
+    }
+
+    .card-title {
+      font-weight: lighter;
+      color: $section--header-color;
+    }
+  }
 }
 
 @media screen and (max-width : 760px) {
