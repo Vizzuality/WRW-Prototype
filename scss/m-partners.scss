@@ -1,0 +1,31 @@
+.m-partners {
+	border: 1px solid #e3e4e6;
+	border-left: 0;
+	border-right: 0;
+	margin-bottom: 35px;
+	margin-top: 150px;
+
+	.partners-title {
+		position: relative;
+		text-transform: uppercase;
+		text-align: center;
+		color: #b9bfc4;
+		font-size: 12px;
+		background-color: #fff;
+		width: 100px;
+		margin: 0 auto;
+		transform: translatey(-50%);
+	}
+
+	ul {
+		padding: 0 100px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	li {
+		list-style: none;
+		float: left;
+		margin-right: 60px;
+	}
+}
