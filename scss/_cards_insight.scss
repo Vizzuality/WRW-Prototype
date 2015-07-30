@@ -1,13 +1,15 @@
 .card.insight {
-  height: 340px;
+  height: 385px;
   width: $card--large-width;
   box-shadow: 0 1px 5px $insights--card-shadow-color;
 
   .card-image {
     height: 180px;
+    background-color: #eee;
   }
 
   .card-image img {
+    display: none;
     position: relative;
 
     width: 100%;
@@ -26,7 +28,7 @@
   }
 
   .card-content {
-    height: 95px;
+    height: 150px;
     box-sizing: border-box;
     border-bottom: 0;
   }
@@ -36,6 +38,7 @@
     margin: 0;
     list-style-type: none;
     font-size: 14px;
+    padding-top: 0;
   }
 
   .card-info-source,
@@ -43,7 +46,7 @@
     display: flex;
     align-items: center;
     height: 100%;
-    width: 45%;
+    // width: 45%;
   }
 
   .card-info-source {
@@ -53,6 +56,7 @@
       width: 38px;
       height: 38px;
       float: left;
+      margin-right: 5px;
     }
   }
 
@@ -67,7 +71,7 @@
   }
 
   .card-title {
-    font-size: 21px;
+    font-size: 19px;
     font-weight: bold;
     color: $insights--card-title-color;
     margin: $insights--card-title-margin;
