@@ -49,6 +49,12 @@
     // width: 45%;
   }
 
+  .card-info-stars {
+    &.active {
+      color: $app--card-stars-active-color;
+    }
+  }
+
   .card-info-source span {
     width: 150px;
   }
