@@ -7,14 +7,29 @@
 
 .gridbox .cell {
   flex: 0 0 $card--large-width;
+
+  &.data {
+    flex: 0 0 $card--data--large-width;
+  } 
 }
 
 .gridbox .cell {
   margin-right: 40px;
 }
 
-.gridbox .cell:nth-child(3n+3) {
-  margin-right: 0;
+.gridbox .cell {
+
+  &:nth-child(3n+3) {
+    margin-right: 0;
+  }
+
+  &.data:nth-child(3n+3) {
+    margin-right: 40px;
+  }
+
+  &.data:nth-child(4n+4) {
+    margin-right: 0;
+  }
 }
 
 @media screen and (max-width: 750px) {
