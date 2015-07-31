@@ -111,6 +111,28 @@ a.header-title-link {
   text-decoration: none;
 }
 
+.header-links .notification {
+  position: relative;
+  display: block;
+
+  &:after {
+    content: '2';
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: $light-blue;
+    display: block;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    color: $header--link-color;
+    font-size: .7em;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+  }
+}
+
 .header-menu-label {
   display: none;
   border: 1px solid #FFFFFF;
