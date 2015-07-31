@@ -10,7 +10,7 @@ gulp.task('serve', ['sass'], function() {
   });
 
   gulp.watch("./scss/*.scss", ['sass']);
-  gulp.watch(["*.html", "./scss/*.scss"]).on('change', browserSync.reload);
+  // gulp.watch(["*.html", "./scss/*.scss"]).on('change', browserSync.reload);
 });
 
 // Compile sass into CSS & auto-inject into browsers
@@ -29,8 +29,8 @@ gulp.task('sass', function() {
     }))
     .pipe(sass())
     .pipe(autoprefixer(autoprefixerConfig))
-    .pipe(gulp.dest("./css"))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest("./css"));
+    // .pipe(browserSync.stream());
 });
 
 gulp.task('default', ['serve']);

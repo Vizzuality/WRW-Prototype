@@ -1,6 +1,9 @@
 body {
   margin: 0;
   padding: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -30,7 +33,7 @@ section {
   margin: 0 0 15px 0;
 
   font-weight: lighter;
-  font-size: 28px;
+  font-size: 26px;
   color: $section--header-color;
 }
 
@@ -38,6 +41,7 @@ section {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 12px;
+  font-weight: bold;
 }
 
 @media screen and (max-width : 760px) {
