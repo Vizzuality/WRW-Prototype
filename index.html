@@ -24,61 +24,74 @@
 
     <div class="header-container">
       <header class="header">
-        <a href="#" class="header-title-link">
-          <h1 class="header-title">World Resources Watch</h1>
-        </a>
+        <div class="upper-header">
+          <div class="upper-header-container">
+            <div class="language-selector">
+              <ul>
+                <li>English</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-        <button class="header-menu-label js--header-open-menu">Menu</button>
+        <div class="down-header">
+          <a href="#" class="header-title-link">
+            <h1 class="header-title">World Resources Watch</h1>
+          </a>
 
-        <ul class="header-links">
-          <li><a href="#">Insights</a></li>
-          <li><a href="#">Explore</a></li>
-          <li><a href="#">Countries</a></li>
-          <li><a href="#">Planet pulse</a></li>
-          <!-- <li><a href="#">Apps</a></li> -->
-          <!-- <li><a href="#">Get Involved</a></li> -->
-          <li><a href="#"><i class="fa fa-search"></i></a></li>
-          <li><a href="#"><img src="img/user-1.png"></a></li>
-        </ul>
+          <button class="header-menu-label js--header-open-menu">Menu</button>
+
+          <ul class="header-links">
+            <li><a href="#">Insights</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Countries</a></li>
+            <li><a href="#">Planet pulse</a></li>
+            <!-- <li><a href="#">Apps</a></li> -->
+            <!-- <li><a href="#">Get Involved</a></li> -->
+            <li><a href="#"><i class="fa fa-search"></i></a></li>
+            <li><a href="#"><img src="img/user-1.png"></a></li>
+          </ul>
+        </div>
       </header>
     </div>
 
+    <!-- hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="container"> 
+          <div class="hero-title">
+            <div class="hero-sub-title">
+              Map of the Day
+            </div>
+
+              Are countries whose water supplies are most at risk from climate change taking action?
+          </div>
+
+          <div class="hero-info">
+            <div class="hero-info-source">
+              <img src="img/insight-wwf-logo.png">
+              <span>by <a href="#">World Resources Institute</a></span>
+            </div>
+
+            <div class="hero-info-stars">
+              <span><i class="fa fa-star"></i> 5,230</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
     <div class="container">
-      <section class="hero">
-        <div class="hero-title">
-          <div class="hero-sub-title">
-            Map of the Day
-          </div>
-
-            Are countries whose water supplies are most at risk from climate change taking action?
-        </div>
-
-        <div class="hero-info">
-          <div class="hero-info-source">
-            <img src="img/insight-wwf-logo.png">
-            <span>by <a href="#">World Resources Institute</a></span>
-          </div>
-
-          <div class="hero-info-stars">
-            <span><i class="fa fa-star"></i> 5,230</span>
-          </div>
-        </div>
-      </section>
-      
       <!-- country selector -->
       <section>
-        <div class="country-selector">
+        <div class="m-country-selector">
           <header>
             <h2>Country dashboards</h2>
             <p>Analyze country data easily</p>
           </header>
           <div class="country-selector">
-            <form action="">
-              <div class="wrapper-selector">
-                <input type="text" placeholder="Choose country">
-                <input type="submit" value="Let's go!">
-              </div>
-            </form>
+            <input class="choose-country" type="text" placeholder="Choose country">
+            <input class="button" type="submit" value="Let's go!">
           </div>
         </div>
       </section>
