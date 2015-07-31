@@ -35,13 +35,14 @@
 .language-selector {
   position: relative;
   padding-right: 20px;
+  font-weight: lighter;
 
   &:after {
     content: "";
     position: absolute;
     bottom: 25%;
     right: 0;
-    @include arrow (7px, #fff, 2px, 225deg);
+    @include arrow (7px, #fff, 1px, 225deg);
   }
 
   ul {
