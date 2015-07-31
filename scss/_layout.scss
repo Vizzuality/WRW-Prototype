@@ -54,6 +54,10 @@ a:visited {
 
 section {
   margin-bottom: 65px;
+
+  #container & {
+    margin-bottom: 20px;
+  }
 }
 
 .section-header {
