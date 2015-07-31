@@ -20,6 +20,10 @@
     color: $footer--link-color;
     text-decoration: none;
     font-size: 14px;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+  a {
     
     &:hover {
       color: $footer--link-hover-color;

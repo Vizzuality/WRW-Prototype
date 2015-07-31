@@ -53,7 +53,7 @@ require([
       if(this.app) {
         this.app.destroy();
       }
-      this.app = new App({ el: '.container', iso: iso});
+      this.app = new App({ el: '#container', iso: iso});
     }
 
   });

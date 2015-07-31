@@ -12,6 +12,7 @@
 
   font-weight: lighter;
   color: white;
+  -webkit-font-smoothing: subpixel-antialiased;
 
   a {
     color: white;
@@ -33,6 +34,7 @@
 .hero-title {
   font-size: 36px;
   width: 50%;
+  margin-bottom: 40px;
 
   // position: absolute;
   // bottom: 100px;

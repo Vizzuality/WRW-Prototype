@@ -1,8 +1,11 @@
 $pink: #C32D7B;
 $light-blue: #3BB2D0;
 $light-grey: #E3E4E6;
+$lighter-grey: #f1f2f3;
+$silver: #b9bfc4;
 $grey: #393F44;
 $dark-grey: #A9B0B6;
+$mango: #fab72e;
 
 // Base Links
 $link-color: $light-blue;
@@ -41,12 +44,12 @@ $card-bg-color: white;
 $insights--card-sub-title-color: #C3C8CC;
 $insights--card-title-color: $grey;
 $insights--card-border-color: rgba(#CACCD0, 0.54);
-$insights--card-shadow-color: rgba(#000000, 0.20);
+$insights--card-shadow-color: rgba(#000000, 0.15);
 $insights--card-stars-color: $dark-grey;
 
 // Cards, Dashboard
 $dashboard--card-border-color: rgba(#CACCD0, .85);
-$dashboard--card-shadow-color: rgba(#000000, 0.20);
+$dashboard--card-shadow-color: rgba(#000000, 0.15);
 $dashboard--card-relevant-1-background: linear-gradient(45deg, #C4256B 0%, #C90E39 100%);
 $dashboard--card-relevant-2-background: linear-gradient(45deg, #3BB2D0 0%, #3DC3E5 100%);
 $dashboard--card-relevant-title-color: #fff;
@@ -55,7 +58,7 @@ $dashboard--card-relevant-title-color: #fff;
 $data--card-sub-title-color: #6C7379;
 $data--card-title-color: $link-color;
 $data--card-border-color: rgba(#CACCD0, 0.54);
-$data--card-shadow-color: rgba(#000000, 0.20);
+$data--card-shadow-color: rgba(#000000, 0.15);
 $data--card-stars-color: $dark-grey;
 $data--card-download-color-1: #C32D7B;
 $data--card-download-color-2: #65B60D;
@@ -66,6 +69,7 @@ $category--card-title-color: $grey;
 // Cards, App
 $app--card-title-color: $grey;
 $app--card-stars-color: $dark-grey;
+$app--card-stars-active-color: $mango;
 
 // ## Insights Page
 

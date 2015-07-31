@@ -5,7 +5,7 @@
   margin-bottom: 0;
 
   background: #C32D7B;
-  background-image: url(../img/header-bg.png), linear-gradient(-49deg, #C32D7B 0%, #C90E39 100%);
+  background-image: url(../img/header-bg.png), linear-gradient(90deg, #C32D7B 0%, #C90E39 100%);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -102,13 +102,48 @@ a.header-title-link {
 }
 
 .header-links li {
-  display: inline-block;
+  display: block;
+  position: relative;
+
+  &.active:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    background-color: #fff;
+  }
 }
 
 .header-links a {
   color: $header--link-color;
   font-weight: lighter;
   text-decoration: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.header-links .notification {
+  position: relative;
+  display: block;
+
+  &:after {
+    content: '2';
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: $light-blue;
+    display: block;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    color: $header--link-color;
+    font-size: .7em;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+  }
 }
 
 .header-menu-label {
