@@ -1,0 +1,46 @@
+.planet-pulse {
+  height: 1000px;
+  background: url('../img/planet-pulse-bg.jpg') black center center;
+  padding-top: 60px;
+  position: relative;
+  display: flex;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .planet-pulse--title {
+    font-size: 48px;
+    font-weight: lighter;
+    color: $planet-pulse--title-color;
+    line-height: 52px;
+  }
+
+  .controls {
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    width: 30px;
+    height: 65px;
+    background: url('../img/planet-pulse-controls.png') no-repeat;
+  }
+
+  .planet-pulse--tabs {
+    font-size: 28px;
+    font-weight: lighter;
+    color: $planet-pulse--title-color;
+    list-style-type: none;
+    text-align: center;
+    padding-left: 0;
+
+    li {
+      display: inline-block;
+
+      &+li {
+        margin-left: 50px;
+      }
+    }
+  }
+}
