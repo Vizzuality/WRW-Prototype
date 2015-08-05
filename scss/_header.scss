@@ -2,11 +2,11 @@
   width: 100%;
   height: $page--header-height;
 
-  margin-bottom: 60px;
+  margin-bottom: 0;
 
   background: #C32D7B;
-  background-image: url(../img/header-bg.png), linear-gradient(-49deg, #C32D7B 0%, #C90E39 100%);
-  background-size: 100% 100px;
+  background-image: url(../img/header-bg.png), linear-gradient(90deg, #C32D7B 0%, #C90E39 100%);
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -17,12 +17,56 @@
 }
 
 .header {
-  width: $page--width;
   height: 100%;
   margin: 0 auto;
 
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upper-header {
+  padding: 10px 0;
+  width: 100%;
+  background-color: rgba(0,0,0,.1);
+}
+
+.language-selector {
+  position: relative;
+  padding-right: 20px;
+  font-weight: lighter;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 25%;
+    right: 0;
+    @include arrow (7px, #fff, 1px, 225deg);
+  }
+
+  ul {
+    margin: 0;
+    list-style: none;
+    font-size: 11px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+}
+
+.upper-header-container {
+  width: $page--width;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.down-header {
+  width: $page--width;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -54,16 +98,52 @@ a.header-title-link {
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
+  margin: 0;
 }
 
 .header-links li {
-  display: inline-block;
+  display: block;
+  position: relative;
+
+  &.active:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    background-color: #fff;
+  }
 }
 
 .header-links a {
   color: $header--link-color;
   font-weight: lighter;
   text-decoration: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.header-links .notification {
+  position: relative;
+  display: block;
+
+  &:after {
+    content: '2';
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: $light-blue;
+    display: block;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    color: $header--link-color;
+    font-size: .7em;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+  }
 }
 
 .header-menu-label {

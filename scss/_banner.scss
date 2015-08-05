@@ -12,12 +12,11 @@
   color: $banner--header-color;
 
   font-size: 38px;
-  font-weight: lighter;
   line-height: 42px;
   text-shadow: 0px 2px 4px rgba(0,0,0,0.50);
   text-align: center;
 
-  width: 360px;
+  width: 400px;
 }
 
 .banner-header,
@@ -27,7 +26,11 @@ a.button.banner-button {
   margin-right: auto;
   left: 0;
   right: 0;
+}
+
+a.button.banner-button {
   width: 250px;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .banner-button {

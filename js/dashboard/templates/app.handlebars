@@ -1,0 +1,67 @@
+{{#if iso}}
+<section>
+  <header class="section-header">
+    <h1 class="story--title">{{{country}}} dashboard</h1>
+    <a onclick="toggleFullscreen();" id="fullscreen-btn" class="section-header-link aligned-bottom">Full screen</a>
+  </header>
+
+  <!-- country selector -->
+  <section>
+    <div class="m-country-selector dashboard">
+      <div class="country-selector">
+        <select  class="choose-country">
+          <option value="" disabled selected>Choose country</option>
+          {{#each countries}}
+          <option value="{{iso}}" {{#is iso ../iso}}selected{{/is}}>{{name}}</option>
+          {{/each}}
+        </select>
+        <input class="button" type="submit" value="Let's go!">
+      </div>
+    </div>
+  </section>
+
+  <div class="gridbox">
+    {{#times cardsCount}}
+    <div class="cell">
+      <div class="card dashboard card{{@index}}">
+      </div>
+    </div>
+    {{/times}}
+  </div>
+</section>
+{{else}}
+<header class="l-main-header">
+  <div class="wrap">
+    <div class="row is-stretch">
+      <div class="grid-6">
+        <h1>word resources watch</h1>
+      </div>
+      {{#if country}}
+        <div class="grid-6 is-flex">
+          <div class="m-breadcrumbs">
+            <a href="/" class="btn-back"></a>
+            <h2>{{{country}}}</h2>
+          </div>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</header>
+<div class="m-modal-window">
+  <div class="modal-wrapper">
+    <div class="modal-container">
+      <h2>Please, select the country <br>you want to analyze</h2>
+      <form>
+      <div class="select-country-wrapper">
+        <select id="country" class="select-country">
+          {{#each countries}}
+          <option value="{{{iso}}}">{{{name}}}</option>
+          {{/each}}
+        </select>
+        <button id="submit" class="button postfix btn-send">Let's go!</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+{{/if}}

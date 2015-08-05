@@ -22,20 +22,36 @@
   </head>
   <body>
 
-    <div class="insights--header-container">
+    <div class="header-container">
       <header class="header">
-        <a href="#" class="header-title-link">
-          <h1 class="header-title">World Resources Watch</h1>
-        </a>
+        <div class="upper-header">
+          <div class="upper-header-container">
+            <div class="language-selector">
+              <ul>
+                <li>English</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-        <ul class="header-links">
-          <li><a href="#" class="header-link-active">Insights</a></li>
-          <li><a href="#">Explore</a></li>
-          <li><a href="#">Apps</a></li>
-          <li><a href="#">Get Involved</a></li>
-          <li><a href="#"><i class="fa fa-search"></i></a></li>
-          <li><a href="#"><img src="img/user-1.png"></a></li>
-        </ul>
+        <div class="down-header">
+          <a href="index.html" class="header-title-link">
+            <h1 class="header-title">World Resources Watch</h1>
+          </a>
+
+          <button class="header-menu-label js--header-open-menu">Menu</button>
+
+          <ul class="header-links">
+            <li class="active"><a href="insights.html">Insights</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="dashboard.html">Countries</a></li>
+            <li><a href="#">Planet pulse</a></li>
+            <!-- <li><a href="#">Apps</a></li> -->
+            <!-- <li><a href="#">Get Involved</a></li> -->
+            <li><a href="#"><i class="fa fa-search"></i></a></li>
+            <li class="notification"><a href="#"><img src="img/user-1.png"></a></li>
+          </ul>
+        </div>
       </header>
     </div>
 
@@ -322,20 +338,108 @@
       </section>
     </div>
 
+    <section class="m-partners">
+      <div class="container">
+        <p class="partners-title">partners
+          <span class="line"></span>
+        </p>
+        <ul>
+          <li>
+            <a href="#">
+              <img src="img/logo-1.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img/logo-2.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img/logo-3.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img/logo-4.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img/logo-5.png" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="m-site-map">
+      <div class="container">
+        <ul class="site-sections">
+          <li class="site-section">
+            <a href="index.html"><img src="data:image/svg+xml ;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjQxcHgiIGhlaWdodD0iNDJweCIgdmlld0JveD0iMCAwIDQxIDQyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4zLjMgKDEyMDgxKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5sb2dvLXdydy1mb290ZXI8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iSG9tZSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc2tldGNoOnR5cGU9Ik1TUGFnZSI+CiAgICAgICAgPGcgaWQ9IjAzYy1kZXRhaWwtZGF0YS1zdGFuZGFsb25lIiBza2V0Y2g6dHlwZT0iTVNBcnRib2FyZEdyb3VwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjMxLjAwMDAwMCwgLTI2MDMuMDAwMDAwKSIgZmlsbD0iI0I5QkZDNCI+CiAgICAgICAgICAgIDxnIGlkPSJmb290ZXIiIHNrZXRjaDp0eXBlPSJNU0xheWVyR3JvdXAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLCAyNDQ3LjAwMDAwMCkiPgogICAgICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMzEuMDAwMDAwLCAxNTQuMDAwMDAwKSIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTE1LjUxNDc4MjMsMzQuMjAyODA4IEwxMC4yODUxMTc1LDM5LjUxNzM4NTggTDE0LjY5NTgwMTksNDQgTDE5LjkyNTEsMzguNjg1NDIyMiBMMTUuNTE0NzgyMywzNC4yMDI4MDggWiBNMjUuNTI4MTI4OSwzMi45OTEzOTE0IEw0MC42NTM0MDk1LDE3LjYxOTA3MzggTDM2LjI0MzA5MTksMTMuMTM2NDU5NiBMMjEuMTE3NDQ0NSwyOC41MDg3NzcyIEwyNS41MjgxMjg5LDMyLjk5MTM5MTQgWiBNMjUuNTI4MTI4OSwxMS45MjUwNDMgTDMwLjg4Mjg1OTcsNi40ODI2MTQxNyBMMjYuNDcyMTc1MywyIEwyMS4xMTc0NDQ1LDcuNDQyNDI4ODcgTDI1LjUyODEyODksMTEuOTI1MDQzIFogTTE1LjUxNDc4MjMsMTMuMTM2NDU5NiBMMC4zODkxMzQ4ODgsMjguNTA4Nzc3MiBMNC43OTk4MTkzLDMyLjk5MTM5MTQgTDE5LjkyNTEsMTcuNjE5MDczOCBMMTUuNTE0NzgyMywxMy4xMzY0NTk2IFogTTE1LjE2Mzc5MDcsMjMuNjY5NDQ3NSBMMTAuNzUzMTA2MywyOC4xNTIwNjE2IEwyNS44Nzg3NTM3LDQzLjUyNDM3OTIgTDMwLjI4OTQzODEsMzkuMDQxNzY1IEwxNS4xNjM3OTA3LDIzLjY2OTQ0NzUgWiBNOS41NjExMjg1NSwxNy45NzU0MTY3IEw0LjQxMDY4NDQxLDEyLjc0MDk3ODcgTDAsMTcuMjIzNTkyOSBMNS4xNTA0NDQxNCwyMi40NTgwMzA4IEw5LjU2MTEyODU1LDE3Ljk3NTQxNjcgWiBNMzAuMjg5NDM4MSwxNy45NzU0MTY3IEwxNS4xNjM3OTA3LDIuNjAzMDk5MSBMMTAuNzUzMTA2Myw3LjA4NTcxMzI3IEwyNS44Nzg3NTM3LDIyLjQ1ODAzMDggTDMwLjI4OTQzODEsMTcuOTc1NDE2NyBaIE0zNS44OTIxMDAzLDIzLjY2OTQ0NzUgTDMxLjQ4MTQxNTksMjguMTUyMDYxNiBMMzYuNTg5MzE1NiwzMy4zNDMyNjEzIEw0MSwyOC44NjA2NDcyIEwzNS44OTIxMDAzLDIzLjY2OTQ0NzUgWiIgaWQ9ImxvZ28td3J3LWZvb3RlciI+PC9wYXRoPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4="/></a>
+          </li>
+          <li class="site-section">
+            <a href="insights.html">Insights</a>
+            <ul>
+              <li><a href="#">Popular insights</a></li>
+              <li><a href="#">Collections</a></li>
+              <li><a href="#">Create an insight</a></li>
+            </ul>
+          </li>
+          <li class="site-section">
+            <a href="#">Explore</a>
+            <ul>
+              <li><a href="#">Data map</a></li>
+              <li><a href="#">Datasets</a></li>
+            </ul>
+          </li>
+          <li class="site-section">
+            <a href="#">Apps</a>
+            <ul>
+              <li><a href="#">Popular apps</a></li>
+              <li><a href="#">iOS apps</a></li>
+              <li><a href="#">Android apps</a></li>
+              <li><a href="#">PWeb apps</a></li>
+            </ul>
+          </li>
+          <li class="site-section">
+            <a href="">Get involved</a>
+            <ul>
+              <li><a href="#">Create insights</a></li>
+              <li><a href="#">Share data</a></li>
+              <li><a href="#">Develop an app</a></li>
+              <li><a href="#">Help improve the data</a></li>
+              <li><a href="#">Become a partner</a></li>
+            </ul>
+          </li>
+          <li class="site-section">
+            <a href="#">Help</a>
+            <ul>
+              <li><a href="#">Site tour</a></li>
+              <li><a href="#">Help center</a></li>
+              <li><a href="#">FAQ's</a></li>
+            </ul>
+          </li>
+          <li class="site-section">
+            <a href="#">More</a>
+            <ul>
+              <li><a href="dashboard.html">Country dashboard</a></li>
+              <li><a href="#">Planet pulse</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- footer -->
     <div class="footer-container">
       <footer class="footer">
-        <a href="#">English</a>
-
-        <ul class="footer-links">
-          <li><a href="#">Insights</a></li>
-          <li><a href="#">Explore</a></li>
-          <li><a href="#">Apps</a></li>
-          <li><a href="#">Planet Pulse</a></li>
-          <li><a href="#">Get Involved</a></li>
-          <li><a href="#">How to</a></li>
-        </ul>
-
-        <a href="#">Contact</a>
+        <a href="#">Terms of Service – Privacy</a>
+        <p>© 2015 - World Resources Watch</p>
       </footer>
     </div>
 

@@ -1,11 +1,50 @@
 body {
   margin: 0;
   padding: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
   width: $page--width;
   margin: 0 auto;
+  position: relative;
+
+  &.is-fullscreen {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 20px !important;
+    overflow: scroll !important;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background-color: #C4256B;
+    }
+
+    .section-header {
+      margin: 0 auto;
+    }
+
+    .gridbox {
+      display: block !important;
+      overflow: hidden;
+      margin: 0 auto;
+
+      .cell {
+        margin: 0 20px 0 20px !important;
+        float: left !important;
+      }
+
+    }
+
+  }
+
 }
 
 a,
@@ -15,6 +54,10 @@ a:visited {
 
 section {
   margin-bottom: 65px;
+
+  #container & {
+    margin-bottom: 20px;
+  }
 }
 
 .section-header {
@@ -30,7 +73,7 @@ section {
   margin: 0 0 15px 0;
 
   font-weight: lighter;
-  font-size: 28px;
+  font-size: 26px;
   color: $section--header-color;
 }
 
@@ -38,6 +81,13 @@ section {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &.aligned-bottom {
+    align-self: flex-end;
+    margin-bottom: 2.67em;
+  }
 }
 
 @media screen and (max-width : 760px) {

@@ -19,7 +19,7 @@
   .card-caption {
     height: 30px;
     margin-top: 10px;
-    font-size: 17px;
+    font-size: 14px;
     font-weight: bold;
     color: $app--card-title-color;
   }
@@ -27,6 +27,11 @@
   .card-info-stars {
     color: $app--card-stars-color;
     text-align: right;
+    font-size: 15px;
+
+    &.active {
+      color: $app--card-stars-active-color;
+    }
   }
 }
 

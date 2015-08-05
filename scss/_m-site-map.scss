@@ -1,0 +1,38 @@
+.m-site-map {
+	.site-sections {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+		margin-bottom: 5px;
+	}
+
+	.site-section {
+		a {
+
+		}
+
+		> a {
+			color: #000;
+			font-size: 15px;
+		}
+
+		ul {
+			padding: 0;
+          margin-top: 8px;
+
+			a {
+				color: #999ba1;
+				font-size: 14px;
+			}
+		}
+	}
+
+	li {
+		list-style: none;
+	}
+}

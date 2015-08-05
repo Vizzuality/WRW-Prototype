@@ -8,13 +8,21 @@
 
   background: url(../img/hero-1.png);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
 
   font-weight: lighter;
   color: white;
+  -webkit-font-smoothing: subpixel-antialiased;
 
   a {
     color: white;
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
   }
 }
 
@@ -24,18 +32,19 @@
 }
 
 .hero-title {
-  font-size: 48px;
-  width: 600px;
+  font-size: 36px;
+  width: 50%;
+  margin-bottom: 40px;
 
-  position: absolute;
-  bottom: 100px;
+  // position: absolute;
+  // bottom: 100px;
 }
 
 .hero-info {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  left: 30px;
+  position: relative;
+  // bottom: 30px;
+  // right: 30px;
+  // left: 30px;
 }
 
 .hero-info-source,
