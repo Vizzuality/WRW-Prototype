@@ -58,7 +58,7 @@
       </header>
     </div>
 
-    <div class="explore--content">
+    <div class="explore--content js--explore--content">
       <header>
         <h2 class="explore--title">Explore</h2>
       </header>
@@ -313,9 +313,14 @@
       </section>
     </div>
 
-    <div id="map" class="explore--map"></div>
+    <div id="map" class="explore--map js--explore--map">
+      <a href="#" class="js--map-expand explore--map-button">
+        <i class="fa fa-chevron-left"></i>
+      </a>
+    </div>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/explore.js"></script>
 
     <script>

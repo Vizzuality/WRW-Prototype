@@ -14,10 +14,12 @@ $explore--content-width: 800px;
   padding: 20px 40px;
 
   overflow-y: scroll;
+
+  transition: width 1s ease;
 }
 
 .explore--content-closed {
-  display: none;
+  width: 0;
 }
 
 .explore--results-header {
@@ -89,6 +91,8 @@ $explore--content-width: 800px;
   right: 0;
 
   background: #000;
+
+  transition: left 1s ease;
 }
 
 .explore--map-open {
@@ -98,4 +102,18 @@ $explore--content-width: 800px;
 .explore--title {
   font-size: 48px;
   font-weight: lighter;
+}
+
+a.explore--map-button {
+  color: #FFF;
+  z-index: 1;
+  padding: 12px 10px;
+  width: 30px;
+  height: 40px;
+  position: absolute;
+  top: 20px;
+
+  background: rgba(#FFF, 0.3);
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
