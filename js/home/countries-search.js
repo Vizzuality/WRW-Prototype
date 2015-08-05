@@ -1,27 +1,54 @@
-define([
-  'handlebars'
-], function(Handlebars) {
+require.config({
+
+  baseUrl: 'js/dashboard',
+
+  paths: {
+    jquery:     '../vendor/jquery/dist/jquery.min',
+    underscore: '../vendor/underscore/underscore-min',
+    backbone:   '../vendor/backbone/backbone-min',
+    handlebars: '../vendor/handlebars/handlebars.amd.min',
+    d3:         '../vendor/d3/d3',
+    d3chart:    'helpers/chart',
+    moment:     '../vendor/moment/min/moment.min',
+    text:       '../vendor/text/text',
+    'backbone-super': '../vendor/backbone-super/backbone-super/' +
+      'backbone-super-min'
+  },
+
+  shim: {
+    d3:   { exports: 'd3' }
+  }
+
+});
+
+require([
+  'underscore',
+  'backbone',
+], function(_, Backbone) {
 
   'use strict';
 
-  Handlebars.registerHelper('times', function(context, options) {
-    var ret = '';
-    for(var i = 0; i < context; i++) {
-      var data = Handlebars.createFrame(options.data || {});
-      data.index = i;
-      ret += options.fn(null, { data: data });
-    }
-    return ret;
-  });
+  var CountrySearch = Backbone.View.extend({
 
-  Handlebars.registerHelper('is', function(v1, v2, options) {
-    if(v1 === v2) {
-      return options.fn(this);
-    }
-    return options.inverse(this);
-  });
+    el: '.choose-country',
 
-  return {
+    events: {
+      'change': 'setCountry'
+    },
+
+  	initialize: function() {
+      var option;
+      this.getCountries().forEach(function(country) {
+        option = document.createElement('option');
+        option.value = country.iso;
+        option.textContent = country.name;
+        this.$el.append(option);
+      }, this);
+  	},
+
+    setCountry: function(e) {
+      window.location = '/dashboard.html#'+e.currentTarget.value;
+    },
 
     getCountries: function() {
       return [
@@ -991,6 +1018,9 @@ define([
         }
       ];
     }
-  };
+
+  });
+
+  new CountrySearch();
 
 });

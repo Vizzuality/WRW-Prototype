@@ -76,6 +76,11 @@ $app--card-stars-active-color: $mango;
 // Title
 $insights--title--color: white;
 $insights--sub-title--color: white;
+$insights--breadcrumbs-color: white;
+$insights--intro-color: white;
+
+$insights--stars-color: $dark-grey;
+$insights--stars-active-color: $mango;
 
 // About
 $insights--about-background-color: #F4F5F6;
@@ -84,21 +89,28 @@ $insights--about-background-color: #F4F5F6;
 $insights--about-color: #6C7379;
 
 // Filters
-$insights--filters-color: #393F44;
-$insights--filters-button-background-color: #00A6DE;
+$insights--filters-color: #c3c8cc;
+$insights--filters-active-color: #393f44 ;
+$insights--filters-button-background-color: #e3e7ea;
+$insights--filters-button-color: #c3c8cc;
 
 // Story, Header
 $story--breadcrumbs-color: $dark-grey;
 $story--title-color: $grey;
 $story--metadata-date-color: $dark-grey;
 $story--metadata-stars-color: $dark-grey;
+$story--metadata-stars-active-color: $mango;
 
 // Story, Intro
-$story--intro-color: #6C7379;
+$story--intro-color: #9aa2a9;
 
 // Story, Content
 $story--author-location-color: $dark-grey;
 $story--media-caption-color: #6C7379;
+$story--media-caption-pagination-color: #a9b0b6;
+$story--media-caption-link-color: #3bb2d0;
+$story--media-content-arrow-color: #3bb2d0;
+$story--media-content-arrow-background: #f4f5f6;
 $story--content-color: #6C7379;
 
 // Story, Comment
