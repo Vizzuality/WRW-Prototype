@@ -160,6 +160,19 @@
         </header>
 
       </section>
+
+      <!-- country selector -->
+      <section>
+        <div class="m-country-selector dashboard">
+          <div class="country-selector">
+            <select  class="choose-country">
+              <option value="" disabled selected>Choose country</option>
+            </select>
+            <input class="button" type="submit" value="Let's go!">
+          </div>
+        </div>
+      </section>
+
     </div>
 
     <div class="container">
@@ -278,7 +291,9 @@
     </div>
 
     <script>
-      window.location.hash = 'BRA';
+      if(!window.location.hash.length) {
+        window.location.hash = 'BRA';
+      }
     </script>
 
     <script src="http://libs.cartocdn.com/cartodb.js/v3/3.13/cartodb.js"></script>

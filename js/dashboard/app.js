@@ -18,8 +18,8 @@ define([
     template: TPL,
 
     events: {
-      'click #submit'   : 'setCountry',
-      'change #country' : 'setCountry'
+      'click input[type=submit]'   : 'setCountry',
+      'change .choose-country' : 'setCountry'
     },
 
   	initialize: function(options) {
@@ -37,7 +37,7 @@ define([
 
     setCountry: function(e) {
       e.preventDefault();
-      this.iso = $('#country').val();
+      this.iso = $('.choose-country').val();
       this.appEvents.trigger('route:update', { iso: this.iso });
       this.fetchConfiguration();
     },
@@ -80,6 +80,7 @@ define([
         return { countries: helper.getCountries() };
       }
       return {
+        countries: helper.getCountries(),
         country: _.findWhere(helper.getCountries(), { iso: this.iso }).name,
         iso: this.iso,
         cardsCount: this.cardsCount
@@ -92,6 +93,10 @@ define([
           this.fetchConfiguration();
         }
       }
+    },
+
+    destroy: function() {
+      this.$el.html('');
     }
 
   });

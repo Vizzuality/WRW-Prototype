@@ -52,10 +52,12 @@ require([
     default: function(iso) {
       if(this.app) {
         this.app.destroy();
-        var container = document.createElement('div');
-        container.className = 'container';
-        container.id = 'container';
-        $(container).insertAfter('.header-container');
+        this.app.render();
+        return;
+//        var container = document.createElement('div');
+//        container.className = 'container';
+//        container.id = 'container';
+//        $(container).insertAfter('.header-container');
       }
       this.app = new App({ el: '#container', iso: iso});
     }

@@ -5,6 +5,21 @@
     <a onclick="toggleFullscreen();" id="fullscreen-btn" class="section-header-link aligned-bottom">Full screen</a>
   </header>
 
+  <!-- country selector -->
+  <section>
+    <div class="m-country-selector dashboard">
+      <div class="country-selector">
+        <select  class="choose-country">
+          <option value="" disabled selected>Choose country</option>
+          {{#each countries}}
+          <option value="{{iso}}" {{#is iso ../iso}}selected{{/is}}>{{name}}</option>
+          {{/each}}
+        </select>
+        <input class="button" type="submit" value="Let's go!">
+      </div>
+    </div>
+  </section>
+
   <div class="gridbox">
     {{#times cardsCount}}
     <div class="cell">
