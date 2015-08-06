@@ -7,7 +7,7 @@
 
 $explore--content-width: 800px;
 
-.explore--content {
+.explore--content-container {
   left: 0;
 
   width: $explore--content-width;
@@ -16,6 +16,10 @@ $explore--content-width: 800px;
   overflow-y: scroll;
 
   transition: width 1s ease;
+}
+
+.explore--content {
+  width: ($explore--content-width - 80);
 }
 
 .explore--content-closed {
