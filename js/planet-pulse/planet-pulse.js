@@ -85,13 +85,14 @@ require([
 
     var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(w, h);
+    renderer.domElement.style.left = 0;
     renderer.domElement.style.position = 'absolute';
 
     container.appendChild( renderer.domElement );
 
     container.addEventListener('mousedown', onMouseDown, false);
 
-    container.addEventListener('mousewheel', onMouseWheel, false);
+    // container.addEventListener('mousewheel', onMouseWheel, false);
 
     container.addEventListener('mouseover', function() {
       overRenderer = true;
@@ -179,6 +180,10 @@ require([
     }
 
     this.start = animate;
+    
+    this.remove = function() {
+      container.removeChild( renderer.domElement );
+    };
   }
 
   var Slideshow = Backbone.View.extend({
@@ -201,7 +206,7 @@ require([
       this.$asideContainer = $('.planet-pulse--slideshow-aside');
       this.$asideWideContainer = $('.planet-pulse--slideshow-wide-aside');
 
-      this.globe = new Globe(this.$asideWideContainer.get(0)).start();
+      this.globe = new Globe(this.$asideWideContainer.get(0), 'temperature').start();
 
       this.setListeners();
     },
@@ -233,8 +238,23 @@ require([
         this.$asideWideContainer: container for the map
       */
      
+      var layer ='';
+     
+      if (index === 1) {
+        layer = 'temperature';
+      } else if (index === 2) {
+        layer = 'climate';
+      } else if (index === 3) {
+        layer = 'preasure';
+      } else if (index === 4) {
+        layer = 'fires';
+      }
+      
+      if (this.globe) {
+        this.globe.remove();
+      }
       this.$asideWideContainer.html(null);
-      this.globe = new Globe(this.$asideWideContainer.get(0), 'temperature').start();
+      this.globe = new Globe(this.$asideWideContainer.get(0), layer).start();
     }
 
   });
