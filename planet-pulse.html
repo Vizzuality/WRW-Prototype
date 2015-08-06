@@ -24,6 +24,83 @@
   </head>
   <body>
 
+    <script>
+      var isFullscreen = false;
+
+      var enableFullscreen = function() {
+        var container = document.querySelector('.planet-pulse');
+        var button = container.querySelector('#fullscreen-btn');
+
+        isFullscreen = true;
+
+        container.className += ' is-fullscreen';
+
+        button.textContent = 'Back';
+      };
+
+      var disableFullscreen = function() {
+        var container = document.querySelector('.planet-pulse');
+        var button = container.querySelector('#fullscreen-btn');
+
+        isFullscreen = false;
+
+        container.className = 'planet-pulse';
+
+        button.textContent = 'Full screen';
+
+      };
+
+      var fullscreenEvents = 'webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange';
+
+      var fullScreenCount = 0;
+
+      var checkContent = function() {
+        var isEnteringFullscreen = fullScreenCount % 2 === 0;
+        fullScreenCount++;
+
+        if(isEnteringFullscreen && !isFullscreen) {
+          enableFullscreen();
+        } else if(!isEnteringFullscreen && isFullscreen) {
+          disableFullscreen();
+        }
+      };
+
+      fullscreenEvents.split(' ').forEach(function(e) {
+        document.addEventListener(e, checkContent);
+      });
+
+
+      var toggleFullscreen = function() {
+        var container = document.querySelector('.planet-pulse');
+
+        if (!container.fullscreenElement && !container.mozFullScreenElement && !container.webkitFullscreenElement && !container.msFullscreenElement && !document.webkitIsFullScreen) {
+
+          if (container.requestFullscreen) {
+            container.requestFullscreen();
+          } else if (container.msRequestFullscreen) {
+            container.msRequestFullscreen();
+          } else if (container.mozRequestFullScreen) {
+            container.mozRequestFullScreen();
+          } else if (container.webkitRequestFullscreen) {
+            container.webkitRequestFullscreen();
+          }
+
+        } else {
+
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+          } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          }
+
+        }
+      };
+    </script>
+
     <div class="header-container">
       <header class="header">
         <div class="upper-header">
@@ -61,7 +138,7 @@
 
       <section class="planet-pulse--slideshow-container">
         <div class="planet-pulse--slideshow-background"></div>
-        <div class="controls"></div>
+        <a onclick="toggleFullscreen();" id="fullscreen-btn" class="section-header-link aligned-bottom">Full screen</a>
         <div class="planet-pulse--slideshow-wide-aside">
           <img src="img/planet-01.png"/>
         </div>
