@@ -135,30 +135,64 @@
 .insights--slideshow-container {
   position: relative;
   height: 1040px;
-  background: url('../img/insight-slides-1.jpg') no-repeat;
-  background-size: cover;
 
-  .insights--slideshow-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background-color: rgba(#000, 0.7);
-  }
-
-  .container {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .insights--slideshow-content,
-  .insights--slideshow-aside {
-    flex-basis: 50%;
+  .slick-list,
+  .slick-track {
+    height: 100% !important;
   }
 
   .insights--slideshow-content {
-    padding-right: 70px;
+    height: 100%;
+
+    &.slide-1 {
+      background: url('../img/insight-slides-1.jpg') no-repeat;
+      background-size: cover;
+    }
+
+    &.slide-2 {
+      background: url('../img/insight-slides-2.jpg') no-repeat;
+      background-size: cover;
+    }
+
+    &.slide-3 {
+      background-color: #1a3a4c;
+    }
+
+
+    &.slide-4 {
+      background: url('../img/insight-slides-4.jpg') no-repeat;
+      background-size: cover;
+    }
+
+    .container {
+      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      height: 100%;
+      position: static;
+    }
+
+    .black-overlay {
+      width: calc(50% + 70px);
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+
+    .left-half,
+    .right-half{
+      flex-basis: 50%;
+      z-index: 2;
+    }
+
+    .two-half {
+      flex-basis: 100%;
+      z-index: 2;
+    }
 
     .story--breadcrumbs,
     .story--metadata,
@@ -174,36 +208,13 @@
       color: #fff;
     }
 
-    .slick-list {
-      overflow: visible !important; /* For the title with the 1. */
-    }
-
-    .story--metadata {
-      margin-bottom: 64px;
+    .story--metadata,
+    .story--pre-title {
+      margin-top: 80px;
     }
 
     .story--metadata-stars {
       -webkit-font-smoothing: subpixel-antialiased;
-    }
-
-    .story--title {
-      margin-bottom: 34px;
-      position: relative;
-      font-weight: 48px;
-
-      &.number-one:before {
-        content: '1.';
-        display: block;
-        position: absolute;
-        left: -50px;
-        color: #c32d7b;
-      }
-    }
-
-    .story--pre-title {
-      margin-top: 80px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-      font-size: 19px;
     }
 
     .story--intro-text {
@@ -211,6 +222,13 @@
       text-align: left;
       font-style: normal;
       font-size: 18px;
+      line-height: 1.6em;
+    }
+
+    .story--pre-title {
+      margin-top: 80px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      font-size: 19px;
     }
 
     blockquote {
@@ -225,6 +243,7 @@
       position: relative;
       font-size: 13px;
       -webkit-font-smoothing: subpixel-antialiased;
+      line-height: 1.5em;
 
       &:before,
       &:after {
@@ -234,6 +253,7 @@
         font-family : 'Georgia', serif;
         position: absolute;
         display: block;
+        line-height: normal;
       }
 
       &:before {
@@ -249,10 +269,20 @@
       }
     }
 
+    .button {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+    }
+
     .controls {
-      margin-top: 100px;
-      padding-bottom: 2px; /* Otherwise the back button is cut */
+      margin: 50px 0 100px 0;
+      padding-bottom: 2px;
       overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      align-self: flex-end;
 
       .left-control,
       .right-control {
@@ -273,7 +303,6 @@
           top: 0;
           width: 70px;
           height: 70px;
-          border-radius: 100%;
         }
 
         &.is-hidden {
@@ -282,16 +311,23 @@
       }
 
       .right-control {
-        padding-right: 83px;
-        float: right;
+
+        span {
+          padding: 0 45px;
+          margin-right: 70px;
+          display: inline-block;
+          border: 1px solid white;
+          height: 70px;
+        }
 
         &:before {
+          position: absolute;
           right: 0;
           background-color: white;
         }
 
         &:after {
-          @include arrow(16px, #555, 1px, 135deg);
+          @include arrow(16px, #3bb2d0, 2px, 135deg);
           content: '';
           display: block;
           position: absolute;
@@ -301,8 +337,6 @@
       }
 
       .left-control {
-        padding-left: 83px;
-        float: left;
 
         &:before {
           left: 0;
@@ -310,7 +344,7 @@
         }
 
         &:after {
-          @include arrow(16px, white, 1px, -45deg);
+          @include arrow(16px, white, 2px, -45deg);
           content: '';
           display: block;
           position: absolute;
@@ -319,19 +353,147 @@
         }
       }
     }
-  }
-
-  .insights--slideshow-wide-aside {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-
-    .button {
-      position: absolute;
-      top: 40px;
-      right: 45px;
-    }
 
   }
+
+//  .insights--slideshow-content {
+//    padding-right: 70px;
+//    overflow: hidden;
+
+//
+//    .slick-list {
+//      overflow: visible !important; /* For the title with the 1. */
+//    }
+//
+//    .story--metadata {
+//      margin-bottom: 64px;
+//    }
+//
+//    .story--metadata-stars {
+//      -webkit-font-smoothing: subpixel-antialiased;
+//    }
+//
+//    .story--title {
+//      margin-bottom: 34px;
+//      position: relative;
+//      font-weight: 48px;
+//
+//      &.number-one:before {
+//        content: '1.';
+//        display: block;
+//        position: absolute;
+//        left: -50px;
+//        color: #c32d7b;
+//      }
+//    }
+//
+//
+//    blockquote {
+//      text-transform: uppercase;
+//      padding: 20px;
+//      border: 1px solid rgba(255, 255, 255, 0.3);
+//      background-color: rgba(255, 255, 255, 0.05);
+//      width: 100%;
+//      margin: 0;
+//      margin-top: 45px;
+//      padding-right: 100px;
+//      position: relative;
+//      font-size: 13px;
+//      -webkit-font-smoothing: subpixel-antialiased;
+//
+//      &:before,
+//      &:after {
+//        color: white;
+//        font-size: 60px;
+//        font-weight: bold;
+//        font-family : 'Georgia', serif;
+//        position: absolute;
+//        display: block;
+//      }
+//
+//      &:before {
+//        content: '“';
+//        right: 55px;
+//        top: calc(50% - 28px);
+//      }
+//
+//      &:after {
+//        content: '”';
+//        right: 20px;
+//        bottom: calc(50% - 30px - 23px);
+//      }
+//    }
+//
+//    .controls {
+//      margin-top: 100px;
+//      padding-bottom: 2px; /* Otherwise the back button is cut */
+//      overflow: hidden;
+//
+//      .left-control,
+//      .right-control {
+//        position: relative;
+//        display: inline-block;
+//        height: 70px;
+//        text-transform: uppercase;
+//        color: white;
+//        font-weight: bolder;
+//        font-size: 17px;
+//        line-height: 70px;
+//        cursor: pointer;
+//
+//        &:before {
+//          content: '';
+//          display: block;
+//          position: absolute;
+//          top: 0;
+//          width: 70px;
+//          height: 70px;
+//          border-radius: 100%;
+//        }
+//
+//        &.is-hidden {
+//          display: none;
+//        }
+//      }
+//
+//      .right-control {
+//        padding-right: 83px;
+//        float: right;
+//
+//        &:before {
+//          right: 0;
+//          background-color: white;
+//        }
+//
+//        &:after {
+//          @include arrow(16px, #555, 1px, 135deg);
+//          content: '';
+//          display: block;
+//          position: absolute;
+//          right: 30px;
+//          top: calc(50% - 8px);
+//        }
+//      }
+//
+//      .left-control {
+//        padding-left: 83px;
+//        float: left;
+//
+//        &:before {
+//          left: 0;
+//          border: 1px solid white;
+//        }
+//
+//        &:after {
+//          @include arrow(16px, white, 1px, -45deg);
+//          content: '';
+//          display: block;
+//          position: absolute;
+//          left: 30px;
+//          top: calc(50% - 8px);
+//        }
+//      }
+//    }
+//  }
 
 }
