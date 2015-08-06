@@ -16,11 +16,90 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
 
+    <link rel="stylesheet" href="js/vendor/slick-carousel/slick/slick.css">
+
     <!--[if lt IE 9]>
     <script src="js/vendor/html5-3.6-respond-1.4.2.min.js"></script>
     <![endif]-->
   </head>
   <body>
+
+    <script>
+      var isFullscreen = false;
+
+      var enableFullscreen = function() {
+        var container = document.querySelector('.planet-pulse');
+        var button = container.querySelector('#fullscreen-btn');
+
+        isFullscreen = true;
+
+        container.className += ' is-fullscreen';
+
+        button.textContent = 'Back';
+      };
+
+      var disableFullscreen = function() {
+        var container = document.querySelector('.planet-pulse');
+        var button = container.querySelector('#fullscreen-btn');
+
+        isFullscreen = false;
+
+        container.className = 'planet-pulse';
+
+        button.textContent = 'Full screen';
+
+      };
+
+      var fullscreenEvents = 'webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange';
+
+      var fullScreenCount = 0;
+
+      var checkContent = function() {
+        var isEnteringFullscreen = fullScreenCount % 2 === 0;
+        fullScreenCount++;
+
+        if(isEnteringFullscreen && !isFullscreen) {
+          enableFullscreen();
+        } else if(!isEnteringFullscreen && isFullscreen) {
+          disableFullscreen();
+        }
+      };
+
+      fullscreenEvents.split(' ').forEach(function(e) {
+        document.addEventListener(e, checkContent);
+      });
+
+
+      var toggleFullscreen = function() {
+        var container = document.querySelector('.planet-pulse');
+
+        if (!container.fullscreenElement && !container.mozFullScreenElement && !container.webkitFullscreenElement && !container.msFullscreenElement && !document.webkitIsFullScreen) {
+
+          if (container.requestFullscreen) {
+            container.requestFullscreen();
+          } else if (container.msRequestFullscreen) {
+            container.msRequestFullscreen();
+          } else if (container.mozRequestFullScreen) {
+            container.mozRequestFullScreen();
+          } else if (container.webkitRequestFullscreen) {
+            container.webkitRequestFullscreen();
+          }
+
+        } else {
+
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+          } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          }
+
+        }
+      };
+    </script>
 
     <div class="header-container">
       <header class="header">
@@ -56,18 +135,85 @@
     </div>
 
     <section class="planet-pulse">
-      <div class="controls"></div>
-      <div class="container">
 
-        <h1 class="planet-pulse--title">Planet Pulse</h1>
+      <section class="planet-pulse--slideshow-container">
+        <div class="planet-pulse--slideshow-background"></div>
+        <a onclick="toggleFullscreen();" id="fullscreen-btn" class="section-header-link aligned-bottom">Full screen</a>
+        <div class="planet-pulse--slideshow-wide-aside">
+          <img src="img/planet-01.png"/>
+        </div>
+        <div class="container">
+          <div class="planet-pulse--slideshow-content">
+            <div>
+              <h1 class="planet-pulse--title">Planet Pulse</h1>
+            </div>
+            <div>
+              <h1 class="planet-pulse--title">Planet Pulse</h1>
+              <p>
+                Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+              </p>
+              <div class="planet-pulse--widget">
+                <div class="btn-info">i</div>
+                <header>
+                  <h3>FOREST</h3>
+                  <h2>Dangerous Indicator</h2>
+                </header>
+                <img src="img/planet-chart.png" />
+              </div>
+            </div>
+            <div>
+              <h1 class="planet-pulse--title">Planet Pulse</h1>
+              <p>
+                Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+              </p>
+              <div class="planet-pulse--widget">
+                <div class="btn-info">i</div>
+                <header>
+                  <h3>FOREST</h3>
+                  <h2>Dangerous Indicator</h2>
+                </header>
+                <img src="img/planet-chart.png" />
+              </div>
+            </div>
+            <div>
+              <h1 class="planet-pulse--title">Planet Pulse</h1>
+              <p>
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+              </p>
+              <div class="planet-pulse--widget">
+                <div class="btn-info">i</div>
+                <header>
+                  <h3>FOREST</h3>
+                  <h2>Good Indicator</h2>
+                </header>
+                <img src="img/planet-chart.png" />
+              </div>
+            </div>
+            <div>
+              <h1 class="planet-pulse--title">Planet Pulse</h1>
+              <p>
+                Vizzuality
+              </p>
+              <div class="planet-pulse--widget">
+                <div class="btn-info">i</div>
+                <header>
+                  <h3>FOREST</h3>
+                  <h2>Dangerous Indicator</h2>
+                </header>
+                <img src="img/planet-chart.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <ul class="planet-pulse--tabs">
           <li>Forest and biomass</li>
           <li>Climate</li>
           <li>Soil</li>
           <li>Food</li>
         </ul>
+      </section>
 
-      </div>
     </section>
 
     <section class="m-partners">
@@ -174,6 +320,9 @@
         <p>© 2015 - World Resources Watch</p>
       </footer>
     </div>
+
+    <script src="js/vendor/requirejs/require.js"></script>
+    <script src="js/planet-pulse/planet-pulse.js"></script>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
