@@ -86,6 +86,7 @@ require([
     var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(w, h);
     renderer.domElement.style.position = 'absolute';
+    renderer.domElement.style.left = '0px';
 
     container.appendChild( renderer.domElement );
 
