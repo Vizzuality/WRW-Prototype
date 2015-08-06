@@ -37,6 +37,6 @@
       iconEl.classList.add('fa-chevron-left');
     }
 
-    setInterval(map.invalidateSize.bind(map), 1100);
+    setTimeout(map.invalidateSize.bind(map), 1100);
   };
 })();
