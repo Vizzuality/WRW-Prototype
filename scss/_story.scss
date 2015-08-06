@@ -27,6 +27,14 @@
   line-height: 52px;
 }
 
+.story--pre-title {
+  font-size: 19px;
+  color: $story--title-color;
+  font-weight: bold;
+  border-bottom: 1px solid $story--title-color;
+  padding-bottom: 10px;
+}
+
 .story--metadata {
   display: flex;
   flex-direction: row;
