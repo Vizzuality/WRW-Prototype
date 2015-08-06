@@ -32,7 +32,7 @@ require([
 
   var Slideshow = Backbone.View.extend({
 
-    el: '.insights--slideshow-content',
+    el: '.insights--slideshow-container',
 
     events: {
       'click .left-control': 'prevSlide',
@@ -51,15 +51,13 @@ require([
 
       }, this));
 
-      this.$backgroundContainer = $('.insights--slideshow-container');
-      this.$asideContainer = $('.insights--slideshow-aside');
       this.$asideWideContainer = $('.insights--slideshow-wide-aside');
 
       this.setListeners();
     },
 
     setListeners: function() {
-      this.$el.on('beforeChange', _.bind(this.update, this));
+//      this.$el.on('beforeChange', _.bind(this.update, this));
     },
 
     prevSlide: function(e) {
@@ -73,29 +71,20 @@ require([
     },
 
     update: function(e, slick, currentSlide, nextSlide ) {
-      this.$asideContainer.html('');
-      this.$asideWideContainer.html('');
-      this.$backgroundContainer.css({
-        'background': 'url(\'../img/insight-slides-' + (nextSlide + 1) + '.jpg\') no-repeat',
-        'background-size': 'cover'
-      });
-
-      switch(nextSlide) {
-
-        case 0:
-          break;
-
-        case 1:
-          break;
-
-        case 2:
-          break;
-
-        case 3:
-          this.$asideWideContainer.html('<a href="#" class="button button-large">VIEW ON GFW FIRES</a>');
-          break;
-
-      }
+//      switch(nextSlide) {
+//
+//        case 0:
+//          break;
+//
+//        case 1:
+//          break;
+//
+//        case 2:
+//          break;
+//
+//        case 3:
+//          break;
+//      }
     }
 
   });
