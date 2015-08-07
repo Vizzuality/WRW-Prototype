@@ -44,6 +44,7 @@
   var mapVisualisations = [
     "https://insights.cartodb.com/api/v2/viz/c572a394-3cda-11e5-9e01-0e4fddd5de28/viz.json",
     "https://insights.cartodb.com/api/v2/viz/bf63525c-3cdd-11e5-afd4-0e4fddd5de28/viz.json",
+    "https://insights.cartodb.com/api/v2/viz/7676a37a-3ce0-11e5-a016-0e0c41326911/viz.json"
   ];
 
   var addLayerToMap = function(id, $el) {
