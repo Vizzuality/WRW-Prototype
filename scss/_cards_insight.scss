@@ -86,6 +86,11 @@
     font-weight: bold;
     color: $insights--card-title-color;
     margin: $insights--card-title-margin;
+
+    a {
+      color: $insights--card-title-color;
+      text-decoration: none;
+    }
   }
 
   .card-sub-title {

@@ -80,6 +80,10 @@
     font-weight: bold;
     color: $data--card-title-color;
     margin: $data--card-title-margin;
+
+    a {
+      text-decoration: none;
+    }
   }
 
   .card-sub-title {
