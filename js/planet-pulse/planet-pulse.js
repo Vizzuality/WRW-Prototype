@@ -258,7 +258,7 @@ require([
       $('.planet-pulse--tabs .active').removeClass('active');
       $tab.addClass('active');
 
-      this.$el.slick('slickGoTo', position);
+      this.$el.slick('slickGoTo', position-1);
 
       this.updateMap(position);
     },
