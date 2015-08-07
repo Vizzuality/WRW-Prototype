@@ -39,4 +39,43 @@
 
     setTimeout(map.invalidateSize.bind(map), 1100);
   };
+
+  var selectedVisualisations = {};
+  var mapVisualisations = [
+    "https://insights.cartodb.com/api/v2/viz/c572a394-3cda-11e5-9e01-0e4fddd5de28/viz.json",
+    "https://insights.cartodb.com/api/v2/viz/bf63525c-3cdd-11e5-afd4-0e4fddd5de28/viz.json",
+  ];
+
+  var addLayerToMap = function(id, $el) {
+    var layerUrl = mapVisualisations[id];
+    cartodb.createLayer(map, layerUrl)
+      .addTo(map)
+      .on('done', function(layer) {
+        selectedVisualisations[id] = layer;
+
+        $el.text("Active");
+        $el.addClass("explore--active-dataset");
+      });
+  };
+
+  var removeLayerFromMap = function(id, $el) {
+    var layer = selectedVisualisations[id];
+    map.removeLayer(layer);
+
+    $el.text("Add to map");
+    $el.removeClass("explore--active-dataset");
+
+    delete selectedVisualisations[id];
+  };
+
+  $('.add-to-map').on('click', function(event) {
+    var $el = $(this),
+        id = $el.data('id');
+
+    if (selectedVisualisations[id] === undefined) {
+      addLayerToMap(id, $el);
+    } else {
+      removeLayerFromMap(id, $el);
+    }
+  });
 })();
