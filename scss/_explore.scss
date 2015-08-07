@@ -168,3 +168,60 @@ a.explore--map-button {
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }
+
+.explore--map-legend {
+  background: white;
+  border-radius: 2px;
+  z-index: 1;
+  display: none;
+
+  position: absolute;
+  bottom: 26px;
+  right: 10px;
+
+  width: 280px;
+
+  font-size: 14px;
+
+  padding: 15px;
+}
+
+.explore--map-legend-layers,
+.explore--map-legend-controls {
+  list-style-type: none;
+  padding: 0;
+}
+
+.explore--map-legend-layers {
+  margin-top: 0;
+}
+
+.explore--map-legend-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+
+  border-top: 1px solid #e3e4e6;
+  color: #9aa2a9;
+
+  padding-top: 5px;
+  margin-bottom: 0;
+
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+
+  i {
+    font-size: 16px;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  li:first-of-type {
+    width: 190px;
+  }
+}
