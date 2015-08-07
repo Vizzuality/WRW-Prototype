@@ -1,4 +1,4 @@
 .DS_Store
 node_modules
-css/styles.css
+# css/styles.css
 js/vendor/
