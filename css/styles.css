@@ -716,6 +716,9 @@ a.button.banner-button {
     font-weight: bold;
     color: #393F44;
     margin: 0; }
+    .card.insight .card-title a {
+      color: #393F44;
+      text-decoration: none; }
   .card.insight .card-sub-title {
     font-size: 11px;
     font-weight: normal;
@@ -799,6 +802,8 @@ a.button.banner-button {
     font-weight: bold;
     color: #3BB2D0;
     margin: 0; }
+    .card.data .card-title a {
+      text-decoration: none; }
   .card.data .card-sub-title {
     font-size: 14px;
     font-weight: lighter;
@@ -828,6 +833,9 @@ a.button.banner-button {
     font-size: 17px;
     font-weight: bold;
     color: #393F44; }
+    .card.category .card-caption a {
+      text-decoration: none;
+      color: #393F44; }
 
 .card.app {
   width: 320px;
@@ -1842,7 +1850,7 @@ a.explore--map-button {
     color: white;
     font-weight: 200;
     -webkit-font-smoothing: subpixel-antialiased;
-    width: 800px;
+    width: 830px;
     margin: 0 auto;
     text-align: center; }
 
@@ -2100,7 +2108,7 @@ a.explore--map-button {
 
 .insights--featured-title {
   font-size: 34px;
-  width: 600px;
+  width: 550px;
   position: absolute;
   bottom: 100px; }
 
@@ -2318,7 +2326,8 @@ a.explore--map-button {
   font-size: 48px;
   font-weight: lighter;
   color: #393F44;
-  line-height: 52px; }
+  line-height: 52px;
+  text-align: center; }
 
 .story--pre-title {
   font-size: 19px;
