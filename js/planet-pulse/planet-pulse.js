@@ -182,6 +182,15 @@ require([
     this.start = animate;
     
     this.remove = function() {
+      mesh.geometry.dispose();
+      mesh.texture.dispose();
+      scene.remove( mesh );
+      renderer.clear();
+      scene = null;
+      camera = null;
+      container.addEventListener('mousedown', null, false);
+      container.addEventListener('mouseover', null, false);
+      container.addEventListener('mouseout', null, false);
       container.removeChild( renderer.domElement );
     };
   }
@@ -197,7 +206,9 @@ require([
           arrows: false,
           draggable: false,
           infinite: false,
-          fade: true
+          fade: true,
+          autoplay: false
+
         });
 
       }, this));
@@ -243,7 +254,7 @@ require([
       if (index === 1) {
         layer = 'temperature';
       } else if (index === 2) {
-        layer = 'climate';
+        layer = 'rainfall';
       } else if (index === 3) {
         layer = 'preasure';
       } else if (index === 4) {

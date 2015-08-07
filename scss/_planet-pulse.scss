@@ -8,6 +8,7 @@
   }
 
   .planet-pulse--slideshow-container {
+    background: url('../img/bg-stars.jpg') black center center;
     width: 100%;
     height: 100%;
     position: relative;
@@ -16,10 +17,10 @@
     .planet-pulse--slideshow-background,
     .planet-pulse--slideshow-wide-aside {
       position: absolute;
-      width: 100%;
+      right: 0;
       height: 100%;
       top: 0;
-      left: 0;
+      left: 400px;
     }
 
     .planet-pulse--slideshow-wide-aside {
@@ -29,9 +30,9 @@
       z-index: 1;
     }
 
-    .planet-pulse--slideshow-background {
-      background: url('../img/bg-stars.jpg') black center center;
-    }
+    // .planet-pulse--slideshow-background {
+    //   background: url('../img/bg-stars.jpg') black center center;
+    // }
 
     #fullscreen-btn {
       position: absolute;
