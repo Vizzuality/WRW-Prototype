@@ -1993,6 +1993,8 @@ a.explore--map-button {
       margin-top: 80px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
       font-size: 19px; }
+    .insights--slideshow-container .insights--slideshow-content .story--title {
+      text-align: left; }
     .insights--slideshow-container .insights--slideshow-content blockquote {
       text-transform: uppercase;
       padding: 20px;
