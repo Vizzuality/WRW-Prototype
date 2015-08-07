@@ -17,6 +17,11 @@
     li {
       display: inline-block;
 
+      a {
+        color: $insights--breadcrumbs-color;
+        text-decoration: none;
+      }
+
       &:after {
         content: '›';
         margin-left: 5px;
@@ -195,6 +200,7 @@
     }
 
     .story--breadcrumbs,
+    .story--breadcrumbs a,
     .story--metadata,
     .story--metadata a,
     .story--metadata span,
