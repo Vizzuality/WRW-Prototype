@@ -47,7 +47,7 @@ require([
   	},
 
     setCountry: function(e) {
-      window.location = window.location.pathname + 'dashboard.html#'+e.currentTarget.value;
+      window.location.href = 'dashboard.html#' + e.currentTarget.value;
     },
 
     getCountries: function() {
