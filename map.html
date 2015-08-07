@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Planet Pulse - World Resource Watch</title>
+    <title>World Resource Watch</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -23,87 +23,6 @@
     <![endif]-->
   </head>
   <body>
-    <img src="img/globe-layers/temperature.jpg" style="display: none;">
-    <img src="img/globe-layers/preasure.jpg" style="display: none;">
-    <img src="img/globe-layers/rainfall.jpg" style="display: none;">
-    <img src="img/globe-layers/fires.jpg" style="display: none;">
-
-    <script>
-      var isFullscreen = false;
-
-      var enableFullscreen = function() {
-        var container = document.querySelector('.planet-pulse');
-        var button = container.querySelector('#fullscreen-btn');
-
-        isFullscreen = true;
-
-        container.className += ' is-fullscreen';
-
-        button.textContent = 'Exit Fullscreen';
-      };
-
-      var disableFullscreen = function() {
-        var container = document.querySelector('.planet-pulse');
-        var button = container.querySelector('#fullscreen-btn');
-
-        isFullscreen = false;
-
-        container.className = 'planet-pulse';
-
-        button.textContent = 'Fullscreen';
-
-      };
-
-      var fullscreenEvents = 'webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange';
-
-      var fullScreenCount = 0;
-
-      var checkContent = function() {
-        var isEnteringFullscreen = fullScreenCount % 2 === 0;
-        fullScreenCount++;
-
-        if(isEnteringFullscreen && !isFullscreen) {
-          enableFullscreen();
-        } else if(!isEnteringFullscreen && isFullscreen) {
-          disableFullscreen();
-        }
-      };
-
-      fullscreenEvents.split(' ').forEach(function(e) {
-        document.addEventListener(e, checkContent);
-      });
-
-
-      var toggleFullscreen = function() {
-        var container = document.querySelector('.planet-pulse');
-
-        if (!container.fullscreenElement && !container.mozFullScreenElement && !container.webkitFullscreenElement && !container.msFullscreenElement && !document.webkitIsFullScreen) {
-
-          if (container.requestFullscreen) {
-            container.requestFullscreen();
-          } else if (container.msRequestFullscreen) {
-            container.msRequestFullscreen();
-          } else if (container.mozRequestFullScreen) {
-            container.mozRequestFullScreen();
-          } else if (container.webkitRequestFullscreen) {
-            container.webkitRequestFullscreen();
-          }
-
-        } else {
-
-          if (document.exitFullscreen) {
-            document.exitFullscreen();
-          } else if (document.msExitFullscreen) {
-            document.msExitFullscreen();
-          } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-          } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-          }
-
-        }
-      };
-    </script>
 
     <div class="header-container">
       <header class="header">
@@ -125,10 +44,10 @@
           <button class="header-menu-label js--header-open-menu">Menu</button>
 
           <ul class="header-links">
-            <li><a href="insights.html">Insights</a></li>
+            <li class="active"><a href="insights.html">Insights</a></li>
             <li><a href="explore.html">Explore</a></li>
             <li><a href="dashboard.html">Countries</a></li>
-            <li class="active"><a href="planet-pulse.html">Planet pulse</a></li>
+            <li><a href="planet-pulse.html">Planet pulse</a></li>
             <!-- <li><a href="#">Apps</a></li> -->
             <!-- <li><a href="#">Get Involved</a></li> -->
             <li><a href="#"><i class="fa fa-search"></i></a></li>
@@ -138,98 +57,77 @@
       </header>
     </div>
 
-    <section class="planet-pulse">
+    <section class="insights--slideshow-container">
 
-      <section class="planet-pulse--slideshow-container">
-        <div class="planet-pulse--slideshow-background"></div>
-        <a onclick="toggleFullscreen();" id="fullscreen-btn" class="section-header-link aligned-bottom">Full screen</a>
-        <div class="planet-pulse--slideshow-wide-aside">
-          <!-- <img src="img/planet-01.png"/> -->
-        </div>
+      <div class="insights--slideshow-content map slide-1">
         <div class="container">
-          <div class="planet-pulse--slideshow-content">
-            <div>
-              <h1 class="planet-pulse--title">Planet Pulse</h1>
-              <p>
-                Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-              </p>
-              <div class="planet-pulse--widget">
-                
-                <header>
-                  <h3>FOREST</h3>
-                  <h2>Dangerous Indicator</h2>
-                </header>
-                <img src="img/planet-chart.png" />
+          <div class="left-half">
+            <ul class="story--breadcrumbs">
+              <li><a href="insights.html">Insights</a></li>
+              <li>Map</li>
+            </ul>
+
+            <div class="story--metadata">
+              <div class="story--metadata-author">
+                <img src="img/avatar-wri.png">
+                by <a href="#">World Resources Institute</a>
+                <span class="story--metadata-date">Oct 5, 2015</span>
+              </div>
+
+              <div class="story--metadata-stars">
+                <i class="fa fa-star"></i> 530
               </div>
             </div>
-            <div>
-              <h1 class="planet-pulse--title">Planet Pulse</h1>
-              <p>
-                Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-              </p>
-              <div class="planet-pulse--widget">
-                
-                <header>
-                  <h3>FOREST</h3>
-                  <h2>Dangerous Indicator</h2>
-                </header>
-                <img src="img/planet-chart.png" />
-              </div>
-            </div>
-            <div>
-              <h1 class="planet-pulse--title">Planet Pulse</h1>
-              <p>
-                Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-              </p>
-              <div class="planet-pulse--widget">
-                
-                <header>
-                  <h3>FOREST</h3>
-                  <h2>Dangerous Indicator</h2>
-                </header>
-                <img src="img/planet-chart.png" />
-              </div>
-            </div>
-            <div>
-              <h1 class="planet-pulse--title">Planet Pulse</h1>
-              <p>
-                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-              </p>
-              <div class="planet-pulse--widget">
-                
-                <header>
-                  <h3>FOREST</h3>
-                  <h2>Good Indicator</h2>
-                </header>
-                <img src="img/planet-chart.png" />
-              </div>
-            </div>
-            <div>
-              <h1 class="planet-pulse--title">Planet Pulse</h1>
-              <p>
-                Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus.
-              </p>
-              <div class="planet-pulse--widget">
-                
-                <header>
-                  <h3>FOREST</h3>
-                  <h2>Dangerous Indicator</h2>
-                </header>
-                <img src="img/planet-chart.png" />
-              </div>
+
+            <h1 class="story--title">
+              Climate change will increase chance of people being affected by floods
+            </h1>
+
+            <p class="story--intro-text">
+              Ethiopia’s Lower Omo Valley, a UNESCO World Heritage site and home to 200,000 agro-pastoralists, is under development for sugar plantations and processing. The early stages of the development have resulted in the loss of land and livelihoods for thousands of Ethiopia’s most vulnerable citizens. The future of 500,000 agro-pastoralists in Ethiopia and Kenya is at risk
+            </p>
+
+            <div class="controls">
+              <a class="right-control"><span>Explore</span></a>
             </div>
           </div>
         </div>
-
-        <ul class="planet-pulse--tabs">
-          <li>Temperature</li>
-          <li>Rainfall</li>
-          <li>Air preasure</li>
-          <li>Fires</li>
-        </ul>
-      </section>
+      </div>
 
     </section>
+
+<!--
+    <section class="insights--slideshow-container">
+      <div class="insights--slideshow-background"></div>
+      <div class="insights--slideshow-wide-aside"></div>
+      <div class="container">
+        <div class="insights--slideshow-content">
+
+          <div>
+            <h1 class="story--pre-title">
+              Indonesia’s Forest Fires Reignite, Threatening Protected Areas and Peatlands
+            </h1>
+
+            <h1 class="story--title">
+              High Concentration of Fires in Tesso Nilo National Park
+            </h1>
+
+            <p class="story--intro-text">
+              A large number of fire alerts are concentrated in Tesso Nilo National Park, which has been significantly damaged by illegal encroachment in recent years. The approximately 83,000-hectare (205,000-acre) national park lost more than half of its tree cover from 2001-2013, according to GFW data. The park is habitat for critically endangered Sumatran elephants and tigers.
+            </p>
+            <p class="story--intro-text">
+              In the last week, 69 fire alerts were detected in Tesso Nilo, of which seven were high-confidence alerts likely to be associated with forest clearing. Other fire alerts that do not meet the high confidence fire criteria are still likely to be fires, but more likely associated with burning fields/grass or other conditions that result in lower-temperature fires.
+            </p>
+
+            <div class="controls">
+              <a class="left-control"></a>
+            </div>
+          </div>
+        </div>
+        <div class="insights--slideshow-aside"></div>
+      </div>
+    </section>
+-->
 
     <section class="m-partners">
       <div class="container">
@@ -335,10 +233,9 @@
         <p>© 2015 - World Resources Watch</p>
       </footer>
     </div>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js"></script>
+
     <script src="js/vendor/requirejs/require.js"></script>
-    <script src="js/planet-pulse/planet-pulse.js"></script>
+    <script src="js/slideshow/slideshow.js"></script>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
