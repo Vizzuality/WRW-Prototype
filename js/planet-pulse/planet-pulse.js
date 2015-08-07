@@ -184,6 +184,10 @@ require([
     this.remove = function() {
       mesh.geometry.dispose();
       mesh.texture.dispose();
+      mesh.deallocate();
+      mesh.geometry.deallocate();
+      mesh.material.deallocate();
+      mesh.texture.deallocate()
       scene.remove( mesh );
       renderer.clear();
       scene = null;
