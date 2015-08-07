@@ -47,7 +47,7 @@ require([
   	},
 
     setCountry: function(e) {
-      window.location.href = 'dashboard.html#' + e.currentTarget.value;
+      window.location.href = '/WRW-Prototype/dashboard.html#' + e.currentTarget.value;
     },
 
     getCountries: function() {
