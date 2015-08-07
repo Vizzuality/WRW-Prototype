@@ -228,20 +228,24 @@ require([
 
       $('.planet-pulse--tabs li').on('click', _.bind(this.nextSlide, this));
 
-      window.onresize = _.debounce(function() {
-        self.globe.remove();
-        self.globe = new Globe(self.$asideWideContainer.get(0), self.layer);
-        self.globe.start();
-      }, 100);
+      $(window).on('resize', _.debounce(function() {
+        if (self.globe) {
+          self.globe.remove();
+          self.globe = new Globe(self.$asideWideContainer.get(0), self.layer);
+          self.globe.start();
+        }
+      }, 100));
 
       var fullscreenEvents = 'webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange';
       var fullScreenCount = 0;
       var isFullscreen = false;
 
       var checkContent = function() {
-        self.globe.remove();
-        self.globe = new Globe(self.$asideWideContainer.get(0), self.layer);
-        self.globe.start();
+        if (self.globe) {
+          self.globe.remove();
+          self.globe = new Globe(self.$asideWideContainer.get(0), self.layer);
+          self.globe.start();
+        }
       };
 
       fullscreenEvents.split(' ').forEach(function(e) {
@@ -286,7 +290,8 @@ require([
         this.globe.remove();
       }
       this.$asideWideContainer.html(null);
-      this.globe = new Globe(this.$asideWideContainer.get(0), this.layer).start();
+      this.globe = new Globe(this.$asideWideContainer.get(0), this.layer);
+      this.globe.start();
     }
 
   });
