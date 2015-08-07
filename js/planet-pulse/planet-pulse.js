@@ -182,21 +182,15 @@ require([
     this.start = animate;
     
     this.remove = function() {
-      mesh.geometry.dispose();
-      mesh.texture.dispose();
-      mesh.deallocate();
-      mesh.geometry.deallocate();
-      mesh.material.deallocate();
-      mesh.texture.deallocate()
-      scene.remove( mesh );
+      scene.remove(mesh);
       renderer.clear();
-      scene = null;
-      camera = null;
       container.addEventListener('mousedown', null, false);
       container.addEventListener('mouseover', null, false);
       container.addEventListener('mouseout', null, false);
       container.removeChild( renderer.domElement );
     };
+
+    return this;
   }
 
   var Slideshow = Backbone.View.extend({
@@ -204,6 +198,7 @@ require([
     el: '.planet-pulse--slideshow-content',
 
     initialize: function() {;
+
       $(document).ready(_.bind(function() {
 
         this.$el.slick({
@@ -220,14 +215,38 @@ require([
       this.$backgroundContainer = $('.planet-pulse--slideshow-container');
       this.$asideContainer = $('.planet-pulse--slideshow-aside');
       this.$asideWideContainer = $('.planet-pulse--slideshow-wide-aside');
+      this.layer = 'temperature';
 
-      this.globe = new Globe(this.$asideWideContainer.get(0), 'temperature').start();
+      this.globe = new Globe(this.$asideWideContainer.get(0), this.layer);
+      this.globe.start();
 
       this.setListeners();
     },
 
     setListeners: function() {
+      var self = this;
+
       $('.planet-pulse--tabs li').on('click', _.bind(this.nextSlide, this));
+
+      window.onresize = _.debounce(function() {
+        self.globe.remove();
+        self.globe = new Globe(self.$asideWideContainer.get(0), self.layer);
+        self.globe.start();
+      }, 100);
+
+      var fullscreenEvents = 'webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange';
+      var fullScreenCount = 0;
+      var isFullscreen = false;
+
+      var checkContent = function() {
+        self.globe.remove();
+        self.globe = new Globe(self.$asideWideContainer.get(0), self.layer);
+        self.globe.start();
+      };
+
+      fullscreenEvents.split(' ').forEach(function(e) {
+        document.addEventListener(e, checkContent);
+      });
     },
 
     nextSlide: function(e) {
@@ -253,23 +272,21 @@ require([
         this.$asideWideContainer: container for the map
       */
      
-      var layer ='';
-     
       if (index === 1) {
-        layer = 'temperature';
+        this.layer = 'temperature';
       } else if (index === 2) {
-        layer = 'rainfall';
+        this.layer = 'rainfall';
       } else if (index === 3) {
-        layer = 'preasure';
+        this.layer = 'preasure';
       } else if (index === 4) {
-        layer = 'fires';
+        this.layer = 'fires';
       }
       
       if (this.globe) {
         this.globe.remove();
       }
       this.$asideWideContainer.html(null);
-      this.globe = new Globe(this.$asideWideContainer.get(0), layer).start();
+      this.globe = new Globe(this.$asideWideContainer.get(0), this.layer).start();
     }
 
   });
