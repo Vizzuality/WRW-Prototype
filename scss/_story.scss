@@ -9,6 +9,11 @@
 
 .story--breadcrumbs li {
   display: inline-block;
+
+  a {
+    text-decoration: none;
+    color: $story--breadcrumbs-color;
+  }
 }
 
 .story--breadcrumbs li:after {
