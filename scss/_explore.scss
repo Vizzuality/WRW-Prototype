@@ -88,6 +88,22 @@ $explore--content-width: 800px;
       width: 100%;
       height: 38px;
       line-height: 10px;
+
+      &.explore--disabled-dataset {
+        background: transparent;
+        border: 1px solid #e3e7ea;
+
+        &:hover {
+          cursor: default;
+          color: #9aa2a9;
+          text-shadow: none;
+        }
+      }
+
+      &.explore--active-dataset {
+        background-color: #65b60d;
+        color: white;
+      }
     }
   }
 }
@@ -151,4 +167,61 @@ a.explore--map-button {
   background: rgba(#FFF, 0.3);
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
+}
+
+.explore--map-legend {
+  background: white;
+  border-radius: 2px;
+  z-index: 1;
+  display: none;
+
+  position: absolute;
+  bottom: 26px;
+  right: 10px;
+
+  width: 280px;
+
+  font-size: 14px;
+
+  padding: 15px;
+}
+
+.explore--map-legend-layers,
+.explore--map-legend-controls {
+  list-style-type: none;
+  padding: 0;
+}
+
+.explore--map-legend-layers {
+  margin-top: 0;
+}
+
+.explore--map-legend-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+
+  border-top: 1px solid #e3e4e6;
+  color: #9aa2a9;
+
+  padding-top: 5px;
+  margin-bottom: 0;
+
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+
+  i {
+    font-size: 16px;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  li:first-of-type {
+    width: 190px;
+  }
 }

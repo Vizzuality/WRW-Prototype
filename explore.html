@@ -95,8 +95,8 @@
                 </div>
 
                 <div class="card-content">
-                  <h5 class="card-title">Water levels in Northern California</h5>
-                  <p class="card-sub-title">Centre for Research on Lorem</p>
+                  <h5 class="card-title">Energy plants</h5>
+                  <p class="card-sub-title">CARMA</p>
                 </div>
 
                 <ul class="card-info">
@@ -107,12 +107,12 @@
                     </div>
                   </li>
                   <li class="card-info-stars">
-                    <span><i class="fa fa-star"></i> 5,230</span>
+                    <span><i class="fa fa-star"></i> 1,432</span>
                   </li>
                 </ul>
 
                 <div class="card-button">
-                  <a href="#" class="button button-large button-grey">Add to map</a>
+                  <a href="#" class="button button-large button-grey add-to-map" data-id="0">Add to map</a>
                 </div>
               </div>
             </div>
@@ -124,8 +124,8 @@
                 </div>
 
                 <div class="card-content">
-                  <h5 class="card-title">Total Greenhouse Emissions</h5>
-                  <p class="card-sub-title">Centre for Research on Lorem</p>
+                  <h5 class="card-title">Global Water Risk</h5>
+                  <p class="card-sub-title">Aqueduct</p>
                 </div>
 
                 <ul class="card-info">
@@ -140,7 +140,7 @@
                 </ul>
 
                 <div class="card-button">
-                  <a href="#" class="button button-large button-grey">Add to map</a>
+                  <a href="#" class="button button-large button-grey add-to-map" data-id="1">Add to map</a>
                 </div>
               </div>
             </div>
@@ -152,8 +152,8 @@
                 </div>
 
                 <div class="card-content">
-                  <h5 class="card-title">CO2 emissions intensity</h5>
-                  <p class="card-sub-title">Centre for Research on Lorem</p>
+                  <h5 class="card-title">CO2 emissions by country</h5>
+                  <p class="card-sub-title">CAIT</p>
                 </div>
 
                 <ul class="card-info">
@@ -169,7 +169,7 @@
                 </ul>
 
                 <div class="card-button">
-                  <a href="#" class="button button-large button-grey">Add to map</a>
+                  <a href="#" class="button button-large button-grey explore--disabled-dataset">Not displayable</a>
                 </div>
               </div>
             </div>
@@ -181,8 +181,8 @@
                 </div>
 
                 <div class="card-content">
-                  <h5 class="card-title">Population distribution by age range in the US</h5>
-                  <p class="card-sub-title">Centre for Research on Lorem</p>
+                  <h5 class="card-title">Countries emissions</h5>
+                  <p class="card-sub-title">CARMA</p>
                 </div>
 
                 <ul class="card-info">
@@ -198,7 +198,7 @@
                 </ul>
 
                 <div class="card-button">
-                  <a href="#" class="button button-large button-grey">Add to map</a>
+                  <a href="#" class="button button-large button-grey explore--disabled-dataset">Not displayable</a>
                 </div>
               </div>
             </div>
@@ -210,8 +210,8 @@
                 </div>
 
                 <div class="card-content">
-                  <h5 class="card-title">Water levels in Northern California</h5>
-                  <p class="card-sub-title">Centre for Research on Lorem</p>
+                  <h5 class="card-title">Country Flood Risk</h5>
+                  <p class="card-sub-title">Aqueduct</p>
                 </div>
 
                 <ul class="card-info">
@@ -226,7 +226,7 @@
                 </ul>
 
                 <div class="card-button">
-                  <a href="#" class="button button-large button-grey">Add to map</a>
+                  <a href="#" class="button button-large button-grey add-to-map" data-id="2">Add to map</a>
                 </div>
               </div>
             </div>
@@ -324,9 +324,20 @@
       <a href="#" class="js--map-expand explore--map-button">
         <i class="fa fa-chevron-left"></i>
       </a>
+
+      <div class="explore--map-legend">
+        <ul class="explore--map-legend-layers">
+        </ul>
+
+        <ul class="explore--map-legend-controls">
+          <li><i class="fa fa-pencil"></i> Create Insight</li>
+          <li><i class="fa fa-cog"></i></li>
+          <li><i class="fa fa-share-alt"></i></li>
+        </ul>
+      </div>
     </div>
 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.13/cartodb.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/explore.js"></script>
 
