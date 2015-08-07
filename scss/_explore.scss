@@ -194,6 +194,52 @@ a.explore--map-button {
 
 .explore--map-legend-layers {
   margin-top: 0;
+
+  .bullet {
+    display: inline-block;
+    width: 12px;
+    height: 8px;
+    margin-right: 5px;
+  }
+
+  // TODO remove this when we render legends correctly
+  li:nth-of-type(1) {
+    .onoffswitch,
+    .bullet { background-color: #3bb2d0; }
+  }
+
+  li:nth-of-type(2) {
+    .onoffswitch,
+    .bullet { background-color: #c1e473; }
+  }
+
+  li:nth-of-type(3) {
+    .onoffswitch,
+    .bullet { background-color: #c32d7b; }
+  }
+
+  .onoffswitch {
+    display: inline-block;
+    position: relative;
+    float: right;
+    top: 7px;
+    width: 17px;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+  }
+
+  .onoffswitch span {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    transform: translate(7px, 0%);
+    border-radius: 4px;
+    transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
 }
 
 .explore--map-legend-controls {
