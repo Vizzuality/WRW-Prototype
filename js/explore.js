@@ -49,7 +49,7 @@
 
   var renderLegend = function() {
     var $legendEl = $('.explore--map-legend');
-    if (selectedVisualisations.length === 0 ) {
+    if (_.isEmpty(selectedVisualisations)) {
       $legendEl.hide();
       return;
     }
@@ -58,7 +58,7 @@
     $list.empty();
 
     _.each(selectedVisualisations, function(value, key) {
-      $list.append('<li>'+mapVisualisations[key].name+'</li>');
+      $list.append('<li><span class="bullet"></span>'+mapVisualisations[key].name+'<span class="onoffswitch"><span></span></span></li>');
     });
 
     $legendEl.show();
