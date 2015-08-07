@@ -152,6 +152,12 @@
     &.slide-1 {
       background: url('../img/insight-slides-1.jpg') no-repeat;
       background-size: cover;
+
+      &.map {
+        background: url('../img/insight-map-1.jpg') no-repeat;
+        background-size: cover;
+      }
+
     }
 
     &.slide-2 {
