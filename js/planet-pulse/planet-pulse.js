@@ -233,6 +233,20 @@ require([
         self.globe = new Globe(self.$asideWideContainer.get(0), self.layer);
         self.globe.start();
       }, 100);
+
+      var fullscreenEvents = 'webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange';
+      var fullScreenCount = 0;
+      var isFullscreen = false;
+
+      var checkContent = function() {
+        self.globe.remove();
+        self.globe = new Globe(self.$asideWideContainer.get(0), self.layer);
+        self.globe.start();
+      };
+
+      fullscreenEvents.split(' ').forEach(function(e) {
+        document.addEventListener(e, checkContent);
+      });
     },
 
     nextSlide: function(e) {

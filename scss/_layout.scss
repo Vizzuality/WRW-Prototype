@@ -10,6 +10,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.section-header.dashboard {
+  margin-top: 40px;
+}
+
 .container {
   width: $page--width;
   margin: 0 auto;
@@ -33,6 +37,10 @@ body {
 
     .section-header {
       margin: 0 auto;
+
+      &.dashboard {
+        margin-top: 140px;
+      }
     }
 
     .gridbox {

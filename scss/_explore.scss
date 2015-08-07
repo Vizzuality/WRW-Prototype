@@ -13,6 +13,10 @@ $explore--wide-content-width: 1020px;
   width: $explore--content-width;
 }
 
+.explore--title {
+  color: #393f44;
+}
+
 .explore-detail--header {
   display: flex;
   justify-content: space-between;
@@ -26,6 +30,7 @@ $explore--wide-content-width: 1020px;
   .explore--title {
     margin-top: 0;
     margin-bottom: 10px;
+    color: #393f44;
   }
 
   .explore-detail--stars {
