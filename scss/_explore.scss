@@ -178,6 +178,11 @@ $explore--wide-content-width: 1020px;
 
 .explore--breadcrumbs li {
   display: inline-block;
+
+  a {
+    text-decoration: none;
+    color: $explore--breadcrumbs-color;
+  }
 }
 
 .explore--breadcrumbs li:after {
