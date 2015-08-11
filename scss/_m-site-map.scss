@@ -36,4 +36,32 @@
 	li {
 		list-style: none;
 	}
+
+  @media screen and (max-width: $responsive-break--mobile) {
+
+    .site-sections {
+      flex-wrap: wrap;
+    }
+
+    .site-sections li {
+      flex-basis: 50%;
+      margin-left: 50%;
+
+      &:first-of-type {
+        position: absolute;
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 100%;
+      }
+    }
+
+    .site-section ul {
+      @include is-hidden;
+    }
+
+  }
+
 }
