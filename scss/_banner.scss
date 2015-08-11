@@ -42,6 +42,8 @@ a.button.banner-button {
 @media screen and (max-width : 760px) {
   .banner {
     overflow: hidden;
+    margin: 0 -20px;
+    width: calc(100% + 40px);
   }
 
   .banner-image {
@@ -50,11 +52,14 @@ a.button.banner-button {
   }
 
   .banner-header {
-    width: 350px;
+    width: 100%;
     top: 0;
+    padding: 0 20px;
+    margin-top: 40px;
   }
 
   .banner-button {
-    top: 190px;
+    bottom: 40px;
+    top: initial;
   }
 }
