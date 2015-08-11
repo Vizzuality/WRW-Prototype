@@ -30,4 +30,24 @@
 		float: left;
 		margin-right: 60px;
 	}
+
+  @media screen and (max-width: $responsive-break--mobile) {
+
+    margin-top: 40px;
+
+    ul {
+      flex-wrap: wrap;
+      padding: 0;
+      justify-content: space-around;
+    }
+
+    li {
+      flex-basis: 40%;
+      margin-right: 0;
+      display: flex;
+      justify-content: space-around;
+    }
+
+  }
+
 }
