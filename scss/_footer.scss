@@ -65,16 +65,15 @@
   }
 }
 
-@media screen and (max-width : 760px) {
+@media screen and (max-width : $responsive-break--mobile) {
   .footer-container {
     background: #F4F5F6;
-    height: 300px;
   }
 
   .footer {
     width: 100%;
     height: auto;
-    margin: 30px 20px;
+    margin: 10px 20px;
     font-size: 17px;
 
     flex-direction: row;
