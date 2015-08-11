@@ -35,7 +35,7 @@
 .language-selector {
   position: relative;
   padding-right: 20px;
-  font-weight: lighter;
+  font-weight: $font--light;
   -webkit-font-smoothing: subpixel-antialiased;
 
   &:after {
@@ -120,7 +120,7 @@ a.header-title-link {
 
 .header-links a {
   color: $header--link-color;
-  font-weight: lighter;
+  font-weight: $font--light;
   text-decoration: none;
   -webkit-font-smoothing: subpixel-antialiased;
   text-transform: capitalize;
@@ -142,7 +142,7 @@ a.header-title-link {
     right: -3px;
     color: $header--link-color;
     font-size: .7em;
-    font-weight: bold;
+    font-weight: $font--bold;
     line-height: 20px;
     text-align: center;
   }
@@ -161,23 +161,27 @@ a.header-title-link {
   background: rgba(0,0,0,0);
 }
 
-@media screen and (max-width : 760px){
+@media screen and (max-width : $responsive-break--mobile){
   .header-container {
     height: $responsive-page--header-height;
-    background-size: auto $responsive-page--header-height;
     margin-bottom: 0;
+    background-image: url(../img/header-bg-mobile.png), linear-gradient(90deg, #C32D7B 0%, #C90E39 100%);
+    background-size: cover;
   }
 
   .header {
     width: 100%;
+  }
+
+  .header-title-link {
+    flex-basis: calc(100% - 90px);
     padding-right: 20px;
   }
 
   .header-title {
     font-size: 14px;
     padding-left: 65px;
-    background-size: 31px 31px;
-    background-position: 20px 9px;
+    width: 100%;
   }
 
   .header-links {
@@ -186,6 +190,15 @@ a.header-title-link {
 
   .header-menu-label {
     display: inline-block;
+  }
+
+  .upper-header {
+    display: none;
+  }
+
+  .down-header {
+    width: 100%;
+    padding: 0 20px;
   }
 
   .header-mobile {
@@ -214,6 +227,10 @@ a.header-title-link {
       font-size: 25px;
       line-height: 22px;
       margin-bottom: 25px;
+    }
+
+    .header-links .notification {
+      display: none;
     }
 
     .header-menu-label {
