@@ -32,8 +32,17 @@
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: $responsive-break--mobile) {
+  .gridbox {
+    flex-direction: column;
+  }
+
   .gridbox .cell {
-    flex: 0 0 100%;
+    flex-basis: initial !important;
+    margin-right: 0 !important;
+  }
+
+  .gridbox .cell.data:nth-child(2n+1) {
+    background-color: $lighter-grey;
   }
 }

@@ -99,9 +99,13 @@ section {
   }
 }
 
-@media screen and (max-width : 760px) {
+@media screen and (max-width: $responsive-break--mobile) {
   .container {
     width: $responsive-page--width;
+  }
+
+  .gridbox {
+    flex-direction: column;
   }
 
   section {
