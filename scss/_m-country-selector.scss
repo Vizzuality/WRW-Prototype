@@ -90,11 +90,16 @@
     }
 
     .country-selector:after {
-      right: 130px;
+      left: calc(70% - 20px);
+    }
+
+    .choose-country {
+      flex-basis: 70%;
     }
 
     .button {
-      padding: 10px;
+      padding: 0;
+      flex-basis: 30%;
     }
 
   }
