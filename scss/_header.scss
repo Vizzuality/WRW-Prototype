@@ -180,9 +180,10 @@ a.header-title-link {
 
   .header-title {
     font-size: 14px;
-    padding-left: 65px;
+    padding-left: 0;
     width: 100%;
-    background-position: center;
+    background-position: center left;
+    max-width: 300px;
   }
 
   .header-links {
