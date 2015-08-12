@@ -142,8 +142,12 @@
       float: none;
       flex-basis: 70%;
 
+      img {
+        flex-basis: 38px;
+      }
+
       span {
-        width: auto !important;
+        flex-basis: calc(100% - 38px);
       }
     }
   }

@@ -34,6 +34,17 @@
 
 @media screen and (max-width: $responsive-break--tablet) {
   .gridbox {
+    justify-content: space-between;
+
+    .cell {
+      margin-right: 0;
+      flex-basis: calc(50% - 10px);
+    }
+  }
+}
+
+@media screen and (max-width: $responsive-break--mobile) {
+  .gridbox {
     flex-direction: column;
   }
 
