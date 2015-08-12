@@ -98,18 +98,15 @@
 
     width: 100%;
     height: initial;
-    margin: 0;
-    border: none;
-    box-shadow: none;
-    background-color: transparent;
-
-    .card-image {
-      @include is-hidden;
-    }
 
     .card-content {
       height: auto;
       padding-bottom: 0;
+    }
+
+    .card-image,
+    .card-image img {
+      height: auto;
     }
 
     .card-info {
@@ -121,6 +118,17 @@
       padding-top: 10px;
     }
 
+  }
+
+  @media screen and (max-width: $responsive-break--mobile) {
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    margin: 0;
+
+    .card-image {
+      @include is-hidden;
+    }
   }
 
 }
