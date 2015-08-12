@@ -64,4 +64,34 @@
 
   }
 
+  @media screen and (min-width: $responsive-break--mobile) and (max-width: $responsive-break--tablet) {
+    .site-sections {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .site-sections li {
+      flex-basis: 25%;
+      margin-left: 0;
+
+      &:first-of-type {
+        position: static;
+        width: auto;
+        height: auto;
+      }
+    }
+
+    .site-sections>li {
+      margin-bottom: 20px;
+    }
+
+    .site-section ul {
+      @include is-visible;
+
+      li:first-of-type {
+        display: block;
+      }
+    }
+  }
+
 }

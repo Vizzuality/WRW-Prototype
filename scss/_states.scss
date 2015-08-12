@@ -3,6 +3,11 @@
   visibility: hidden;
 }
 
+@mixin is-visible() {
+  display: block !important;
+  visibility: visible;
+}
+
 .is-hidden {
    @include is-hidden;
 }
