@@ -32,7 +32,7 @@
   }
 }
 
-@media screen and (max-width: $responsive-break--mobile) {
+@media screen and (max-width: $responsive-break--tablet) {
   .gridbox {
     flex-direction: column;
   }

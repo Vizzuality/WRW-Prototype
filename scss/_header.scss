@@ -161,7 +161,7 @@ a.header-title-link {
   background: rgba(0,0,0,0);
 }
 
-@media screen and (max-width : $responsive-break--mobile){
+@media screen and (max-width : $responsive-break--tablet){
   .header-container {
     height: $responsive-page--header-height;
     margin-bottom: 0;

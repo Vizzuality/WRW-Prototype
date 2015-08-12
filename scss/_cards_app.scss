@@ -43,7 +43,7 @@
   flex-wrap: nowrap;
 }
 
-@media screen and (max-width : $responsive-break--mobile) {
+@media screen and (max-width : $responsive-break--tablet) {
   .card.app {
     width: 100%;
     height: auto;
