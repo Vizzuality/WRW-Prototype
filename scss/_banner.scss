@@ -39,7 +39,7 @@ a.button.banner-button {
   text-shadow: 0px 1px 2px rgba(0,0,0,0.24);
 }
 
-@media screen and (max-width : 760px) {
+@media screen and (max-width : $responsive-break--tablet) {
   .banner {
     overflow: hidden;
     margin: 0 -20px;
@@ -50,7 +50,9 @@ a.button.banner-button {
     width: auto;
     height: 100%;
   }
+}
 
+@media screen and (max-width : $responsive-break--mobile) {
   .banner-header {
     width: 100%;
     top: 0;
