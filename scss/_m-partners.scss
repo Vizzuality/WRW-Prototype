@@ -44,10 +44,17 @@
     li {
       flex-basis: 40%;
       margin-right: 0;
+      margin-bottom: 10px;
       display: flex;
       justify-content: space-around;
     }
 
+  }
+
+  @media screen and (min-width: $responsive-break--mobile) and (max-width: $responsive-break--tablet) {
+    li {
+      flex-basis: 28%;
+    }
   }
 
 }
