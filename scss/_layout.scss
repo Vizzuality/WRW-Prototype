@@ -102,6 +102,7 @@ section {
 @media screen and (max-width: $responsive-break--tablet) {
   .container {
     width: $responsive-page--width;
+    padding: 0 20px;
   }
 
   .gridbox {
@@ -110,6 +111,5 @@ section {
 
   section {
     margin-bottom: 30px;
-    padding: 0 20px;
   }
 }
