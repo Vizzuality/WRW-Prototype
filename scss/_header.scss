@@ -252,4 +252,8 @@ a.header-title-link {
       padding-right: 20px;
     }
   }
+
+  .header-links li.active:after {
+    content: none;
+  }
 }
