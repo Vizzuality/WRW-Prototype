@@ -34,18 +34,48 @@
 
 @media screen and (max-width: $responsive-break--tablet) {
   .gridbox {
-    justify-content: space-between;
-
     .cell {
-      margin-right: 0;
-      flex-basis: calc(50% - 10px);
+      margin-right: 20px;
+      flex-basis: calc(33.33% - 40px / 3);
     }
 
     .cell.data {
-      flex-basis: calc(50% - 10px);
+      flex-basis: calc(33.33% - 40px / 3);
 
       &:nth-child(3n+3) {
         margin-right: 0;
+      }
+
+      &:nth-child(4n+4) {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .gridbox {
+    .cell {
+      flex-basis: calc(50% - 20px / 2);
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+
+      &:nth-child(2n+1) {
+        margin-right: 20px;
+      }
+    }
+
+    .cell.data {
+      flex-basis: calc(50% - 20px / 2);
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+
+      &:nth-child(2n+1) {
+        margin-right: 20px;
       }
     }
   }
