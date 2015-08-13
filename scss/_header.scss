@@ -42,7 +42,7 @@
     content: "";
     position: absolute;
     bottom: 25%;
-    right: 0;
+    right: 3px;
     @include arrow (7px, #fff, 1px, 225deg);
   }
 
@@ -195,7 +195,7 @@ a.header-title-link {
   }
 
   .upper-header {
-    display: none;
+    @include is-hidden;
   }
 
   .down-header {
@@ -222,7 +222,7 @@ a.header-title-link {
       position: absolute;
       top: $responsive-page--header-height;
       left: 0;
-      margin-top: 35px;
+      margin-top: 65px;
     }
 
     .header-links li {
@@ -238,6 +238,18 @@ a.header-title-link {
 
     .header-menu-label {
       background: rgba(255,255,255,0.4);
+    }
+
+    .upper-header {
+      @include is-visible;
+
+      position: absolute;
+      top: 80px;
+    }
+
+    .upper-header-container {
+      width: 100%;
+      padding-right: 20px;
     }
   }
 }
