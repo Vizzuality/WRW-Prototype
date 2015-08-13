@@ -32,4 +32,23 @@
     }
 
   }
+
+  @media screen and (max-width: $responsive-break--tablet) {
+    width: 100%;
+    height: auto;
+
+    .card-image {
+      height: auto;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .card-caption {
+      height: auto;
+      margin-top: 20px;
+    }
+  }
 }
