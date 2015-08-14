@@ -103,7 +103,7 @@ define(['d3'], function(d3) {
   PieChart.prototype._drawLabels = function(group) {
     var labels = svg.append('g')
       .attr('class', 'labels')
-      .attr('transform','translate(440,200)');
+      .attr('transform','translate(' + (this.sizing.width/2) + ',' + (this.sizing.height/2) + ')');
 
     var enteringLabels = labels.selectAll(".label")
       .data(pie(this.data))
@@ -118,7 +118,7 @@ define(['d3'], function(d3) {
 
   PieChart.prototype.render = function() {
     var group = svg.append('g')
-        .attr('transform','translate(440,200)')
+        .attr('transform','translate(' + (this.sizing.width/2) + ',' + (this.sizing.height/2) + ')')
       .selectAll('.arc')
       .data(pie(this.data))
       .enter()
