@@ -65,15 +65,16 @@ $explore--wide-content-width: 1020px;
 }
 
 .explore-detail--visualization {
-  background: url('../img/chart-line-thin-hover.png') no-repeat;
   width: 1020px;
   height: 560px;
   position: relative;
   left: -40px;
   margin-bottom: 40px;
 
-  &.pie {
-    background: url('../img/chart-pie-thin.png') no-repeat;
+  &,
+  svg {
+    background: #43B9D6;
+    font-family: Lato-Regular;
   }
 
   label {
@@ -132,6 +133,36 @@ $explore--wide-content-width: 1020px;
     &:checked ~ .menu {
       display: block;
     }
+  }
+
+  .tooltip {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    width: 125px;
+    height: 60px;
+    background: #fff;
+    pointer-events: none;
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.20);
+    border-radius: 3px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .tooltip h4 {
+    font-family: Lato-Regular;
+    font-size: 21px;
+    color: #393F44;
+    line-height: 25px;
+    margin: 0;
+  }
+
+  .tooltip h5 {
+    margin: 0;
+    font-family: Lato-Regular;
+    font-size: 11px;
+    color: #9AA2A9;
+    line-height: 13px;
   }
 }
 

@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style>
-
-  svg {
-    position: relative;
-    background: #43B9D6;
-    font-family: Lato-Regular;
-  }
-
+.lineChart {
   .area,
   .line {
     clip-path: url(#clip);
@@ -84,50 +75,12 @@
     fill: #43B9D6;
     stroke: white;
     stroke-width: 2px;
+    pointer-events: none;
   }
 
   .hoverOverlay line {
     stroke: white;
     stroke-width: 1px;
-  }
-
-  .tooltip {
-    display: none;
-    z-index: 1;
-    position: absolute;
-    width: 125px;
-    height: 60px;
-    background: #fff;
     pointer-events: none;
-    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.20);
-    border-radius: 3px;
-    padding: 10px;
-    box-sizing: border-box;
   }
-
-  .tooltip h4 {
-    font-family: Lato-Regular;
-    font-size: 21px;
-    color: #393F44;
-    line-height: 25px;
-    margin: 0;
-  }
-
-  .tooltip h5 {
-    margin: 0;
-    font-family: Lato-Regular;
-    font-size: 11px;
-    color: #9AA2A9;
-    line-height: 13px;
-  }
-
-</style>
-<body>
-<div class="tooltip">
-  <h4></h4>
-  <h5></h5>
-</div>
-
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-<script src="line_chart.js"></script>
+}
