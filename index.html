@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+    <script src="js/login.js"></script>
+
     <link rel="stylesheet"
       href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700'
@@ -55,493 +57,504 @@
       </header>
     </div>
 
-    <!-- hero -->
-    <section class="hero">
-      <div class="hero-content">
-        <div class="container"> 
-          <div class="hero-title">
-            <div class="hero-sub-title">
-              Featured insight
+    <div class="js--main-login" style="display: none;">
+      <form id="login">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="top_secret_password">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+    <div class="js--main-content" style="display: none;">
+
+      <!-- hero -->
+      <section class="hero">
+        <div class="hero-content">
+          <div class="container">
+            <div class="hero-title">
+              <div class="hero-sub-title">
+                Featured insight
+              </div>
+
+               <a href="map.html">Are countries whose water supplies are most at risk from climate change taking action?</a>
             </div>
 
-             <a href="map.html">Are countries whose water supplies are most at risk from climate change taking action?</a>
-          </div>
+            <div class="hero-info">
+              <div class="hero-info-source">
+                <img src="img/insight-wwf-logo.png">
+                <span>by <a href="#">World Resources Institute</a></span>
+              </div>
 
-          <div class="hero-info">
-            <div class="hero-info-source">
-              <img src="img/insight-wwf-logo.png">
-              <span>by <a href="#">World Resources Institute</a></span>
-            </div>
-
-            <div class="hero-info-stars">
-              <span><i class="fa fa-star"></i> 5,230</span>
+              <div class="hero-info-stars">
+                <span><i class="fa fa-star"></i> 5,230</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    
-    <div class="container">
-      <!-- country selector -->
-      <section>
-        <div class="m-country-selector">
-          <header>
-            <h2>Country dashboards</h2>
-            <p>Analyze country data easily</p>
+      </section>
+
+      <div class="container">
+        <!-- country selector -->
+        <section>
+          <div class="m-country-selector">
+            <header>
+              <h2>Country dashboards</h2>
+              <p>Analyze country data easily</p>
+            </header>
+            <div class="country-selector">
+              <select  class="choose-country">
+                <option value="" disabled selected>Choose country</option>
+              </select>
+              <input class="button" type="submit" value="Let's go!">
+            </div>
+          </div>
+        </section>
+
+        <!-- feature-insights -->
+        <section>
+          <header class="section-header">
+            <h3>Featured insights</h3>
+            <a href="#" class="section-header-link">View More <i class="fa fa-angle-right"></i></a>
           </header>
-          <div class="country-selector">
-            <select  class="choose-country">
-              <option value="" disabled selected>Choose country</option>
-            </select>
-            <input class="button" type="submit" value="Let's go!">
-          </div>
-        </div>
-      </section>
 
-      <!-- feature-insights -->
-      <section>
-        <header class="section-header">
-          <h3>Featured insights</h3>
-          <a href="#" class="section-header-link">View More <i class="fa fa-angle-right"></i></a>
-        </header>
-
-        <div class="gridbox">
-          <div class="cell">
-            <div class="card insight">
-              <div class="card-image">
-                <img src="img/insight-1-th.jpg">
-              </div>
-
-              <div class="card-content">
-                <h6 class="card-sub-title">Story</h6>
-                <h5 class="card-title"><a href="story.html">See how climate change will increase chance of people being affected by floods</a></h5>
-              </div>
-
-              <ul class="card-info">
-                <li class="card-info-source">
-                  <img src="img/avatar-wwf.png">
-                  <span>by <a href="#">WWF</a></span>
-                </li>
-                <li class="card-info-stars">
-                  <span><i class="fa fa-star"></i> 5,230</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="cell">
-            <div class="card insight">
-              <div class="card-image">
-                <img src="img/insight-2-th.jpg">
-              </div>
-
-              <div class="card-content">
-                <h6 class="card-sub-title">Map</h6>
-                <h5 class="card-title"><a href="map.html">Deforestation and land use change drives about 80% of Indonesia’s greenhouse gas emissions</a></h5>
-              </div>
-
-              <ul class="card-info">
-                <li class="card-info-source">
-                  <img src="img/avatar-greenpeace.png">
-                  <span>by <a href="#">Greenpeace</a></span>
-                </li>
-                <li class="card-info-stars">
-                  <span><i class="fa fa-star"></i> 3,531</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="cell">
-            <div class="card insight">
-              <div class="card-image">
-                <img src="img/insight-3-th.jpg">
-              </div>
-
-              <div class="card-content">
-                <h6 class="card-sub-title">Story</h6>
-                <h5 class="card-title"><a href="story.html">Satellites empower journalists and civil society to investigate illegal logging</a></h5>
-              </div>
-
-              <ul class="card-info">
-                <li class="card-info-source">
-                  <img src="img/avatar-wri.png">
-                  <span>by <a href="#">World resources institute</a></span>
-                </li>
-                <li class="card-info-stars active">
-                  <span><i class="fa fa-star"></i> 4,345</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="cell">
-            <div class="card insight">
-              <div class="card-image">
-                <img src="img/insight-4-th.jpg">
-              </div>
-
-              <div class="card-content">
-                <h6 class="card-sub-title">Slideshow</h6>
-                <h5 class="card-title"><a href="slideshow.html">Which countries food growing areas will be affected most by climate change?</a></h5>
-              </div>
-
-              <ul class="card-info">
-                <li class="card-info-source">
-                  <img src="img/avatar-0.jpg">
-                  <span>by <a href="#">Sajjad Malik</a></span>
-                </li>
-                <li class="card-info-stars active">
-                  <span><i class="fa fa-star"></i> 1,349</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="cell">
-            <div class="card insight">
-              <div class="card-image">
-                <img src="img/insight-5-th.jpg">
-              </div>
-
-              <div class="card-content">
-                <h6 class="card-sub-title">Story</h6>
-                <h5 class="card-title"><a href="story.html">Deforestation of intact forests is predictable</a></h5>
-              </div>
-
-              <ul class="card-info">
-                <li class="card-info-source">
-                  <img src="img/avatar-1.jpg">
-                  <span>by <a href="#">Marion Johnson</a></span>
-                </li>
-                <li class="card-info-stars">
-                  <span><i class="fa fa-star"></i> 9,430</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="cell">
-            <div class="card insight">
-              <div class="card-image">
-                <img src="img/insight-6-th.jpg">
-              </div>
-
-              <div class="card-content">
-                <h6 class="card-sub-title">Slideshow</h6>
-                <h5 class="card-title"><a href="slideshow.html">If an environmental issue happened where you are, would you be able to do anything about it?</a></h5>
-              </div>
-
-              <ul class="card-info">
-                <li class="card-info-source">
-                  <img src="img/avatar-wwf.png">
-                  <span>by <a href="#">WWF</a></span>
-                </li>
-                <li class="card-info-stars">
-                  <span><i class="fa fa-star"></i> 430</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- planet-pulse -->
-      <section>
-        <header class="section-header">
-          <h3>Planet Pulse</h3>
-          <a href="planet-pulse.html" class="section-header-link">Launch <i class="fa fa-angle-right"></i></a>
-        </header>
-
-        <div class="banner">
-          <img src="img/planet-pulse-1.png" class="banner-image">
-          <h3 class="banner-header">Real-time data monitoring the planet</h3>
-          <a href="planet-pulse.html" class="banner-button button button-large">Launch Planet Pulse</a>
-        </div>
-      </section>
-      
-      <!-- explore the data -->
-      <section>
-        <header class="section-header">
-          <h3>Explore the data</h3>
-          <a href="#" class="section-header-link">View More <i class="fa fa-angle-right"></i></a>
-        </header>
-        
-        <div class="gridbox">
-
-          <div class="cell data">
-            <div class="card data">
-              <div class="card-image">
-                <img src="img/data-1-th.png">
-              </div>
-
-              <div class="card-content">
-                <h5 class="card-title"><a href="explore-standalone.html">Water levels in Northern California</a></h5>
-                <p class="card-sub-title">Centre for Research on Lorem</p>
-              </div>
-
-              <ul class="card-info">
-                <li> 
-                  <div class="card-info-download">
-                    <a class="link-map" href="#">MAP</a>
-                    <a class="link-csv" href="#">CSV</a>
-                  </div> 
-                </li>
-                <li class="card-info-stars">
-                  <span><i class="fa fa-star"></i> 5,230</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="cell data">
-            <div class="card data">
-              <div class="card-image">
-                <img src="img/data-2-th.png">
-              </div>
-
-              <div class="card-content">
-                <h5 class="card-title"><a href="explore-standalone.html">Total Greenhouse Emissions</a></h5>
-                <p class="card-sub-title">Centre for Research on Lorem</p>
-              </div>
-
-              <ul class="card-info">
-                <li> 
-                  <div class="card-info-download">
-                    <a class="link-csv" href="#">CSV</a>
-                  </div> 
-                </li>
-                <li class="card-info-stars">
-                  <span><i class="fa fa-star"></i> 1,348</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="cell data">
-            <div class="card data">
-              <div class="card-image">
-                <img src="img/data-3-th.png">
-              </div>
-
-              <div class="card-content">
-                <h5 class="card-title"><a href="explore-standalone.html">CO2 emissions intensity</a></h5>
-                <p class="card-sub-title">Centre for Research on Lorem</p>
-              </div>
-
-              <ul class="card-info">
-                <li> 
-                  <div class="card-info-download">
-                    <a class="link-map" href="#">MAP</a>
-                    <a class="link-csv" href="#">CSV</a>
-                  </div> 
-                </li>
-                <li class="card-info-stars">
-                  <span><i class="fa fa-star"></i> 5,230</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="cell data">
-            <div class="card data">
-              <div class="card-image">
-                <img src="img/data-4-th.png">
-              </div>
-
-              <div class="card-content">
-                <h5 class="card-title"><a href="explore-standalone.html">Population distribution by age range in the US</a></h5>
-                <p class="card-sub-title">Centre for Research on Lorem</p>
-              </div>
-
-              <ul class="card-info">
-                <li> 
-                  <div class="card-info-download">
-                    <a class="link-map" href="#">MAP</a>
-                    <a class="link-csv" href="#">CSV</a>
-                  </div> 
-                </li>
-                <li class="card-info-stars">
-                  <span><i class="fa fa-star"></i> 5,230</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="cell data">
-            <div class="card data">
-              <div class="card-image">
-                <img src="img/data-5-th.png">
-              </div>
-
-              <div class="card-content">
-                <h5 class="card-title"><a href="explore-standalone.html">Water levels in Northern California</a></h5>
-                <p class="card-sub-title">Centre for Research on Lorem</p>
-              </div>
-
-              <ul class="card-info">
-                <li> 
-                  <div class="card-info-download">
-                    <a class="link-csv" href="#">CSV</a>
-                  </div> 
-                </li>
-                <li class="card-info-stars">
-                  <span><i class="fa fa-star"></i> 5,230</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="cell data">
-            <div class="card data">
-              <div class="card-image">
-                <img src="img/data-6-th.png">
-              </div>
-
-              <div class="card-content">
-                <h5 class="card-title"><a href="explore-standalone.html">Energy produced in Spain - Real Time</a> </h5>
-                <p class="card-sub-title">Centre for Research on Lorem</p>
-              </div>
-
-              <ul class="card-info">
-                <li> 
-                  <div class="card-info-download">
-                    <a class="link-csv" href="#">CSV</a>
-                  </div> 
-                </li>
-                <li class="card-info-stars">
-                  <span><i class="fa fa-star"></i> 5,230</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="cell data">
-            <div class="card data">
-              <div class="card-image">
-                <img src="img/data-7-th.png">
-              </div>
-
-              <div class="card-content">
-                <h5 class="card-title"><a href="explore-standalone.html">Water levels in Northern California</a></h5>
-                <p class="card-sub-title">Centre for Research on Lorem</p>
-              </div>
-
-              <ul class="card-info">
-                <li> 
-                  <div class="card-info-download">
-                    <a class="link-csv" href="#">CSV</a>
-                  </div> 
-                </li>
-                <li class="card-info-stars">
-                  <span><i class="fa fa-star"></i> 5,230</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="cell data">
-            <div class="card data">
-              <div class="card-image">
-                <img src="img/data-8-th.png">
-              </div>
-
-              <div class="card-content">
-                <h5 class="card-title"><a href="explore-standalone.html">Water levels in Northern California</a></h5>
-                <p class="card-sub-title">Centre for Research on Lorem</p>
-              </div>
-
-              <ul class="card-info">
-                <li> 
-                  <div class="card-info-download">
-                    <a class="link-csv" href="#">CSV</a>
-                  </div> 
-                </li>
-                <li class="card-info-stars">
-                  <span><i class="fa fa-star"></i> 5,230</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          
-        </div> 
-    
-      </section>
-     
-      <!-- feature-apps -->
-      <section>
-        <header class="section-header">
-          <h3>Featured apps</h3>
-          <a href="#" class="section-header-link">View More <i class="fa fa-angle-right"></i></a>
-        </header>
-
-        <div class="gridbox">
-          <div class="cell">
-            <div class="card app">
-              <div class="card-image">
-                <img src="img/app-1.png">
-              </div>
-
-              <div class="card-caption-container">
-                <div class="card-caption">
-                  Worldwide Deforestation
+          <div class="gridbox">
+            <div class="cell">
+              <div class="card insight">
+                <div class="card-image">
+                  <img src="img/insight-1-th.jpg">
                 </div>
 
-                <div class="card-info-stars active">
-                  <i class="fa fa-star"></i> 1,345
+                <div class="card-content">
+                  <h6 class="card-sub-title">Story</h6>
+                  <h5 class="card-title"><a href="story.html">See how climate change will increase chance of people being affected by floods</a></h5>
+                </div>
+
+                <ul class="card-info">
+                  <li class="card-info-source">
+                    <img src="img/avatar-wwf.png">
+                    <span>by <a href="#">WWF</a></span>
+                  </li>
+                  <li class="card-info-stars">
+                    <span><i class="fa fa-star"></i> 5,230</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cell">
+              <div class="card insight">
+                <div class="card-image">
+                  <img src="img/insight-2-th.jpg">
+                </div>
+
+                <div class="card-content">
+                  <h6 class="card-sub-title">Map</h6>
+                  <h5 class="card-title"><a href="map.html">Deforestation and land use change drives about 80% of Indonesia’s greenhouse gas emissions</a></h5>
+                </div>
+
+                <ul class="card-info">
+                  <li class="card-info-source">
+                    <img src="img/avatar-greenpeace.png">
+                    <span>by <a href="#">Greenpeace</a></span>
+                  </li>
+                  <li class="card-info-stars">
+                    <span><i class="fa fa-star"></i> 3,531</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cell">
+              <div class="card insight">
+                <div class="card-image">
+                  <img src="img/insight-3-th.jpg">
+                </div>
+
+                <div class="card-content">
+                  <h6 class="card-sub-title">Story</h6>
+                  <h5 class="card-title"><a href="story.html">Satellites empower journalists and civil society to investigate illegal logging</a></h5>
+                </div>
+
+                <ul class="card-info">
+                  <li class="card-info-source">
+                    <img src="img/avatar-wri.png">
+                    <span>by <a href="#">World resources institute</a></span>
+                  </li>
+                  <li class="card-info-stars active">
+                    <span><i class="fa fa-star"></i> 4,345</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cell">
+              <div class="card insight">
+                <div class="card-image">
+                  <img src="img/insight-4-th.jpg">
+                </div>
+
+                <div class="card-content">
+                  <h6 class="card-sub-title">Slideshow</h6>
+                  <h5 class="card-title"><a href="slideshow.html">Which countries food growing areas will be affected most by climate change?</a></h5>
+                </div>
+
+                <ul class="card-info">
+                  <li class="card-info-source">
+                    <img src="img/avatar-0.jpg">
+                    <span>by <a href="#">Sajjad Malik</a></span>
+                  </li>
+                  <li class="card-info-stars active">
+                    <span><i class="fa fa-star"></i> 1,349</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cell">
+              <div class="card insight">
+                <div class="card-image">
+                  <img src="img/insight-5-th.jpg">
+                </div>
+
+                <div class="card-content">
+                  <h6 class="card-sub-title">Story</h6>
+                  <h5 class="card-title"><a href="story.html">Deforestation of intact forests is predictable</a></h5>
+                </div>
+
+                <ul class="card-info">
+                  <li class="card-info-source">
+                    <img src="img/avatar-1.jpg">
+                    <span>by <a href="#">Marion Johnson</a></span>
+                  </li>
+                  <li class="card-info-stars">
+                    <span><i class="fa fa-star"></i> 9,430</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cell">
+              <div class="card insight">
+                <div class="card-image">
+                  <img src="img/insight-6-th.jpg">
+                </div>
+
+                <div class="card-content">
+                  <h6 class="card-sub-title">Slideshow</h6>
+                  <h5 class="card-title"><a href="slideshow.html">If an environmental issue happened where you are, would you be able to do anything about it?</a></h5>
+                </div>
+
+                <ul class="card-info">
+                  <li class="card-info-source">
+                    <img src="img/avatar-wwf.png">
+                    <span>by <a href="#">WWF</a></span>
+                  </li>
+                  <li class="card-info-stars">
+                    <span><i class="fa fa-star"></i> 430</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- planet-pulse -->
+        <section>
+          <header class="section-header">
+            <h3>Planet Pulse</h3>
+            <a href="planet-pulse.html" class="section-header-link">Launch <i class="fa fa-angle-right"></i></a>
+          </header>
+
+          <div class="banner">
+            <img src="img/planet-pulse-1.png" class="banner-image">
+            <h3 class="banner-header">Real-time data monitoring the planet</h3>
+            <a href="planet-pulse.html" class="banner-button button button-large">Launch Planet Pulse</a>
+          </div>
+        </section>
+
+        <!-- explore the data -->
+        <section>
+          <header class="section-header">
+            <h3>Explore the data</h3>
+            <a href="#" class="section-header-link">View More <i class="fa fa-angle-right"></i></a>
+          </header>
+
+          <div class="gridbox">
+
+            <div class="cell data">
+              <div class="card data">
+                <div class="card-image">
+                  <img src="img/data-1-th.png">
+                </div>
+
+                <div class="card-content">
+                  <h5 class="card-title"><a href="explore-standalone.html">Water levels in Northern California</a></h5>
+                  <p class="card-sub-title">Centre for Research on Lorem</p>
+                </div>
+
+                <ul class="card-info">
+                  <li>
+                    <div class="card-info-download">
+                      <a class="link-map" href="#">MAP</a>
+                      <a class="link-csv" href="#">CSV</a>
+                    </div>
+                  </li>
+                  <li class="card-info-stars">
+                    <span><i class="fa fa-star"></i> 5,230</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cell data">
+              <div class="card data">
+                <div class="card-image">
+                  <img src="img/data-2-th.png">
+                </div>
+
+                <div class="card-content">
+                  <h5 class="card-title"><a href="explore-standalone.html">Total Greenhouse Emissions</a></h5>
+                  <p class="card-sub-title">Centre for Research on Lorem</p>
+                </div>
+
+                <ul class="card-info">
+                  <li>
+                    <div class="card-info-download">
+                      <a class="link-csv" href="#">CSV</a>
+                    </div>
+                  </li>
+                  <li class="card-info-stars">
+                    <span><i class="fa fa-star"></i> 1,348</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cell data">
+              <div class="card data">
+                <div class="card-image">
+                  <img src="img/data-3-th.png">
+                </div>
+
+                <div class="card-content">
+                  <h5 class="card-title"><a href="explore-standalone.html">CO2 emissions intensity</a></h5>
+                  <p class="card-sub-title">Centre for Research on Lorem</p>
+                </div>
+
+                <ul class="card-info">
+                  <li>
+                    <div class="card-info-download">
+                      <a class="link-map" href="#">MAP</a>
+                      <a class="link-csv" href="#">CSV</a>
+                    </div>
+                  </li>
+                  <li class="card-info-stars">
+                    <span><i class="fa fa-star"></i> 5,230</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cell data">
+              <div class="card data">
+                <div class="card-image">
+                  <img src="img/data-4-th.png">
+                </div>
+
+                <div class="card-content">
+                  <h5 class="card-title"><a href="explore-standalone.html">Population distribution by age range in the US</a></h5>
+                  <p class="card-sub-title">Centre for Research on Lorem</p>
+                </div>
+
+                <ul class="card-info">
+                  <li>
+                    <div class="card-info-download">
+                      <a class="link-map" href="#">MAP</a>
+                      <a class="link-csv" href="#">CSV</a>
+                    </div>
+                  </li>
+                  <li class="card-info-stars">
+                    <span><i class="fa fa-star"></i> 5,230</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cell data">
+              <div class="card data">
+                <div class="card-image">
+                  <img src="img/data-5-th.png">
+                </div>
+
+                <div class="card-content">
+                  <h5 class="card-title"><a href="explore-standalone.html">Water levels in Northern California</a></h5>
+                  <p class="card-sub-title">Centre for Research on Lorem</p>
+                </div>
+
+                <ul class="card-info">
+                  <li>
+                    <div class="card-info-download">
+                      <a class="link-csv" href="#">CSV</a>
+                    </div>
+                  </li>
+                  <li class="card-info-stars">
+                    <span><i class="fa fa-star"></i> 5,230</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cell data">
+              <div class="card data">
+                <div class="card-image">
+                  <img src="img/data-6-th.png">
+                </div>
+
+                <div class="card-content">
+                  <h5 class="card-title"><a href="explore-standalone.html">Energy produced in Spain - Real Time</a> </h5>
+                  <p class="card-sub-title">Centre for Research on Lorem</p>
+                </div>
+
+                <ul class="card-info">
+                  <li>
+                    <div class="card-info-download">
+                      <a class="link-csv" href="#">CSV</a>
+                    </div>
+                  </li>
+                  <li class="card-info-stars">
+                    <span><i class="fa fa-star"></i> 5,230</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cell data">
+              <div class="card data">
+                <div class="card-image">
+                  <img src="img/data-7-th.png">
+                </div>
+
+                <div class="card-content">
+                  <h5 class="card-title"><a href="explore-standalone.html">Water levels in Northern California</a></h5>
+                  <p class="card-sub-title">Centre for Research on Lorem</p>
+                </div>
+
+                <ul class="card-info">
+                  <li>
+                    <div class="card-info-download">
+                      <a class="link-csv" href="#">CSV</a>
+                    </div>
+                  </li>
+                  <li class="card-info-stars">
+                    <span><i class="fa fa-star"></i> 5,230</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cell data">
+              <div class="card data">
+                <div class="card-image">
+                  <img src="img/data-8-th.png">
+                </div>
+
+                <div class="card-content">
+                  <h5 class="card-title"><a href="explore-standalone.html">Water levels in Northern California</a></h5>
+                  <p class="card-sub-title">Centre for Research on Lorem</p>
+                </div>
+
+                <ul class="card-info">
+                  <li>
+                    <div class="card-info-download">
+                      <a class="link-csv" href="#">CSV</a>
+                    </div>
+                  </li>
+                  <li class="card-info-stars">
+                    <span><i class="fa fa-star"></i> 5,230</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- feature-apps -->
+        <section>
+          <header class="section-header">
+            <h3>Featured apps</h3>
+            <a href="#" class="section-header-link">View More <i class="fa fa-angle-right"></i></a>
+          </header>
+
+          <div class="gridbox">
+            <div class="cell">
+              <div class="card app">
+                <div class="card-image">
+                  <img src="img/app-1.png">
+                </div>
+
+                <div class="card-caption-container">
+                  <div class="card-caption">
+                    Worldwide Deforestation
+                  </div>
+
+                  <div class="card-info-stars active">
+                    <i class="fa fa-star"></i> 1,345
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="cell">
-            <div class="card app">
-              <div class="card-image">
-                <img src="img/app-2.png">
-              </div>
-
-              <div class="card-caption-container">
-                <div class="card-caption">
-                  World Resources Watch AI
+            <div class="cell">
+              <div class="card app">
+                <div class="card-image">
+                  <img src="img/app-2.png">
                 </div>
 
-                <div class="card-info-stars">
-                  <i class="fa fa-star"></i> 6,332
-                </div>
-              </div>
-            </div>
-          </div>
+                <div class="card-caption-container">
+                  <div class="card-caption">
+                    World Resources Watch AI
+                  </div>
 
-          <div class="cell">
-            <div class="card app">
-              <div class="card-image">
-                <img src="img/app-3.png">
-              </div>
-
-              <div class="card-caption-container">
-                <div class="card-caption">
-                  Android Wearable Environmental Alerts
-                </div>
-
-                <div class="card-info-stars">
-                  <i class="fa fa-star"></i> 2,324
+                  <div class="card-info-stars">
+                    <i class="fa fa-star"></i> 6,332
+                  </div>
                 </div>
               </div>
             </div>
+
+            <div class="cell">
+              <div class="card app">
+                <div class="card-image">
+                  <img src="img/app-3.png">
+                </div>
+
+                <div class="card-caption-container">
+                  <div class="card-caption">
+                    Android Wearable Environmental Alerts
+                  </div>
+
+                  <div class="card-info-stars">
+                    <i class="fa fa-star"></i> 2,324
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
+        </section>
 
-        </div>
-      </section>
-      
-      <!-- contribute -->
-      <section>
-        <div class="m-contribute">
-          <a href="#">
-            AWESOME IDEAS? DEVELOP YOUR OWN APP
-          </a>
-        </div>
-      </section>
+        <!-- contribute -->
+        <section>
+          <div class="m-contribute">
+            <a href="#">
+              AWESOME IDEAS? DEVELOP YOUR OWN APP
+            </a>
+          </div>
+        </section>
 
+      </div>
     </div>
 
     <section class="m-partners">
@@ -595,14 +608,14 @@
           </li>
           <li class="site-section">
             <a href="#">Explore</a>
-            <ul>  
+            <ul>
               <li><a href="#">Data map</a></li>
               <li><a href="#">Datasets</a></li>
             </ul>
           </li>
           <li class="site-section">
             <a href="#">Apps</a>
-            <ul> 
+            <ul>
               <li><a href="#">Popular apps</a></li>
               <li><a href="#">iOS apps</a></li>
               <li><a href="#">Android apps</a></li>
@@ -640,7 +653,7 @@
         </ul>
       </div>
     </section>
-  
+
     <!-- footer -->
     <div class="footer-container">
       <footer class="footer">
@@ -651,6 +664,7 @@
 
     <script src="js/vendor/requirejs/require.js"></script>
     <script src="js/home/countries-search.js"></script>
+    <script src="js/login_form.js"></script>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
