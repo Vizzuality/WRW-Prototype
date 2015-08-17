@@ -372,6 +372,23 @@
     }
 
   }
+
+  @media screen and (max-width: $responsive-break--tablet) {
+    height: auto;
+
+    .insights--slideshow-content {
+      flex-wrap: wrap;
+
+      .left-half,
+      .right-half {
+        flex-basis: 100%;
+      }
+
+      .story--metadata {
+        margin-top: 40px;
+      }
+    }
+  }
 }
 
 .insights--featured {
