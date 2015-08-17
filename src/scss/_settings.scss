@@ -6,6 +6,9 @@ $page--header-height: 130px;
 $responsive-page--width: 100%;
 $responsive-page--header-height: 80px;
 
+$responsive-break--mobile: 540px;
+$responsive-break--tablet: $page--width;
+
 // Grid
 $gutter-width: 1.5rem !default;
 $element-top-margin: $gutter-width/3 !default;
@@ -23,3 +26,9 @@ $insights--card-sub-title-margin: 0px 0px 5px;
 // Cards, Data
 $data--card-title-margin: 0;
 $data--card-sub-title-margin: 5px 0px 0px;
+
+// Font weights
+$font--extra-light: 100;
+$font--light: 300;
+$font--normal: 500;
+$font--bold: 700;

@@ -25,13 +25,13 @@
   h2 {
     margin: 0;
     font-size: 25px;
-    font-weight: normal;
+    font-weight: $font--normal;
     margin-bottom: 5px;
   }
 
 	p {
 		margin: 0;
-		font-weight: lighter;
+		font-weight: $font--light;
 	}
 
 	.country-selector {
@@ -75,6 +75,34 @@
       padding: 10px 40px;
       width: 200px;
 	}
+
+  @media screen and (max-width: $responsive-break--tablet) {
+
+    flex-direction: column;
+
+    header,
+    .country-selector {
+      width: 100%;
+    }
+
+    header {
+      margin-bottom: 20px;
+    }
+
+    .country-selector:after {
+      left: calc(70% - 20px);
+    }
+
+    .choose-country {
+      flex-basis: 70%;
+    }
+
+    .button {
+      padding: 0;
+      flex-basis: 30%;
+    }
+
+  }
 
 
 }

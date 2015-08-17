@@ -20,7 +20,7 @@
     height: 30px;
     margin-top: 10px;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: $font--bold;
     color: $app--card-title-color;
   }
 
@@ -43,17 +43,28 @@
   flex-wrap: nowrap;
 }
 
-@media screen and (max-width : 760px) {
+@media screen and (max-width : $responsive-break--tablet) {
   .card.app {
     width: 100%;
-  }
-
-  .card.app .card-image {
-    overflow: hidden;
-  }
-
-  .card.app .card-image img {
-    width: 100%;
     height: auto;
+
+    .card-image {
+      overflow: hidden;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: auto;
+    }
+
+    .card-caption {
+      flex-basis: 70%;
+      margin-top: 0;
+      height: auto;
+    }
+
+    .card-caption-container {
+      padding-top: 10px;
+    }
   }
 }

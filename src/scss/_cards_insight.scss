@@ -83,7 +83,7 @@
 
   .card-title {
     font-size: 19px;
-    font-weight: bold;
+    font-weight: $font--bold;
     color: $insights--card-title-color;
     margin: $insights--card-title-margin;
 
@@ -95,7 +95,7 @@
 
   .card-sub-title {
     font-size: 11px;
-    font-weight: normal;
+    font-weight: $font--normal;
     -webkit-font-smoothing: subpixel-antialiased;
     color: $insights--card-sub-title-color;
     margin: $insights--card-sub-title-margin;
@@ -107,18 +107,48 @@
     padding-bottom: $card-padding * 2;
 
     .card-sub-title {
-      font-weight: bold;
+      font-weight: $font--bold;
     }
 
     .card-title {
-      font-weight: lighter;
+      font-weight: $font--light;
       color: $section--header-color;
     }
   }
 }
 
-@media screen and (max-width : 760px) {
+@media screen and (max-width : $responsive-break--tablet) {
   .card.insight {
     width: 100%;
+    height: auto;
+
+    .card-content {
+      height: auto;
+    }
+
+    .card-image {
+      height: auto;
+    }
+
+    .card-info {
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+    }
+
+    .card-info-source {
+      float: none;
+      flex-basis: 70%;
+
+      img {
+        flex-basis: 38px;
+      }
+
+      span {
+        flex-basis: calc(100% - 38px);
+      }
+    }
   }
 }

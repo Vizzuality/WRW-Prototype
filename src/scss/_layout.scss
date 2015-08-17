@@ -81,7 +81,7 @@ section {
 
   margin: 0 0 15px 0;
 
-  font-weight: lighter;
+  font-weight: $font--light;
   font-size: 26px;
   color: $section--header-color;
 }
@@ -90,7 +90,7 @@ section {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: $font--bold;
   cursor: pointer;
 
   &.aligned-bottom {
@@ -99,13 +99,17 @@ section {
   }
 }
 
-@media screen and (max-width : 760px) {
+@media screen and (max-width: $responsive-break--tablet) {
   .container {
     width: $responsive-page--width;
+    padding: 0 20px;
+  }
+
+  .gridbox {
+    flex-direction: column;
   }
 
   section {
     margin-bottom: 30px;
-    padding: 0 20px;
   }
 }
