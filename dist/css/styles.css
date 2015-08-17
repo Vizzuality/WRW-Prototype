@@ -1720,14 +1720,14 @@ a.button.banner-button {
   margin-bottom: 30px !important; }
 
 .explore-detail--visualization {
-  background: url('../img/chart-line-thin-hover.png') no-repeat;
   width: 1020px;
   height: 560px;
   position: relative;
   left: -40px;
   margin-bottom: 40px; }
-  .explore-detail--visualization.pie {
-    background: url('../img/chart-pie-thin.png') no-repeat; }
+  .explore-detail--visualization, .explore-detail--visualization svg {
+    background: #43B9D6;
+    font-family: Lato-Regular; }
   .explore-detail--visualization label {
     font-size: 13px;
     font-weight: bold;
@@ -1777,6 +1777,32 @@ a.button.banner-button {
     left: -9999px; }
     .explore-detail--visualization input[type=checkbox]:checked ~ .menu {
       display: block; }
+  .explore-detail--visualization .tooltip {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    width: 125px;
+    height: 60px;
+    background: #fff;
+    pointer-events: none;
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+  .explore-detail--visualization .tooltip h4 {
+    font-family: Lato-Regular;
+    font-size: 21px;
+    color: #393F44;
+    line-height: 25px;
+    margin: 0; }
+  .explore-detail--visualization .tooltip h5 {
+    margin: 0;
+    font-family: Lato-Regular;
+    font-size: 11px;
+    color: #9AA2A9;
+    line-height: 13px; }
 
 .explore-detail--wide-visualization {
   background: url('../img/chart-line-hover.png') no-repeat center center;
@@ -3166,6 +3192,68 @@ a.explore--map-button {
     -webkit-flex-basis: 70%;
         -ms-flex-preferred-size: 70%;
             flex-basis: 70%; } }
+
+.lineChart .area, .lineChart .line {
+  -webkit-clip-path: url(#clip);
+          clip-path: url(#clip); }
+.lineChart .overlay {
+  fill: none;
+  pointer-events: all; }
+.lineChart .line {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 3px; }
+.lineChart .area {
+  fill: #61BED4; }
+.lineChart .axis line {
+  stroke: #000;
+  shape-rendering: crispEdges; }
+.lineChart .axis text {
+  fill: #fff;
+  font-weight: bold;
+  font-size: 11px; }
+.lineChart .axis path, .lineChart .axis2 path {
+  visibility: hidden; }
+.lineChart .axis2 line {
+  fill: none;
+  stroke: #6AC3D9;
+  shape-rendering: crispEdges; }
+.lineChart .axis2 text {
+  fill: #B8E2EC;
+  font-size: 10px; }
+.lineChart .axis.y line {
+  fill: none;
+  stroke: #7CCDE2; }
+.lineChart .axis.x .tick line {
+  fill: none;
+  stroke: #fff; }
+.lineChart .brush .extent {
+  fill: #fff;
+  fill-opacity: .125;
+  shape-rendering: crispEdges; }
+.lineChart .resize rect {
+  visibility: visible !important;
+  fill: #fff; }
+.lineChart .context .background {
+  fill: #3DAFCB; }
+.lineChart .hoverOverlay circle {
+  fill: #43B9D6;
+  stroke: white;
+  stroke-width: 2px;
+  pointer-events: none; }
+.lineChart .hoverOverlay line {
+  stroke: white;
+  stroke-width: 1px;
+  pointer-events: none; }
+
+.pieChart .labelTitle {
+  font-family: Lato-Bold;
+  font-size: 17px;
+  fill: #FFFFFF; }
+.pieChart .labelSubtitle {
+  font-family: Lato-Bold;
+  font-size: 14px;
+  fill: rgba(255, 255, 255, 0.72); }
 
 .login--container {
   display: block;
