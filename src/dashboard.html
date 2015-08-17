@@ -1,0 +1,329 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>World Resource Watch - Countries - Brazil</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.13/themes/css/cartodb.css" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700'
+      rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!--[if lt IE 9]>
+    <script src="js/vendor/html5-3.6-respond-1.4.2.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <script>
+      var isFullscreen = false;
+
+      var enableFullscreen = function() {
+        var container = document.querySelector('.container');
+        var gridbox = container.querySelector('.gridbox');
+        var header = container.querySelector('.section-header');
+        var button = container.querySelector('#fullscreen-btn');
+
+        isFullscreen = true;
+
+        container.className += ' is-fullscreen';
+
+        var innerWidth = container.offsetWidth - parseInt(window.getComputedStyle(container, null).getPropertyValue('padding-left')) - parseInt(window.getComputedStyle(container, null).getPropertyValue('padding-right'));
+        var nbCardsARow = Math.round(innerWidth / (320 + 2 * 20));
+        gridbox.style.width = (320 + 2 * 20) * nbCardsARow + 'px';
+
+        header.style.width = (320 + 2 * 20) * nbCardsARow + 'px';
+        header.style.paddingLeft = '20px';
+        header.style.paddingRight = '20px';
+
+        button.textContent = 'Exit Full screen';
+      };
+
+      var disableFullscreen = function() {
+        var container = document.querySelector('.container');
+        var gridbox = container.querySelector('.gridbox');
+        var header = container.querySelector('.section-header');
+        var button = container.querySelector('#fullscreen-btn');
+
+        isFullscreen = false;
+
+        container.className = 'container';
+
+        gridbox.style.width = 'auto';
+
+        header.style.width = 'auto';
+        header.style.paddingLeft = '0';
+        header.style.paddingRight = '0';
+
+        button.textContent = 'Full screen';
+
+      };
+
+      var fullscreenEvents = 'webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange';
+
+      var fullScreenCount = 0;
+
+      var checkContent = function() {
+        var isEnteringFullscreen = fullScreenCount % 2 === 0;
+        fullScreenCount++;
+
+        if(isEnteringFullscreen && !isFullscreen) {
+          enableFullscreen();
+        } else if(!isEnteringFullscreen && isFullscreen) {
+          disableFullscreen();
+        }
+      };
+
+      fullscreenEvents.split(' ').forEach(function(e) {
+        document.addEventListener(e, checkContent);
+      });
+
+
+      var toggleFullscreen = function() {
+        var container = document.querySelector('.container');
+
+        if (!container.fullscreenElement && !container.mozFullScreenElement && !container.webkitFullscreenElement && !container.msFullscreenElement && !document.webkitIsFullScreen) {
+
+          if (container.requestFullscreen) {
+            container.requestFullscreen();
+          } else if (container.msRequestFullscreen) {
+            container.msRequestFullscreen();
+          } else if (container.mozRequestFullScreen) {
+            container.mozRequestFullScreen();
+          } else if (container.webkitRequestFullscreen) {
+            container.webkitRequestFullscreen();
+          }
+
+        } else {
+
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+          } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          }
+
+        }
+      };
+    </script>
+
+    <div class="header-container">
+      <header class="header">
+        <div class="upper-header">
+          <div class="upper-header-container">
+            <div class="language-selector">
+              <ul>
+                <li>English</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="down-header">
+          <a href="index.html" class="header-title-link">
+            <h1 class="header-title"></h1>
+          </a>
+
+          <button class="header-menu-label js--header-open-menu">Menu</button>
+
+          <ul class="header-links">
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li class="active"><a href="dashboard.html">Countries</a></li>
+            <li><a href="planet-pulse.html">Planet pulse</a></li>
+            <!-- <li><a href="#">Apps</a></li> -->
+            <!-- <li><a href="#">Get Involved</a></li> -->
+            <li><a href="#"><i class="fa fa-search"></i></a></li>
+            <li class="notification"><a href="#"><img src="img/user-1.png"></a></li>
+          </ul>
+        </div>
+      </header>
+    </div>
+
+    <div id="container" class="container">
+
+      <section>
+        <header class="section-header dashboard">
+          <h1 class="story--title">Dashboard</h1>
+          <a onclick="toggleFullscreen();" id="fullscreen-btn" class="section-header-link aligned-bottom">Full screen</a>
+        </header>
+
+      </section>
+
+      <!-- country selector -->
+      <section>
+        <div class="m-country-selector dashboard">
+          <div class="country-selector">
+            <select  class="choose-country">
+              <option value="" disabled selected>Choose country</option>
+            </select>
+            <input class="button" type="submit" value="Let's go!">
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="container">
+      <section>
+        <div class="m-contribute">
+          <a href="#">
+            LOAD MORE INDICATORS
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <section class="m-partners">
+      <div class="container">
+        <p class="partners-title">partners
+          <span class="line"></span>
+        </p>
+        <ul>
+          <li>
+            <a href="#">
+              <img src="img/logo-1.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img/logo-2.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img/logo-3.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img/logo-4.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img/logo-5.png" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="m-site-map">
+      <div class="container">
+        <ul class="site-sections">
+          <li class="site-section">
+            <a href="index.html"><img src="data:image/svg+xml ;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjQxcHgiIGhlaWdodD0iNDJweCIgdmlld0JveD0iMCAwIDQxIDQyIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4zLjMgKDEyMDgxKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5sb2dvLXdydy1mb290ZXI8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iSG9tZSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc2tldGNoOnR5cGU9Ik1TUGFnZSI+CiAgICAgICAgPGcgaWQ9IjAzYy1kZXRhaWwtZGF0YS1zdGFuZGFsb25lIiBza2V0Y2g6dHlwZT0iTVNBcnRib2FyZEdyb3VwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjMxLjAwMDAwMCwgLTI2MDMuMDAwMDAwKSIgZmlsbD0iI0I5QkZDNCI+CiAgICAgICAgICAgIDxnIGlkPSJmb290ZXIiIHNrZXRjaDp0eXBlPSJNU0xheWVyR3JvdXAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLCAyNDQ3LjAwMDAwMCkiPgogICAgICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMzEuMDAwMDAwLCAxNTQuMDAwMDAwKSIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTE1LjUxNDc4MjMsMzQuMjAyODA4IEwxMC4yODUxMTc1LDM5LjUxNzM4NTggTDE0LjY5NTgwMTksNDQgTDE5LjkyNTEsMzguNjg1NDIyMiBMMTUuNTE0NzgyMywzNC4yMDI4MDggWiBNMjUuNTI4MTI4OSwzMi45OTEzOTE0IEw0MC42NTM0MDk1LDE3LjYxOTA3MzggTDM2LjI0MzA5MTksMTMuMTM2NDU5NiBMMjEuMTE3NDQ0NSwyOC41MDg3NzcyIEwyNS41MjgxMjg5LDMyLjk5MTM5MTQgWiBNMjUuNTI4MTI4OSwxMS45MjUwNDMgTDMwLjg4Mjg1OTcsNi40ODI2MTQxNyBMMjYuNDcyMTc1MywyIEwyMS4xMTc0NDQ1LDcuNDQyNDI4ODcgTDI1LjUyODEyODksMTEuOTI1MDQzIFogTTE1LjUxNDc4MjMsMTMuMTM2NDU5NiBMMC4zODkxMzQ4ODgsMjguNTA4Nzc3MiBMNC43OTk4MTkzLDMyLjk5MTM5MTQgTDE5LjkyNTEsMTcuNjE5MDczOCBMMTUuNTE0NzgyMywxMy4xMzY0NTk2IFogTTE1LjE2Mzc5MDcsMjMuNjY5NDQ3NSBMMTAuNzUzMTA2MywyOC4xNTIwNjE2IEwyNS44Nzg3NTM3LDQzLjUyNDM3OTIgTDMwLjI4OTQzODEsMzkuMDQxNzY1IEwxNS4xNjM3OTA3LDIzLjY2OTQ0NzUgWiBNOS41NjExMjg1NSwxNy45NzU0MTY3IEw0LjQxMDY4NDQxLDEyLjc0MDk3ODcgTDAsMTcuMjIzNTkyOSBMNS4xNTA0NDQxNCwyMi40NTgwMzA4IEw5LjU2MTEyODU1LDE3Ljk3NTQxNjcgWiBNMzAuMjg5NDM4MSwxNy45NzU0MTY3IEwxNS4xNjM3OTA3LDIuNjAzMDk5MSBMMTAuNzUzMTA2Myw3LjA4NTcxMzI3IEwyNS44Nzg3NTM3LDIyLjQ1ODAzMDggTDMwLjI4OTQzODEsMTcuOTc1NDE2NyBaIE0zNS44OTIxMDAzLDIzLjY2OTQ0NzUgTDMxLjQ4MTQxNTksMjguMTUyMDYxNiBMMzYuNTg5MzE1NiwzMy4zNDMyNjEzIEw0MSwyOC44NjA2NDcyIEwzNS44OTIxMDAzLDIzLjY2OTQ0NzUgWiIgaWQ9ImxvZ28td3J3LWZvb3RlciI+PC9wYXRoPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4="/></a>
+          </li>
+          <li class="site-section">
+            <a href="insights.html">Insights</a>
+            <ul>
+              <li><a href="#">Popular insights</a></li>
+              <li><a href="#">Collections</a></li>
+              <li><a href="#">Create an insight</a></li>
+            </ul>
+          </li>
+          <li class="site-section">
+            <a href="#">Explore</a>
+            <ul>
+              <li><a href="#">Data map</a></li>
+              <li><a href="#">Datasets</a></li>
+            </ul>
+          </li>
+          <li class="site-section">
+            <a href="#">Apps</a>
+            <ul>
+              <li><a href="#">Popular apps</a></li>
+              <li><a href="#">iOS apps</a></li>
+              <li><a href="#">Android apps</a></li>
+              <li><a href="#">PWeb apps</a></li>
+            </ul>
+          </li>
+          <li class="site-section">
+            <a href="">Get involved</a>
+            <ul>
+              <li><a href="#">Create insights</a></li>
+              <li><a href="#">Share data</a></li>
+              <li><a href="#">Develop an app</a></li>
+              <li><a href="#">Help improve the data</a></li>
+              <li><a href="#">Become a partner</a></li>
+            </ul>
+          </li>
+          <li class="site-section">
+            <a href="#">Help</a>
+            <ul>
+              <li><a href="#">Site tour</a></li>
+              <li><a href="#">Help center</a></li>
+              <li><a href="#">FAQ's</a></li>
+            </ul>
+          </li>
+          <li class="site-section">
+            <a href="#">More</a>
+            <ul>
+              <li><a href="dashboard.html">Country dashboard</a></li>
+              <li><a href="#">Planet pulse</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <div class="footer-container">
+      <footer class="footer">
+        <a href="#">Terms of Service – Privacy</a>
+        <p>© 2015 - World Resources Watch</p>
+      </footer>
+    </div>
+
+    <script>
+      if(!window.location.hash.length) {
+        window.location.hash = 'BRA';
+      }
+    </script>
+
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.13/cartodb.js"></script>
+    <script src="js/vendor/requirejs/require.js"></script>
+    <script src="js/dashboard/router.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var mobileMenuLink = document.querySelector(".js--header-open-menu");
+        mobileMenuLink.onclick = function() {
+          var headerEl = document.querySelector('.header-container');
+
+          if (headerEl.classList.contains("header-mobile")) {
+            mobileMenuLink.innerHTML = "Menu";
+            headerEl.classList.remove('header-mobile');
+          } else {
+            mobileMenuLink.innerHTML = "Close";
+            headerEl.classList.add('header-mobile');
+          }
+        };
+      });
+    </script>
+
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+    </script>
+  </body>
+</html>
