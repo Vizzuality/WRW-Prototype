@@ -143,7 +143,7 @@
 
   .slick-list,
   .slick-track {
-    height: 100% !important;
+    height: 100%;
   }
 
   .insights--slideshow-content {
@@ -376,16 +376,48 @@
   @media screen and (max-width: $responsive-break--tablet) {
     height: auto;
 
+    .slick-list,
+    .slick-track {
+      height: auto;
+    }
+
     .insights--slideshow-content {
       flex-wrap: wrap;
+
+      &.slide-4 {
+        background: none;
+      }
+
+      .black-overlay {
+        width: 100%;
+        background: #222;
+      }
 
       .left-half,
       .right-half {
         flex-basis: 100%;
       }
 
+      .button {
+        position: static;
+        width: 100%;
+      }
+
+      .left-half,
+      .right-half,
+      .two-half {
+        &>img,
+        & .is-responsive {
+         width: 100%;
+        }
+      }
+
       .story--metadata {
         margin-top: 40px;
+      }
+
+      .story--pre-title {
+        margin-top: 20px;
       }
     }
   }
