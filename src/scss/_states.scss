@@ -1,0 +1,26 @@
+@mixin is-hidden() {
+  display: none !important;
+  visibility: hidden;
+}
+
+@mixin is-visible() {
+  display: block !important;
+  visibility: visible;
+}
+
+.is-hidden {
+   @include is-hidden;
+}
+
+@media screen and (max-width: $responsive-break--mobile) {
+  .is-mobile-hidden {
+    @include is-hidden;
+  }
+}
+
+@media screen and (min-width: $responsive-break--mobile) {
+  .is-desktop-hidden {
+
+    @include is-hidden;
+  }
+}

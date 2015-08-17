@@ -1,0 +1,34 @@
+// Page
+$page--width: 1040px;
+$page--footer-height: 30px;
+$page--header-height: 130px;
+
+$responsive-page--width: 100%;
+$responsive-page--header-height: 80px;
+
+$responsive-break--mobile: 540px;
+$responsive-break--tablet: $page--width;
+
+// Grid
+$gutter-width: 1.5rem !default;
+$element-top-margin: $gutter-width/3 !default;
+$element-bottom-margin: ($gutter-width*2)/3 !default;
+
+// Cards
+$card-padding: 20px;
+$card--large-width: 320px;
+$card--data--large-width: 230px;
+
+// Cards, Insights
+$insights--card-title-margin: 0;
+$insights--card-sub-title-margin: 0px 0px 5px;
+
+// Cards, Data
+$data--card-title-margin: 0;
+$data--card-sub-title-margin: 5px 0px 0px;
+
+// Font weights
+$font--extra-light: 100;
+$font--light: 300;
+$font--normal: 500;
+$font--bold: 700;
