@@ -8,6 +8,15 @@
   background-image: url(../img/header-bg.png), linear-gradient(90deg, #C32D7B 0%, #C90E39 100%);
   background-size: cover;
   background-repeat: no-repeat;
+
+  &.is-fixed {
+    position: fixed;
+    z-index: 10;
+
+    & + div {
+      padding-top: 114px;
+    }
+  }
 }
 
 .insights--header-container {
@@ -161,9 +170,49 @@ a.header-title-link {
   background: rgba(0,0,0,0);
 }
 
+.sub-header-container {
+  padding: 10px 0;
+  background-color: #43B9D6;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  font-size: 11px;
+  color: #fff;
+  width: 100%;
+  position: relative;
+
+  &.is-fixed {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+  }
+
+  .header-mobile & {
+    @include is-hidden;
+  }
+
+  label {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  div {
+    padding: 0 20px;
+
+    &.align-right {
+      text-align: right;
+    }
+  }
+}
+
 @media screen and (max-width : $responsive-break--tablet){
   .header-container {
-    height: $responsive-page--header-height;
+    height: auto;
     margin-bottom: 0;
     background-image: url(../img/header-bg-mobile.png), linear-gradient(90deg, #C32D7B 0%, #C90E39 100%);
     background-size: cover;

@@ -112,12 +112,21 @@
     .card-info {
       height: auto;
       padding-top: 0;
+
+      & + .card-button {
+        position: relative;
+        top: -10px;
+      }
     }
 
     .card-info-stars {
       padding-top: 10px;
     }
 
+    .card-button {
+      width: calc(100% - 20px);
+      margin: 0 auto;
+    }
   }
 
   @media screen and (max-width: $responsive-break--mobile) {
