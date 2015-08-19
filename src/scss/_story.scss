@@ -470,3 +470,9 @@
     flex-basis: 70%;
   }
 }
+
+@media screen and (max-width: $responsive-break--tablet) {
+  .story--title {
+    font-size: 36px;
+  }
+}
