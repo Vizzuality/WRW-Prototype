@@ -12,6 +12,14 @@ body {
 
 .section-header.dashboard {
   margin-top: 40px;
+
+  .story--title {
+    text-align: left;
+  }
+
+  @media screen and (max-width: $responsive-break--tablet) {
+    margin-top: 0;
+  }
 }
 
 .container {
