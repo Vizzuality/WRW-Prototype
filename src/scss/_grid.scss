@@ -70,11 +70,13 @@
     .cell.data {
       flex-basis: calc(50% - 20px / 2);
 
-      &:nth-child(2n) {
+      &:nth-child(2n),
+      .explore--content .explore-datasets &:nth-child(2n) {
         margin-right: 0;
       }
 
-      &:nth-child(2n+1) {
+      &:nth-child(2n+1),
+      .explore--content .explore-datasets &:nth-child(2n+1) {
         margin-right: 20px;
       }
     }
@@ -91,7 +93,18 @@
     margin-right: 0 !important;
   }
 
+  .gridbox .cell.data:nth-child(2n) {
+    .card-button .button {
+      background-color: transparent;
+      border: 1px solid $lighter-grey;
+    }
+  }
+
   .gridbox .cell.data:nth-child(2n+1) {
     background-color: $lighter-grey;
+
+    .card-button .button {
+      border: 1px solid white;
+    }
   }
 }

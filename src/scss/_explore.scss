@@ -79,7 +79,7 @@ $explore--wide-content-width: 1020px;
 
   label {
     font-size: 13px;
-    font-weight: bold;
+    font-weight: $font--bold;
     position: absolute;
     top: 16px;
     right: -8px;
@@ -101,6 +101,7 @@ $explore--wide-content-width: 1020px;
     right: 18px;
     padding: 17px;
     padding-top: 52px;
+    z-index: 1;
 
     select {
       height: 30px;
@@ -172,6 +173,7 @@ $explore--wide-content-width: 1020px;
   height: 560px;
   margin: 0 auto;
   margin-bottom: 50px;
+  left: 0;
 
   &.pie {
     background: url('../img/chart-pie.png') no-repeat center center;
@@ -268,14 +270,14 @@ $explore--wide-content-width: 1020px;
   }
 }
 
-.explore-datasets {
+.explore--content .explore-datasets {
   margin-left: 100px;
 
-  .cell.data {
-    margin-right: 42px !important;
+  .gridbox .cell.data {
+    margin-right: 42px;
 
     &:nth-child(3n+3) {
-      margin-right: 0 !important;
+      margin-right: 0;
     }
   }
 }
@@ -332,7 +334,7 @@ $explore--wide-content-width: 1020px;
   text-decoration: none;
   text-transform: uppercase;
   text-shadow: none;
-  font-weight: bolder;
+  font-weight: $font--bold;
   line-height: 30px;
 }
 
@@ -397,7 +399,7 @@ $explore--wide-content-width: 1020px;
 
 .explore--title {
   font-size: 48px;
-  font-weight: lighter;
+  font-weight: $font--light;
 }
 
 .explore--search {
@@ -531,7 +533,7 @@ a.explore--map-button {
 
   text-transform: uppercase;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: $font--bold;
 
   i {
     font-size: 16px;
@@ -543,5 +545,55 @@ a.explore--map-button {
 
   li:first-of-type {
     width: 190px;
+  }
+}
+
+@media screen and (max-width: $responsive-break--tablet) {
+  .explore-detail--wide-visualization {
+    width: 100%;
+    height: auto;
+    padding-top: 37.33%; /* To be updated once it has a real content */
+    background-size: contain;
+    margin-bottom: 30px;
+
+    &.pie {
+      background-size: contain;
+    }
+  }
+
+  .explore--content-right-cell {
+    margin-top: 20px;
+  }
+
+  .explore--content-container,
+  .explore--content,
+  .explore--wide-content,
+  .explore-detail--visualization {
+    width: 100%;
+  }
+
+  .explore--content {
+    position: static;
+    padding: 0 20px;
+  }
+
+  .explore--content-left-cell,
+  .explore--content-cell,
+  .explore--content-right-cell {
+    flex-basis: 100%;
+    padding: 0;
+  }
+
+  .explore-detail--visualization {
+    left: 0;
+    height: auto;
+  }
+
+  .explore--content .explore-datasets {
+    margin-left: 0;
+  }
+
+  .explore--content .gridbox .card.data {
+    height: auto;
   }
 }
