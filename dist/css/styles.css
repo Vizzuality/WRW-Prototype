@@ -2217,7 +2217,7 @@ a.explore--map-button {
     padding: 0; }
   .explore-detail--visualization {
     left: 0;
-    height: auto; }
+    height: 400px; }
   .explore--content .explore-datasets {
     margin-left: 0; }
   .explore--content .gridbox .card.data {

@@ -1,8 +1,8 @@
 define([
- 'jquery', 'd3',
+ 'jquery', 'd3', 'underscore',
  'line_chart_context', 'line_chart_interaction_handler'
 ], function(
-  $, d3,
+  $, d3, _,
   LineChartContext, LineChartInteractionHandler
 ) {
 
@@ -18,12 +18,20 @@ var LineChart = function(options) {
   this.data = options.data;
 
   this.sizing = options.sizing;
-  this.width = this.sizing.width - this.sizing.margin.left - this.sizing.margin.right,
-  this.height = this.sizing.height - this.sizing.margin.top - this.sizing.margin.bottom,
+  this.width = $(this.options.el).outerWidth() - this.sizing.margin.left - this.sizing.margin.right,
+  this.height = $(this.options.el).outerHeight() - this.sizing.margin.top - this.sizing.margin.bottom,
 
   this._createEl();
   this._createDefs();
   this._createScales();
+
+  window.addEventListener('resize', _.debounce(this.resize.bind(this), 100));
+};
+
+LineChart.prototype.resize = function() {
+  window.removeEventListener('resize', _.debounce(this.resize.bind(this), 100));
+  $(this.options.el).empty();
+  new LineChart(this.options).render();
 };
 
 LineChart.prototype._createEl = function() {
@@ -85,6 +93,7 @@ LineChart.prototype._drawContext = function(group) {
   var contextGroup = svg.append("g").attr("class", "context")
 
   var context = new LineChartContext({
+    el: this.options.el,
     data: this.data,
     group: contextGroup,
     sizing: {

@@ -8,6 +8,8 @@ define(['d3', 'handlebars'], function(d3, Handlebars) {
   var bisectDate = d3.bisector(function(d) { return d[xKey]; }).left;
 
   var LineChartInteractionHandler = function(svg, options) {
+    this.options = options;
+
     group = svg.append("g")
       .attr("class", "hoverOverlay")
       .attr("width", options.width)
@@ -36,7 +38,8 @@ define(['d3', 'handlebars'], function(d3, Handlebars) {
   };
 
   LineChartInteractionHandler.prototype._setupHandlers = function() {
-    var $tooltip = this.$tooltip;
+    var $tooltip = this.$tooltip,
+        height = this.options.height;
 
     eventInterceptor
       .on("mouseover", function() {
@@ -79,7 +82,7 @@ define(['d3', 'handlebars'], function(d3, Handlebars) {
 
         group.select(".bottom-line")
           .attr("y1", yVal + (sizing.margin.top*1.5))
-          .attr("y2", sizing.height - sizing.margin.bottom);
+          .attr("y2", height + (sizing.margin.top));
       });
   };
 

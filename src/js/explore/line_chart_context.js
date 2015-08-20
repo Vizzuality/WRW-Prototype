@@ -10,9 +10,9 @@ define(['d3'], function(d3) {
     this.data = options.data;
 
     this.sizing = options.sizing;
-    this.margin = {top: this.sizing.height - 70, right: 10, bottom: 7, left: 0};
-    this.width = this.sizing.width;
-    this.height = this.sizing.height - this.margin.top - this.margin.bottom;
+    this.margin = {top: $(this.options.el).outerHeight() - 70, right: 10, bottom: 7, left: 0};
+    this.width = $(this.options.el).outerWidth();
+    this.height = $(this.options.el).outerHeight() - this.margin.top - this.margin.bottom;
 
     this._createScales();
   };

@@ -22,9 +22,7 @@ define([
       this.listenTo(ChartOptions, 'change:vizType', this.render);
 
       this.sizing = {
-        margin: {top: 10, right: 0, bottom: 100, left: 0},
-        width: this.$el.outerWidth(),
-        height: this.$el.outerHeight()
+        margin: {top: 10, right: 0, bottom: 100, left: 0}
       };
     },
 
