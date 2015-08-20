@@ -46,7 +46,8 @@ require([
           arrows: false,
           draggable: false,
           infinite: false,
-          fade: true
+          fade: true,
+          adaptiveHeight: true
         });
 
       }, this));
@@ -57,7 +58,7 @@ require([
     },
 
     setListeners: function() {
-//      this.$el.on('beforeChange', _.bind(this.update, this));
+      this.$el.on('beforeChange', _.bind(this.update, this));
     },
 
     prevSlide: function(e) {
@@ -71,20 +72,12 @@ require([
     },
 
     update: function(e, slick, currentSlide, nextSlide ) {
-//      switch(nextSlide) {
-//
-//        case 0:
-//          break;
-//
-//        case 1:
-//          break;
-//
-//        case 2:
-//          break;
-//
-//        case 3:
-//          break;
-//      }
+      if(!!navigator.userAgent.match(/iPad|iPhone|iPod|Android|BlackBerry|webOS/i) ||
+        window.innerWidth <= 540) {
+        $('html, body').animate({
+          scrollTop: $('.insights--slideshow-container').offset().top
+        }, 300);
+      }
     }
 
   });

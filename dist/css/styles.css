@@ -8,12 +8,12 @@
   display: none !important;
   visibility: hidden; }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 1040px) {
   .is-mobile-hidden {
     display: none !important;
     visibility: hidden; } }
 
-@media screen and (min-width: 540px) {
+@media screen and (min-width: 1040px) {
   .is-desktop-hidden {
     display: none !important;
     visibility: hidden; } }
@@ -30,6 +30,11 @@ body {
 
 .section-header.dashboard {
   margin-top: 40px; }
+  .section-header.dashboard .story--title {
+    text-align: left; }
+  @media screen and (max-width: 1040px) {
+    .section-header.dashboard {
+      margin-top: 0; } }
 
 .container {
   width: 1040px;
@@ -126,6 +131,11 @@ section {
   background-image: url(../img/header-bg.png), linear-gradient(90deg, #C32D7B 0%, #C90E39 100%);
   background-size: cover;
   background-repeat: no-repeat; }
+  .header-container.is-fixed {
+    position: fixed;
+    z-index: 10; }
+    .header-container.is-fixed + div {
+      padding-top: 114px; }
 
 .insights--header-container {
   opacity: 0.73;
@@ -299,9 +309,39 @@ a.header-title-link {
   text-transform: uppercase;
   background: transparent; }
 
+.sub-header-container {
+  padding: 10px 0;
+  background-color: #43B9D6;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  font-size: 11px;
+  color: #fff;
+  width: 100%;
+  position: relative; }
+  .sub-header-container.is-fixed {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0; }
+  .header-mobile .sub-header-container {
+    display: none !important;
+    visibility: hidden; }
+  .sub-header-container label {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer; }
+  .sub-header-container div {
+    padding: 0 20px; }
+    .sub-header-container div.align-right {
+      text-align: right; }
+
 @media screen and (max-width: 1040px) {
   .header-container {
-    height: 80px;
+    height: auto;
     margin-bottom: 0;
     background-image: url(../img/header-bg-mobile.png), linear-gradient(90deg, #C32D7B 0%, #C90E39 100%);
     background-size: cover; }
@@ -528,9 +568,9 @@ a.header-title-link {
     -webkit-flex-basis: calc(50% - 20px / 2);
         -ms-flex-preferred-size: calc(50% - 20px / 2);
             flex-basis: calc(50% - 20px / 2); }
-    .gridbox .cell.data:nth-child(2n) {
+    .gridbox .cell.data:nth-child(2n), .explore--content .explore-datasets .gridbox .cell.data:nth-child(2n) {
       margin-right: 0; }
-    .gridbox .cell.data:nth-child(2n+1) {
+    .gridbox .cell.data:nth-child(2n+1), .explore--content .explore-datasets .gridbox .cell.data:nth-child(2n+1) {
       margin-right: 20px; } }
 
 @media screen and (max-width: 540px) {
@@ -545,8 +585,13 @@ a.header-title-link {
         -ms-flex-preferred-size: initial !important;
             flex-basis: initial !important;
     margin-right: 0 !important; }
+  .gridbox .cell.data:nth-child(2n) .card-button .button {
+    background-color: transparent;
+    border: 1px solid #f1f2f3; }
   .gridbox .cell.data:nth-child(2n+1) {
-    background-color: #f1f2f3; } }
+    background-color: #f1f2f3; }
+    .gridbox .cell.data:nth-child(2n+1) .card-button .button {
+      border: 1px solid white; } }
 
 .table {
   width: 100%;
@@ -986,8 +1031,14 @@ a.button.banner-button {
       .card.data .card-info {
         height: auto;
         padding-top: 0; }
+        .card.data .card-info + .card-button {
+          position: relative;
+          top: -10px; }
       .card.data .card-info-stars {
-        padding-top: 10px; } }
+        padding-top: 10px; }
+      .card.data .card-button {
+        width: calc(100% - 20px);
+        margin: 0 auto; } }
   @media screen and (max-width: 540px) {
     .card.data {
       border: none;
@@ -1147,13 +1198,13 @@ a.button.banner-button {
     position: relative; }
     .card.dashboard .card-graph .card-sub-title {
       font-size: 11px;
-      font-weight: bold;
+      font-weight: 700;
       color: #C3C8CC;
       margin: 0px 0px 5px;
       text-transform: uppercase; }
     .card.dashboard .card-graph .card-title {
       font-size: 21px;
-      font-weight: lighter;
+      font-weight: 300;
       color: #C32D7B;
       margin: 0;
       margin-bottom: 20px; }
@@ -1730,7 +1781,7 @@ a.button.banner-button {
     font-family: Lato-Regular; }
   .explore-detail--visualization label {
     font-size: 13px;
-    font-weight: bold;
+    font-weight: 700;
     position: absolute;
     top: 16px;
     right: -8px;
@@ -1749,7 +1800,8 @@ a.button.banner-button {
     top: 30px;
     right: 18px;
     padding: 17px;
-    padding-top: 52px; }
+    padding-top: 52px;
+    z-index: 1; }
     .explore-detail--visualization .menu select {
       height: 30px;
       width: 100%;
@@ -1809,7 +1861,8 @@ a.button.banner-button {
   width: 1500px;
   height: 560px;
   margin: 0 auto;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  left: 0; }
   .explore-detail--wide-visualization.pie {
     background: url('../img/chart-pie.png') no-repeat center center; }
 
@@ -1908,12 +1961,12 @@ a.button.banner-button {
     width: 100% !important;
     margin-bottom: 15px; }
 
-.explore-datasets {
+.explore--content .explore-datasets {
   margin-left: 100px; }
-  .explore-datasets .cell.data {
-    margin-right: 42px !important; }
-    .explore-datasets .cell.data:nth-child(3n+3) {
-      margin-right: 0 !important; }
+  .explore--content .explore-datasets .gridbox .cell.data {
+    margin-right: 42px; }
+    .explore--content .explore-datasets .gridbox .cell.data:nth-child(3n+3) {
+      margin-right: 0; }
 
 .explore--share-links {
   list-style-type: none;
@@ -1959,7 +2012,7 @@ a.button.banner-button {
   text-decoration: none;
   text-transform: uppercase;
   text-shadow: none;
-  font-weight: bolder;
+  font-weight: 700;
   line-height: 30px; }
 
 .explore--content .gridbox .cell.data {
@@ -2002,7 +2055,7 @@ a.button.banner-button {
 
 .explore--title {
   font-size: 48px;
-  font-weight: lighter; }
+  font-weight: 300; }
 
 .explore--search {
   display: -webkit-box;
@@ -2132,13 +2185,43 @@ a.explore--map-button {
   margin-bottom: 0;
   text-transform: uppercase;
   font-size: 12px;
-  font-weight: bold; }
+  font-weight: 700; }
   .explore--map-legend-controls i {
     font-size: 16px; }
   .explore--map-legend-controls li {
     display: inline-block; }
   .explore--map-legend-controls li:first-of-type {
     width: 190px; }
+
+@media screen and (max-width: 1040px) {
+  .explore-detail--wide-visualization {
+    width: 100%;
+    height: auto;
+    padding-top: 37.33%;
+    /* To be updated once it has a real content */
+    background-size: contain;
+    margin-bottom: 30px; }
+    .explore-detail--wide-visualization.pie {
+      background-size: contain; }
+  .explore--content-right-cell {
+    margin-top: 20px; }
+  .explore--content-container, .explore--content, .explore--wide-content, .explore-detail--visualization {
+    width: 100%; }
+  .explore--content {
+    position: static;
+    padding: 0 20px; }
+  .explore--content-left-cell, .explore--content-cell, .explore--content-right-cell {
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+    padding: 0; }
+  .explore-detail--visualization {
+    left: 0;
+    height: auto; }
+  .explore--content .explore-datasets {
+    margin-left: 0; }
+  .explore--content .gridbox .card.data {
+    height: auto; } }
 
 .insights--hero {
   width: 100%;
@@ -2266,7 +2349,7 @@ a.explore--map-button {
   position: relative;
   height: 1040px; }
   .insights--slideshow-container .slick-list, .insights--slideshow-container .slick-track {
-    height: 100% !important; }
+    height: 100%; }
   .insights--slideshow-container .insights--slideshow-content {
     height: 100%; }
     .insights--slideshow-container .insights--slideshow-content.slide-1 {
@@ -2444,6 +2527,33 @@ a.explore--map-button {
         position: absolute;
         left: 30px;
         top: calc(50% - 8px); }
+  @media screen and (max-width: 1040px) {
+    .insights--slideshow-container {
+      height: auto; }
+      .insights--slideshow-container .slick-list, .insights--slideshow-container .slick-track {
+        height: auto; }
+      .insights--slideshow-container .insights--slideshow-content {
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap; }
+        .insights--slideshow-container .insights--slideshow-content.slide-4 {
+          background: none; }
+        .insights--slideshow-container .insights--slideshow-content .black-overlay {
+          width: 100%;
+          background: #222; }
+        .insights--slideshow-container .insights--slideshow-content .left-half, .insights--slideshow-container .insights--slideshow-content .right-half {
+          -webkit-flex-basis: 100%;
+              -ms-flex-preferred-size: 100%;
+                  flex-basis: 100%; }
+        .insights--slideshow-container .insights--slideshow-content .button {
+          position: static;
+          width: 100%; }
+        .insights--slideshow-container .insights--slideshow-content .left-half > img, .insights--slideshow-container .insights--slideshow-content .left-half .is-responsive, .insights--slideshow-container .insights--slideshow-content .right-half > img, .insights--slideshow-container .insights--slideshow-content .right-half .is-responsive, .insights--slideshow-container .insights--slideshow-content .two-half > img, .insights--slideshow-container .insights--slideshow-content .two-half .is-responsive {
+          width: 100%; }
+        .insights--slideshow-container .insights--slideshow-content .story--metadata {
+          margin-top: 40px; }
+        .insights--slideshow-container .insights--slideshow-content .story--pre-title {
+          margin-top: 20px; } }
 
 .insights--featured {
   width: 100%;
@@ -3192,6 +3302,10 @@ a.explore--map-button {
     -webkit-flex-basis: 70%;
         -ms-flex-preferred-size: 70%;
             flex-basis: 70%; } }
+
+@media screen and (max-width: 1040px) {
+  .story--title {
+    font-size: 36px; } }
 
 .lineChart .area, .lineChart .line {
   -webkit-clip-path: url(#clip);

@@ -98,4 +98,85 @@
       removeLayerFromMap(id, $el);
     }
   });
+
+  /* For mobile devices */
+  var checkbox = document.querySelector('#js--show--map');
+  var showMapClass = '.js--show--map';
+  var hideMapClass = '.js--hide--map';
+  var headerClass = '.header-container';
+  var headerContainer = document.querySelector(headerClass);
+  var subHeaderClass = '.sub-header-container';
+  var subHeaderContainer = document.querySelector(subHeaderClass);
+  var mapContainer = document.querySelector('#map');
+  var cachedOffsetTop;
+  var setMapPosition = function() {
+    if(!!navigator.userAgent.match(/iPad|iPhone|iPod|Android|BlackBerry|webOS/i) ||
+      window.innerWidth <= 540) {
+      mapContainer.style.top =  '114px';
+      if(!isMapOpened()) {
+        mapContainer.style.left = window.innerWidth + 'px';
+      }
+    }
+  };
+  var isMapOpened = function() {
+    return checkbox.checked;
+  };
+  var fixSubHeaderPosition = function() {
+    if(isMapOpened()) { return; }
+
+    var offsetTop = subHeaderContainer.offsetTop;
+    if(window.scrollY > offsetTop && !hasClass(subHeaderClass, 'is-fixed')) {
+      cachedOffsetTop = offsetTop;
+      toggleClass(subHeaderClass, 'is-fixed');
+    } else if(window.scrollY < cachedOffsetTop && hasClass(subHeaderClass, 'is-fixed')) {
+      toggleClass(subHeaderClass, 'is-fixed');
+    }
+  };
+
+  window.addEventListener('resize', setMapPosition);
+  setMapPosition();
+  window.addEventListener('scroll', fixSubHeaderPosition);
+  fixSubHeaderPosition();
+
+  checkbox.addEventListener('change', function() {
+    if(isMapOpened()) {
+      if(hasClass(hideMapClass, 'is-hidden')) {
+        toggleClass(hideMapClass, 'is-hidden');
+      }
+      if(!hasClass(showMapClass, 'is-hidden')) {
+        toggleClass(showMapClass, 'is-hidden');
+      }
+
+      var offsetTop = subHeaderContainer.offsetTop;
+      if(window.scrollY < offsetTop) {
+        if(!hasClass(headerClass, 'is-fixed')) {
+          toggleClass(headerClass, 'is-fixed');
+        }
+        if(hasClass(subHeaderClass, 'is-fixed')) {
+          toggleClass(subHeaderClass, 'is-fixed');
+        }
+        mapContainer.style.top =  '114px';
+      } else {
+        if(!hasClass(subHeaderClass, 'is-fixed')) {
+          toggleClass(subHeaderClass, 'is-fixed');
+        }
+        mapContainer.style.top =  '33px';
+      }
+
+      mapContainer.style.left = '0';
+    } else {
+      if(hasClass(showMapClass, 'is-hidden')) {
+        toggleClass(showMapClass, 'is-hidden');
+      }
+      if(!hasClass(hideMapClass, 'is-hidden')) {
+        toggleClass(hideMapClass, 'is-hidden');
+      }
+      if(hasClass(headerClass, 'is-fixed')) {
+        toggleClass(headerClass, 'is-fixed');
+      }
+      mapContainer.style.left = window.innerWidth + 'px';
+      fixSubHeaderPosition();
+    }
+  });
+
 })();

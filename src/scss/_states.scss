@@ -12,13 +12,13 @@
    @include is-hidden;
 }
 
-@media screen and (max-width: $responsive-break--mobile) {
+@media screen and (max-width: $responsive-break--tablet) {
   .is-mobile-hidden {
     @include is-hidden;
   }
 }
 
-@media screen and (min-width: $responsive-break--mobile) {
+@media screen and (min-width: $responsive-break--tablet) {
   .is-desktop-hidden {
 
     @include is-hidden;
