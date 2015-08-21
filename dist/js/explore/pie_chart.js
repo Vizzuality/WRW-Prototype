@@ -32,6 +32,11 @@ define(['d3'], function(d3) {
     this.width = this.parentWidth - this.sizing.left - this.sizing.right;
     this.height = this.parentHeight - this.sizing.top - this.sizing.bottom;
 
+    var maxArcRadius = 150,
+        arcRadius = (this.width/3) > maxArcRadius ? maxArcRadius : (this.width/3);
+    arc.outerRadius(arcRadius);
+    largeArc.outerRadius(arcRadius+10);
+
     this._createEl();
     this._createScales();
 
@@ -84,11 +89,14 @@ define(['d3'], function(d3) {
   PieChart.prototype._drawLabel = function(group, key, className, offset) {
     if (offset === undefined) { offset = 0; }
 
+    var maxRadius = 175,
+        labelRadius = (this.width/5) > maxRadius ? maxRadius : (this.width/5);
+
     group.append("text").attr({
       x: function (d, i) {
         centroid = arc.centroid(d);
         midAngle = Math.atan2(centroid[1], centroid[0]);
-        x = Math.cos(midAngle) * 175;
+        x = Math.cos(midAngle) * labelRadius;
         sign = (x > 0) ? 1 : -1
         labelX = x + (5 * sign)
         return labelX;
@@ -97,14 +105,14 @@ define(['d3'], function(d3) {
       y: function (d, i) {
         centroid = arc.centroid(d);
         midAngle = Math.atan2(centroid[1], centroid[0]);
-        y = Math.sin(midAngle) * 175 + offset;
+        y = Math.sin(midAngle) * labelRadius + offset;
         return y;
       },
 
       'text-anchor': function (d, i) {
         centroid = arc.centroid(d);
         midAngle = Math.atan2(centroid[1], centroid[0]);
-        x = Math.cos(midAngle) * 175;
+        x = Math.cos(midAngle) * labelRadius;
         return (x > 0) ? "start" : "end";
       },
 
