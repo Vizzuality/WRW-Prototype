@@ -145,6 +145,7 @@
       }
       if(!hasClass(showMapClass, 'is-hidden')) {
         toggleClass(showMapClass, 'is-hidden');
+        setTimeout(map.invalidateSize.bind(map), 1100);
       }
 
       var offsetTop = subHeaderContainer.offsetTop;
@@ -167,6 +168,7 @@
     } else {
       if(hasClass(showMapClass, 'is-hidden')) {
         toggleClass(showMapClass, 'is-hidden');
+        setTimeout(map.invalidateSize.bind(map), 1100);
       }
       if(!hasClass(hideMapClass, 'is-hidden')) {
         toggleClass(hideMapClass, 'is-hidden');
