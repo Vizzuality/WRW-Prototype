@@ -26,11 +26,26 @@ define(['d3'], function(d3) {
     this.data = options.data;
 
     this.sizing = options.sizing;
-    this.width = this.sizing.width - this.sizing.margin.left - this.sizing.margin.right,
-    this.height = this.sizing.height - this.sizing.margin.top - this.sizing.margin.bottom,
+
+    this.parentWidth = $(this.options.el).outerWidth();
+    this.parentHeight = $(this.options.el).outerHeight();
+    this.width = this.parentWidth - this.sizing.left - this.sizing.right;
+    this.height = this.parentHeight - this.sizing.top - this.sizing.bottom;
 
     this._createEl();
     this._createScales();
+
+    $(window).resize(_.debounce(this.resize.bind(this), 100));
+  };
+
+  PieChart.prototype.offResize = function() {
+    $(window).off('resize');
+  };
+
+  PieChart.prototype.resize = function() {
+    this.offResize();
+    $(this.options.el).find('svg').remove();
+    new PieChart(this.options).render();
   };
 
   PieChart.prototype._createEl = function() {
@@ -103,7 +118,7 @@ define(['d3'], function(d3) {
   PieChart.prototype._drawLabels = function(group) {
     var labels = svg.append('g')
       .attr('class', 'labels')
-      .attr('transform','translate(' + (this.sizing.width/2) + ',' + (this.sizing.height/2) + ')');
+      .attr('transform','translate(' + (this.width/2) + ',' + (this.height/2) + ')');
 
     var enteringLabels = labels.selectAll(".label")
       .data(pie(this.data))
@@ -118,7 +133,7 @@ define(['d3'], function(d3) {
 
   PieChart.prototype.render = function() {
     var group = svg.append('g')
-        .attr('transform','translate(' + (this.sizing.width/2) + ',' + (this.sizing.height/2) + ')')
+        .attr('transform','translate(' + (this.width/2) + ',' + (this.height/2) + ')')
       .selectAll('.arc')
       .data(pie(this.data))
       .enter()

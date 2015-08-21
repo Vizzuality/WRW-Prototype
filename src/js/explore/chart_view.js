@@ -1,9 +1,9 @@
 define([
-  'backbone', 'handlebars', 'd3',
+  'backbone', 'handlebars', 'd3', 'jquery',
   'line_chart', 'pie_chart',
   'text!templates/chart.hbs'
 ], function(
-  Backbone, Handlebars, d3,
+  Backbone, Handlebars, d3, $,
   LineChart, PieChart,
   tpl
 ) {
@@ -20,10 +20,6 @@ define([
 
     initialize: function() {
       this.listenTo(ChartOptions, 'change:vizType', this.render);
-
-      this.sizing = {
-        margin: {top: 10, right: 0, bottom: 100, left: 0}
-      };
     },
 
     events: {
@@ -41,6 +37,7 @@ define([
         isLineChart: (type === 'line')
       }));
 
+      $(window).off('resize');
       if (type === 'line') {
         this._renderLine();
       } else {
@@ -63,7 +60,7 @@ define([
         var lineChart = new LineChart({
           data: data,
           el: this.el,
-          sizing: this.sizing,
+          sizing: {top: 10, right: 0, bottom: 100, left: 0},
           keys: keys
         });
 
@@ -78,7 +75,7 @@ define([
         var pieChart = new PieChart({
           data: data,
           el: this.el,
-          sizing: this.sizing,
+          sizing: {top: 10, right: 0, bottom: 10, left: 0},
           keys: pieKeys
         });
 

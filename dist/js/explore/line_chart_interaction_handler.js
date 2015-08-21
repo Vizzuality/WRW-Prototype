@@ -3,13 +3,11 @@ define(['d3', 'handlebars'], function(d3, Handlebars) {
     '<div class="tooltip"><h4></h4><h5></h5></div>'
   );
 
-  var group, eventInterceptor, xKey, yKey, x, y, data, sizing;
+  var group, eventInterceptor, xKey, yKey, x, y, data, sizing, height;
 
   var bisectDate = d3.bisector(function(d) { return d[xKey]; }).left;
 
   var LineChartInteractionHandler = function(svg, options) {
-    this.options = options;
-
     group = svg.append("g")
       .attr("class", "hoverOverlay")
       .attr("width", options.width)
@@ -23,6 +21,7 @@ define(['d3', 'handlebars'], function(d3, Handlebars) {
     yKey = options.keys.y;
     x = options.x;
     y = options.y;
+    height = options.height;
 
     this._setupTooltip(svg);
     this.render();
@@ -38,8 +37,7 @@ define(['d3', 'handlebars'], function(d3, Handlebars) {
   };
 
   LineChartInteractionHandler.prototype._setupHandlers = function() {
-    var $tooltip = this.$tooltip,
-        height = this.options.height;
+    var $tooltip = this.$tooltip;
 
     eventInterceptor
       .on("mouseover", function() {
@@ -60,11 +58,11 @@ define(['d3', 'handlebars'], function(d3, Handlebars) {
           yVal = y(d[yKey]);
 
         group.select("circle").attr("transform",
-           "translate(" + xVal + "," + (yVal+sizing.margin.top) + ")");
+           "translate(" + xVal + "," + (yVal+sizing.top) + ")");
 
         var left = xVal - ($tooltip.width()/2),
             top = yVal - $tooltip.height() - 20;
-        if (top <= sizing.margin.top) { top = yVal + $tooltip.height() - 10; }
+        if (top <= sizing.top) { top = yVal + $tooltip.height() - 10; }
         $tooltip.css({ left: left+"px", top: top+"px" });
         $tooltip.find('h4').text(d[yKey]);
 
@@ -78,11 +76,11 @@ define(['d3', 'handlebars'], function(d3, Handlebars) {
 
         group.select(".top-line")
           .attr("y1", 0)
-          .attr("y2", yVal + (sizing.margin.top/2));
+          .attr("y2", yVal + (sizing.top/2));
 
         group.select(".bottom-line")
-          .attr("y1", yVal + (sizing.margin.top*1.5))
-          .attr("y2", height + (sizing.margin.top));
+          .attr("y1", yVal + (sizing.top*1.5))
+          .attr("y2", height + (sizing.top));
       });
   };
 

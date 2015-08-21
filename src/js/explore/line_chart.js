@@ -18,31 +18,35 @@ var LineChart = function(options) {
   this.data = options.data;
 
   this.sizing = options.sizing;
-  this.width = $(this.options.el).outerWidth() - this.sizing.margin.left - this.sizing.margin.right,
-  this.height = $(this.options.el).outerHeight() - this.sizing.margin.top - this.sizing.margin.bottom,
+
+  this.parentWidth = $(this.options.el).outerWidth();
+  this.parentHeight = $(this.options.el).outerHeight();
+  this.width = this.parentWidth - this.sizing.left - this.sizing.right,
+  this.height = this.parentHeight - this.sizing.top - this.sizing.bottom;
 
   this._createEl();
   this._createDefs();
   this._createScales();
 
-  window.addEventListener('resize', _.debounce(this.resize.bind(this), 100));
+  $(window).resize(_.debounce(this.resize.bind(this), 100));
+};
+
+LineChart.prototype.offResize = function() {
+  $(window).off('resize');
 };
 
 LineChart.prototype.resize = function() {
-  window.removeEventListener('resize', _.debounce(this.resize.bind(this), 100));
-  $(this.options.el).empty();
+  this.offResize();
+  $(this.options.el).find('svg').remove();
   new LineChart(this.options).render();
 };
 
 LineChart.prototype._createEl = function() {
-  var fullWidth = this.width + this.sizing.margin.left + this.sizing.margin.right,
-      fullHeight = this.height + this.sizing.margin.top + this.sizing.margin.bottom;
-
   svg = d3.select(this.options.el)
     .append("svg")
       .attr('class', 'lineChart')
-      .attr("width", fullWidth)
-      .attr("height", fullHeight);
+      .attr("width", this.parentWidth)
+      .attr("height", this.parentHeight);
 };
 
 LineChart.prototype._createScales = function() {
@@ -98,7 +102,7 @@ LineChart.prototype._drawContext = function(group) {
     group: contextGroup,
     sizing: {
       width: this.width,
-      height: this.sizing.height
+      height: this.parentHeight
     },
     keys: this.options.keys,
     domain: {
@@ -119,7 +123,7 @@ LineChart.prototype._setupHandlers = function() {
     .attr("class", "overlay")
     .attr("width", this.width)
     .attr("height", this.height)
-    .attr("transform", "translate(" + this.sizing.margin.left + "," + this.sizing.margin.top + ")");
+    .attr("transform", "translate(" + this.sizing.left + "," + this.sizing.top + ")");
 
   var handler = new LineChartInteractionHandler(svg, {
     width: this.width,
@@ -137,7 +141,7 @@ LineChart.prototype.render = function() {
   var group = svg.append("g")
     .attr("class", "focus")
     .attr("transform",
-      "translate(" + this.sizing.margin.left + "," + this.sizing.margin.top + ")");
+      "translate(" + this.sizing.left + "," + this.sizing.top + ")");
 
   this._drawAxes(group);
   this._drawLine(group);
