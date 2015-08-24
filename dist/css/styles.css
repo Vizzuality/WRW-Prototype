@@ -681,6 +681,20 @@ a.button.button-grey {
 .button:hover {
   cursor: pointer; }
 
+.star-active, .star-inactive {
+  width: 17px;
+  height: 17px;
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  background-size: 100%; }
+
+.star-inactive {
+  background-image: url(../img/star-inactive.png); }
+
+.star-active {
+  background-image: url(../img/star-active.png); }
+
 .hero {
   width: 100%;
   height: 465px;
