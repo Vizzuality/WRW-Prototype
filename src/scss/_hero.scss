@@ -18,6 +18,15 @@
     color: white;
   }
 
+  .hero-link-wrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+  }
+
   .hero-content {
     position: absolute;
     bottom: 30px;
@@ -58,6 +67,8 @@
   display: inline-flex;
   flex-flow: row wrap;
   align-items: center;
+  
+  z-index: 15;
 
   img {
     width: 38px;
