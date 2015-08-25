@@ -2,3 +2,5 @@
 node_modules
 css/styles.css
 js/vendor/
+
+dist
