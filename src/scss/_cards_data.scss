@@ -3,6 +3,10 @@
   width: 230px;
   box-shadow: 0 1px 2px $data--card-shadow-color;
   border: 1px solid $data--card-border-color;
+  &:hover {
+    border: 1px solid #CACCD0;
+    box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.12);
+  }
 
   .card-image {
     height: 180px;
