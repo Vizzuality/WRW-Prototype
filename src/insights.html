@@ -18,6 +18,8 @@
   </head>
   <body>
 
+    @@include('./templates/svg_icons.html')
+
     <div class="header-container">
       <header class="header">
         <div class="upper-header">
@@ -71,6 +73,7 @@
         </header>
 
         <div class="insights--featured">
+          <a class="hero-link-wrap" href="map.html"></a>
           <div class="insights--featured-title">
             <div class="insights--featured-sub-title">
               Featured insight
@@ -86,7 +89,8 @@
             </div>
 
             <div class="insights--featured-info-stars">
-              <span><i class="star-inactive"></i> 6,578</span>
+              <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+              <span>6,578</span>
             </div>
           </div>
         </div>
@@ -111,7 +115,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-1-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-1-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -123,7 +129,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-2-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-2-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -135,7 +143,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-3-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-3-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -147,7 +157,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-4-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-4-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -159,7 +171,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-5-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-5-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -171,7 +185,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-6-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-6-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -183,7 +199,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-7-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-7-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -195,7 +213,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-8-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-8-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -207,7 +227,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-9-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-9-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -241,6 +263,8 @@
     </div>
 
     @@include('./templates/footer.html')
+
+    <script src="js/fav.js"></script>
 
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

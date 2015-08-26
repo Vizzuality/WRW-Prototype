@@ -77,6 +77,11 @@
     float: right;
     color: $data--card-stars-color;
     text-align: right;
+    cursor: pointer;
+
+    &.active span {
+      color: #fab72e;
+    }
   }
 
   .card-title {

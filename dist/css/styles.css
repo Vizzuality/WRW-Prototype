@@ -18,6 +18,18 @@
     display: none !important;
     visibility: hidden; } }
 
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: bottom;
+  -webkit-transition: fill .2s;
+          transition: fill .2s; }
+  .icon.icon-star {
+    fill: #a9b0b6; }
+  .icon.icon-star--active {
+    fill: #fab72e; }
+
 html, body {
   height: 100%; }
 
@@ -684,16 +696,13 @@ a.button.button-grey {
 .star-active, .star-inactive {
   width: 17px;
   height: 17px;
+  margin-right: 3px;
   position: relative;
   top: 2px;
   display: inline-block;
-  background-size: 100%; }
-
-.star-inactive {
-  background-image: url(../img/star-inactive.png); }
-
-.star-active {
-  background-image: url(../img/star-active.png); }
+  background-image: url(../img/star.svg);
+  background-size: 100%;
+  background-repeat: no-repeat; }
 
 .hero {
   width: 100%;
@@ -708,6 +717,13 @@ a.button.button-grey {
   -webkit-font-smoothing: subpixel-antialiased; }
   .hero a {
     color: white; }
+  .hero .hero-link-wrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 11; }
   .hero .hero-content {
     position: absolute;
     bottom: 30px;
@@ -752,12 +768,17 @@ a.button.button-grey {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  z-index: 15; }
   .hero-info-source img, .hero-info-stars img {
     width: 38px;
-    height: 38px; }
-  .hero-info-source span, .hero-info-stars span {
-    margin-left: 10px; }
+    height: 38px;
+    margin-right: 10px; }
+
+.hero-info-stars {
+  cursor: pointer; }
+  .hero-info-stars.active {
+    color: #fab72e; }
 
 @media screen and (max-width: 1040px) {
   .hero {
@@ -790,11 +811,23 @@ a.button.button-grey {
 
 .banner {
   position: relative;
+  overflow: hidden;
   height: 280px; }
 
 .banner-image {
   width: 100%;
-  float: left; }
+  float: left;
+  -webkit-transition: -webkit-transform 1s ease;
+          transition: transform 1s ease;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1); }
+  .banner-image:hover {
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
+    -webkit-transition: -webkit-transform 2s ease;
+            transition: transform 2s ease; }
 
 .banner-header {
   color: white;
@@ -810,7 +843,8 @@ a.button.button-grey {
   margin-left: auto;
   margin-right: auto;
   left: 0;
-  right: 0; }
+  right: 0;
+  z-index: 15; }
 
 a.button.banner-button {
   width: 250px;
@@ -850,7 +884,21 @@ a.button.banner-button {
   width: 320px;
   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
           box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(202, 204, 208, 0.54); }
+  border: 1px solid rgba(202, 204, 208, 0.54);
+  -webkit-transition: all .2s;
+          transition: all .2s; }
+  .card.insight .card-title a {
+    -webkit-transition: border .2s;
+            transition: border .2s;
+    border-bottom: 2px solid transparent;
+    border-color: transparent; }
+  .card.insight:hover {
+    border: 1px solid #CACCD0;
+    -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.12);
+            box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.12); }
+    .card.insight:hover .card-title a {
+      border-bottom: 2px solid #9CD9E8;
+      border-color: #9CD9E8; }
   .card.insight .card-image {
     height: 180px;
     background-color: #eee; }
@@ -883,8 +931,10 @@ a.button.banner-button {
         -ms-flex-align: center;
             align-items: center;
     height: 100%; }
-  .card.insight .card-info-stars.active {
-    color: #fab72e; }
+  .card.insight .card-info-stars {
+    cursor: pointer; }
+    .card.insight .card-info-stars.active {
+      color: #fab72e; }
   .card.insight .card-info-source span {
     width: 150px; }
   .card.insight .card-info-source {
@@ -900,7 +950,9 @@ a.button.banner-button {
     color: #A9B0B6; }
     .card.insight .card-info-stars span {
       width: 100%;
-      text-align: right; }
+      text-align: right;
+      -webkit-transition: color .2s;
+              transition: color .2s; }
   .card.insight .card-title {
     font-size: 19px;
     font-weight: 700;
@@ -968,6 +1020,10 @@ a.button.banner-button {
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(202, 204, 208, 0.54); }
+  .card.data:hover {
+    border: 1px solid #CACCD0;
+    -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.12);
+            box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.12); }
   .card.data .card-image {
     height: 180px; }
   .card.data .card-image img {
@@ -1019,7 +1075,10 @@ a.button.banner-button {
   .card.data .card-info-stars {
     float: right;
     color: #A9B0B6;
-    text-align: right; }
+    text-align: right;
+    cursor: pointer; }
+    .card.data .card-info-stars.active span {
+      color: #fab72e; }
   .card.data .card-title {
     font-size: 17px;
     font-weight: 700;
@@ -1111,7 +1170,8 @@ a.button.banner-button {
       width: 320px;
       height: 180px; }
   .card.app .card-caption, .card.app .card-info-stars {
-    display: inline-block; }
+    display: inline-block;
+    cursor: pointer; }
   .card.app .card-caption {
     height: 30px;
     margin-top: 10px;
@@ -2587,6 +2647,14 @@ a.explore--map-button {
   font-size: 13px;
   text-transform: uppercase; }
 
+.hero-link-wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 11; }
+
 .insights--featured-title {
   font-size: 34px;
   width: 550px;
@@ -2611,16 +2679,22 @@ a.explore--map-button {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  z-index: 15; }
   .insights--featured-info-source img, .insights--featured-info-stars img {
     width: 38px;
     height: 38px;
     margin-right: 10px;
     border-radius: 100%; }
+  .insights--featured-info-source span, .insights--featured-info-stars span {
+    z-index: 15; }
+    .insights--featured-info-source span a, .insights--featured-info-stars span a {
+      text-decoration: underline; }
 
 .insights--featured-info-stars {
   position: absolute;
-  right: 0; }
+  right: 0;
+  cursor: pointer; }
 
 .insights--search-container {
   width: 100%;

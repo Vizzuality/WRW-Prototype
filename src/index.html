@@ -24,6 +24,7 @@
   </head>
   <body>
 
+    @@include('./templates/svg_icons.html')
     @@include('./templates/login_wrapper_top.html')
 
     <div class="header-container">
@@ -79,7 +80,8 @@
             </div>
 
             <div class="hero-info-stars">
-              <span><i class="star-inactive"></i> 6,578</span>
+              <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+              <span>6,578</span>
             </div>
           </div>
         </div>
@@ -108,7 +110,7 @@
       <section>
         <header class="section-header">
           <h3>Featured insights</h3>
-          <a href="#" class="section-header-link">View More <i class="fa fa-angle-right"></i></a>
+          <!-- <a href="#" class="section-header-link">View More <i class="fa fa-angle-right"></i></a> -->
         </header>
 
         @@include('./templates/insight_cards.html')
@@ -160,7 +162,8 @@
                   </div>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,575</span>
                 </li>
               </ul>
             </div>
@@ -186,7 +189,8 @@
                   </div>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,575</span>
                 </li>
               </ul>
             </div>
@@ -213,7 +217,8 @@
                   </div>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,575</span>
                 </li>
               </ul>
             </div>
@@ -240,7 +245,8 @@
                   </div>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,575</span>
                 </li>
               </ul>
             </div>
@@ -266,7 +272,8 @@
                   </div>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,575</span>
                 </li>
               </ul>
             </div>
@@ -292,7 +299,8 @@
                   </div>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,575</span>
                 </li>
               </ul>
             </div>
@@ -318,7 +326,8 @@
                   </div>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,575</span>
                 </li>
               </ul>
             </div>
@@ -344,7 +353,8 @@
                   </div>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,575</span>
                 </li>
               </ul>
             </div>
@@ -374,7 +384,8 @@
                 </div>
 
                 <div class="card-info-stars active">
-                  <span><i class="star-active"></i> 6,578</span>
+                  <svg class="icon icon-star--active"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,574</span>
                 </div>
               </div>
             </div>
@@ -392,7 +403,8 @@
                 </div>
 
                 <div class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,574</span>
                 </div>
               </div>
             </div>
@@ -410,7 +422,8 @@
                 </div>
 
                 <div class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,574</span>
                 </div>
               </div>
             </div>
@@ -435,6 +448,8 @@
 
     <script src="js/vendor/requirejs/require.js"></script>
     <script src="js/home/countries-search.js"></script>
+    <script src="js/fav.js"></script>
+
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {

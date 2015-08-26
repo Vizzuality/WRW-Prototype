@@ -49,18 +49,21 @@ a.button.button-grey {
 .star-inactive {
   width: 17px;
   height: 17px;
+  margin-right: 3px;
 
   position: relative;
   top: 2px;
 
   display: inline-block;
+  background-image: url(../img/star.svg);
   background-size: 100%;
+  background-repeat: no-repeat;
 }
 
-.star-inactive {
-  background-image: url(../img/star-inactive.png);
-}
+// .star-inactive {
+//   background-image: url(../img/star.svg);
+// }
 
-.star-active {
-  background-image: url(../img/star-active.png);
-}
+// .star-active {
+//   background-image: url(../img/star-active.png);
+// }

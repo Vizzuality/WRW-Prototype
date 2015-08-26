@@ -73,10 +73,18 @@
   img {
     width: 38px;
     height: 38px;
+    margin-right: 10px;
   }
 
-  span {
-    margin-left: 10px;
+  // span {
+  //   margin-left: 10px;
+  // }
+}
+
+.hero-info-stars {
+  cursor: pointer;
+  &.active {
+    color: #fab72e;
   }
 }
 
