@@ -1,11 +1,19 @@
 .banner {
   position: relative;
+  overflow: hidden;
   height: 280px;
 }
 
 .banner-image {
   width: 100%;
   float: left;
+
+  transition: transform 1s ease;
+  transform: scale(1.1);
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 2s ease;
+  }
 }
 
 .banner-header {
@@ -27,6 +35,7 @@ a.button.banner-button {
   margin-right: auto;
   left: 0;
   right: 0;
+  z-index: 15;
 }
 
 a.button.banner-button {

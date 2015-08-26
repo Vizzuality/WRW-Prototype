@@ -18,6 +18,14 @@
   </head>
   <body>
 
+    <svg class="is-hidden" style="display:none">
+    <!-- Star -->
+    <symbol id="icon-star" viewBox="0 0 1092 1024">
+    <title>star</title>
+    <path class="path1" d="M546.133 779.605l-361.135 263.588 139.090-424.913-362.284-262.007 447.098 0.977 137.231-425.517 137.231 425.517 447.098-0.977-362.284 262.007 139.090 424.913z"></path>
+    </symbol>
+</svg>
+
     <div class="header-container">
       <header class="header">
         <div class="upper-header">
@@ -45,7 +53,26 @@
             <!-- <li><a href="#">Apps</a></li> -->
             <!-- <li><a href="#">Get Involved</a></li> -->
             <li><a href="#"><i class="fa fa-search"></i></a></li>
-            <li class="notification"><a href="#"><img src="img/user-1.png"></a></li>
+            <li class="notification">
+              <a href="#"><img src="img/user-1.png"></a>
+              <ul class="user-menu is-hide">
+                <div class="notification-space">
+                  <h4>Notifications</h4>
+                  <ul>
+                    <li class="unread"><a href="#">New insight from World Resources Institute</a></li>
+                    <li class="unread"><a href="#">'Total Greenhouse Emissions' dataset updated</a></li>
+                    <li><a href="#">'Flower pollination in the United States' dataset updated</a></li>
+                  </ul>
+                </div>
+                <div class="user-settings">
+                  <ul>
+                    <li><h4><a href="">Your profile</a></h4></li>
+                    <li><h4><a href="">Settings</a></h4></li>
+                    <li><h4><a href="">Logout</a></h4></li>
+                  </ul>
+                </div>
+              </ul>
+            </li>
           </ul>
         </div>
       </header>
@@ -67,10 +94,11 @@
       <section>
         <header class="section-header">
           <h3>Featured insights</h3>
-          <a href="#" class="section-header-link">View More <i class="fa fa-angle-right"></i></a>
+          <!-- <a href="#" class="section-header-link">View More <i class="fa fa-angle-right"></i></a> -->
         </header>
 
         <div class="insights--featured">
+          <a class="hero-link-wrap" href="map.html"></a>
           <div class="insights--featured-title">
             <div class="insights--featured-sub-title">
               Featured insight
@@ -86,7 +114,8 @@
             </div>
 
             <div class="insights--featured-info-stars">
-              <span><i class="star-inactive"></i> 6,578</span>
+              <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+              <span>6,578</span>
             </div>
           </div>
         </div>
@@ -95,7 +124,10 @@
   <div class="cell">
     <div class="card insight">
       <div class="card-image">
-        <img src="img/insight-1-th.jpg">
+        <a href="story.html">
+          <img src="img/insight-1-th.jpg">  
+        </a>
+        
       </div>
 
       <div class="card-content">
@@ -109,7 +141,8 @@
           <span>by <a href="#">WWF</a></span>
         </li>
         <li class="card-info-stars">
-          <span><i class="star-inactive"></i> 6,578</span>
+          <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+          <span>6,574</span>
         </li>
       </ul>
     </div>
@@ -118,7 +151,9 @@
   <div class="cell">
     <div class="card insight">
       <div class="card-image">
-        <img src="img/insight-2-th.jpg">
+        <a href="map.html">
+          <img src="img/insight-2-th.jpg">
+        </a>
       </div>
 
       <div class="card-content">
@@ -132,7 +167,8 @@
           <span>by <a href="#">Greenpeace</a></span>
         </li>
         <li class="card-info-stars">
-          <span><i class="star-inactive"></i> 6,578</span>
+          <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+          <span>6,574</span>
         </li>
       </ul>
     </div>
@@ -141,7 +177,9 @@
   <div class="cell">
     <div class="card insight">
       <div class="card-image">
-        <img src="img/insight-3-th.jpg">
+        <a href="story.html">
+          <img src="img/insight-3-th.jpg">
+        </a>
       </div>
 
       <div class="card-content">
@@ -155,7 +193,8 @@
           <span>by <a href="#">World resources institute</a></span>
         </li>
         <li class="card-info-stars active">
-          <span><i class="star-active"></i> 6,578</span>
+          <svg class="icon icon-star--active"><use xlink:href="#icon-star"></use></svg>
+          <span>6,574</span>
         </li>
       </ul>
     </div>
@@ -164,7 +203,9 @@
   <div class="cell">
     <div class="card insight">
       <div class="card-image">
-        <img src="img/insight-4-th.jpg">
+        <a href="slideshow.html">
+          <img src="img/insight-4-th.jpg">
+        </a>
       </div>
 
       <div class="card-content">
@@ -178,7 +219,8 @@
           <span>by <a href="#">Sajjad Malik</a></span>
         </li>
         <li class="card-info-stars active">
-          <span><i class="star-active"></i> 6,578</span>
+          <svg class="icon icon-star--active"><use xlink:href="#icon-star"></use></svg>
+          <span>6,574</span>
         </li>
       </ul>
     </div>
@@ -187,7 +229,9 @@
   <div class="cell">
     <div class="card insight">
       <div class="card-image">
-        <img src="img/insight-5-th.jpg">
+        <a href="story.html">
+          <img src="img/insight-5-th.jpg">
+        </a>
       </div>
 
       <div class="card-content">
@@ -201,7 +245,8 @@
           <span>by <a href="#">Marion Johnson</a></span>
         </li>
         <li class="card-info-stars">
-          <span><i class="star-inactive"></i> 6,578</span>
+          <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+          <span>6,574</span>
         </li>
       </ul>
     </div>
@@ -210,7 +255,9 @@
   <div class="cell">
     <div class="card insight">
       <div class="card-image">
-        <img src="img/insight-6-th.jpg">
+        <a href="slideshow.html">
+          <img src="img/insight-6-th.jpg">
+        </a>
       </div>
 
       <div class="card-content">
@@ -224,7 +271,8 @@
           <span>by <a href="#">WWF</a></span>
         </li>
         <li class="card-info-stars">
-          <span><i class="star-inactive"></i> 6,578</span>
+          <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+          <span>6,574</span>
         </li>
       </ul>
     </div>
@@ -250,7 +298,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-1-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-1-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -262,7 +312,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-2-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-2-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -274,7 +326,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-3-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-3-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -286,7 +340,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-4-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-4-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -298,7 +354,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-5-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-5-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -310,7 +368,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-6-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-6-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -322,7 +382,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-7-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-7-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -334,7 +396,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-8-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-8-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -346,7 +410,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-9-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-9-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -484,6 +550,9 @@
   </footer>
 </div>
 
+
+    <script src="js/fav.js"></script>
+    <script src="js/user_menu.js"></script>
 
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

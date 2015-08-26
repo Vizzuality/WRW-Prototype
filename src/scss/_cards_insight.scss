@@ -3,6 +3,21 @@
   width: $card--large-width;
   box-shadow: 0 1px 5px $insights--card-shadow-color;
   border: 1px solid $insights--card-border-color;
+  transition: all .2s;
+  .card-title a {
+    transition: border .2s;
+    border-bottom: 2px solid transparent;
+    border-color: transparent;
+  }
+  &:hover {
+    border: 1px solid #CACCD0;
+    box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.12);
+
+    .card-title a {
+      border-bottom: 2px solid #9CD9E8;
+      border-color: #9CD9E8;
+    }
+  }
 
   .card-image {
     height: 180px;
@@ -10,7 +25,6 @@
   }
 
   .card-image img {
-//    display: none;
     position: relative;
 
     width: 100%;
@@ -46,10 +60,10 @@
     display: flex;
     align-items: center;
     height: 100%;
-    // width: 45%;
   }
 
   .card-info-stars {
+    cursor: pointer;
     &.active {
       color: $app--card-stars-active-color;
     }
@@ -78,6 +92,7 @@
     span {
       width: 100%;
       text-align: right;
+      transition: color .2s;
     }
   }
 
