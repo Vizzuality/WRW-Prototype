@@ -15,10 +15,10 @@ var Globe = function(element) {
     return new THREE.Mesh(
       new THREE.SphereGeometry(radius, segments, segments),
       new THREE.MeshPhongMaterial({
-        map: THREE.ImageUtils.loadTexture('/img/planet-pulse/2_no_clouds_4k.jpg'),
-        bumpMap: THREE.ImageUtils.loadTexture('/img/planet-pulse/elev_bump_4k.jpg'),
+        map: THREE.ImageUtils.loadTexture('img/planet-pulse/2_no_clouds_4k.jpg'),
+        bumpMap: THREE.ImageUtils.loadTexture('img/planet-pulse/elev_bump_4k.jpg'),
         bumpScale: 0.0005,
-        specularMap: THREE.ImageUtils.loadTexture('/img/planet-pulse/water_4k.png'),
+        specularMap: THREE.ImageUtils.loadTexture('img/planet-pulse/water_4k.png'),
         specular: new THREE.Color('grey')
       })
     );
@@ -28,7 +28,7 @@ var Globe = function(element) {
     return new THREE.Mesh(
       new THREE.SphereGeometry(radius + 0.003, segments, segments),     
       new THREE.MeshPhongMaterial({
-        map: THREE.ImageUtils.loadTexture('/img/planet-pulse/fair_clouds_4k.png'),
+        map: THREE.ImageUtils.loadTexture('img/planet-pulse/fair_clouds_4k.png'),
         side: THREE.DoubleSide,
         transparent: true,
         depthWrite: false
@@ -40,7 +40,7 @@ var Globe = function(element) {
     return new THREE.Mesh(
       new THREE.SphereGeometry(radius, segments, segments),
       new THREE.MeshBasicMaterial({
-        map: THREE.ImageUtils.loadTexture('/img/planet-pulse/galaxy_starfield_4k.png'),
+        map: THREE.ImageUtils.loadTexture('img/planet-pulse/galaxy_starfield_4k.png'),
         side: THREE.BackSide
       })
     );
