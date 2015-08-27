@@ -23,88 +23,6 @@
     <![endif]-->
   </head>
   <body>
-    <img src="img/globe-layers/temperature.jpg" style="display: none;">
-    <img src="img/globe-layers/preasure.jpg" style="display: none;">
-    <img src="img/globe-layers/rainfall.jpg" style="display: none;">
-    <img src="img/globe-layers/fires.jpg" style="display: none;">
-
-    <script>
-      var isFullscreen = false;
-
-      var enableFullscreen = function() {
-        var container = document.querySelector('.planet-pulse');
-        var button = container.querySelector('#fullscreen-btn');
-
-        isFullscreen = true;
-
-        container.className += ' is-fullscreen';
-
-        button.textContent = 'Exit Fullscreen';
-      };
-
-      var disableFullscreen = function() {
-        var container = document.querySelector('.planet-pulse');
-        var button = container.querySelector('#fullscreen-btn');
-
-        isFullscreen = false;
-
-        container.className = 'planet-pulse';
-
-        button.textContent = 'Fullscreen';
-
-      };
-
-      var fullscreenEvents = 'webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange';
-
-      var fullScreenCount = 0;
-
-      var checkContent = function() {
-        var isEnteringFullscreen = fullScreenCount % 2 === 0;
-        fullScreenCount++;
-
-        if(isEnteringFullscreen && !isFullscreen) {
-          enableFullscreen();
-        } else if(!isEnteringFullscreen && isFullscreen) {
-          disableFullscreen();
-        }
-      };
-
-      fullscreenEvents.split(' ').forEach(function(e) {
-        document.addEventListener(e, checkContent);
-      });
-
-
-      var toggleFullscreen = function() {
-        var container = document.querySelector('.planet-pulse');
-
-        if (!container.fullscreenElement && !container.mozFullScreenElement && !container.webkitFullscreenElement && !container.msFullscreenElement && !document.webkitIsFullScreen) {
-
-          if (container.requestFullscreen) {
-            container.requestFullscreen();
-          } else if (container.msRequestFullscreen) {
-            container.msRequestFullscreen();
-          } else if (container.mozRequestFullScreen) {
-            container.mozRequestFullScreen();
-          } else if (container.webkitRequestFullscreen) {
-            container.webkitRequestFullscreen();
-          }
-
-        } else {
-
-          if (document.exitFullscreen) {
-            document.exitFullscreen();
-          } else if (document.msExitFullscreen) {
-            document.msExitFullscreen();
-          } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-          } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-          }
-
-        }
-      };
-    </script>
-
     <div class="header-container">
       <header class="header">
         <div class="upper-header">
@@ -159,80 +77,57 @@
 
     <section class="planet-pulse">
 
-      <section class="planet-pulse--slideshow-container">
-        <div class="planet-pulse--slideshow-background"></div>
-        <a onclick="toggleFullscreen();" id="fullscreen-btn" class="section-header-link aligned-bottom">Full screen</a>
-        <div class="planet-pulse--slideshow-wide-aside">
-          <!-- <img src="img/planet-01.png"/> -->
-        </div>
-        <div class="container">
-          <div class="planet-pulse--slideshow-content">
-            <div>
-              <h1 class="planet-pulse--title">Planet Pulse</h1>
-              <p>
-                Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-              </p>
-              <div class="planet-pulse--widget">
-                
-                <header>
-                  <h3>Temperature</h3>
-                  <h2>Dangerous Indicator</h2>
-                </header>
-                <a href="explore-standalone.html"><img src="img/planet-chart.png" /></a>
-              </div>
-            </div>
-            <div>
-              <h1 class="planet-pulse--title">Planet Pulse</h1>
-              <p>
-                Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-              </p>
-              <div class="planet-pulse--widget">
-                
-                <header>
-                  <h3>Rainfall</h3>
-                  <h2>Dangerous Indicator</h2>
-                </header>
-                <a href="explore-standalone.html"><img src="img/planet-chart.png" /></a>
-              </div>
-            </div>
-            <div>
-              <h1 class="planet-pulse--title">Planet Pulse</h1>
-              <p>
-                Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-              </p>
-              <div class="planet-pulse--widget">
-                
-                <header>
-                  <h3>Air pressure</h3>
-                  <h2>Dangerous Indicator</h2>
-                </header>
-                <a href="explore-standalone.html"><img src="img/planet-chart.png" /></a>
-              </div>
-            </div>
-            <div>
-              <h1 class="planet-pulse--title">Planet Pulse</h1>
-              <p>
-                Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus.
-              </p>
-              <div class="planet-pulse--widget">
-                
-                <header>
-                  <h3>Fires</h3>
-                  <h2>Dangerous Indicator</h2>
-                </header>
-                <a href="explore-standalone.html"><img src="img/planet-chart.png" /></a>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="planet-pulse--globe" id="globe"></div>
 
-        <ul class="planet-pulse--tabs">
-          <li>Temperature</li>
-          <li>Rainfall</li>
-          <li>Air pressure</li>
-          <li>Fires</li>
-        </ul>
-      </section>
+      <div class="planet-pulse--container">
+        
+        <header class="planet-pulse--header">
+          <h1 class="planet-pulse--title">Planet pulse</h1>
+
+          <ul class="planet-pulse--main-nav">
+            <li>
+              <a href="#drought">Drought</a>
+              <ul>
+                <li><a href="#drought/spei">SPEI</a></li>
+                <li><a href="#drought/agricultural">Agricultural areas (EarthStat)</a></li>
+                <li><a href="#drought/groundwater">Groundwater depletion (GRACE)</a></li>
+                <li><a href="#drought/forecast">Forecasts / Climate projections</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#forest">Forest</a>
+              <ul>
+                <li><a href="#forest/forma">Forma</a></li>
+                <li><a href="#forest/umd">UMD</a></li>
+                <li><a href="#forest/protected-areas">Protected areas</a></li>
+                <li><a href="#forest/fires">Fires</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#flooding">Flooding</a>
+              <ul>
+                <li><a href="#flooding/current-floods">Current floods</a></li>
+                <li><a href="#flooding/population-data">Population data</a></li>
+                <li><a href="#flooding/climate">Climate projections</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#conflict">Conflict</a>
+              <ul>
+                <li><a href="#conflict/events">Conflict events</a></li>
+                <li><a href="#conflict/protests">Protests</a></li>
+                <li><a href="#conflict/epidemics">Epidemics</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="planet-pulse--toolbar">
+            <a href="#" id="backBtn">Back</a>
+            <button id="fullscreenBtn" onclick="toggleFullscreen();">Fullscreen</button>
+          </div>
+        </header>
+
+      </div>
 
     </section>
 
@@ -341,8 +236,10 @@
       </footer>
     </div>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r61/three.min.js"></script>
     <script src="js/vendor/requirejs/require.js"></script>
+    <script src="js/planet-pulse/trackballcontrols.js"></script>
+    <script src="js/planet-pulse/globe.js"></script>
     <script src="js/planet-pulse/planet-pulse.js"></script>
     <script src="js/user_menu.js"></script>
 
@@ -361,6 +258,83 @@
           }
         };
       });
+    </script>
+
+    <script>
+      var isFullscreen = false;
+
+      var enableFullscreen = function() {
+        var container = document.querySelector('.planet-pulse');
+        var button = container.querySelector('#fullscreenBtn');
+
+        isFullscreen = true;
+
+        container.className += ' is-fullscreen';
+
+        button.textContent = 'Exit Fullscreen';
+      };
+
+      var disableFullscreen = function() {
+        var container = document.querySelector('.planet-pulse');
+        var button = container.querySelector('#fullscreenBtn');
+
+        isFullscreen = false;
+
+        container.className = 'planet-pulse';
+
+        button.textContent = 'Fullscreen';
+
+      };
+
+      var fullscreenEvents = 'webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange';
+
+      var fullScreenCount = 0;
+
+      var checkContent = function() {
+        var isEnteringFullscreen = fullScreenCount % 2 === 0;
+        fullScreenCount++;
+
+        if(isEnteringFullscreen && !isFullscreen) {
+          enableFullscreen();
+        } else if(!isEnteringFullscreen && isFullscreen) {
+          disableFullscreen();
+        }
+      };
+
+      fullscreenEvents.split(' ').forEach(function(e) {
+        document.addEventListener(e, checkContent);
+      });
+
+
+      var toggleFullscreen = function() {
+        var container = document.querySelector('.planet-pulse');
+
+        if (!container.fullscreenElement && !container.mozFullScreenElement && !container.webkitFullscreenElement && !container.msFullscreenElement && !document.webkitIsFullScreen) {
+
+          if (container.requestFullscreen) {
+            container.requestFullscreen();
+          } else if (container.msRequestFullscreen) {
+            container.msRequestFullscreen();
+          } else if (container.mozRequestFullScreen) {
+            container.mozRequestFullScreen();
+          } else if (container.webkitRequestFullscreen) {
+            container.webkitRequestFullscreen();
+          }
+
+        } else {
+
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+          } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          }
+
+        }
+      };
     </script>
 
     <script>

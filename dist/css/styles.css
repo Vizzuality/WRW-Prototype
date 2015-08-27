@@ -1525,7 +1525,7 @@ a.button.banner-button {
   border-left: 0;
   border-right: 0;
   margin-bottom: 35px;
-  margin-top: 150px; }
+  margin-top: 70px; }
   .m-partners .partners-title {
     position: relative;
     text-transform: uppercase;
@@ -2949,110 +2949,129 @@ a.explore--map-button {
                   transform: translateY(-100%); }
 
 .planet-pulse {
-  height: 1000px;
-  position: relative; }
+  position: relative;
+  height: calc(100vh - 130px);
+  margin-bottom: 0;
+  color: white;
+  background-color: #000; }
   .planet-pulse.is-fullscreen {
-    width: 100%;
-    height: 100%; }
-  .planet-pulse .planet-pulse--slideshow-container {
-    background: url('../img/bg-stars.jpg') black center center;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    padding-top: 60px; }
-    .planet-pulse .planet-pulse--slideshow-container .planet-pulse--slideshow-background, .planet-pulse .planet-pulse--slideshow-container .planet-pulse--slideshow-wide-aside {
-      position: absolute;
-      right: 0;
-      height: 100%;
-      top: 0;
-      left: 400px; }
-    .planet-pulse .planet-pulse--slideshow-container .planet-pulse--slideshow-wide-aside {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-          -ms-flex-align: center;
-              align-items: center;
-      z-index: 1; }
-    .planet-pulse .planet-pulse--slideshow-container #fullscreen-btn {
-      position: absolute;
-      top: 70px;
-      right: 40px;
-      color: white;
-      cursor: pointer;
-      z-index: 10; }
-    .planet-pulse .planet-pulse--slideshow-container .planet-pulse--slideshow-content {
-      width: 350px;
-      z-index: 5; }
-      .planet-pulse .planet-pulse--slideshow-container .planet-pulse--slideshow-content p {
-        font-size: 20px;
-        line-height: 30px;
-        font-weight: lighter;
-        color: white; }
-      .planet-pulse .planet-pulse--slideshow-container .planet-pulse--slideshow-content .planet-pulse--widget {
-        margin: 50px 0 40px 0;
-        position: relative;
-        padding-top: 20px; }
-        .planet-pulse .planet-pulse--slideshow-container .planet-pulse--slideshow-content .planet-pulse--widget header h2, .planet-pulse .planet-pulse--slideshow-container .planet-pulse--slideshow-content .planet-pulse--widget header h3 {
-          color: white; }
-        .planet-pulse .planet-pulse--slideshow-container .planet-pulse--slideshow-content .planet-pulse--widget header h3 {
-          font-size: 11px;
-          font-weight: bold;
-          margin-bottom: 0; }
-        .planet-pulse .planet-pulse--slideshow-container .planet-pulse--slideshow-content .planet-pulse--widget header h2 {
-          font-weight: lighter;
-          font-size: 21px;
-          line-height: 30px;
-          margin-top: 0; }
-        .planet-pulse .planet-pulse--slideshow-container .planet-pulse--slideshow-content .planet-pulse--widget .btn-info {
-          width: 15px;
-          height: 15px;
-          line-height: 15px;
-          text-align: center;
-          border-radius: 50%;
-          background-color: white;
-          font-size: 11px;
-          color: black;
-          font-weight: 700;
-          font-style: italic;
-          font-family: "Georgia";
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          cursor: pointer; }
-    .planet-pulse .planet-pulse--slideshow-container .planet-pulse--tabs {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-          -ms-transform: translateX(-50%);
-              transform: translateX(-50%);
-      font-size: 28px;
-      font-weight: lighter;
-      color: white;
-      list-style-type: none;
-      text-align: center;
-      padding-left: 0;
-      z-index: 10; }
-      .planet-pulse .planet-pulse--slideshow-container .planet-pulse--tabs li {
-        display: inline-block;
-        padding-bottom: 3px;
-        cursor: pointer; }
-        .planet-pulse .planet-pulse--slideshow-container .planet-pulse--tabs li + li {
-          margin-left: 50px; }
-        .planet-pulse .planet-pulse--slideshow-container .planet-pulse--tabs li.active {
-          border-bottom: 2px solid white; }
-  .planet-pulse .planet-pulse--title {
+    height: 100vh;
+    width: 100%; }
+
+.planet-pulse--container {
+  position: relative;
+  max-width: 1040px;
+  margin: 0 auto; }
+  .planet-pulse--container:after, .planet-pulse--container:before {
+    content: '';
+    display: table;
+    clear: both; }
+
+.planet-pulse--header {
+  margin-top: 40px;
+  position: relative;
+  font-family: 'Lato'; }
+  .planet-pulse--header:after, .planet-pulse--header:before {
+    content: '';
+    display: table;
+    clear: both; }
+  .planet-pulse--header h1 {
+    margin: 30px 0 19px 0;
     font-size: 48px;
-    font-weight: lighter;
-    color: white;
-    line-height: 52px; }
+    font-weight: lighter; }
+  .planet-pulse--header .planet-pulse--main-nav {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    .planet-pulse--header .planet-pulse--main-nav, .planet-pulse--header .planet-pulse--main-nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+    .planet-pulse--header .planet-pulse--main-nav a {
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+      text-transform: uppercase;
+      -webkit-transition: opacity .15s ease;
+              transition: opacity .15s ease; }
+    .planet-pulse--header .planet-pulse--main-nav.is-blur a {
+      opacity: .7; }
+    .planet-pulse--header .planet-pulse--main-nav li {
+      position: relative;
+      margin-right: 30px;
+      padding-bottom: 10px; }
+      .planet-pulse--header .planet-pulse--main-nav li > ul {
+        position: absolute;
+        display: none;
+        width: 250px;
+        margin-top: 10px;
+        margin-left: -15px;
+        border-radius: 5px;
+        background-color: white; }
+        .planet-pulse--header .planet-pulse--main-nav li > ul li {
+          margin-right: 0;
+          padding-bottom: 0;
+          border-bottom: 1px solid #e3e4e6;
+          overflow: hidden; }
+          .planet-pulse--header .planet-pulse--main-nav li > ul li:first-child {
+            border-radius: 5px 5px 0 0; }
+            .planet-pulse--header .planet-pulse--main-nav li > ul li:first-child a {
+              border-radius: 5px 5px 0 0; }
+          .planet-pulse--header .planet-pulse--main-nav li > ul li:last-child {
+            border-bottom-width: 0;
+            border-radius: 0 0 5px 5px; }
+            .planet-pulse--header .planet-pulse--main-nav li > ul li:last-child a {
+              border-radius: 0 0 5px 5px; }
+        .planet-pulse--header .planet-pulse--main-nav li > ul li a {
+          display: block;
+          padding: 15px;
+          color: #393f44;
+          font-size: 14px;
+          text-transform: none;
+          -webkit-transition: all .15s ease;
+                  transition: all .15s ease; }
+          .planet-pulse--header .planet-pulse--main-nav li > ul li a:hover {
+            color: #3bb2d0;
+            background-color: #f1f2f3; }
+      .planet-pulse--header .planet-pulse--main-nav li:hover > ul {
+        display: block; }
+    .planet-pulse--header .planet-pulse--main-nav:hover a {
+      opacity: .7; }
+      .planet-pulse--header .planet-pulse--main-nav:hover a:hover {
+        opacity: 1; }
+  .planet-pulse--header .planet-pulse--toolbar {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0; }
+    .planet-pulse--header .planet-pulse--toolbar button, .planet-pulse--header .planet-pulse--toolbar a {
+      display: block;
+      border: 0;
+      margin-left: 10px;
+      padding: 0;
+      color: white;
+      font-size: 12px;
+      text-transform: uppercase;
+      text-decoration: none;
+      background-color: transparent;
+      opacity: .7;
+      -webkit-transition: opacity .15s ease;
+              transition: opacity .15s ease; }
+      .planet-pulse--header .planet-pulse--toolbar button:hover, .planet-pulse--header .planet-pulse--toolbar a:hover {
+        opacity: 1; }
+    .planet-pulse--header .planet-pulse--toolbar #backBtn {
+      display: none; }
+
+.planet-pulse--globe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
 
 .story--breadcrumbs {
   font-size: 14px;
