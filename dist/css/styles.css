@@ -780,6 +780,8 @@ a.button.button-grey {
 
 .hero-info-stars {
   cursor: pointer; }
+  .hero-info-stars .icon.icon-star {
+    fill: #fff; }
   .hero-info-stars.active {
     color: #fab72e; }
 
@@ -2484,7 +2486,8 @@ a.explore--map-button {
     .insights--slideshow-container .insights--slideshow-content .story--metadata, .insights--slideshow-container .insights--slideshow-content .story--pre-title {
       margin-top: 80px; }
     .insights--slideshow-container .insights--slideshow-content .story--metadata-stars {
-      -webkit-font-smoothing: subpixel-antialiased; }
+      -webkit-font-smoothing: subpixel-antialiased;
+      cursor: pointer; }
     .insights--slideshow-container .insights--slideshow-content .story--intro-text {
       width: auto;
       text-align: left;
@@ -2849,7 +2852,16 @@ a.explore--map-button {
     height: 100%; }
     .insights-map-container #map .cartodb-zoom {
       float: right;
-      margin: 75px 20px 0; }
+      margin: 75px 20px 0;
+      background: transparent;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      border: 0; }
+      .insights-map-container #map .cartodb-zoom a {
+        background-color: #fff;
+        border-radius: 2px; }
+        .insights-map-container #map .cartodb-zoom a.zoom_out {
+          margin-top: 5px; }
     .insights-map-container #map.is-priority {
       z-index: 250; }
     .insights-map-container #map.hide-controls .cartodb-zoom, .insights-map-container #map.hide-controls .cartodb-legend-stack {
@@ -2875,8 +2887,10 @@ a.explore--map-button {
     width: 550px;
     height: initial;
     z-index: 249;
-    -webkit-transition: all 1.5s;
-            transition: all 1.5s; }
+    -webkit-transition: all .5s;
+            transition: all .5s; }
+    .insights-map-container .insights--slideshow-container .story--intro-text {
+      color: #ddd; }
     .insights-map-container .insights--slideshow-container.explore-container .left-half, .insights-map-container .insights--slideshow-container.read-more-container .left-half {
       height: 100%;
       -webkit-flex-basis: initial;
@@ -2891,7 +2905,7 @@ a.explore--map-button {
       opacity: 0;
       left: 0;
       padding-left: 20px;
-      background-color: rgba(0, 0, 0, 0.3); }
+      background-color: rgba(0, 0, 0, 0.7); }
       .insights-map-container .insights--slideshow-container.read-more-container:before, .insights-map-container .insights--slideshow-container.read-more-container:after {
         content: '';
         position: absolute;
@@ -2971,7 +2985,7 @@ a.explore--map-button {
             transform: rotate(135deg);
         pointer-events: none; }
       .insights-map-container .insights--slideshow-container.read-more-container .left-half {
-        padding-right: 35px; }
+        padding-right: 50px; }
     .insights-map-container .insights--slideshow-container.is-priority {
       z-index: 250; }
     .insights-map-container .insights--slideshow-container .insights--slideshow-content .container {
@@ -2980,16 +2994,19 @@ a.explore--map-button {
       background: none;
       -webkit-transition: 1.5s all;
               transition: 1.5s all; }
-    .insights-map-container .insights--slideshow-container .insights--slideshow-content.map.read-more li {
-      font-size: 18px;
-      color: #fff; }
+    .insights-map-container .insights--slideshow-container .insights--slideshow-content.map.read-more ul {
+      margin-bottom: 30px; }
+      .insights-map-container .insights--slideshow-container .insights--slideshow-content.map.read-more ul li {
+        font-size: 18px;
+        color: #ddd;
+        line-height: 1.6em; }
 
 .map-navigation {
   position: relative;
   width: 100%;
   background: rgba(0, 0, 0, 0.7);
-  -webkit-transition: all 1s;
-          transition: all 1s;
+  -webkit-transition: all .5s;
+          transition: all .5s;
   -webkit-transform: translateY(-100%);
       -ms-transform: translateY(-100%);
           transform: translateY(-100%);
@@ -3723,7 +3740,8 @@ input.button.button-large.login--container-button {
   .user-menu.is-hide, .language-menu.is-hide {
     opacity: 0;
     z-index: -35;
-    top: 30px; }
+    top: 30px;
+    pointer-events: none; }
   .user-menu::before, .language-menu::before {
     content: '';
     position: absolute;

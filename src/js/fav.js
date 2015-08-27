@@ -5,8 +5,6 @@
 	var starsCard = document.getElementsByClassName('card-info-stars');
 	var mapStar = document.querySelector('.story--metadata-stars');
 
-	console.log(mapStar);
-
 	var doFav = function() {
 		var fav = this.querySelector('svg'),
 			selectorClass = this.className,

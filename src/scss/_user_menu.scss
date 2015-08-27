@@ -19,6 +19,7 @@
 		opacity: 0;
 		z-index: -35;
 		top: 30px;
+		pointer-events: none;
 	}
 
 	&::before {
