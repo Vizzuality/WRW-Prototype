@@ -1,0 +1,110 @@
+.gridbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.gridbox .cell {
+  flex: 0 0 $card--large-width;
+
+  &.data {
+    flex: 0 0 $card--data--large-width;
+  } 
+}
+
+.gridbox .cell {
+  margin-right: 40px;
+}
+
+.gridbox .cell {
+
+  &:nth-child(3n+3) {
+    margin-right: 0;
+  }
+
+  &.data:nth-child(3n+3) {
+    margin-right: 40px;
+  }
+
+  &.data:nth-child(4n+4) {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: $responsive-break--tablet) {
+  .gridbox {
+    .cell {
+      margin-right: 20px;
+      flex-basis: calc(33.33% - 40px / 3);
+    }
+
+    .cell.data {
+      flex-basis: calc(33.33% - 40px / 3);
+
+      &:nth-child(3n+3) {
+        margin-right: 0;
+      }
+
+      &:nth-child(4n+4) {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .gridbox {
+    .cell {
+      flex-basis: calc(50% - 20px / 2);
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+
+      &:nth-child(2n+1) {
+        margin-right: 20px;
+      }
+    }
+
+    .cell.data {
+      flex-basis: calc(50% - 20px / 2);
+
+      &:nth-child(2n),
+      .explore--content .explore-datasets &:nth-child(2n) {
+        margin-right: 0;
+      }
+
+      &:nth-child(2n+1),
+      .explore--content .explore-datasets &:nth-child(2n+1) {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $responsive-break--mobile) {
+  .gridbox {
+    flex-direction: column;
+  }
+
+  .gridbox .cell {
+    flex-basis: initial !important;
+    margin-right: 0 !important;
+  }
+
+  .gridbox .cell.data:nth-child(2n) {
+    .card-button .button {
+      background-color: transparent;
+      border: 1px solid $lighter-grey;
+    }
+  }
+
+  .gridbox .cell.data:nth-child(2n+1) {
+    background-color: $lighter-grey;
+
+    .card-button .button {
+      border: 1px solid white;
+    }
+  }
+}
