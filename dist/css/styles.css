@@ -3702,7 +3702,7 @@ input.button.button-large.login--container-button {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
 
-.user-menu {
+.user-menu, .language-menu {
   display: inline-block;
   position: absolute;
   top: 100%;
@@ -3720,11 +3720,11 @@ input.button.button-large.login--container-button {
   opacity: 1;
   -webkit-transition: all .5s;
           transition: all .5s; }
-  .user-menu.is-hide {
+  .user-menu.is-hide, .language-menu.is-hide {
     opacity: 0;
     z-index: -35;
     top: 30px; }
-  .user-menu::before {
+  .user-menu::before, .language-menu::before {
     content: '';
     position: absolute;
     top: -6px;
@@ -3734,32 +3734,58 @@ input.button.button-large.login--container-button {
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
     border-bottom: 7px solid #fff; }
-  .user-menu h4, .user-menu h4 > a {
+  .user-menu h4, .user-menu h4 > a, .language-menu h4, .language-menu h4 > a {
     margin: 0;
     font-size: 12px;
     color: #9aa2a9;
     text-transform: uppercase; }
-  .user-menu a {
+  .user-menu a, .language-menu a {
     color: #000;
     font-weight: 400; }
-  .user-menu .notification-space, .user-menu .user-settings {
+  .user-menu .notification-space, .user-menu .user-settings, .language-menu .notification-space, .language-menu .user-settings {
     padding: 15px; }
-  .user-menu .notification-space ul {
+  .user-menu .notification-space ul, .language-menu .notification-space ul {
     padding-left: 18px; }
-    .user-menu .notification-space ul li {
+    .user-menu .notification-space ul li, .language-menu .notification-space ul li {
       display: list-item;
       list-style-type: disc;
       font-size: 14px;
       margin: 8px 0;
       color: #9aa2a9; }
-      .user-menu .notification-space ul li.unread {
+      .user-menu .notification-space ul li.unread, .language-menu .notification-space ul li.unread {
         color: #3BB2D0; }
-      .user-menu .notification-space ul li a {
+      .user-menu .notification-space ul li a, .language-menu .notification-space ul li a {
         text-transform: none; }
-  .user-menu .user-settings {
+  .user-menu .user-settings, .language-menu .user-settings {
     border-top: 1px solid #e3e4e6;
     padding: 10px 15px; }
-    .user-menu .user-settings ul {
+    .user-menu .user-settings ul, .language-menu .user-settings ul {
       padding: 0; }
-      .user-menu .user-settings ul li {
+      .user-menu .user-settings ul li, .language-menu .user-settings ul li {
         margin: 6px 0; }
+
+.language {
+  position: relative; }
+  .language a {
+    color: #fff;
+    text-decoration: none; }
+
+.language-menu {
+  width: 140px;
+  padding: 7px 0;
+  top: 26px;
+  right: 50%;
+  -webkit-transform: translate(50%, 0);
+      -ms-transform: translate(50%, 0);
+          transform: translate(50%, 0); }
+  .language-menu.is-hide {
+    top: 10px; }
+  .language-menu:before {
+    left: 50%; }
+  .language-menu li {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: 5px 0; }
+    .language-menu li h4 > a {
+      text-decoration: none; }
