@@ -39,6 +39,31 @@ require([
 
     createGlobe: function() {
       this.globe = new Globe(this.el);
+    },
+
+    setVis: function(vis) {
+      this.globe.removeClouds();
+      this.globe.removeLayer(this.currentVis);
+      this.currentVis = vis;
+
+      switch(vis) {
+        case 'fires':
+          this.globe.ambientLight.color.setHex(0xcccccc);
+          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture('/img/planet-pulse/basemap-terrain-blue_4k.jpg');
+          this.globe.createLayer(this.currentVis, '/img/planet-pulse/layers/fires_4k.png');
+          break;
+      }
+      
+      // this.globe.setPosition(0.35, -0.1);
+      this.globe.setPosition(0, -0.05);
+    },
+
+    reset: function() {
+      this.globe.removeLayer(this.currentVis);
+      this.globe.sphere.material.map = THREE.ImageUtils.loadTexture('/img/planet-pulse/2_no_clouds_4k.jpg');
+      this.globe.ambientLight.color.setHex(0x444444);
+      this.globe.setPosition(0, -0.1);
+      this.globe.addClouds();
     }
 
   });
@@ -86,7 +111,7 @@ require([
       this.$title.show(100);
       this.$nav.removeClass('is-blur');
       this.$backBtn.hide(100);
-      this.globeView.globe.setPosition(0, -0.1);
+      this.globeView.reset();
     },
 
     initVis: function(section, vis) {
@@ -95,11 +120,7 @@ require([
       this.$backBtn.show(100);
       
       // TODO
-      // this.globeView.globe.removeClouds();
-      this.globeView.globe.removeLayer(this.currentVis);
-      this.currentVis = vis;
-      // this.globeView.globe.createLayer(this.currentVis, '/img/globe-layers/rainfall.jpg');
-      this.globeView.globe.setPosition(0.35, -0.1);
+      this.globeView.setVis(vis);
     },
 
     start: function() {
