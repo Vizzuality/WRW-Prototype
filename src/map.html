@@ -18,11 +18,16 @@
 
     <link rel="stylesheet" href="js/vendor/slick-carousel/slick/slick.css">
 
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+
+
     <!--[if lt IE 9]>
     <script src="js/vendor/html5-3.6-respond-1.4.2.min.js"></script>
     <![endif]-->
   </head>
   <body>
+
+    @@include('./templates/svg_icons.html')
 
     <div class="header-container">
       <header class="header">
@@ -57,82 +62,117 @@
       </header>
     </div>
 
-    <section class="insights--slideshow-container">
-
-      <div class="insights--slideshow-content map slide-1">
-        <div class="container">
-          <div class="left-half">
-            <ul class="story--breadcrumbs">
-              <li><a href="insights.html">Insights</a></li>
-              <li>Map</li>
+    <div class="insights-map-container">
+        <div class="map-navigation">
+          <div class="inner">
+            <p>Climate change will increase chance of people being affected by floods - <a class="read-more" href="#">Read more</a></p>
+            <ul class="scenarios">
+              <li data-scenario="A" class="current"><a href="#">Scenario A</a></li>
+              <li data-scenario="B"><a href="#">Scenario B</a></li>
+              <li data-scenario="C"><a href="#" >Scenario C</a></li>
             </ul>
+          </div>
+        </div>
 
-            <div class="story--metadata">
-              <div class="story--metadata-author">
-                <img src="img/avatar-wri.png">
-                by <a href="#">World Resources Institute</a>
-                <span class="story--metadata-date">Oct 5, 2015</span>
+      <div id="map"></div>
+
+      <div class="veil"></div>
+      <div class="insights--slideshow-container">
+
+        <div class="insights--slideshow-content map slide-1">
+          <div class="container">
+            <div class="left-half">
+              <ul class="story--breadcrumbs">
+                <li><a href="insights.html">Insights</a></li>
+                <li>Map</li>
+              </ul>
+
+              <div class="story--metadata">
+                <div class="story--metadata-author">
+                  <img src="img/avatar-wri.png">
+                  by <a href="#">World Resources Institute</a>
+                  <span class="story--metadata-date">Oct 5, 2015</span>
+                </div>
+
+                <div class="story--metadata-stars">
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>530</span>
+                </div>
               </div>
 
-              <div class="story--metadata-stars">
-                <i class="star-inactive"></i> 530
+              <h1 class="story--title">
+                Climate change will increase chance of people being affected by floods
+              </h1>
+
+              <p class="story--intro-text">
+                Ethiopia’s Lower Omo Valley, a UNESCO World Heritage site and home to 200,000 agro-pastoralists, is under development for sugar plantations and processing. The early stages of the development have resulted in the loss of land and livelihoods for thousands of Ethiopia’s most vulnerable citizens. The future of 500,000 agro-pastoralists in Ethiopia and Kenya is at risk
+              </p>
+
+              <div class="controls">
+                <a class="right-control"><span>Explore</span></a>
               </div>
-            </div>
-
-            <h1 class="story--title">
-              Climate change will increase chance of people being affected by floods
-            </h1>
-
-            <p class="story--intro-text">
-              Ethiopia’s Lower Omo Valley, a UNESCO World Heritage site and home to 200,000 agro-pastoralists, is under development for sugar plantations and processing. The early stages of the development have resulted in the loss of land and livelihoods for thousands of Ethiopia’s most vulnerable citizens. The future of 500,000 agro-pastoralists in Ethiopia and Kenya is at risk
-            </p>
-
-            <div class="controls">
-              <a class="right-control"><span>Explore</span></a>
             </div>
           </div>
         </div>
-      </div>
 
-    </section>
+        <div class="insights--slideshow-content map read-more">
+          <div class="container">
+            <div class="left-half">
+              <!-- <ul class="story--breadcrumbs">
+                <li><a href="insights.html">Insights</a></li>
+                <li>Map</li>
+              </ul> -->
 
-<!--
-    <section class="insights--slideshow-container">
-      <div class="insights--slideshow-background"></div>
-      <div class="insights--slideshow-wide-aside"></div>
-      <div class="container">
-        <div class="insights--slideshow-content">
+              <h1 class="story--title">
+                About this map
+              </h1>
 
-          <div>
-            <h1 class="story--pre-title">
-              Indonesia’s Forest Fires Reignite, Threatening Protected Areas and Peatlands
-            </h1>
+              <p class="story--intro-text">
+                This is a recurrent question for many of us; our biggest towns and cities are often found on the banks of some of the largest rivers in the world. To answer this question we performed an analysis on WRI’s Aqueduct tool (http://floods.wri.org/) to determine wich countries’ population will be more exposed to damages from floods under a range of diferent climate change scenarios.
+              </p>
 
-            <h1 class="story--title">
-              High Concentration of Fires in Tesso Nilo National Park
-            </h1>
+              <p class="story--intro-text">
+                We looked at three different scenarios, using different combinations of pathways identified by the Intergovernmental Panel on Climate Change 5th Assessment Report. 
+              </p>
 
-            <p class="story--intro-text">
-              A large number of fire alerts are concentrated in Tesso Nilo National Park, which has been significantly damaged by illegal encroachment in recent years. The approximately 83,000-hectare (205,000-acre) national park lost more than half of its tree cover from 2001-2013, according to GFW data. The park is habitat for critically endangered Sumatran elephants and tigers.
-            </p>
-            <p class="story--intro-text">
-              In the last week, 69 fire alerts were detected in Tesso Nilo, of which seven were high-confidence alerts likely to be associated with forest clearing. Other fire alerts that do not meet the high confidence fire criteria are still likely to be fires, but more likely associated with burning fields/grass or other conditions that result in lower-temperature fires.
-            </p>
+              <ul>
+                  <li>
+                    <p>Scenario A takes into account a moderate climate change pathway (the IPCC’s RCP 4.5) and a continuation of current trends in socio-economic development (the IPCC’s SSP2)</p>
+                  </li>
+                  <li>
+                    <p>Scenario B assumes more severe climate change (IPCC’s RCP 8.5) and a continuation of current trends in socio-economic development (the IPCC’s SSP2)</p>
+                  </li>
+                  <li>
+                    <p>Scenario C also assumes more severe climate change (IPCC’s RCP 8.5) coupled with uncontrolled socio-economic growth (IPCC’s SSP3)</p>
+                  </li>
+              </ul>
 
-            <div class="controls">
-              <a class="left-control"></a>
+              <p class="story--intro-text">
+                The first test we ran assumed there were no protections against flood events at all. We did this by looking at the current population under the flood risk curve, then changing the risk curve depending on projections for 2030. As you can see on the map, the results show that there are winners and losers. Spain and Portugal, for example, have a decrease in population at risk of nearly 8% in Scenario A. 
+              </p>
+
+              <p class="story--intro-text">
+                We’ve also identified hotspots of population at risk. As you can see in the scatter plot below, what’s particularly worrying is that some countries with the largest risk - some could be facing a threefold increase in population at risk - are those with the highest rates of poverty. 
+              </p>
             </div>
           </div>
         </div>
-        <div class="insights--slideshow-aside"></div>
+
+
+        
+
       </div>
-    </section>
--->
+      
+    </div>
+
 
     @@include('./templates/footer.html')
 
-    <script src="js/vendor/requirejs/require.js"></script>
-    <script src="js/slideshow/slideshow.js"></script>
+    <!--<script src="js/vendor/requirejs/require.js"></script> -->
+    <!--<script src="js/slideshow/slideshow.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.3/mustache.js"></script>
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+    <script src="js/map/map.js"></script>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {

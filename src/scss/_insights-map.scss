@@ -1,0 +1,138 @@
+.insights-map-container {
+	position: relative;
+	height: 100%;
+
+	.map-navigation {
+		overflow: hidden;
+		background: rgba(0,0,0, .7);
+		transition: all .5s;
+		transform: translateY(-39px);
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 250;
+
+		.inner {
+			width: 1040px;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			p {
+				float: left;
+				margin: 0;
+				color: #fff;
+				font-size: 17px; 
+				a {
+					text-decoration: none;
+				}
+			}
+
+			.scenarios {
+				float: right;
+				margin: 0;
+				padding: 0;
+				li {
+					display: inline-block;
+					padding: 10px 20px;
+					a {
+						color: #fff;
+						text-decoration: none;
+					}
+					&.current {
+						border-bottom: 4px solid #fff;
+					}
+				}
+			}
+		}
+		
+		&.show {
+			opacity: 1;
+			transform: translateX(0);
+		}
+
+	}
+
+	#map {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+
+		&.is-priority {
+			z-index: 249;
+		}
+
+		&.hide-controls {
+			.cartodb-zoom,
+			.cartodb-legend-stack {
+				display: none !important;
+			}
+		}
+ 	}
+
+
+ 	.veil {
+ 		position: absolute;
+ 		top: 0;
+ 		bottom: 0;
+ 		left: 0;
+ 		right: 0;
+ 		background: rgba(0,0,0, .3);
+ 		transition: all .5s;
+
+ 		&.hide {
+ 			background: transparent;
+ 			z-index: -5;
+ 		}
+ 	}
+
+
+	.insights--slideshow-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 125;
+		transition: all 2s;
+
+		.insights--slideshow-content {
+			display: inline-block;
+			padding-left: 7%;
+			&.map {
+				.left-half {
+					height: 80%;
+					overflow-y: scroll;
+				}
+				&.slide-left {
+					transform: translateX(-100%);
+				}
+
+				&.slide-1 {
+					background: none;
+					transition: 1.5s all;
+					
+				}
+				&.read-more {
+					opacity: 0;
+					transition: opacity 1s;
+
+					li {
+						font-size: 18px;
+						color: #fff;
+					}
+
+					&.show {
+						opacity: 1;
+						transform: translateY(-100%);
+					}
+				}	
+			}
+		}
+	}
+}

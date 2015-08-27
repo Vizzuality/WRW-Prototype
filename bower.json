@@ -24,6 +24,7 @@
     "d3": "~3.5.5",
     "almond": "~0.3.1",
     "normalize-css": "~3.0.3",
-    "slick-carousel": "~1.5.8"
+    "slick-carousel": "~1.5.8",
+    "mustache": "~2.1.3"
   }
 }
