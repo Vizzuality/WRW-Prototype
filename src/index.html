@@ -24,6 +24,7 @@
   </head>
   <body>
 
+    @@include('./templates/svg_icons.html')
     @@include('./templates/login_wrapper_top.html')
 
     <div class="header-container">
@@ -53,7 +54,26 @@
             <!-- <li><a href="#">Apps</a></li> -->
             <!-- <li><a href="#">Get Involved</a></li> -->
             <li><a href="#"><i class="fa fa-search"></i></a></li>
-            <li class="notification"><a href="#"><img src="img/user-1.png"></a></li>
+            <li class="notification">
+              <a href="#"><img src="img/user-1.png"></a>
+              <ul class="user-menu is-hide">
+                <div class="notification-space">
+                  <h4>Notifications</h4>
+                  <ul>
+                    <li class="unread"><a href="#">New insight from World Resources Institute</a></li>
+                    <li class="unread"><a href="#">'Total Greenhouse Emissions' dataset updated</a></li>
+                    <li><a href="#">'Flower pollination in the United States' dataset updated</a></li>
+                  </ul>
+                </div>
+                <div class="user-settings">
+                  <ul>
+                    <li><h4><a href="">Your profile</a></h4></li>
+                    <li><h4><a href="">Settings</a></h4></li>
+                    <li><h4><a href="">Logout</a></h4></li>
+                  </ul>
+                </div>
+              </ul>
+            </li>
           </ul>
         </div>
       </header>
@@ -61,7 +81,8 @@
 
     <!-- hero -->
     <section class="hero">
-      <div class="hero-content">
+      <a class="hero-link-wrap" href="map.html"></a>
+      <div class="hero-content">  
         <div class="container">
           <div class="hero-title">
             <div class="hero-sub-title">
@@ -78,7 +99,8 @@
             </div>
 
             <div class="hero-info-stars">
-              <span><i class="star-inactive"></i> 6,578</span>
+              <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+              <span>6,578</span>
             </div>
           </div>
         </div>
@@ -107,7 +129,7 @@
       <section>
         <header class="section-header">
           <h3>Featured insights</h3>
-          <a href="#" class="section-header-link">View More <i class="fa fa-angle-right"></i></a>
+          <!-- <a href="#" class="section-header-link">View More <i class="fa fa-angle-right"></i></a> -->
         </header>
 
         @@include('./templates/insight_cards.html')
@@ -121,7 +143,9 @@
         </header>
 
         <div class="banner">
-          <img src="img/planet-pulse-1.png" class="banner-image">
+          <a href="planet-pulse.html">
+            <img src="img/planet-pulse-1.png" class="banner-image">
+          </a>
           <h3 class="banner-header">Real-time data monitoring the planet</h3>
           <a href="planet-pulse.html" class="banner-button button button-large">Launch Planet Pulse</a>
         </div>
@@ -139,7 +163,9 @@
           <div class="cell data">
             <div class="card data">
               <div class="card-image">
-                <img src="img/data-1-th.png">
+                <a href="explore-standalone.html">
+                  <img src="img/data-1-th.png">
+                </a>
               </div>
 
               <div class="card-content">
@@ -155,7 +181,8 @@
                   </div>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,575</span>
                 </li>
               </ul>
             </div>
@@ -164,7 +191,9 @@
           <div class="cell data">
             <div class="card data">
               <div class="card-image">
-                <img src="img/data-2-th.png">
+                <a href="explore-standalone.html">
+                  <img src="img/data-2-th.png">
+                </a>
               </div>
 
               <div class="card-content">
@@ -179,7 +208,8 @@
                   </div>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,575</span>
                 </li>
               </ul>
             </div>
@@ -188,7 +218,9 @@
           <div class="cell data">
             <div class="card data">
               <div class="card-image">
-                <img src="img/data-3-th.png">
+                <a href="explore-standalone.html">
+                  <img src="img/data-3-th.png">
+                </a>
               </div>
 
               <div class="card-content">
@@ -204,7 +236,8 @@
                   </div>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,575</span>
                 </li>
               </ul>
             </div>
@@ -213,7 +246,9 @@
           <div class="cell data">
             <div class="card data">
               <div class="card-image">
-                <img src="img/data-4-th.png">
+                <a href="explore-standalone.html">
+                  <img src="img/data-4-th.png">
+                </a>
               </div>
 
               <div class="card-content">
@@ -229,7 +264,8 @@
                   </div>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,575</span>
                 </li>
               </ul>
             </div>
@@ -238,7 +274,9 @@
           <div class="cell data">
             <div class="card data">
               <div class="card-image">
-                <img src="img/data-5-th.png">
+                <a href="explore-standalone.html">
+                  <img src="img/data-5-th.png">
+                </a>
               </div>
 
               <div class="card-content">
@@ -253,7 +291,8 @@
                   </div>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,575</span>
                 </li>
               </ul>
             </div>
@@ -262,7 +301,9 @@
           <div class="cell data">
             <div class="card data">
               <div class="card-image">
-                <img src="img/data-6-th.png">
+                <a href="explore-standalone.html">
+                  <img src="img/data-6-th.png">
+                </a>
               </div>
 
               <div class="card-content">
@@ -277,7 +318,8 @@
                   </div>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,575</span>
                 </li>
               </ul>
             </div>
@@ -286,7 +328,9 @@
           <div class="cell data">
             <div class="card data">
               <div class="card-image">
-                <img src="img/data-7-th.png">
+                <a href="explore-standalone.html">
+                  <img src="img/data-7-th.png">
+                </a>
               </div>
 
               <div class="card-content">
@@ -301,7 +345,8 @@
                   </div>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,575</span>
                 </li>
               </ul>
             </div>
@@ -310,7 +355,9 @@
           <div class="cell data">
             <div class="card data">
               <div class="card-image">
-                <img src="img/data-8-th.png">
+                <a href="explore-standalone.html">
+                  <img src="img/data-8-th.png">
+                </a>
               </div>
 
               <div class="card-content">
@@ -325,7 +372,8 @@
                   </div>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,575</span>
                 </li>
               </ul>
             </div>
@@ -355,7 +403,8 @@
                 </div>
 
                 <div class="card-info-stars active">
-                  <span><i class="star-active"></i> 6,578</span>
+                  <svg class="icon icon-star--active"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,574</span>
                 </div>
               </div>
             </div>
@@ -373,7 +422,8 @@
                 </div>
 
                 <div class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,574</span>
                 </div>
               </div>
             </div>
@@ -391,7 +441,8 @@
                 </div>
 
                 <div class="card-info-stars">
-                  <span><i class="star-inactive"></i> 6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,574</span>
                 </div>
               </div>
             </div>
@@ -416,6 +467,9 @@
 
     <script src="js/vendor/requirejs/require.js"></script>
     <script src="js/home/countries-search.js"></script>
+    <script src="js/user_menu.js"></script>
+    <script src="js/fav.js"></script>
+
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {

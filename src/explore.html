@@ -25,6 +25,8 @@
   </head>
   <body>
 
+    @@include('./templates/svg_icons.html')
+
     <div class="header-container">
       <header class="header">
         <div class="upper-header">
@@ -52,7 +54,26 @@
             <!-- <li><a href="#">Apps</a></li> -->
             <!-- <li><a href="#">Get Involved</a></li> -->
             <li><a href="#"><i class="fa fa-search"></i></a></li>
-            <li class="notification"><a href="#"><img src="img/user-1.png"></a></li>
+            <li class="notification">
+              <a href="#"><img src="img/user-1.png"></a>
+              <ul class="user-menu is-hide">
+                <div class="notification-space">
+                  <h4>Notifications</h4>
+                  <ul>
+                    <li class="unread"><a href="#">New insight from World Resources Institute</a></li>
+                    <li class="unread"><a href="#">'Total Greenhouse Emissions' dataset updated</a></li>
+                    <li><a href="#">'Flower pollination in the United States' dataset updated</a></li>
+                  </ul>
+                </div>
+                <div class="user-settings">
+                  <ul>
+                    <li><h4><a href="">Your profile</a></h4></li>
+                    <li><h4><a href="">Settings</a></h4></li>
+                    <li><h4><a href="">Logout</a></h4></li>
+                  </ul>
+                </div>
+              </ul>
+            </li>
           </ul>
         </div>
 
@@ -118,7 +139,8 @@
                     </div>
                   </li>
                   <li class="card-info-stars">
-                    <span><i class="star-inactive"></i> 6,578</span>
+                    <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                    <span>6,578</span>
                   </li>
                 </ul>
 
@@ -146,7 +168,8 @@
                     </div>
                   </li>
                   <li class="card-info-stars">
-                    <span><i class="star-inactive"></i> 6,578</span>
+                    <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                    <span>6,578</span>
                   </li>
                 </ul>
 
@@ -175,7 +198,8 @@
                     </div>
                   </li>
                   <li class="card-info-stars">
-                    <span><i class="star-inactive"></i> 6,578</span>
+                    <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                    <span>6,578</span>
                   </li>
                 </ul>
 
@@ -204,7 +228,8 @@
                     </div>
                   </li>
                   <li class="card-info-stars">
-                    <span><i class="star-inactive"></i> 6,578</span>
+                    <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                    <span>6,578</span>
                   </li>
                 </ul>
 
@@ -232,7 +257,8 @@
                     </div>
                   </li>
                   <li class="card-info-stars">
-                    <span><i class="star-inactive"></i> 6,578</span>
+                    <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                    <span>6,578</span>
                   </li>
                 </ul>
 
@@ -260,7 +286,8 @@
                     </div>
                   </li>
                   <li class="card-info-stars">
-                    <span><i class="star-inactive"></i> 6,578</span>
+                    <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                    <span>6,578</span>
                   </li>
                 </ul>
 
@@ -288,7 +315,8 @@
                     </div>
                   </li>
                   <li class="card-info-stars">
-                    <span><i class="star-inactive"></i> 6,578</span>
+                    <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                    <span>6,578</span>
                   </li>
                 </ul>
 
@@ -316,7 +344,8 @@
                     </div>
                   </li>
                   <li class="card-info-stars">
-                    <span><i class="star-inactive"></i> 6,578</span>
+                    <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                    <span>6,578</span>
                   </li>
                 </ul>
 
@@ -344,7 +373,8 @@
                     </div>
                   </li>
                   <li class="card-info-stars">
-                    <span><i class="star-inactive"></i> 6,578</span>
+                    <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                    <span>6,578</span>
                   </li>
                 </ul>
 
@@ -379,6 +409,8 @@
     <script src="http://libs.cartocdn.com/cartodb.js/v3/3.13/cartodb.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/explore.js"></script>
+    <script src="js/user_menu.js"></script>
+    <script src="js/fav.js"></script>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {

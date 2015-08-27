@@ -18,6 +18,8 @@
   </head>
   <body>
 
+    @@include('./templates/svg_icons.html')
+
     <div class="header-container">
       <header class="header">
         <div class="upper-header">
@@ -45,7 +47,26 @@
             <!-- <li><a href="#">Apps</a></li> -->
             <!-- <li><a href="#">Get Involved</a></li> -->
             <li><a href="#"><i class="fa fa-search"></i></a></li>
-            <li class="notification"><a href="#"><img src="img/user-1.png"></a></li>
+            <li class="notification">
+              <a href="#"><img src="img/user-1.png"></a>
+              <ul class="user-menu is-hide">
+                <div class="notification-space">
+                  <h4>Notifications</h4>
+                  <ul>
+                    <li class="unread"><a href="#">New insight from World Resources Institute</a></li>
+                    <li class="unread"><a href="#">'Total Greenhouse Emissions' dataset updated</a></li>
+                    <li><a href="#">'Flower pollination in the United States' dataset updated</a></li>
+                  </ul>
+                </div>
+                <div class="user-settings">
+                  <ul>
+                    <li><h4><a href="">Your profile</a></h4></li>
+                    <li><h4><a href="">Settings</a></h4></li>
+                    <li><h4><a href="">Logout</a></h4></li>
+                  </ul>
+                </div>
+              </ul>
+            </li>
           </ul>
         </div>
       </header>
@@ -67,10 +88,11 @@
       <section>
         <header class="section-header">
           <h3>Featured insights</h3>
-          <a href="#" class="section-header-link">View More <i class="fa fa-angle-right"></i></a>
+          <!-- <a href="#" class="section-header-link">View More <i class="fa fa-angle-right"></i></a> -->
         </header>
 
         <div class="insights--featured">
+          <a class="hero-link-wrap" href="map.html"></a>
           <div class="insights--featured-title">
             <div class="insights--featured-sub-title">
               Featured insight
@@ -86,7 +108,8 @@
             </div>
 
             <div class="insights--featured-info-stars">
-              <span><i class="star-inactive"></i> 6,578</span>
+              <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+              <span>6,578</span>
             </div>
           </div>
         </div>
@@ -111,7 +134,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-1-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-1-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -123,7 +148,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-2-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-2-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -135,7 +162,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-3-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-3-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -147,7 +176,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-4-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-4-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -159,7 +190,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-5-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-5-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -171,7 +204,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-6-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-6-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -183,7 +218,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-7-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-7-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -195,7 +232,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-8-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-8-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -207,7 +246,9 @@
           <div class="cell">
             <div class="card category">
               <div class="card-image">
-                <img src="img/collection-9-th.jpg">
+                <a href="insights-collection.html">
+                  <img src="img/collection-9-th.jpg">
+                </a>
               </div>
 
               <div class="card-caption">
@@ -241,6 +282,9 @@
     </div>
 
     @@include('./templates/footer.html')
+
+    <script src="js/fav.js"></script>
+    <script src="js/user_menu.js"></script>
 
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

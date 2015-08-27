@@ -112,11 +112,17 @@
   var setMapPosition = function() {
     if(!!navigator.userAgent.match(/iPad|iPhone|iPod|Android|BlackBerry|webOS/i) ||
       window.innerWidth <= 540) {
-      mapContainer.style.top =  '114px';
+
+      mapContainer.style.top =  '130px';
       if(!isMapOpened()) {
         mapContainer.style.left = window.innerWidth + 'px';
       }
     }
+
+    if (window.innerWidth > 580 && window.innerWidth <= 800) {
+        mapContainer.style.top =  '130px';
+        mapContainer.style.left = window.innerWidth + 'px';
+    };
   };
   var isMapOpened = function() {
     return checkbox.checked;
@@ -139,6 +145,7 @@
   fixSubHeaderPosition();
 
   checkbox.addEventListener('change', function() {
+
     if(isMapOpened()) {
       if(hasClass(hideMapClass, 'is-hidden')) {
         toggleClass(hideMapClass, 'is-hidden');
@@ -164,6 +171,7 @@
         mapContainer.style.top =  '33px';
       }
 
+
       mapContainer.style.left = '0';
     } else {
       if(hasClass(showMapClass, 'is-hidden')) {
@@ -176,7 +184,9 @@
       if(hasClass(headerClass, 'is-fixed')) {
         toggleClass(headerClass, 'is-fixed');
       }
+
       mapContainer.style.left = window.innerWidth + 'px';
+      console.log(window.innerWidth);
       fixSubHeaderPosition();
     }
   });
