@@ -29,6 +29,8 @@ require([
 
   'use strict';
 
+  var hostname = location.hostname === 'localhost' ? '' : 'http://vizzuality.github.io/WRW-Prototype/dist/';
+
   var GlobeView = Backbone.View.extend({
 
     el: '#globe',
@@ -49,8 +51,8 @@ require([
       switch(vis) {
         case 'fires':
           this.globe.ambientLight.color.setHex(0xcccccc);
-          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture('img/planet-pulse/basemap-terrain-blue_4k.jpg');
-          this.globe.createLayer(this.currentVis, 'img/planet-pulse/layers/fires_4k.png');
+          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/basemap-terrain-blue_4k.jpg');
+          this.globe.createLayer(this.currentVis, hostname + 'img/planet-pulse/layers/fires_4k.png');
           break;
       }
       
@@ -60,7 +62,7 @@ require([
 
     reset: function() {
       this.globe.removeLayer(this.currentVis);
-      this.globe.sphere.material.map = THREE.ImageUtils.loadTexture('img/planet-pulse/2_no_clouds_4k.jpg');
+      this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/2_no_clouds_4k.jpg');
       this.globe.ambientLight.color.setHex(0x444444);
       // this.globe.setPosition(0, -0.1);
       this.globe.addClouds();
