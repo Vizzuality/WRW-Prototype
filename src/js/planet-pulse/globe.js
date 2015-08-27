@@ -143,6 +143,8 @@ var Globe = function(element) {
       layers[l].rotation.y += 0.0005;
     }
 
+    rotation = sphere.rotation.y;
+
     requestAnimationFrame(render);
     renderer.clear();
     renderer.render(scene, camera);
