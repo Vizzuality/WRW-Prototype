@@ -33,8 +33,10 @@
 
     if (!viz) {
       viz = 'https://insights.cartodb.com/api/v2/viz/eda2596a-3ce7-11e5-aea1-0e0c41326911/viz.json';
+      map.setAttribute('class', 'hide-controls');
+    } else {
+      map.setAttribute('class', '');
     }
-
 
     if (mapContainer && mapContainer.map.layers) {
       mapDiv.remove();
@@ -60,10 +62,6 @@
           [-180.0000, -90.0000]
         ]);
       }, 500);
-
-      if (!map.hasAttribute('class')) {
-        map.setAttribute('class', 'hide-controls');
-      }
 
       var legend = document.querySelector('.cartodb-legend-stack');
       var html = document.createElement('div');
@@ -112,9 +110,7 @@
     var navigation = document.querySelector('.map-navigation');
 
     exploreContainer.setAttribute('class', exploreContainer.className + ' slide-left');
-
     veil.setAttribute('class', veil.className + ' hide');
-
     navigation.setAttribute('class', navigation.className + ' show');
 
     
