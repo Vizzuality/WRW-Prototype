@@ -9,6 +9,10 @@
 
 	@media screen and (min-width: 551px) and (max-width: 900px) {
 		top: -121px;
+
+		.cartodb-zoom {
+			margin: 165px 20px 0 !important;
+		}
 	}
 
 	#map {
@@ -261,5 +265,11 @@
 				}
 			}
 		}
+	}
+}
+
+@media screen and (min-width: 551px) and (max-width: 900px) {
+	.insights--slideshow-container {
+		top: 121px !important;
 	}
 }
