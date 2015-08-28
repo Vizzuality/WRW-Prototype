@@ -1,63 +1,77 @@
 (function() {
 
+  var mapContainer;
+
   // Selectors
 	var next = document.querySelector('.right-control');
-  var readMoreBtn = document.querySelector('.read-more');
   var scenarios = document.querySelectorAll('.scenarios > li');
 
-  var readMore = function(e) {
-    e && e.preventDefault();
+  var hideArrow = document.querySelector('.hide-arrow');
+  var showArrow = document.querySelector('.show-arrow');
 
-    var slide = document.querySelector('.slide-1');
-    var readMoreSection = document.querySelector('.insights--slideshow-container > .read-more');
+  var hideSlide = function() {
+    var slide = document.querySelector('.read-more-container');
 
-    if (readMoreSection.getAttribute('class') === 'insights--slideshow-content map read-more slide-left') {
+    slide.setAttribute('class', 'insights--slideshow-container read-more-container is-priority show slide-left');
 
-      // Hide
-      this.innerText = 'Read more';
-      readMoreSection.setAttribute('class', 'insights--slideshow-content map read-more slide-left');
-    } else {
-      // Show
-      this.innerText = 'Hide description';
-      readMoreSection.setAttribute('class', 'insights--slideshow-content map read-more slide-left');  
-    }
+    hideArrow.setAttribute('class', 'hide-arrow is-hidden');
+    showArrow.setAttribute('class', 'show-arrow');
+  };
 
+  var showSlide = function() {
+    var slide = document.querySelector('.read-more-container');
+
+    slide.setAttribute('class', 'insights--slideshow-container read-more-container is-priority show slide-right');
+
+    showArrow.setAttribute('class', 'show-arrow is-hidden');
+    hideArrow.setAttribute('class', 'hide-arrow');
   };
 
 	var loadMap = function(viz) {
-    var viz = viz;
-    var map = document.querySelector('#map');
+    var mapDiv = document.querySelector('#map');
+    var lmap;
 
     if (!viz) {
       viz = 'https://insights.cartodb.com/api/v2/viz/eda2596a-3ce7-11e5-aea1-0e0c41326911/viz.json';
+      map.setAttribute('class', 'hide-controls');
+    } else {
+      map.setAttribute('class', '');
     }
 
-    var mapDiv = map.querySelector('div');
-
-    if (mapDiv) {
+    if (mapContainer && mapContainer.map.layers) {
       mapDiv.remove();
+
+      var container = document.querySelector('.insights-map-container');
+      var newMap = document.createElement('div');
+
+      newMap.setAttribute('id', 'map');
+      container.insertBefore(newMap, null);
+
+      mapContainer.mapView.invalidateSize(true);
     }
 
+    mapContainer = cartodb.createVis('map', viz)
+    .done(function(vis, layers) {
 
-    cartodb.createVis('map', viz)
-    .done(function(vis) {
-      
-      var lmap = vis.getNativeMap();
-      // var p1 = cartodb.L.latLng(-180.0000, -90.0000);
-      // var p2 = cartodb.L.latLng(180.0000, 90.0000);
-      // var bounds = cartodb.L.latLng(p2, p1);
+      var center = L.latLng(0, 0);
+      mapContainer.map.setView(center, 3, {animation: true});
 
+      window.setTimeout(function() {
+        layers[0].leafletMap.setMaxBounds([
+          [180.0000, 90.0000], 
+          [-180.0000, -90.0000]
+        ]);
+      }, 500);
 
-      lmap.fitBounds([
-        [180.0000, 90.0000],
-        [-180.0000, -90.0000]
-      ]);
+      var legend = document.querySelector('.cartodb-legend-stack');
+      var html = document.createElement('div');
+      html.setAttribute('class', 'legend-options')
+      html.innerHTML = '<a href="/explore.html">open in data map</a> <div class="options"> \
+        <a href=""><svg class="icon icon-cog"><use xlink:href="#icon-cog"></use></svg></a> \
+        <svg class="icon icon-share"><use xlink:href="#icon-share"></use></svg> \
+        </div>';
 
-      lmap.setZoom(2);
-      if (!mapDiv) {
-        map.setAttribute('class', 'hide-controls');
-      };
-
+      legend.insertBefore(html, legend.querySelector('.cartodb-legend').nextSibling);
     });
   };
 
@@ -91,21 +105,20 @@
   var goMap = function(e) {
     e && e.preventDefault();
 
-    var slide = document.querySelector('.slide-1');
+    var exploreContainer = document.querySelector('.explore-container');
     var veil = document.querySelector('.veil');
-
-    slide.setAttribute('class', slide.className + ' slide-left');
-
-    veil.setAttribute('class', veil.className + ' hide');
-
-    window.setTimeout(function() {
-      map.setAttribute('class', 'is-priority');
-    }, 500);
-
-
     var navigation = document.querySelector('.map-navigation');
 
+    exploreContainer.setAttribute('class', exploreContainer.className + ' slide-left');
+    veil.setAttribute('class', veil.className + ' hide');
     navigation.setAttribute('class', navigation.className + ' show');
+
+    
+    window.setTimeout(function() {
+      map.setAttribute('class', 'is-priority');
+      hideSlide();
+    }, 1500);
+
   }
 
   loadMap()
@@ -115,7 +128,9 @@
   }
 
 
+  hideArrow.onclick = hideSlide;
+  showArrow.onclick = showSlide;
+
 	next.onclick = goMap;
-  readMoreBtn.onclick = readMore;
 
 }());

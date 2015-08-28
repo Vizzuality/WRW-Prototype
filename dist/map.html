@@ -41,7 +41,13 @@
           <div class="upper-header-container">
             <div class="language-selector">
               <ul>
-                <li>English</li>
+                <li class="language"><a id="language" href="#">English</a>
+                  <ul class="language-menu is-hide">
+                    <li><h4><a href="">English</a></h4></li>
+                    <li><h4><a href="">Español</a></h4></li>
+                    <li><h4><a href="">Français</a></h4></li>
+                  </ul>
+                </li>
               </ul>
             </div>
           </div>
@@ -62,28 +68,47 @@
             <!-- <li><a href="#">Apps</a></li> -->
             <!-- <li><a href="#">Get Involved</a></li> -->
             <li><a href="#"><i class="fa fa-search"></i></a></li>
-            <li class="notification"><a href="#"><img src="img/user-1.png"></a></li>
+            <li class="notification">
+              <a href="#"><img src="img/user-1.png"></a>
+              <ul class="user-menu is-hide">
+                <div class="notification-space">
+                  <h4>Notifications</h4>
+                  <ul>
+                    <li class="unread"><a href="#">New insight from World Resources Institute</a></li>
+                    <li class="unread"><a href="#">'Total Greenhouse Emissions' dataset updated</a></li>
+                    <li><a href="#">'Flower pollination in the United States' dataset updated</a></li>
+                  </ul>
+                </div>
+                <div class="user-settings">
+                  <ul>
+                    <li><h4><a href="">Your profile</a></h4></li>
+                    <li><h4><a href="">Settings</a></h4></li>
+                    <li><h4><a href="">Logout</a></h4></li>
+                  </ul>
+                </div>
+              </ul>
+            </li>
           </ul>
         </div>
       </header>
     </div>
+    <div class="map-navigation">
+      <div class="inner">
+        <p>Climate change will increase chance of people being affected by floods</p>
+        <ul class="scenarios">
+          <li data-scenario="A" class="current"><a href="#">Scenario A</a></li>
+          <li data-scenario="B"><a href="#">Scenario B</a></li>
+          <li data-scenario="C"><a href="#" >Scenario C</a></li>
+        </ul>
+      </div>
+    </div>
 
     <div class="insights-map-container">
-        <div class="map-navigation">
-          <div class="inner">
-            <p>Climate change will increase chance of people being affected by floods - <a class="read-more" href="#">Read more</a></p>
-            <ul class="scenarios">
-              <li data-scenario="A" class="current"><a href="#">Scenario A</a></li>
-              <li data-scenario="B"><a href="#">Scenario B</a></li>
-              <li data-scenario="C"><a href="#" >Scenario C</a></li>
-            </ul>
-          </div>
-        </div>
-
+  
       <div id="map"></div>
 
       <div class="veil"></div>
-      <div class="insights--slideshow-container">
+      <div class="insights--slideshow-container explore-container">
 
         <div class="insights--slideshow-content map slide-1">
           <div class="container">
@@ -102,7 +127,7 @@
 
                 <div class="story--metadata-stars">
                   <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
-                  <span>530</span>
+                  <span>1,531</span>
                 </div>
               </div>
 
@@ -121,7 +146,14 @@
           </div>
         </div>
 
+      
+      </div>
+
+      <div class="insights--slideshow-container read-more-container slide-left is-hidden">
+
         <div class="insights--slideshow-content map read-more">
+          <div class="hide-arrow is-hidden"></div>
+          <div class="show-arrow"></div>
           <div class="container">
             <div class="left-half">
               <!-- <ul class="story--breadcrumbs">
@@ -163,9 +195,6 @@
             </div>
           </div>
         </div>
-
-
-        
 
       </div>
       
@@ -283,6 +312,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.3/mustache.js"></script>
     <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
     <script src="js/map/map.js"></script>
+    <script src="js/user_menu.js"></script>
+    <script src="js/fav.js"></script>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {

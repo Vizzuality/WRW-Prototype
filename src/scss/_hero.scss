@@ -83,6 +83,9 @@
 
 .hero-info-stars {
   cursor: pointer;
+  .icon.icon-star {
+    fill: #fff;
+  }
   &.active {
     color: #fab72e;
   }

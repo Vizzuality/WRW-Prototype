@@ -3,6 +3,31 @@
 	var notification = document.querySelector('.notification > a');
 	var menu = document.querySelector('.user-menu');
 
+	var languageBtn = document.querySelector('#language');
+	var languageMenu = document.querySelector('.language-menu');
+
+
+	var toggleLanguageMenu = function(e) {
+		e && e.preventDefault();
+
+		var languageClass = languageMenu.getAttribute('class');
+		console.log(languageClass);
+
+		if (languageClass === 'language-menu is-hide') {
+			languageMenu.setAttribute('class', 'language-menu');
+
+			languageMenu.onclick = function(e) {
+				e.stopPropagation();
+			};
+			window.setTimeout(function(){
+				document.addEventListener('click', closeMenu);
+			}, 0);
+			
+		} else {
+			languageMenu.setAttribute('class', 'language-menu is-hide');
+		}
+	}
+
 	var toggleMenu = function(e) {
 		e && e.preventDefault();
 		
@@ -24,13 +49,20 @@
 	};
 
 	var closeMenu = function() {
-		console.log('closing..!');
 		if (menu.getAttribute('class') === 'user-menu') {
 			menu.setAttribute('class', 'user-menu is-hide');
+		} else {
+
 		}
+
+		if(languageMenu.getAttribute('class') === 'language-menu') {
+			languageMenu.setAttribute('class', 'language-menu is-hide');
+		}
+
 		document.removeEventListener('click', closeMenu);
 	}
 
 	notification.onclick = toggleMenu;
+	languageBtn.onclick = toggleLanguageMenu;
 
 })();
