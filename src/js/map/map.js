@@ -14,7 +14,7 @@
 
     slide.setAttribute('class', 'insights--slideshow-container read-more-container is-priority show slide-left');
 
-    this.setAttribute('class', 'hide-arrow is-hidden');
+    hideArrow.setAttribute('class', 'hide-arrow is-hidden');
     showArrow.setAttribute('class', 'show-arrow');
   };
 
@@ -23,35 +23,8 @@
 
     slide.setAttribute('class', 'insights--slideshow-container read-more-container is-priority show slide-right');
 
-    this.setAttribute('class', 'show-arrow is-hidden');
-
+    showArrow.setAttribute('class', 'show-arrow is-hidden');
     hideArrow.setAttribute('class', 'hide-arrow');
-  };
-
-  var readMore = function(e) {
-    e && e.preventDefault();
-
-    var container = document.querySelector('.read-more-container');
-
-    if (container.getAttribute('class') === 'insights--slideshow-container read-more-container is-priority show') {
-
-      // Hide
-      
-      container.setAttribute('class', 'insights--slideshow-container read-more-container is-priority');
-      window.setTimeout(function() {
-        container.setAttribute('class', 'insights--slideshow-container read-more-container');
-      }, 350);
-      
-    } else {
-      // Show
-      
-      container.setAttribute('class', 'insights--slideshow-container read-more-container is-priority');
-      window.setTimeout(function() {
-        container.setAttribute('class', container.className + ' show');    
-      }, 350);
-      
-    }
-
   };
 
 	var loadMap = function(viz) {
@@ -137,7 +110,6 @@
     navigation.setAttribute('class', navigation.className + ' show');
 
     
-
     window.setTimeout(function() {
       map.setAttribute('class', 'is-priority');
       hideSlide();
