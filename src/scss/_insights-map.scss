@@ -3,6 +3,14 @@
 	height: 100%;
 	top: -43px;
 
+	@media screen and (max-width: 550px) {
+		top: -178px;
+	}
+
+	@media screen and (min-width: 551px) and (max-width: 900px) {
+		top: -121px;
+	}
+
 	#map {
 		position: relative;
 		top: 0;
