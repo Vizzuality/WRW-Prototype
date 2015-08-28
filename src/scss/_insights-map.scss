@@ -3,6 +3,18 @@
 	height: 100%;
 	top: -43px;
 
+	@media screen and (max-width: 550px) {
+		top: -178px;
+	}
+
+	@media screen and (min-width: 551px) and (max-width: 900px) {
+		top: -121px;
+
+		.cartodb-zoom {
+			margin: 165px 20px 0 !important;
+		}
+	}
+
 	#map {
 		position: relative;
 		top: 0;
@@ -253,5 +265,11 @@
 				}
 			}
 		}
+	}
+}
+
+@media screen and (min-width: 551px) and (max-width: 900px) {
+	.insights--slideshow-container {
+		top: 121px !important;
 	}
 }

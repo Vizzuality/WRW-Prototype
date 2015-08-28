@@ -1,7 +1,7 @@
 .map-navigation {
 	position: relative;
 	width: 100%;
-	background: rgba(0,0,0, .7);
+	background: #1F2632;
 	transition: all .5s;
 	transform: translateY(-100%);
 	opacity: 0;
@@ -38,6 +38,11 @@
 					border-bottom: 4px solid #fff;
 				}
 			}
+
+			@media screen and (max-width: 900px) {
+				width: 150px;
+			}
+			
 		}
 	}
 	
