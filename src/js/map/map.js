@@ -1,13 +1,13 @@
 (function() {
 
+  var mapContainer;
+
   // Selectors
 	var next = document.querySelector('.right-control');
   var scenarios = document.querySelectorAll('.scenarios > li');
 
   var hideArrow = document.querySelector('.hide-arrow');
   var showArrow = document.querySelector('.show-arrow');
-
-
 
   var hideSlide = function() {
     var slide = document.querySelector('.read-more-container');
@@ -28,44 +28,52 @@
   };
 
 	var loadMap = function(viz) {
-    var viz = viz;
-    var map = document.querySelector('#map');
+    var mapDiv = document.querySelector('#map');
+    var lmap;
 
     if (!viz) {
       viz = 'https://insights.cartodb.com/api/v2/viz/eda2596a-3ce7-11e5-aea1-0e0c41326911/viz.json';
     }
 
-    var mapDiv = map.querySelector('div');
 
-    if (mapDiv) {
+    if (mapContainer && mapContainer.map.layers) {
       mapDiv.remove();
+
+      var container = document.querySelector('.insights-map-container');
+      var newMap = document.createElement('div');
+
+      newMap.setAttribute('id', 'map');
+      container.insertBefore(newMap, null);
+
+      mapContainer.mapView.invalidateSize(true);
     }
 
-
-    cartodb.createVis('map', viz)
+    mapContainer = cartodb.createVis('map', viz)
     .done(function(vis, layers) {
-      
-      var lmap = vis.getNativeMap();
-      // var p1 = cartodb.L.latLng(-180.0000, -90.0000);
-      // var p2 = cartodb.L.latLng(180.0000, 90.0000);
-      // var bounds = cartodb.L.latLng(p2, p1);
 
-      layers[0].leafletMap.setMaxBounds([
-        [180.0000, 90.0000], 
-        [-180.0000, -90.0000]
-      ]);
+      var center = L.latLng(0, 0);
+      mapContainer.map.setView(center, 3, {animation: true});
 
+      window.setTimeout(function() {
+        layers[0].leafletMap.setMaxBounds([
+          [180.0000, 90.0000], 
+          [-180.0000, -90.0000]
+        ]);
+      }, 500);
 
-      lmap.fitBounds([
-        [180.0000, 90.0000],
-        [-180.0000, -90.0000]
-      ]);
-
-      lmap.setZoom(3);
-      if (!mapDiv) {
+      if (!map.hasAttribute('class')) {
         map.setAttribute('class', 'hide-controls');
-      };
+      }
 
+      var legend = document.querySelector('.cartodb-legend-stack');
+      var html = document.createElement('div');
+      html.setAttribute('class', 'legend-options')
+      html.innerHTML = '<a href="/explore.html">open in data map</a> <div class="options"> \
+        <a href=""><svg class="icon icon-cog"><use xlink:href="#icon-cog"></use></svg></a> \
+        <svg class="icon icon-share"><use xlink:href="#icon-share"></use></svg> \
+        </div>';
+
+      legend.insertBefore(html, legend.querySelector('.cartodb-legend').nextSibling);
     });
   };
 
