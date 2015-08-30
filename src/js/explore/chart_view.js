@@ -1,10 +1,10 @@
 define([
   'backbone', 'handlebars', 'd3', 'jquery',
-  'line_chart', 'pie_chart',
+  'line_chart', 'pie_chart', 'scatter_chart',
   'text!templates/chart.hbs'
 ], function(
   Backbone, Handlebars, d3, $,
-  LineChart, PieChart,
+  LineChart, PieChart, ScatterChart,
   tpl
 ) {
 
@@ -45,6 +45,21 @@ define([
       }
 
       return this;
+    },
+
+    _renderScatter: function() {
+      d3.json("js/explore/scatter_chart_test.json", function(error, data) {
+        var keys = { x: 'carbon_2009', y: 'energy_2009' };
+
+        var scatterChart = new ScatterChart({
+          data: data,
+          el: this.el,
+          sizing: {top: 20, right: 20, bottom: 30, left: 20},
+          keys: keys
+        });
+
+        scatterChart.render();
+      }.bind(this));
     },
 
     _renderLine: function() {

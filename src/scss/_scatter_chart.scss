@@ -1,0 +1,17 @@
+.scatterChart {
+  .axis path {
+    stroke: none;
+    fill: none;
+  }
+
+  .axis text {
+    fill: white;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .axis.y line {
+    fill: none;
+    stroke: #7CCDE2;
+  }
+}

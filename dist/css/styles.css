@@ -1530,7 +1530,7 @@ a.button.banner-button {
   border-left: 0;
   border-right: 0;
   margin-bottom: 35px;
-  margin-top: 70px; }
+  margin-top: 35px; }
   .m-partners .partners-title {
     position: relative;
     text-transform: uppercase;
@@ -2843,6 +2843,14 @@ a.explore--map-button {
   position: relative;
   height: 100%;
   top: -43px; }
+  @media screen and (max-width: 550px) {
+    .insights-map-container {
+      top: -178px; } }
+  @media screen and (min-width: 551px) and (max-width: 900px) {
+    .insights-map-container {
+      top: -121px; }
+      .insights-map-container .cartodb-zoom {
+        margin: 165px 20px 0 !important; } }
   .insights-map-container #map {
     position: relative;
     top: 0;
@@ -3001,10 +3009,63 @@ a.explore--map-button {
         color: #ddd;
         line-height: 1.6em; }
 
+.cartodb-legend-stack {
+  border-radius: 3px !important;
+  border: 0 !important;
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.09) !important;
+          box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.09) !important; }
+  .cartodb-legend-stack .cartodb-legend {
+    border-bottom: 0 !important; }
+    .cartodb-legend-stack .cartodb-legend .min, .cartodb-legend-stack .cartodb-legend .max {
+      font-family: 'Lato';
+      font-size: 11px;
+      color: #393F44; }
+    .cartodb-legend-stack .cartodb-legend .graph {
+      margin-top: 5px;
+      border: 0 !important;
+      border-radius: 0 !important; }
+  .cartodb-legend-stack .legend-options {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 0 20px;
+    padding: 10px 0;
+    border-top: 1px solid #e3e4e6; }
+    .cartodb-legend-stack .legend-options a {
+      font-size: 11px;
+      font-weight: 600;
+      color: #9aa2a9;
+      text-decoration: none;
+      text-transform: uppercase; }
+      .cartodb-legend-stack .legend-options a:hover {
+        color: #3BB2D0; }
+    .cartodb-legend-stack .legend-options .options {
+      float: right; }
+      .cartodb-legend-stack .legend-options .options svg {
+        width: 15px;
+        height: 15px;
+        margin: 0 2px;
+        fill: #b9bfc4; }
+        .cartodb-legend-stack .legend-options .options svg:hover {
+          fill: #3BB2D0; }
+
+@media screen and (min-width: 551px) and (max-width: 900px) {
+  .insights--slideshow-container {
+    top: 121px !important; } }
+
 .map-navigation {
   position: relative;
   width: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: #1F2632;
   -webkit-transition: all .5s;
           transition: all .5s;
   -webkit-transform: translateY(-100%);
@@ -3046,6 +3107,9 @@ a.explore--map-button {
           text-decoration: none; }
         .map-navigation .inner .scenarios li.current {
           border-bottom: 4px solid #fff; }
+      @media screen and (max-width: 900px) {
+        .map-navigation .inner .scenarios {
+          width: 150px; } }
   .map-navigation.show {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -3696,6 +3760,17 @@ a.explore--map-button {
   font-family: Lato-Bold;
   font-size: 14px;
   fill: rgba(255, 255, 255, 0.72); }
+
+.scatterChart .axis path {
+  stroke: none;
+  fill: none; }
+.scatterChart .axis text {
+  fill: white;
+  font-size: 12px;
+  font-weight: bold; }
+.scatterChart .axis.y line {
+  fill: none;
+  stroke: #7CCDE2; }
 
 .login--container {
   display: block;
