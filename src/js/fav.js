@@ -3,6 +3,7 @@
 	var stars = document.querySelector('.hero-info-stars');
 	var insightStar = document.querySelector('.insights--featured-info-stars');
 	var starsCard = document.getElementsByClassName('card-info-stars');
+	var mapStar = document.querySelector('.story--metadata-stars');
 
 	var doFav = function() {
 		var fav = this.querySelector('svg'),
@@ -50,6 +51,10 @@
 	if (insightStar) {
 		insightStar.onclick = doFav;
 	}
+
+	if (mapStar) {
+		mapStar.onclick = doFav;
+	};
 	
 
 	if (starsCard.length > 0) {

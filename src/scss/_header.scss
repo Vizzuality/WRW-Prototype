@@ -1,13 +1,15 @@
 .header-container {
+  position: relative;
   width: 100%;
   height: $page--header-height;
-
   margin-bottom: 0;
 
   background: #C32D7B;
   background-image: url(../img/header-bg.png), linear-gradient(90deg, #C32D7B 0%, #C90E39 100%);
   background-size: cover;
   background-repeat: no-repeat;
+
+  z-index: 252;
 
   &.is-fixed {
     position: fixed;
@@ -26,6 +28,7 @@
 }
 
 .header {
+  position: relative;
   height: 100%;
   margin: 0 auto;
 
