@@ -5,19 +5,7 @@ require.config({
   paths: {
     jquery:     '../vendor/jquery/dist/jquery.min',
     underscore: '../vendor/underscore/underscore-min',
-    backbone:   '../vendor/backbone/backbone-min',
-    handlebars: '../vendor/handlebars/handlebars.amd.min',
-    d3:         '../vendor/d3/d3',
-    d3chart:    'helpers/chart',
-    moment:     '../vendor/moment/min/moment.min',
-    text:       '../vendor/text/text',
-    'backbone-super': '../vendor/backbone-super/backbone-super/' +
-      'backbone-super-min',
-    slick:      '../vendor/slick-carousel/slick/slick.min'
-  },
-
-  shim: {
-    d3:   { exports: 'd3' }
+    backbone:   '../vendor/backbone/backbone-min'
   }
 
 });
@@ -28,6 +16,8 @@ require([
 ], function(_, Backbone) {
 
   'use strict';
+
+  var hostname = location.hostname === 'localhost' ? '' : 'WRW-Prototype/dist/';
 
   var GlobeView = Backbone.View.extend({
 
@@ -49,8 +39,13 @@ require([
       switch(vis) {
         case 'fires':
           this.globe.ambientLight.color.setHex(0xcccccc);
-          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture('/img/planet-pulse/basemap-terrain-blue_4k.jpg');
-          this.globe.createLayer(this.currentVis, '/img/planet-pulse/layers/fires_4k.png');
+          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/basemap-terrain-blue_4k.jpg');
+          this.globe.createLayer(this.currentVis, hostname + 'img/planet-pulse/layers/fires_4k.png');
+          break;
+        case 'protected-areas':
+          this.globe.ambientLight.color.setHex(0xcccccc);
+          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/basemap-terrain-blue_4k.jpg');
+          this.globe.createLayer(this.currentVis, hostname + 'img/planet-pulse/layers/protected-areas_4k.png');
           break;
       }
       
@@ -60,7 +55,7 @@ require([
 
     reset: function() {
       this.globe.removeLayer(this.currentVis);
-      this.globe.sphere.material.map = THREE.ImageUtils.loadTexture('/img/planet-pulse/2_no_clouds_4k.jpg');
+      this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/2_no_clouds_4k.jpg');
       this.globe.ambientLight.color.setHex(0x444444);
       // this.globe.setPosition(0, -0.1);
       this.globe.addClouds();
