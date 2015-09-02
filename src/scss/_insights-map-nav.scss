@@ -5,7 +5,7 @@
 	transition: all .5s;
 	transform: translateY(-100%);
 	opacity: 0;
-	z-index: 251;
+	z-index: $z-index-2;
 
 	.inner {
 		margin: 0 20px;

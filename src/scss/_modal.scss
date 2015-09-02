@@ -5,7 +5,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 2000000;
+  z-index: $z-index-10;
 
   .infowindow {
     background-color: rgba(#fff, .77);
@@ -16,7 +16,7 @@
   display: flex;
   position: relative;
   margin: auto;
-  z-index: 2000014;
+  z-index: $z-index-10;
 }
 
 .modal-container {
@@ -57,7 +57,7 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  z-index: 1;
+  z-index: $z-index-1;
   cursor: pointer;
   font-weight: bold;
   color: #6C7379;
