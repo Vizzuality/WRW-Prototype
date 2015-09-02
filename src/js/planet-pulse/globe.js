@@ -2,8 +2,8 @@ var Globe = function(element) {
   var webglEl = element || document.body;
 
   // Vars
-  var w = element ? webglEl.clientWidth : window.innerWidth;
-  var h = element ? webglEl.clientHeight : window.innerHeight;
+  var w = this.w = element ? webglEl.clientWidth : window.innerWidth;
+  var h = this.h = element ? webglEl.clientHeight : window.innerHeight;
 
   var radius = 0.5;
   var segments = 32;
@@ -158,7 +158,7 @@ var Globe = function(element) {
     renderer.setSize( window.innerWidth, window.innerHeight );
   }
 
-  window.addEventListener('resize', onWindowResize, false);
+  // window.addEventListener('resize', onWindowResize, false);
 
   this.setPosition = setPosition;
 
@@ -169,6 +169,8 @@ var Globe = function(element) {
   this.removeClouds = function() {
     scene.remove(clouds);
   };
+
+  this.camera = camera;
 
   this.resize = onWindowResize;
 

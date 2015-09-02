@@ -17,7 +17,7 @@ require([
 
   'use strict';
 
-  var hostname = location.hostname === 'localhost' ? '' : 'WRW-Prototype/dist/';
+  var hostname = location.hostname === 'localhost' || location.hostname === '192.168.1.142' ? '' : 'WRW-Prototype/dist/';
 
   var GlobeView = Backbone.View.extend({
 
@@ -32,6 +32,9 @@ require([
     },
 
     setVis: function(vis) {
+      var w = this.globe.w;
+      var h = this.globe.h;
+
       this.globe.removeClouds();
       this.globe.removeLayer(this.currentVis);
       this.currentVis = vis;
@@ -40,7 +43,7 @@ require([
         case 'fires':
           this.globe.ambientLight.color.setHex(0xcccccc);
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/basemap-terrain-blue_4k.jpg');
-          this.globe.createLayer(this.currentVis, hostname + 'img/planet-pulse/layers/fires_4k.png');
+          this.globe.createLayer(this.currentVis, hostname + 'img/planet-pulse/layers/fires_4k.jpg');
           break;
         case 'protected-areas':
           this.globe.ambientLight.color.setHex(0xcccccc);
@@ -48,16 +51,18 @@ require([
           this.globe.createLayer(this.currentVis, hostname + 'img/planet-pulse/layers/protected-areas_4k.png');
           break;
       }
-      
-      // this.globe.setPosition(0.35, -0.1);
-      // this.globe.setPosition(0, -0.05);
+
+      this.globe.camera.setViewOffset( w, h, w * -0.2, h * 0, w, h );
     },
 
     reset: function() {
+      var w = this.globe.w;
+      var h = this.globe.h;
+
       this.globe.removeLayer(this.currentVis);
       this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/2_no_clouds_4k.jpg');
       this.globe.ambientLight.color.setHex(0x444444);
-      // this.globe.setPosition(0, -0.1);
+      this.globe.camera.setViewOffset( w, h, w * 0, h * 0, w, h );
       this.globe.addClouds();
     }
 

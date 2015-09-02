@@ -109,10 +109,12 @@ THREE.TrackballControls = function ( object, domElement ) {
     //   ( _this.screen.height * 0.5 + _this.screen.offsetTop - clientY ) / _this.radius,
     //   0.0
     // );
+    var currentX = ( clientX - _this.screen.width * 0.5 - _this.screen.offsetLeft ) / _this.radius;
+    var currentY = ( _this.screen.height * 0.5 + _this.screen.offsetTop - clientY ) / _this.radius;
     
     var mouseOnBall = new THREE.Vector3(
-      ( clientX - _this.screen.width * 0.5 - _this.screen.offsetLeft ) / _this.radius,
-      0.0,
+      currentX,
+      currentY,
       0.0
     );
 
