@@ -40,7 +40,7 @@
 		}
 
 		&.is-priority {
-			z-index: 250;
+			z-index: $z-index-1;
 		}
 
 		&.hide-controls {
@@ -63,7 +63,7 @@
 
  		&.hide {
  			background: transparent;
- 			z-index: -5;
+ 			z-index: $z-index-2;
  		}
  	}
 
@@ -76,7 +76,7 @@
 		right: 0;
 		width: 550px;
 		height: initial;
-		z-index: 249;
+		z-index: $z-index-3;
 		transition: all .5s;
 
 		.story--intro-text {
@@ -112,7 +112,7 @@
 				left: 0;
 				height: 50px;
 				width: 100%;
-				z-index: 999;
+				z-index: $z-index-3;
 			}
 			&:before {
 				top: -12px;
@@ -185,7 +185,7 @@
 		}
 
 		&.is-priority {
-			z-index: 250;
+			z-index: $z-index-2;
 		}
 
 		.insights--slideshow-content {
