@@ -87,8 +87,24 @@
   text-align: right;
   font-size: 15px;
 
+  span {
+    padding-left: 5px;
+    transition: color 0.2s;
+  }
+
+  .icon-star {
+    height: 15px;
+    margin-top: 1px; /* For vertical centering */
+  }
+
   &.active {
-    color: $insights--stars-active-color;
+    .icon-star {
+      fill: $insights--stars-active-color;
+    }
+
+    span {
+      color: $insights--stars-active-color;
+    }
   }
 }
 
@@ -479,7 +495,6 @@
   height: 40px;
 
   display: inline-flex;
-  flex-flow: row wrap;
   align-items: center;
 
   z-index: 15;
@@ -503,6 +518,24 @@
   position: absolute;
   right: 0;
   cursor: pointer;
+
+  .icon-star {
+    fill: white;
+  }
+
+  span {
+    width: 100%;
+    padding-left: 5px;
+    transition: color .2s;
+  }
+
+  &.active span {
+    color: $mango;
+  }
+}
+
+.insights--featured-info-source {
+  flex-flow: row wrap;
 }
 
 .insights--search-container {

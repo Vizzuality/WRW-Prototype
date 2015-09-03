@@ -71,9 +71,22 @@
 
 .story--metadata-stars {
   color: $story--metadata-stars-color;
+  display: flex;
+
+  span {
+    width: 100%;
+    padding-left: 5px;
+    transition: color 0.2s;
+  }
 
   &.active {
-    color: $story--metadata-stars-active-color;
+    .icon-star {
+      fill: $mango;
+    }
+
+    span {
+      color: $story--metadata-stars-active-color !important;
+    }
   }
 }
 
