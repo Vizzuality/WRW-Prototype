@@ -79,9 +79,22 @@
     color: $data--card-stars-color;
     text-align: right;
     cursor: pointer;
+    display: flex;
 
-    &.active span {
-      color: #fab72e;
+    span {
+      width: 100%;
+      transition: color 0.2s;
+      line-height: 1.4em; /* To align the text with the star icon */
+    }
+
+    &.active {
+      .icon-star {
+        fill: $mango;
+      }
+
+      span {
+        color: $mango;
+      }
     }
   }
 

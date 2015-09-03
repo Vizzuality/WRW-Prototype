@@ -24,6 +24,8 @@
   </head>
   <body>
 
+    @@include('./templates/svg_icons.html')
+
     <div class="header-container">
       <header class="header">
         <div class="upper-header">
@@ -94,7 +96,8 @@
               </div>
 
               <div class="story--metadata-stars">
-                <i class="fa fa-star"></i> 452
+                <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                <span>452</span>
               </div>
             </div>
 
@@ -233,5 +236,6 @@
     <script src="js/slideshow/slideshow.js"></script>
 
     @@include('./templates/scripts.html')
+
   </body>
 </html>

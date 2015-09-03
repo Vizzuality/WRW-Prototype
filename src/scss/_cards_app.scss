@@ -30,8 +30,19 @@
     text-align: right;
     font-size: 15px;
 
+    .icon-star {
+      height: 15px;
+      margin-bottom: 2px; /* For vertical alignment with the span */
+    }
+
     &.active {
-      color: $app--card-stars-active-color;
+      span {
+        color: $app--card-stars-active-color;
+      }
+
+      .icon-star {
+        fill: $app--card-stars-active-color;
+      }
     }
   }
 }

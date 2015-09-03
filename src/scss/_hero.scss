@@ -64,7 +64,6 @@
   height: 40px;
 
   display: inline-flex;
-  flex-flow: row wrap;
   align-items: center;
 
   img {
@@ -80,12 +79,29 @@
 
 .hero-info-stars {
   cursor: pointer;
+
+  span {
+    width: 100%;
+    padding-left: 5px;
+  }
+
   .icon.icon-star {
     fill: #fff;
   }
+
   &.active {
-    color: #fab72e;
+    .icon-star {
+      fill: $mango;
+    }
+
+    span {
+      color: $mango;
+    }
   }
+}
+
+.hero-info-source {
+  flex-flow: row wrap;
 }
 
 @media screen and (max-width : $responsive-break--tablet) {
