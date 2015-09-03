@@ -37,6 +37,9 @@ define([
         isLineChart: (type === 'line')
       }));
 
+      this._renderScatter();
+      return this;
+
       $(window).off('resize');
       if (type === 'line') {
         this._renderLine();

@@ -38,7 +38,6 @@ define([
       }));
 
       this._renderScatter();
-
       return this;
 
       $(window).off('resize');

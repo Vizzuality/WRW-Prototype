@@ -10,8 +10,13 @@
     font-weight: bold;
   }
 
+  .axis.x line,
   .axis.y line {
     fill: none;
     stroke: #7CCDE2;
+  }
+
+  .axis.x line {
+    stroke-width: 1px;
   }
 }

@@ -43,16 +43,25 @@ define([
 
   ScatterChart.prototype._drawAxes = function() {
     var xAxis = d3.svg.axis().scale(x).orient("bottom"),
-        yAxis = d3.svg.axis().scale(y).tickSize(-this.parentWidth, 0).orient("left");
+        yAxis = d3.svg.axis()
+          .scale(y)
+          .tickSize(-this.parentWidth, 100).orient("left")
+          .tickFormat(function(d) {
+            var suffix = d3.formatPrefix(d);
+            return suffix.scale(d).toFixed() + suffix.symbol;
+          });
 
     svg.append("g")
       .attr("class", "x axis")
-      .attr("transform", "translate("+this.sizing.left+"," + this.height + ")")
+      .attr("transform", "translate("+(this.sizing.left+20)+"," + this.height + ")")
       .call(xAxis);
 
     svg.append("g")
       .attr("class", "y axis")
-      .call(yAxis);
+      .call(yAxis)
+      .selectAll("text")
+        .style("text-anchor", "end")
+        .attr("transform", "translate(35,-10)" );
   };
 
   ScatterChart.prototype.render = function() {
@@ -60,7 +69,7 @@ define([
 
     var group = svg.append("g")
       .attr("class", "focus")
-      .attr("transform", "translate(" + this.sizing.left + ",0)");
+      .attr("transform", "translate(" + (this.sizing.left+20) + ",0)");
 
     group.selectAll(".dot")
         .data(this.data)

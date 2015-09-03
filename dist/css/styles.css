@@ -3768,9 +3768,11 @@ a.explore--map-button {
   fill: white;
   font-size: 12px;
   font-weight: bold; }
-.scatterChart .axis.y line {
+.scatterChart .axis.x line, .scatterChart .axis.y line {
   fill: none;
   stroke: #7CCDE2; }
+.scatterChart .axis.x line {
+  stroke-width: 1px; }
 
 .login--container {
   display: block;
