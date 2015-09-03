@@ -11,7 +11,7 @@ var Globe = function(element) {
 
   var layers = {};
 
-  var hostname = location.hostname === 'localhost' ? '' : 'WRW-Prototype/dist/';
+  var hostname = location.hostname === 'localhost' || location.hostname === '192.168.1.142' ? '' : 'WRW-Prototype/dist/';
 
   function createEarth(radius, segments) {
     return new THREE.Mesh(
@@ -19,7 +19,7 @@ var Globe = function(element) {
       new THREE.MeshPhongMaterial({
         map: THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/2_no_clouds_4k.jpg'),
         bumpMap: THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/elev_bump_4k.jpg'),
-        bumpScale: 0.0005,
+        bumpScale: 0.001,
         specularMap: THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/water_4k.png'),
         specular: new THREE.Color('grey')
       })
@@ -32,6 +32,7 @@ var Globe = function(element) {
       new THREE.MeshPhongMaterial({
         map: THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/fair_clouds_4k.png'),
         side: THREE.DoubleSide,
+        opacity: 0.8,
         transparent: true,
         depthWrite: false
       })
@@ -104,7 +105,10 @@ var Globe = function(element) {
   scene.add(space);
 
   // Controls
-  var controls = new THREE.TrackballControls(camera);
+  // var controls = new THREE.TrackballControls(camera);
+  var controls = new THREE.OrbitControls(camera);
+  controls.minDistance = 1;
+  controls.maxDistance = 15;
 
   // Helper functions
   function setPosition(x, y) {
