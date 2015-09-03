@@ -1,66 +1,57 @@
 (function() {
 
-	var stars = document.querySelector('.hero-info-stars');
-	var insightStar = document.querySelector('.insights--featured-info-stars');
-	var starsCard = document.getElementsByClassName('card-info-stars');
-	var mapStar = document.querySelector('.story--metadata-stars');
+  var stars = document.querySelector('.hero-info-stars');
+  var insightStar = document.querySelector('.insights--featured-info-stars');
+  var starsCard = document.getElementsByClassName('card-info-stars');
+  var mapStar = document.querySelector('.story--metadata-stars');
+  var insights = document.querySelector('.insights--star');
+  var explore = document.querySelector('.explore-detail--stars');
 
-	var doFav = function() {
-		var fav = this.querySelector('svg'),
-			selectorClass = this.className,
-			totalFavsContainer = this.querySelector('span'),
-			totalFavs = Number(totalFavsContainer.innerText.replace(',', ''));
+  var doFav = function() {
+    var totalFavsContainer = this.querySelector('span'),
+        totalFavs = Number(totalFavsContainer.innerText.replace(',', ''));
 
-		if (fav.getAttribute('class') === 'icon icon-star') {
+    if(this.classList.contains('active')) {
+      totalFavs--;
+    } else {
+      totalFavs++;
+    }
 
-			fav.setAttribute('class', 'icon icon-star--active');
-			this.setAttribute('class', this.className + ' active');
-			totalFavs += 1;			
+    this.classList.toggle('active');
 
-		} else {
+    if(totalFavs / 1000 > 1) {
+      totalFavs = String(totalFavs / 1000).replace('.', ',');
+    }
 
-			fav.setAttribute('class', 'icon icon-star');
+    totalFavsContainer.innerText = totalFavs;
+  };
 
-			if (selectorClass === 'card-info-stars' || selectorClass === 'card-info-stars active') {
-				this.setAttribute('class', 'card-info-stars');
-			}
+  // Add events
+  if (stars) {
+    stars.onclick = doFav;
+  }
 
-			if (selectorClass === 'insights--featured-info-stars' || selectorClass === 'insights--featured-info-stars active') {
-				this.setAttribute('class', 'insights--featured-info-stars');
-			}
+  if (insights) {
+    insights.onclick = doFav;
+  }
 
-			if (selectorClass === 'hero-info-stars' || selectorClass === 'hero-info-stars active') {
-				this.setAttribute('class', 'hero-info-stars');
-			}
+  if (explore) {
+    explore.onclick = doFav;
+  }
 
-			totalFavs -= 1;
-		}
+  if (insightStar) {
+    insightStar.onclick = doFav;
+  }
 
-		if (totalFavs / 1000 > 0) {
-			totalFavs = String(totalFavs / 1000).replace('.', ',');
-		}
-	
-		totalFavsContainer.innerText = totalFavs;
-	};
+  if (mapStar) {
+    mapStar.onclick = doFav;
+  };
 
-	// Add events
-	if (stars) {
-		stars.onclick = doFav;
-	}
 
-	if (insightStar) {
-		insightStar.onclick = doFav;
-	}
-
-	if (mapStar) {
-		mapStar.onclick = doFav;
-	};
-	
-
-	if (starsCard.length > 0) {
-		for (var i = 0; i < starsCard.length; i++) {
-			starsCard[i].onclick = doFav;
-		}
-	}
+  if (starsCard.length > 0) {
+    for (var i = 0; i < starsCard.length; i++) {
+      starsCard[i].onclick = doFav;
+    }
+  }
 
 })();

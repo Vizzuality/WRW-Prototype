@@ -72,6 +72,7 @@
 .story--metadata-stars {
   color: $story--metadata-stars-color;
   display: flex;
+  cursor: pointer;
 
   span {
     width: 100%;

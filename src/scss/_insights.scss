@@ -86,6 +86,7 @@
   color: $insights--stars-color;
   text-align: right;
   font-size: 15px;
+  cursor: pointer;
 
   span {
     padding-left: 5px;
@@ -529,8 +530,14 @@
     transition: color .2s;
   }
 
-  &.active span {
-    color: $mango;
+  &.active {
+    span {
+      color: $mango;
+    }
+
+    .icon-star {
+      fill: $mango;
+    }
   }
 }
 

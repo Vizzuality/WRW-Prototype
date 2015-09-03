@@ -37,12 +37,14 @@ $explore--wide-content-width: 1020px;
     display: flex;
     align-items: flex-end;
     margin-bottom: 10px;
+    cursor: pointer;
 
     span {
       width: 100%;
       padding-left: 5px;
       padding-bottom: 1px; /* For vertical alignment with the star icon */
       transition: color 0.2s;
+      color: #A9B0B6;
     }
 
     &.active {

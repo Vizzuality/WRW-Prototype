@@ -93,7 +93,13 @@
   }
 
   &.active {
-    color: #fab72e;
+    .icon-star {
+      fill: $mango;
+    }
+
+    span {
+      color: $mango;
+    }
   }
 }
 
