@@ -40,7 +40,7 @@
 		}
 
 		&.is-priority {
-			z-index: 250;
+			z-index: $z-index-1;
 		}
 
 		&.hide-controls {
@@ -63,7 +63,7 @@
 
  		&.hide {
  			background: transparent;
- 			z-index: -5;
+ 			z-index: $z-index-2;
  		}
  	}
 
@@ -76,7 +76,7 @@
 		right: 0;
 		width: 550px;
 		height: initial;
-		z-index: 249;
+		z-index: $z-index-3;
 		transition: all .5s;
 
 		.story--intro-text {
@@ -112,10 +112,10 @@
 				left: 0;
 				height: 50px;
 				width: 100%;
-				z-index: 999;
+				z-index: $z-index-3;
 			}
 			&:before {
-				top: -12px;
+				top: 0px;
 				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&amp;1+0,0+100 */
 				background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
 				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
@@ -185,7 +185,7 @@
 		}
 
 		&.is-priority {
-			z-index: 250;
+			z-index: $z-index-2;
 		}
 
 		.insights--slideshow-content {

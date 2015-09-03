@@ -209,18 +209,18 @@
       top: 0;
       left: 0;
       background-color: rgba(0, 0, 0, 0.7);
-      z-index: 1;
+      z-index: $z-index-1;
     }
 
     .left-half,
     .right-half{
       flex-basis: 50%;
-      z-index: 2;
+      z-index: $z-index-2;
     }
 
     .two-half {
       flex-basis: 100%;
-      z-index: 2;
+      z-index: $z-index-2;
     }
 
     .story--breadcrumbs,
@@ -473,7 +473,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 11;
 }
 
 .insights--featured-title {
@@ -498,8 +497,6 @@
   display: inline-flex;
   align-items: center;
 
-  z-index: 15;
-
   img {
     width: 38px;
     height: 38px;
@@ -508,7 +505,6 @@
   }
 
   span {
-    z-index: 15;
     a {
       text-decoration: underline;
     }

@@ -24,7 +24,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 11;
   }
 
   .hero-content {
@@ -66,8 +65,6 @@
 
   display: inline-flex;
   align-items: center;
-  
-  z-index: 15;
 
   img {
     width: 38px;

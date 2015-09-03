@@ -10,14 +10,13 @@
 	background: #fff;
 	border-radius: 5px;
 	box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.30);
-	z-index: 35;
+	z-index: $z-index-10;
 	opacity: 1;
 
 	transition: all .5s;
 
 	&.is-hide {
 		opacity: 0;
-		z-index: -35;
 		top: 30px;
 		pointer-events: none;
 	}

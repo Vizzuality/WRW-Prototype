@@ -84,12 +84,8 @@
 }
 
 @media screen and (max-width: $responsive-break--mobile) {
-  .gridbox {
-    flex-direction: column;
-  }
-
   .gridbox .cell {
-    flex-basis: initial !important;
+    flex-basis: 100% !important;
     margin-right: 0 !important;
   }
 
