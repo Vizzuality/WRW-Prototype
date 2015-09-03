@@ -28,14 +28,14 @@ var Globe = function(element) {
 
   function createClouds(radius, segments) {
     return new THREE.Mesh(
-      new THREE.SphereGeometry(radius + 0.003, segments, segments),     
+      new THREE.SphereGeometry(radius + 0.003, segments, segments),
       new THREE.MeshPhongMaterial({
         map: THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/fair_clouds_4k.png'),
         side: THREE.DoubleSide,
         transparent: true,
         depthWrite: false
       })
-    );    
+    );
   }
 
   function createSpace(radius, segments) {
@@ -50,7 +50,7 @@ var Globe = function(element) {
 
   function createLayer(name, imageUrl) {
     var layer = new THREE.Mesh(
-      new THREE.SphereGeometry(radius + 0.002, segments, segments),     
+      new THREE.SphereGeometry(radius + 0.002, segments, segments),
       new THREE.MeshPhongMaterial({
         map: THREE.ImageUtils.loadTexture(imageUrl),
         side: THREE.DoubleSide,
@@ -158,7 +158,7 @@ var Globe = function(element) {
     renderer.setSize( window.innerWidth, window.innerHeight );
   }
 
-  // window.addEventListener('resize', onWindowResize, false);
+  window.addEventListener('resize', onWindowResize, false);
 
   this.setPosition = setPosition;
 

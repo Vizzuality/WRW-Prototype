@@ -43,7 +43,7 @@ require([
         case 'fires':
           this.globe.ambientLight.color.setHex(0xcccccc);
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/basemap-terrain-blue_4k.jpg');
-          this.globe.createLayer(this.currentVis, hostname + 'img/planet-pulse/layers/fires_4k.jpg');
+          this.globe.createLayer(this.currentVis, hostname + 'img/planet-pulse/layers/fires_4k.png');
           break;
         case 'protected-areas':
           this.globe.ambientLight.color.setHex(0xcccccc);
@@ -118,7 +118,7 @@ require([
       this.$title.hide(100)
       this.$nav.addClass('is-blur');
       this.$backBtn.show(100);
-      
+
       // TODO
       this.globeView.setVis(vis);
     },
