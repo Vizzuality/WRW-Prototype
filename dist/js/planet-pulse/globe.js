@@ -11,7 +11,7 @@ var Globe = function(element) {
 
   var layers = {};
 
-  var hostname = location.hostname === 'localhost' || location.hostname === '192.168.1.142' ? '' : 'WRW-Prototype/dist/';
+  var hostname = location.hostname === 'localhost' || location.hostname === '192.168.1.142' ? '' : '/WRW-Prototype/dist/';
 
   function createEarth(radius, segments) {
     return new THREE.Mesh(
