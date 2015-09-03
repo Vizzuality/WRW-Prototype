@@ -91,6 +91,10 @@ require([
       this.$nav = $('.planet-pulse--main-nav')
       this.$backBtn = $('#backBtn');
 
+      $('.img-preload').each(function(index, el) {
+        el.src = hostname + el.src;
+      });
+
       this.globeView = new GlobeView();
       this.router = new Router();
 
