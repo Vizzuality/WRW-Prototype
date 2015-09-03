@@ -34,9 +34,28 @@ $explore--wide-content-width: 1020px;
   }
 
   .explore-detail--stars {
-    align-self: flex-end;
-    color: $mango;
+    display: flex;
+    align-items: flex-end;
     margin-bottom: 10px;
+    cursor: pointer;
+
+    span {
+      width: 100%;
+      padding-left: 5px;
+      padding-bottom: 1px; /* For vertical alignment with the star icon */
+      transition: color 0.2s;
+      color: #A9B0B6;
+    }
+
+    &.active {
+      span {
+        color: $mango;
+      }
+
+      .icon-star {
+        fill: $mango;
+      }
+    }
   }
 
   .explore-detail--metadata {
@@ -101,7 +120,7 @@ $explore--wide-content-width: 1020px;
     right: 18px;
     padding: 17px;
     padding-top: 52px;
-    z-index: 1;
+    z-index: $z-index-1;
 
     select {
       height: 30px;
@@ -138,7 +157,7 @@ $explore--wide-content-width: 1020px;
 
   .tooltip {
     display: none;
-    z-index: 1;
+    z-index: $z-index-1;
     position: absolute;
     width: 125px;
     height: 60px;
@@ -433,7 +452,7 @@ a.button.button-large.explore--search-button {
 
 a.explore--map-button {
   color: #FFF;
-  z-index: 1;
+  z-index: $z-index-1;
   padding: 12px 10px;
   width: 30px;
   height: 40px;
@@ -448,7 +467,7 @@ a.explore--map-button {
 .explore--map-legend {
   background: white;
   border-radius: 2px;
-  z-index: 1;
+  z-index: $z-index-1;
   display: none;
 
   position: absolute;

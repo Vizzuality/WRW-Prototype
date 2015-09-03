@@ -22,13 +22,21 @@
   </head>
   <body>
 
+    @@include('./templates/svg_icons.html')
+
     <div class="header-container">
       <header class="header">
         <div class="upper-header">
           <div class="upper-header-container">
             <div class="language-selector">
               <ul>
-                <li>English</li>
+                <li class="language"><a id="language" href="#">English</a>
+                  <ul class="language-menu is-hide">
+                    <li><h4><a href="">English</a></h4></li>
+                    <li><h4><a href="">Español</a></h4></li>
+                    <li><h4><a href="">Français</a></h4></li>
+                  </ul>
+                </li>
               </ul>
             </div>
           </div>
@@ -49,7 +57,26 @@
             <!-- <li><a href="#">Apps</a></li> -->
             <!-- <li><a href="#">Get Involved</a></li> -->
             <li><a href="#"><i class="fa fa-search"></i></a></li>
-            <li class="notification"><a href="#"><img src="img/user-1.png"></a></li>
+            <li class="notification">
+              <a href="#"><img src="img/user-1.png"></a>
+              <ul class="user-menu is-hide">
+                <div class="notification-space">
+                  <h4>Notifications</h4>
+                  <ul>
+                    <li class="unread"><a href="#">New insight from World Resources Institute</a></li>
+                    <li class="unread"><a href="#">'Total Greenhouse Emissions' dataset updated</a></li>
+                    <li><a href="#">'Flower pollination in the United States' dataset updated</a></li>
+                  </ul>
+                </div>
+                <div class="user-settings">
+                  <ul>
+                    <li><h4><a href="">Your profile</a></h4></li>
+                    <li><h4><a href="">Settings</a></h4></li>
+                    <li><h4><a href="">Logout</a></h4></li>
+                  </ul>
+                </div>
+              </ul>
+            </li>
           </ul>
         </div>
       </header>
@@ -73,7 +100,8 @@
 
     <div class="container">
       <div class="insights--star">
-        <span><i class="star-inactive"></i>6,578</span>
+        <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+        <span>6,578</span>
       </div>
     </div>
 
@@ -99,7 +127,7 @@
           <div class="cell">
             <div class="card insight">
               <div class="card-image">
-                <img src="img/insight-1-th.jpg">
+                <a href="story.html"><img src="img/insight-1-th.jpg"></a>
               </div>
 
               <div class="card-content">
@@ -113,7 +141,8 @@
                   <span>by <a href="#">WWF</a></span>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i>6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,578</span>
                 </li>
               </ul>
             </div>
@@ -122,7 +151,7 @@
           <div class="cell">
             <div class="card insight">
               <div class="card-image">
-                <img src="img/insight-2-th.jpg">
+                <a href="map.html"><img src="img/insight-2-th.jpg"></a>
               </div>
 
               <div class="card-content">
@@ -136,7 +165,8 @@
                   <span>by <a href="#">Greenpeace</a></span>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i>6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,578</span>
                 </li>
               </ul>
             </div>
@@ -145,7 +175,7 @@
           <div class="cell">
             <div class="card insight">
               <div class="card-image">
-                <img src="img/insight-3-th.jpg">
+                <a href="story.html"><img src="img/insight-3-th.jpg"></a>
               </div>
 
               <div class="card-content">
@@ -159,7 +189,8 @@
                   <span>by <a href="#">World Resources Institute</a></span>
                 </li>
                 <li class="card-info-stars active">
-                  <span><i class="star-active"></i>6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,578</span>
                 </li>
               </ul>
             </div>
@@ -168,7 +199,7 @@
           <div class="cell">
             <div class="card insight">
               <div class="card-image">
-                <img src="img/insight-4-th.jpg">
+                <a href="slideshow.html"><img src="img/insight-4-th.jpg"></a>
               </div>
 
               <div class="card-content">
@@ -182,7 +213,8 @@
                   <span>by <a href="#">Sajjad Malik</a></span>
                 </li>
                 <li class="card-info-stars active">
-                  <span><i class="star-active"></i>6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,578</span>
                 </li>
               </ul>
             </div>
@@ -191,7 +223,7 @@
           <div class="cell">
             <div class="card insight">
               <div class="card-image">
-                <img src="img/insight-5-th.jpg">
+                <a href="story.html"><img src="img/insight-5-th.jpg"></a>
               </div>
 
               <div class="card-content">
@@ -205,7 +237,8 @@
                   <span>by <a href="#">Marion Johnson</a></span>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i>6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,578</span>
                 </li>
               </ul>
             </div>
@@ -214,7 +247,7 @@
           <div class="cell">
             <div class="card insight">
               <div class="card-image">
-                <img src="img/insight-6-th.jpg">
+                <a href="slideshow.html"><img src="img/insight-6-th.jpg"></a>
               </div>
 
               <div class="card-content">
@@ -228,7 +261,8 @@
                   <span>by <a href="#">WWF</a></span>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i>6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,578</span>
                 </li>
               </ul>
             </div>
@@ -237,7 +271,7 @@
           <div class="cell">
             <div class="card insight">
               <div class="card-image">
-                <img src="img/insight-7-th.jpg">
+                <a href="story.html"><img src="img/insight-7-th.jpg"></a>
               </div>
 
               <div class="card-content">
@@ -251,7 +285,8 @@
                   <span>by <a href="#">WWF</a></span>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i>6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,578</span>
                 </li>
               </ul>
             </div>
@@ -260,7 +295,7 @@
           <div class="cell">
             <div class="card insight">
               <div class="card-image">
-                <img src="img/insight-8-th.jpg">
+                <a href="slideshow.html"><img src="img/insight-8-th.jpg"></a>
               </div>
 
               <div class="card-content">
@@ -274,7 +309,8 @@
                   <span>by <a href="#">Greenpeace</a></span>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i>6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,578</span>
                 </li>
               </ul>
             </div>
@@ -283,7 +319,7 @@
           <div class="cell">
             <div class="card insight">
               <div class="card-image">
-                <img src="img/insight-9-th.jpg">
+                <a href="story.html"><img src="img/insight-9-th.jpg"></a>
               </div>
 
               <div class="card-content">
@@ -297,7 +333,8 @@
                   <span>by <a href="#">WWF</a></span>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i>6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,578</span>
                 </li>
               </ul>
             </div>
@@ -306,7 +343,7 @@
           <div class="cell">
             <div class="card insight">
               <div class="card-image">
-                <img src="img/insight-10-th.jpg">
+                <a href="slideshow.html"><img src="img/insight-10-th.jpg"></a>
               </div>
 
               <div class="card-content">
@@ -320,7 +357,8 @@
                   <span>by <a href="#">Sajjad Malik</a></span>
                 </li>
                 <li class="card-info-stars active">
-                  <span><i class="star-active"></i>6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,578</span>
                 </li>
               </ul>
             </div>
@@ -329,7 +367,7 @@
           <div class="cell">
             <div class="card insight">
               <div class="card-image">
-                <img src="img/insight-11-th.jpg">
+                <a href="story.html"><img src="img/insight-11-th.jpg"></a>
               </div>
 
               <div class="card-content">
@@ -343,7 +381,8 @@
                   <span>by <a href="#">Marion Johnson</a></span>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i>6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,578</span>
                 </li>
               </ul>
             </div>
@@ -352,7 +391,7 @@
           <div class="cell">
             <div class="card insight">
               <div class="card-image">
-                <img src="img/insight-12-th.jpg">
+                <a href="slideshow.html"><img src="img/insight-12-th.jpg"></a>
               </div>
 
               <div class="card-content">
@@ -366,7 +405,8 @@
                   <span>by <a href="#">WWF</a></span>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i>6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,578</span>
                 </li>
               </ul>
             </div>
@@ -375,7 +415,7 @@
           <div class="cell">
             <div class="card insight">
               <div class="card-image">
-                <img src="img/insight-13-th.jpg">
+                <a href="story.html"><img src="img/insight-13-th.jpg"></a>
               </div>
 
               <div class="card-content">
@@ -389,7 +429,8 @@
                   <span>by <a href="#">WWF</a></span>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i>6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,578</span>
                 </li>
               </ul>
             </div>
@@ -398,7 +439,7 @@
           <div class="cell">
             <div class="card insight">
               <div class="card-image">
-                <img src="img/insight-14-th.jpg">
+                <a href="slideshow.html"><img src="img/insight-14-th.jpg"></a>
               </div>
 
               <div class="card-content">
@@ -412,7 +453,8 @@
                   <span>by <a href="#">Greenpeace</a></span>
                 </li>
                 <li class="card-info-stars">
-                  <span><i class="star-inactive"></i>6,578</span>
+                  <svg class="icon icon-star"><use xlink:href="#icon-star"></use></svg>
+                  <span>6,578</span>
                 </li>
               </ul>
             </div>
@@ -584,13 +626,6 @@
       </footer>
     </div>
 
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-        e.src='//www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-    </script>
+    @@include('./templates/scripts.html')
   </body>
 </html>

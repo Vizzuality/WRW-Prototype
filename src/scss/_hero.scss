@@ -24,7 +24,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 11;
   }
 
   .hero-content {
@@ -65,10 +64,7 @@
   height: 40px;
 
   display: inline-flex;
-  flex-flow: row wrap;
   align-items: center;
-  
-  z-index: 15;
 
   img {
     width: 38px;
@@ -83,9 +79,29 @@
 
 .hero-info-stars {
   cursor: pointer;
-  &.active {
-    color: #fab72e;
+
+  span {
+    width: 100%;
+    padding-left: 5px;
   }
+
+  .icon.icon-star {
+    fill: #fff;
+  }
+
+  &.active {
+    .icon-star {
+      fill: $mango;
+    }
+
+    span {
+      color: $mango;
+    }
+  }
+}
+
+.hero-info-source {
+  flex-flow: row wrap;
 }
 
 @media screen and (max-width : $responsive-break--tablet) {

@@ -1,7 +1,7 @@
 .header-container {
+  position: relative;
   width: 100%;
   height: $page--header-height;
-
   margin-bottom: 0;
 
   background: #C32D7B;
@@ -9,9 +9,11 @@
   background-size: cover;
   background-repeat: no-repeat;
 
+  z-index: $z-index-10;
+
   &.is-fixed {
     position: fixed;
-    z-index: 10;
+    z-index: $z-index-10;
 
     & + div {
       padding-top: 114px;
@@ -26,6 +28,7 @@
 }
 
 .header {
+  position: relative;
   height: 100%;
   margin: 0 auto;
 
@@ -181,7 +184,7 @@ a.header-title-link {
 
   &.is-fixed {
     position: fixed;
-    z-index: 10;
+    z-index: $z-index-10;
     top: 0;
     left: 0;
   }
@@ -197,7 +200,7 @@ a.header-title-link {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: $z-index-10;
     cursor: pointer;
   }
 
@@ -259,7 +262,7 @@ a.header-title-link {
     bottom: 0;
     height: auto;
     margin: 0;
-    z-index: 1;
+    z-index: $z-index-10;
 
     .header {
       height: $responsive-page--header-height;

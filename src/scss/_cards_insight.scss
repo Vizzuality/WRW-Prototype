@@ -65,7 +65,13 @@
   .card-info-stars {
     cursor: pointer;
     &.active {
-      color: $app--card-stars-active-color;
+      .icon-star {
+        fill: $app--card-stars-active-color;
+      }
+
+      span {
+        color: $app--card-stars-active-color;
+      }
     }
   }
 

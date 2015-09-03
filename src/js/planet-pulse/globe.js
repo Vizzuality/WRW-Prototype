@@ -2,8 +2,8 @@ var Globe = function(element) {
   var webglEl = element || document.body;
 
   // Vars
-  var w = element ? webglEl.clientWidth : window.innerWidth;
-  var h = element ? webglEl.clientHeight : window.innerHeight;
+  var w = this.w = element ? webglEl.clientWidth : window.innerWidth;
+  var h = this.h = element ? webglEl.clientHeight : window.innerHeight;
 
   var radius = 0.5;
   var segments = 32;
@@ -11,7 +11,7 @@ var Globe = function(element) {
 
   var layers = {};
 
-  var hostname = location.hostname === 'localhost' ? '' : 'http://vizzuality.github.io/WRW-Prototype/dist/';
+  var hostname = location.hostname === 'localhost' || location.hostname === '192.168.1.142' ? '' : 'WRW-Prototype/dist/';
 
   function createEarth(radius, segments) {
     return new THREE.Mesh(
@@ -19,7 +19,7 @@ var Globe = function(element) {
       new THREE.MeshPhongMaterial({
         map: THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/2_no_clouds_4k.jpg'),
         bumpMap: THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/elev_bump_4k.jpg'),
-        bumpScale: 0.0005,
+        bumpScale: 0.001,
         specularMap: THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/water_4k.png'),
         specular: new THREE.Color('grey')
       })
@@ -28,14 +28,15 @@ var Globe = function(element) {
 
   function createClouds(radius, segments) {
     return new THREE.Mesh(
-      new THREE.SphereGeometry(radius + 0.003, segments, segments),     
+      new THREE.SphereGeometry(radius + 0.003, segments, segments),
       new THREE.MeshPhongMaterial({
         map: THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/fair_clouds_4k.png'),
         side: THREE.DoubleSide,
+        opacity: 0.8,
         transparent: true,
         depthWrite: false
       })
-    );    
+    );
   }
 
   function createSpace(radius, segments) {
@@ -50,7 +51,7 @@ var Globe = function(element) {
 
   function createLayer(name, imageUrl) {
     var layer = new THREE.Mesh(
-      new THREE.SphereGeometry(radius + 0.002, segments, segments),     
+      new THREE.SphereGeometry(radius + 0.002, segments, segments),
       new THREE.MeshPhongMaterial({
         map: THREE.ImageUtils.loadTexture(imageUrl),
         side: THREE.DoubleSide,
@@ -104,7 +105,12 @@ var Globe = function(element) {
   scene.add(space);
 
   // Controls
-  var controls = new THREE.TrackballControls(camera);
+  // var controls = new THREE.TrackballControls(camera);
+  var controls = new THREE.OrbitControls(camera);
+  // var controls = new THREE.OrthographicTrackballControls(camera);
+
+  controls.minDistance = 1;
+  controls.maxDistance = 15;
 
   // Helper functions
   function setPosition(x, y) {
@@ -169,6 +175,8 @@ var Globe = function(element) {
   this.removeClouds = function() {
     scene.remove(clouds);
   };
+
+  this.camera = camera;
 
   this.resize = onWindowResize;
 

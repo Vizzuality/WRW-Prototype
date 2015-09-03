@@ -5,19 +5,7 @@ require.config({
   paths: {
     jquery:     '../vendor/jquery/dist/jquery.min',
     underscore: '../vendor/underscore/underscore-min',
-    backbone:   '../vendor/backbone/backbone-min',
-    handlebars: '../vendor/handlebars/handlebars.amd.min',
-    d3:         '../vendor/d3/d3',
-    d3chart:    'helpers/chart',
-    moment:     '../vendor/moment/min/moment.min',
-    text:       '../vendor/text/text',
-    'backbone-super': '../vendor/backbone-super/backbone-super/' +
-      'backbone-super-min',
-    slick:      '../vendor/slick-carousel/slick/slick.min'
-  },
-
-  shim: {
-    d3:   { exports: 'd3' }
+    backbone:   '../vendor/backbone/backbone-min'
   }
 
 });
@@ -29,7 +17,7 @@ require([
 
   'use strict';
 
-  var hostname = location.hostname === 'localhost' ? '' : 'http://vizzuality.github.io/WRW-Prototype/dist/';
+  var hostname = location.hostname === 'localhost' || location.hostname === '192.168.1.142' ? '' : 'WRW-Prototype/dist/';
 
   var GlobeView = Backbone.View.extend({
 
@@ -44,6 +32,9 @@ require([
     },
 
     setVis: function(vis) {
+      var w = this.globe.w;
+      var h = this.globe.h;
+
       this.globe.removeClouds();
       this.globe.removeLayer(this.currentVis);
       this.currentVis = vis;
@@ -51,20 +42,32 @@ require([
       switch(vis) {
         case 'fires':
           this.globe.ambientLight.color.setHex(0xcccccc);
-          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/basemap-terrain-blue_4k.jpg');
+          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/basemap-dark_4k.jpg');
           this.globe.createLayer(this.currentVis, hostname + 'img/planet-pulse/layers/fires_4k.png');
           break;
+        case 'protected-areas':
+          this.globe.ambientLight.color.setHex(0xcccccc);
+          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/basemap-terrain-blue_4k.jpg');
+          this.globe.createLayer(this.currentVis, hostname + 'img/planet-pulse/layers/protected-areas_4k.png');
+          break;
+        case 'umd':
+          this.globe.ambientLight.color.setHex(0xcccccc);
+          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/basemap-terrain-blue_4k.jpg');
+          this.globe.createLayer(this.currentVis, hostname + 'img/planet-pulse/layers/umd_4k.png');
+          break;
       }
-      
-      // this.globe.setPosition(0.35, -0.1);
-      // this.globe.setPosition(0, -0.05);
+
+      this.globe.camera.setViewOffset( w, h, w * -0.2, h * 0, w, h );
     },
 
     reset: function() {
+      var w = this.globe.w;
+      var h = this.globe.h;
+
       this.globe.removeLayer(this.currentVis);
       this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/2_no_clouds_4k.jpg');
       this.globe.ambientLight.color.setHex(0x444444);
-      // this.globe.setPosition(0, -0.1);
+      this.globe.camera.setViewOffset( w, h, w * 0, h * 0, w, h );
       this.globe.addClouds();
     }
 
@@ -120,7 +123,7 @@ require([
       this.$title.hide(100)
       this.$nav.addClass('is-blur');
       this.$backBtn.show(100);
-      
+
       // TODO
       this.globeView.setVis(vis);
     },
