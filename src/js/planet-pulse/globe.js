@@ -107,6 +107,8 @@ var Globe = function(element) {
   // Controls
   // var controls = new THREE.TrackballControls(camera);
   var controls = new THREE.OrbitControls(camera);
+  // var controls = new THREE.OrthographicTrackballControls(camera);
+
   controls.minDistance = 1;
   controls.maxDistance = 15;
 

@@ -50,6 +50,11 @@ require([
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/basemap-terrain-blue_4k.jpg');
           this.globe.createLayer(this.currentVis, hostname + 'img/planet-pulse/layers/protected-areas_4k.png');
           break;
+        case 'umd':
+          this.globe.ambientLight.color.setHex(0xcccccc);
+          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/basemap-terrain-blue_4k.jpg');
+          this.globe.createLayer(this.currentVis, hostname + 'img/planet-pulse/layers/umd_4k.png');
+          break;
       }
 
       this.globe.camera.setViewOffset( w, h, w * -0.2, h * 0, w, h );
