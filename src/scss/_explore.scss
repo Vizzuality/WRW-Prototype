@@ -522,6 +522,16 @@ a.explore--map-button {
     height: 10px;
     background: #ddd;
     border-radius: 5px;
+    transition: background 0.2s;
+    cursor: pointer;
+
+    &.off {
+      background: $silver !important;
+
+      span {
+        left: -5px;
+      }
+    }
   }
 
   .onoffswitch span {

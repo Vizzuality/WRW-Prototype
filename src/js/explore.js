@@ -58,7 +58,20 @@
     $list.empty();
 
     _.each(selectedVisualisations, function(value, key) {
-      $list.append('<li><span class="bullet"></span>'+mapVisualisations[key].name+'<span class="onoffswitch"><span></span></span></li>');
+      var layerId = mapVisualisations.indexOf(mapVisualisations[key]);
+      var isLayerVisible = selectedVisualisations[layerId].isVisible();
+
+      var li = '<li><!--<span class="bullet">--></span>'+mapVisualisations[key].name;
+      li += '<span class="onoffswitch' + (!isLayerVisible ? ' off"' : '"');
+      li += 'data-id="'+mapVisualisations.indexOf(mapVisualisations[key])+'"><span></span></span></li>';
+
+      $list.append(li);
+    });
+
+    $list.find('.onoffswitch').off().on('click', function(e) {
+      var $el = $(this),
+          id  = $el.data('id');
+      toggleLayer(id, $el);
     });
 
     $legendEl.show();
@@ -98,6 +111,17 @@
       removeLayerFromMap(id, $el);
     }
   });
+
+  var toggleLayer = function(id, $el) {
+    var layer = selectedVisualisations[id];
+    if(layer.isVisible()) {
+      layer.hide();
+      $el.addClass('off');
+    } else {
+      layer.show();
+      $el.removeClass('off');
+    }
+  };
 
   /* For mobile devices */
   var checkbox = document.querySelector('#js--show--map');
