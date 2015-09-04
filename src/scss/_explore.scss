@@ -497,6 +497,13 @@ a.explore--map-button {
     margin-right: 5px;
   }
 
+  li {
+    margin-bottom: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
   // TODO remove this when we render legends correctly
   li:nth-of-type(1) {
     .onoffswitch,
@@ -516,12 +523,10 @@ a.explore--map-button {
   .onoffswitch {
     display: inline-block;
     position: relative;
-    float: right;
-    top: 7px;
-    width: 17px;
-    height: 10px;
+    width: 25px;
+    height: 12px;
     background: #ddd;
-    border-radius: 5px;
+    border-radius: 6px;
     transition: background 0.2s;
     cursor: pointer;
 
@@ -536,13 +541,13 @@ a.explore--map-button {
 
   .onoffswitch span {
     position: absolute;
-    left: 2px;
+    left: 8px;
     top: 2px;
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     background: #fff;
     transform: translate(7px, 0%);
-    border-radius: 4px;
+    border-radius: 100%;
     transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   }
 }
@@ -557,7 +562,7 @@ a.explore--map-button {
   border-top: 1px solid #e3e4e6;
   color: #9aa2a9;
 
-  padding-top: 5px;
+  padding-top: 12px;
   margin-bottom: 0;
 
   text-transform: uppercase;
@@ -566,6 +571,7 @@ a.explore--map-button {
 
   i {
     font-size: 16px;
+    margin-right: 5px;
   }
 
   li {
