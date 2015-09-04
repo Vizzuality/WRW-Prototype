@@ -127,6 +127,7 @@
   var checkbox = document.querySelector('#js--show--map');
   var showMapClass = '.js--show--map';
   var hideMapClass = '.js--hide--map';
+  var legendClass = '.explore--map-legend';
   var headerClass = '.header-container';
   var headerContainer = document.querySelector(headerClass);
   var subHeaderClass = '.sub-header-container';
@@ -178,6 +179,9 @@
         toggleClass(showMapClass, 'is-hidden');
         setTimeout(map.invalidateSize.bind(map), 1100);
       }
+      if(!hasClass(legendClass, 'is-hidden')) {
+        setTimeout(function() { toggleClass(legendClass, 'is-mobile-hidden'); }, 800);
+      }
 
       var offsetTop = subHeaderContainer.offsetTop;
       if(window.scrollY < offsetTop) {
@@ -208,9 +212,11 @@
       if(hasClass(headerClass, 'is-fixed')) {
         toggleClass(headerClass, 'is-fixed');
       }
+      if(!hasClass(legendClass, 'is-hidden')) {
+        toggleClass(legendClass, 'is-mobile-hidden');
+      }
 
       mapContainer.style.left = window.innerWidth + 'px';
-      console.log(window.innerWidth);
       fixSubHeaderPosition();
     }
   });
