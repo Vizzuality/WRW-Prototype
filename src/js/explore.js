@@ -40,7 +40,8 @@
     setTimeout(map.invalidateSize.bind(map), 1100);
   };
 
-  var selectedVisualisations = {};
+  var selectedVisualisations = [];
+
   var mapVisualisations = [
     {name: "Energy Plants", url: "https://insights.cartodb.com/api/v2/viz/c572a394-3cda-11e5-9e01-0e4fddd5de28/viz.json"},
     {name: "Global Water Risk", url: "https://insights.cartodb.com/api/v2/viz/bf63525c-3cdd-11e5-afd4-0e4fddd5de28/viz.json"},
@@ -49,7 +50,7 @@
 
   var renderLegend = function() {
     var $legendEl = $('.explore--map-legend');
-    if (_.isEmpty(selectedVisualisations)) {
+    if (!selectedVisualisations.length) {
       $legendEl.hide();
       return;
     }
@@ -57,7 +58,7 @@
     var $list = $('.explore--map-legend-layers');
     $list.empty();
 
-    _.each(selectedVisualisations, function(value, key) {
+    selectedVisualisations.forEach(function(value, key) {
       var layerId = mapVisualisations.indexOf(mapVisualisations[key]);
       var isLayerVisible = selectedVisualisations[layerId].isVisible();
 
@@ -77,7 +78,7 @@
     $legendEl.show();
   };
 
-  var addLayerToMap = function(id, $el) {
+  var addLayerToMap = function(id, $el, callback) {
     $el.text("Active");
     $el.addClass("explore--active-dataset");
 
@@ -87,6 +88,9 @@
       .on('done', function(layer) {
         selectedVisualisations[id] = layer;
         renderLegend();
+        sessionStorage.setItem('layers', JSON.stringify(getSelectedVisualisationsIndex()));
+
+        if(callback) { callback(id); }
       });
   };
 
@@ -99,6 +103,7 @@
 
     delete selectedVisualisations[id];
     renderLegend();
+    sessionStorage.setItem('layers', JSON.stringify(getSelectedVisualisationsIndex()));
   };
 
   $('.add-to-map').on('click', function(event) {
@@ -121,7 +126,44 @@
       layer.show();
       $el.removeClass('off');
     }
+    sessionStorage.setItem('layers', JSON.stringify(getSelectedVisualisationsIndex()));
   };
+
+  var getSelectedVisualisationsIndex = function() {
+    var indexes = selectedVisualisations.map(function(cell, index) {
+      return cell !== undefined && cell !== null && cell !== false && index;
+    });
+
+    var res = [];
+
+    indexes.forEach(function(cell) {
+      if(cell !== undefined && cell !== null && cell !== false) {
+        var isVisible = selectedVisualisations[cell].isVisible();
+        res.push({ id: cell, visible: isVisible });
+      }
+    });
+
+    return res;
+  };
+
+  var cachedLayers = JSON.parse(sessionStorage.getItem('layers') || '[]');
+
+  if(cachedLayers.length) {
+    cachedLayers.forEach(function(o) {
+      var id = o.id,
+          isVisible = o.visible;
+      var $el = $('.add-to-map[data-id='+id+']');
+      var callback = null;
+      if(!isVisible) {
+        var callback = function(id) {
+          var $switch = $('.onoffswitch[data-id='+id+']');
+          toggleLayer(id, $switch);
+        };
+      }
+
+      addLayerToMap(id, $el, callback);
+    });
+  }
 
   /* For mobile devices */
   var checkbox = document.querySelector('#js--show--map');
