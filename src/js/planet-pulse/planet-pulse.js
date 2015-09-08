@@ -57,7 +57,7 @@ require([
           break;
       }
 
-      this.globe.camera.setViewOffset( w, h, w * -0.2, h * 0, w, h );
+      // this.globe.camera.setViewOffset( w, h, w * -0.2, h * 0, w, h );
     },
 
     reset: function() {
@@ -67,7 +67,7 @@ require([
       this.globe.removeLayer(this.currentVis);
       this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(hostname + 'img/planet-pulse/2_no_clouds_4k.jpg');
       this.globe.ambientLight.color.setHex(0x444444);
-      this.globe.camera.setViewOffset( w, h, w * 0, h * 0, w, h );
+      // this.globe.camera.setViewOffset( w, h, w * 0, h * 0, w, h );
       this.globe.addClouds();
     }
 

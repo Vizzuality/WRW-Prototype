@@ -2,8 +2,9 @@ var Globe = function(element) {
   var webglEl = element || document.body;
 
   // Vars
-  var w = this.w = element ? webglEl.clientWidth : window.innerWidth;
-  var h = this.h = element ? webglEl.clientHeight : window.innerHeight;
+  var _this = this;
+  var w = this.w = element ? webglEl.offsetWidth : window.innerWidth;
+  var h = this.h = element ? webglEl.offsetHeight : window.innerHeight;
 
   var radius = 0.5;
   var segments = 32;
@@ -77,6 +78,7 @@ var Globe = function(element) {
   // Camera
   var camera = new THREE.PerspectiveCamera(45, w / h, 0.01, 1000);
   camera.position.z = 2;
+  camera.lookAt(scene.position);
 
   // Renderer
   var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -154,14 +156,16 @@ var Globe = function(element) {
     rotation = sphere.rotation.y;
 
     requestAnimationFrame(render);
-    renderer.clear();
     renderer.render(scene, camera);
   }
 
   function onWindowResize() {
-    camera.aspect = window.innerWidth / window.innerHeight;
+    w = _this.w = webglEl.offsetWidth;
+    h = _this.h =  webglEl.offsetHeight;
+
+    camera.aspect = w / h;
     camera.updateProjectionMatrix();
-    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.setSize(w, h);
   }
 
   window.addEventListener('resize', onWindowResize, false);
