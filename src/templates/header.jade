@@ -1,0 +1,60 @@
+mixin header(activeTab)
+  //- activeTab must be insights, explore, dashboard, planet-pulse or undefined
+  .header-container
+    header.header
+      .upper-header
+        .upper-header-container
+          .language-selector
+            ul
+              li.language
+                a#language(href='#') English
+                ul.language-menu.is-hide
+                  li
+                    h4
+                      a(href='') English
+                  li
+                    h4
+                      a(href='') Español
+                  li
+                    h4
+                      a(href='') Français
+      .down-header
+        a.header-title-link(href='index.html')
+          h1.header-title
+        button.header-menu-label.js--header-open-menu Menu
+        ul.header-links
+          li(class= activeTab=='insights' ? 'active' : '')
+            a(href='insights.html') Insights
+          li(class= activeTab=='explore' ? 'active' : '')
+            a(href='explore.html') Explore
+          li(class= activeTab=='dashboard' ? 'active' : '')
+            a(href='dashboard.html') Countries
+          li(class= activeTab=='planet-pulse' ? 'active' : '')
+            a(href='planet-pulse.html') Planet pulse
+          li
+            a(href='#')
+              i.fa.fa-search
+          li.notification
+            a(href='#')
+              img(src='img/user-1.png')
+            ul.user-menu.is-hide
+              .notification-space
+                h4 Notifications
+                ul
+                  li.unread
+                    a(href='#') New insight from World Resources Institute
+                  li.unread
+                    a(href='#') 'Total Greenhouse Emissions' dataset updated
+                  li
+                    a(href='#') 'Flower pollination in the United States' dataset updated
+              .user-settings
+                ul
+                  li
+                    h4
+                      a(href='') Your profile
+                  li
+                    h4
+                      a(href='') Settings
+                  li
+                    h4
+                      a(href='') Logout

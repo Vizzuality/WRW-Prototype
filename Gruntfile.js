@@ -28,7 +28,7 @@ module.exports = function (grunt) {
   require('load-grunt-config')(grunt, options);
 
   grunt.registerTask('default', [
-    'jade',
+    'jade:dev',
     'sass',
     'postcss:dist',
     'browserSync:livereload',

@@ -1,7 +1,13 @@
 .card.data {
   height: 310px;
   width: 230px;
-  box-shadow: 0 1px 5px $data--card-shadow-color;
+  box-shadow: 0 1px 2px $data--card-shadow-color;
+  border: 1px solid $data--card-border-color;
+  transition: all .2s;
+  &:hover {
+    border: 1px solid #CACCD0;
+    box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.12);
+  }
 
   .card-image {
     height: 180px;
@@ -16,7 +22,6 @@
 
   .card-content,
   .card-info {
-    border: 1px solid $data--card-border-color;
     border-top: 0;
   }
 
@@ -38,22 +43,26 @@
     font-size: 14px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
 
   .card-info-download,
   .card-info-stars {
     height: 100%;
-    width: 50%;
+    // width: 50%;
   }
 
   .card-info-download {
     float: left;
+    font-size: 12px;
+    font-weight: $font--bold;
+    padding-top: 10px;
 
     a {
       text-transform: uppercase;
       text-decoration: none;
-      font-weight: bold;
-      margin-right: 5px;
+      margin-right: 10px;
+      float: left;
     }
 
     a:first-of-type {
@@ -69,19 +78,89 @@
     float: right;
     color: $data--card-stars-color;
     text-align: right;
+    cursor: pointer;
+    display: flex;
+
+    span {
+      width: 100%;
+      transition: color 0.2s;
+      line-height: 1.4em; /* To align the text with the star icon */
+    }
+
+    &.active {
+      .icon-star {
+        fill: $mango;
+      }
+
+      span {
+        color: $mango;
+      }
+    }
   }
 
   .card-title {
     font-size: 17px;
-    font-weight: bold;
+    font-weight: $font--bold;
     color: $data--card-title-color;
     margin: $data--card-title-margin;
+
+    a {
+      text-decoration: none;
+    }
   }
 
   .card-sub-title {
     font-size: 14px;
-    font-weight: lighter;
+    font-weight: $font--light;
     color: $data--card-sub-title-color;
     margin: $data--card-sub-title-margin;
+    -webkit-font-smoothing: subpixel-antialiased;
   }
+
+  @media screen and (max-width: $responsive-break--tablet) {
+
+    width: 100%;
+    height: initial;
+
+    .card-content {
+      height: auto;
+      padding-bottom: 0;
+    }
+
+    .card-image,
+    .card-image img {
+      height: auto;
+    }
+
+    .card-info {
+      height: auto;
+      padding-top: 0;
+
+      & + .card-button {
+        position: relative;
+        top: -10px;
+      }
+    }
+
+    .card-info-stars {
+      padding-top: 10px;
+    }
+
+    .card-button {
+      width: calc(100% - 20px);
+      margin: 0 auto;
+    }
+  }
+
+  @media screen and (max-width: $responsive-break--mobile) {
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    margin: 0;
+
+    .card-image {
+      @include is-hidden;
+    }
+  }
+
 }

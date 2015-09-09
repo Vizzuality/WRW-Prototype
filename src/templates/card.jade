@@ -1,0 +1,82 @@
+//- Return a card cell
+//- Type: insight, data or app
+//- Note: wrap the card or the set of cards inside a .gridbox wrapper
+mixin card(type)
+
+  if type=='insight'
+    //- Available attributes:
+    //-   url:         link url
+    //-   thumbnail:   image url
+    //-   title:       card's title
+    //-   sub_title:   cards's subtitle
+    //-   author:      author's name
+    //-   avatar:      author's image
+    //-   star_count:  'like' count
+    //-   star_active: is card 'liked'?
+    .cell
+      .card.insight
+        .card-image
+          a(href=attributes.url)
+            img(src=attributes.thumbnail)
+        .card-content
+          h6.card-sub-title= attributes.sub_title
+          h5.card-title
+            a(href=attributes.url)= attributes.title
+        ul.card-info
+          li.card-info-source
+            img(src=attributes.avatar)
+            span
+              | by &nbsp;
+              a(href='#')= attributes.author
+          li.card-info-stars(class= attributes.star_active ? 'active' : '')
+            svg.icon.icon-star
+              use(xlink:href='#icon-star')
+            span= attributes.star_count
+
+  else if type=='data'
+    //- Available attributes:
+    //-   url:          link url
+    //-   thumbnail:    image url
+    //-   title:        card's title
+    //-   download_map: show the MAP download link?
+    //-   download_csv: show the CSV download link?
+    //-   sub_title:    cards's subtitle
+    //-   star_count:   'like' count
+    //-   star_active:  is card 'liked'?
+    .cell.data
+      .card.data
+        .card-image
+          a(href=attributes.url)
+            img(src=attributes.thumbnail)
+        .card-content
+          h5.card-title
+            a(href=attributes.url)= attributes.title
+          p.card-sub-title= attributes.sub_title
+        ul.card-info
+          li
+            .card-info-download
+              if attributes.download_map
+                a.link-map(href='#') MAP
+              if attributes.download_csv
+                a.link-csv(href='#') CSV
+          li.card-info-stars(class= attributes.star_active ? 'active' : '')
+            svg.icon.icon-star
+              use(xlink:href='#icon-star')
+            span= attributes.star_count
+
+  else if type=='app'
+    //- Available attributes:
+    //-   thumbnail:    image url
+    //-   title:        card's title
+    //-   star_count:   'like' count
+    //-   star_active:  is card 'liked'?
+    .cell
+      .card.app
+        .card-image
+          img(src=attributes.thumbnail)
+        .card-caption-container
+          .card-caption= attributes.title
+          .card-info-stars(class= attributes.star_active ? 'active' : '')
+            svg.icon.icon-star
+              use(xlink:href='#icon-star')
+            span= attributes.star_count

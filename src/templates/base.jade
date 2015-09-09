@@ -1,0 +1,49 @@
+doctype html
+html.no-js
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    block title
+      title Resource Watch
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='apple-touch-icon', href='apple-touch-icon.png')
+    script(src='js/login.js')
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+    link(href='http://fonts.googleapis.com/css?family=Lato:300,400,700', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='bower_components/normalize-css/normalize.css')
+    link(rel='stylesheet', href='styles/main.css')
+    <!--[lt IE 9]>
+    script(src='js/vendor/html5-3.6-respond-1.4.2.min.js')
+    <![endif]-->
+  body
+    //- The global SVG icons to include in every page
+    include ./svg_icons.jade
+
+    // The login popup form
+    .login--container.js--main-login(style='display: none;')
+      form#login
+        input#password.login--container-password(type='password', name='password', placeholder='top_secret_password')
+        input.button.button-large.login--container-button(type='submit', value='Submit')
+    .js--main-content(style='display: none;')
+
+      //- The global header
+      include ./header.jade
+      block header
+        +header
+
+      block content
+
+      //- The global footer
+      block footer
+        include ./footer.jade
+
+
+    //- The global scripts to include in every page
+    block scripts
+      script(src='js/login_form.js')
+      script(src='js/user_menu.js')
+      script(src='js/fav.js')
+      script(src='js/mobile_menu.js')
+      script(src='js/analytics.js')
+      script(src='js/empty_links.js')

@@ -11,7 +11,7 @@ module.exports = {
     files: [{
       expand: true,
       cwd: '<%= src %>',
-      src: ['{,*/}*.slim'],
+      src: ['{,*/}*.jade'],
       dest: '<%= tmp %>',
       ext: '.html'
     }]
@@ -26,7 +26,7 @@ module.exports = {
     files: [{
       expand: true,
       cwd: '<%= src %>',
-      src: ['{,*/}*.slim'],
+      src: ['{,*/}*.jade'],
       dest: '<%= build %>',
       ext: '.html'
     }]

@@ -6,9 +6,9 @@ module.exports = {
     tasks: ['sass', 'postcss:dist']
   },
 
-  slim: {
-    files: ['<%= src %>/**/*.slim'],
-    tasks: ['slim']
+  jade: {
+    files: ['<%= src %>/**/*.jade'],
+    tasks: ['jade:dev']
   }
 
 };

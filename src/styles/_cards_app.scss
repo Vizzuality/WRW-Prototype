@@ -14,19 +14,36 @@
   .card-caption,
   .card-info-stars {
     display: inline-block;
+    cursor: pointer;
   }
 
   .card-caption {
     height: 30px;
     margin-top: 10px;
-    font-size: 17px;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: $font--bold;
     color: $app--card-title-color;
   }
 
   .card-info-stars {
     color: $app--card-stars-color;
     text-align: right;
+    font-size: 15px;
+
+    .icon-star {
+      height: 15px;
+      margin-bottom: 2px; /* For vertical alignment with the span */
+    }
+
+    &.active {
+      span {
+        color: $app--card-stars-active-color;
+      }
+
+      .icon-star {
+        fill: $app--card-stars-active-color;
+      }
+    }
   }
 }
 
@@ -38,17 +55,28 @@
   flex-wrap: nowrap;
 }
 
-@media screen and (max-width : 760px) {
+@media screen and (max-width : $responsive-break--tablet) {
   .card.app {
     width: 100%;
-  }
-
-  .card.app .card-image {
-    overflow: hidden;
-  }
-
-  .card.app .card-image img {
-    width: 100%;
     height: auto;
+
+    .card-image {
+      overflow: hidden;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: auto;
+    }
+
+    .card-caption {
+      flex-basis: 70%;
+      margin-top: 0;
+      height: auto;
+    }
+
+    .card-caption-container {
+      padding-top: 10px;
+    }
   }
 }

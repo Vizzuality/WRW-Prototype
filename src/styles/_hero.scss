@@ -1,6 +1,6 @@
 .hero {
   width: 100%;
-  height: 430px;
+  height: 465px;
 
   padding: 30px;
 
@@ -8,13 +8,29 @@
 
   background: url(../img/hero-1.png);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
 
-  font-weight: lighter;
+  font-weight: $font--light;
   color: white;
+  -webkit-font-smoothing: subpixel-antialiased;
 
   a {
     color: white;
+  }
+
+  .hero-link-wrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
   }
 }
 
@@ -24,18 +40,23 @@
 }
 
 .hero-title {
-  font-size: 48px;
-  width: 600px;
+  font-size: 36px;
+  width: 50%;
+  margin-bottom: 40px;
 
-  position: absolute;
-  bottom: 100px;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  // position: absolute;
+  // bottom: 100px;
 }
 
 .hero-info {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  left: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .hero-info-source,
@@ -43,7 +64,6 @@
   height: 40px;
 
   display: inline-flex;
-  flex-flow: row wrap;
   align-items: center;
 
   img {
@@ -51,21 +71,70 @@
     height: 38px;
     margin-right: 10px;
   }
+
+  // span {
+  //   margin-left: 10px;
+  // }
 }
 
 .hero-info-stars {
-  position: absolute;
-  right: 0;
+  cursor: pointer;
+
+  span {
+    width: 100%;
+    padding-left: 5px;
+  }
+
+  .icon.icon-star {
+    fill: #fff;
+  }
+
+  &.active {
+    .icon-star {
+      fill: $mango;
+    }
+
+    span {
+      color: $mango;
+    }
+  }
 }
 
-@media screen and (max-width : 760px) {
+.hero-info-source {
+  flex-flow: row wrap;
+}
+
+@media screen and (max-width : $responsive-break--tablet) {
   .hero {
-    background-size: auto 100%;
+    background-size: cover;
+    background-position: 30% 0%;
+    height: auto;
+    padding: 30px 10px;
+
+    .hero-content {
+      position: static;
+
+      .container {
+        width: 100%;
+      }
+    }
   }
 
   .hero-title {
     width: auto;
     position: relative;
-    bottom: -120px;
+  }
+
+  .hero-info-source {
+    flex-basis: 70%;
+    flex-wrap: nowrap;
+
+    img {
+      flex-basis: 38px;
+    }
+
+    span {
+      flex-basis: calc(100% - 38px);
+    }
   }
 }

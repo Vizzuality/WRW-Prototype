@@ -1,9 +1,7 @@
 module.exports = {
 
   options: {
-    sourceMap: true,
-    sourceMapEmbed: true,
-    sourceMapContents: true,
+    sourceMap: false,
     includePaths: ['.']
   },
 
