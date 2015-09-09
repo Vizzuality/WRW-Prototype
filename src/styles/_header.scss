@@ -1,0 +1,141 @@
+.header-container {
+  width: 100%;
+  height: $page--header-height;
+
+  margin-bottom: 60px;
+
+  background: #C32D7B;
+  background-image: url(../img/header-bg.png), linear-gradient(-49deg, #C32D7B 0%, #C90E39 100%);
+  background-size: 100% 100px;
+  background-repeat: no-repeat;
+}
+
+.insights--header-container {
+  opacity: 0.73;
+  background-image: linear-gradient(-180deg, rgba(0,0,0,0.84) 0%,
+  rgba(0,0,0,0.42) 85%);
+}
+
+.header {
+  width: $page--width;
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a.header-title-link {
+  color: $header--title-link-color;
+  text-decoration: none;
+}
+
+.header-title {
+  margin: 0;
+  padding-left: 72px;
+  height: 52px;
+
+  font-size: 19px;
+  line-height: 50px;
+  text-transform: uppercase;
+
+  background-image: url(../img/wri-logo.png);
+  background-repeat: no-repeat;
+  background-size: 52px 52px;
+}
+
+.header-links {
+  list-style-type: none;
+  width: 500px;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-links li {
+  display: inline-block;
+}
+
+.header-links a {
+  color: $header--link-color;
+  font-weight: lighter;
+  text-decoration: none;
+}
+
+.header-menu-label {
+  display: none;
+  border: 1px solid #FFFFFF;
+  border-radius: 3px;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0.92px;
+  line-height: 15px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  background: rgba(0,0,0,0);
+}
+
+@media screen and (max-width : 760px){
+  .header-container {
+    height: $responsive-page--header-height;
+    background-size: auto $responsive-page--header-height;
+    margin-bottom: 0;
+  }
+
+  .header {
+    width: 100%;
+    padding-right: 20px;
+  }
+
+  .header-title {
+    font-size: 14px;
+    padding-left: 65px;
+    background-size: 31px 31px;
+    background-position: 20px 9px;
+  }
+
+  .header-links {
+    display: none;
+  }
+
+  .header-menu-label {
+    display: inline-block;
+  }
+
+  .header-mobile {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    margin: 0;
+    z-index: 1;
+
+    .header {
+      height: $responsive-page--header-height;
+      border-bottom: 1px solid rgba(#fff, 0.22);
+    }
+
+    .header-links {
+      display: block;
+      position: absolute;
+      top: $responsive-page--header-height;
+      left: 0;
+      margin-top: 35px;
+    }
+
+    .header-links li {
+      display: block;
+      font-size: 25px;
+      line-height: 22px;
+      margin-bottom: 25px;
+    }
+
+    .header-menu-label {
+      background: rgba(255,255,255,0.4);
+    }
+  }
+}

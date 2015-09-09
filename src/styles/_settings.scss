@@ -1,0 +1,24 @@
+// Page
+$page--width: 1040px;
+$page--footer-height: 100px;
+$page--header-height: 100px;
+
+$responsive-page--width: 100%;
+$responsive-page--header-height: 80px;
+
+// Grid
+$gutter-width: 1.5rem !default;
+$element-top-margin: $gutter-width/3 !default;
+$element-bottom-margin: ($gutter-width*2)/3 !default;
+
+// Cards
+$card-padding: 20px;
+$card--large-width: 320px;
+
+// Cards, Insights
+$insights--card-title-margin: 0;
+$insights--card-sub-title-margin: 0px 0px 5px;
+
+// Cards, Data
+$data--card-title-margin: 0;
+$data--card-sub-title-margin: 5px 0px 0px;

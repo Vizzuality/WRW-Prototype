@@ -1,0 +1,94 @@
+$pink: #C32D7B;
+$light-blue: #3BB2D0;
+$light-grey: #E3E4E6;
+$grey: #393F44;
+$dark-grey: #A9B0B6;
+
+// Base Links
+$link-color: $light-blue;
+$link-color-grey: #999BA1;
+
+// Sections
+$section--header-color: $pink;
+
+// Banner
+$banner--header-color: white;
+
+// Header
+$header--title-link-color: white;
+$header--link-color: white;
+
+// Footer
+$footer--border-color: $light-grey;
+$footer--link-color: black;
+$footer--link-list-color: $link-color-grey;
+$footer--link-hover-color: $link-color;
+
+// Tables
+$table--row-background-1: #F4F5F6;
+$table--row-background-2: #FFFFFF;
+$table--color: $grey;
+$table--header-color: $dark-grey;
+$table--header-border-color: $light-grey;
+$table--stars-color: $dark-grey;
+$table--download-color-1: #C32D7B;
+$table--download-color-2: #65B60D;
+
+// Cards
+$card-bg-color: white;
+
+// Cards, Insights
+$insights--card-sub-title-color: #C3C8CC;
+$insights--card-title-color: $grey;
+$insights--card-border-color: rgba(#CACCD0, 0.54);
+$insights--card-shadow-color: rgba(#000000, 0.20);
+$insights--card-stars-color: $dark-grey;
+
+// Cards, Data
+$data--card-sub-title-color: #6C7379;
+$data--card-title-color: $link-color;
+$data--card-border-color: rgba(#CACCD0, 0.54);
+$data--card-shadow-color: rgba(#000000, 0.20);
+$data--card-stars-color: $dark-grey;
+$data--card-download-color-1: #C32D7B;
+$data--card-download-color-2: #65B60D;
+
+// Cards, Category
+$category--card-title-color: $grey;
+
+// Cards, App
+$app--card-title-color: $grey;
+$app--card-stars-color: $dark-grey;
+
+// ## Insights Page
+
+// Title
+$insights--title--color: white;
+$insights--sub-title--color: white;
+
+// About
+$insights--about-background-color: #F4F5F6;
+$insights--about-header-color: #C3C8CC;
+$insights--about-background-color: #F4F5F6;
+$insights--about-color: #6C7379;
+
+// Filters
+$insights--filters-color: #393F44;
+$insights--filters-button-background-color: #00A6DE;
+
+// Story, Header
+$story--breadcrumbs-color: $dark-grey;
+$story--title-color: $grey;
+$story--metadata-date-color: $dark-grey;
+$story--metadata-stars-color: $dark-grey;
+
+// Story, Intro
+$story--intro-color: #6C7379;
+
+// Story, Content
+$story--author-location-color: $dark-grey;
+$story--media-caption-color: #6C7379;
+$story--content-color: #6C7379;
+
+// Story, Comment
+$story--comment-text: #6C7379;
