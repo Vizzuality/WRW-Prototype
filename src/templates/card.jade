@@ -1,5 +1,5 @@
 //- Return a card cell
-//- Type: insight, data or app
+//- Type: insight, data, app or category
 //- Note: wrap the card or the set of cards inside a .gridbox wrapper
 mixin card(type)
 
@@ -80,3 +80,16 @@ mixin card(type)
             svg.icon.icon-star
               use(xlink:href='#icon-star')
             span= attributes.star_count
+
+  else if type=='category'
+    //- Available attributes:
+    //-   url:          link url
+    //-   thumbnail:    image url
+    //-   title:        card's title
+    .cell
+      .card.category
+        .card-image
+          a(href=attributes.url)
+            img(src=attributes.thumbnail)
+        .card-caption
+          a(href=attributes.url)= attributes.title
