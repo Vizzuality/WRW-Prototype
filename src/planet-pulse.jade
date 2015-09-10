@@ -1,0 +1,67 @@
+extends ./templates/base.jade
+
+block vars
+  - var className = 'is-planet-pulse'
+
+block title
+  title
+    | Resource Watch - Zooming In: “Sustainable” Cocoa Producer Destroys Pristine Forest in Peru
+
+block header
+  +header('insights')
+
+block content
+  section.planet-pulse
+
+    #globe.planet-pulse--globe
+
+    .planet-pulse--container
+      header.planet-pulse--header
+        h1.planet-pulse--title Planet pulse
+        ul.planet-pulse--main-nav
+          li
+            a(href='#drought') Drought
+            ul
+              li
+                a(href='#drought/spei') SPEI
+              li
+                a(href='#drought/agricultural') Agricultural areas (EarthStat)
+              li
+                a(href='#drought/groundwater') Groundwater depletion (GRACE)
+              li
+                a(href='#drought/forecast') Forecasts / Climate projections
+          li
+            a(href='#forest') Forest
+            ul
+              li
+                a(href='#forest/forma') Forma
+              li
+                a(href='#forest/umd') UMD
+              li
+                a(href='#forest/protected-areas') Protected areas
+              li
+                a(href='#forest/fires') Fires
+          li
+            a(href='#flooding') Flooding
+            ul
+              li
+                a(href='#flooding/current-floods') Current floods
+              li
+                a(href='#flooding/population-data') Population data
+              li
+                a(href='#flooding/climate') Climate projections
+          li
+            a(href='#conflict') Conflict
+            ul
+              li
+                a(href='#conflict/events') Conflict events
+              li
+                a(href='#conflict/protests') Protests
+              li
+                a(href='#conflict/epidemics') Epidemics
+
+        .planet-pulse--toolbar
+          a#backBtn(href='#') Back
+          button#fullscreenBtn(onclick='toggleFullscreen();') Fullscreen
+
+block footer
