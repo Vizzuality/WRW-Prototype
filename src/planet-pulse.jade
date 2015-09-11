@@ -1,6 +1,6 @@
 extends ./templates/base.jade
 
-block vars
+append vars
   - var className = 'is-planet-pulse'
 
 block title
@@ -11,6 +11,18 @@ block header
   +header('insights')
 
 block content
+  //- Preloading images
+  img.img-preload(src=path + 'img/planet-pulse/2_no_clouds_4k.jpg', id="basemap1")
+  img.img-preload(src=path + 'img/planet-pulse/basemap-terrain-blue_4k.jpg', id="basemap2")
+  img.img-preload(src=path + 'img/planet-pulse/elev_bump_4k.jpg', id="basemap3")
+  img.img-preload(src=path + 'img/planet-pulse/fair_clouds_4k.png', id="basemap4")
+  img.img-preload(src=path + 'img/planet-pulse/galaxy_starfield_4k.png', id="basemap5")
+  img.img-preload(src=path + 'img/planet-pulse/water_4k.png', id="basemap6")
+
+  img.img-preload(src=path + 'img/planet-pulse/layers/fires_4k.png', id="layer1")
+  img.img-preload(src=path + 'img/planet-pulse/layers/protected-areas_4k.png', id="layer2")
+  img.img-preload(src=path + 'img/planet-pulse/layers/umd_4k.png', id="layer3")
+
   section.planet-pulse
 
     #globe.planet-pulse--globe
@@ -61,7 +73,7 @@ block content
                 a(href='#conflict/epidemics') Epidemics
 
         .planet-pulse--toolbar
-          a#backBtn(href='#') Back
-          button#fullscreenBtn(onclick='toggleFullscreen();') Fullscreen
+          a(href='planet-pulse.html#', id="backBtn") Back
+          button#fullscreenBtn Fullscreen
 
 block footer

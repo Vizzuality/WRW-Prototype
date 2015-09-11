@@ -1,10 +1,10 @@
 module.exports = {
 
-  js: {
+  scripts: {
     expand: true,
-    cwd: '<%= src %>/js',
+    cwd: '<%= src %>/scripts',
     src: '**/*',
-    dest: '<%= build %>/js'
+    dest: '<%= build %>/scripts'
   }
 
 };

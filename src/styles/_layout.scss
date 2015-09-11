@@ -3,11 +3,32 @@ html, body {
 }
 
 body {
+  display: none;
   margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  &.is-logged {
+    display: block;
+  }
+
+  &.is-login-page {
+    display: block;
+  }
+}
+
+img.img-preload {
+  display: none;
+}
+
+.is-planet-pulse {
+  background-color: black;
+  overflow: hidden;
+  .container {
+    width: 100%;
+  }
 }
 
 .section-header.dashboard {
@@ -59,6 +80,12 @@ body {
 
     }
 
+  }
+
+  .is-planet-pulse &.is-fullscreen {
+    padding: 0 !important;
+    overflow: hidden !important;
+    background-color: black;
   }
 
 }
