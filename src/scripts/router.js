@@ -10,7 +10,8 @@ define([
       '(/)': 'homepage',
       'index.html': 'homepage',
       'login.html': 'login',
-      'planet-pulse.html': 'planetPulse'
+      'planet-pulse.html': 'planetPulse',
+      'dashboard.html': 'countries'
     }
 
   });
