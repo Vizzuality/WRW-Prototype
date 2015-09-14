@@ -58,7 +58,8 @@ require([
       this._checkAuth(function() {
         new SearchCountriesView({ el: '.choose-country' });
         console.log('showing countries...');
-        // new App({ el: '#container', iso: iso});
+        var hash = window.location.hash.split('/');
+        new App({ el: '#container', iso: hash[1] || 'BRA'});
       });
     },
 
