@@ -5,12 +5,18 @@ module.exports = {
     includePaths: ['.']
   },
 
-  compile: {
+  dev: {
     options: {
       style: 'expanded'
     },
     files: [{
       '<%= tmp %>/styles/main.css': '<%= src %>/styles/styles.scss'
+    }]
+  },
+
+  dist: {
+    files: [{
+      '<%= build %>/styles/main.css': '<%= src %>/styles/styles.scss'
     }]
   }
 

@@ -1,0 +1,14 @@
+extends ./templates/base
+
+block vars
+  - var className = 'is-login-page'
+
+block header
+
+block content
+  .login--container.js--main-login
+    form#login
+      input#password.login--container-password(type='password', name='password', placeholder='Type your secret password')
+      input.button.button-large.login--container-button(type='submit', value='Submit')
+
+block footer

@@ -11,7 +11,7 @@ module.exports = {
     files: [{
       expand: true,
       cwd: '<%= src %>',
-      src: ['{,*/}*.jade'],
+      src: ['*.jade'],
       dest: '<%= tmp %>',
       ext: '.html'
     }]
@@ -20,13 +20,13 @@ module.exports = {
   dist: {
     options: {
       data: {
-        env: 'development'
+        env: 'production'
       }
     },
     files: [{
       expand: true,
       cwd: '<%= src %>',
-      src: ['{,*/}*.jade'],
+      src: ['*.jade'],
       dest: '<%= build %>',
       ext: '.html'
     }]

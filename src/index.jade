@@ -1,5 +1,8 @@
 extends ./templates/base.jade
 
+append vars
+  - var title = 'Welcome'
+
 block content
   // hero
   section.hero
@@ -163,7 +166,3 @@ block content
       .m-contribute
         a(href='#')
           | AWESOME IDEAS? DEVELOP YOUR OWN APP
-
-append scripts
-  script(src='js/vendor/requirejs/require.js')
-  script(src='js/home/countries-search.js')

@@ -28,11 +28,20 @@ module.exports = function (grunt) {
   require('load-grunt-config')(grunt, options);
 
   grunt.registerTask('default', [
+    'clean',
     'jade:dev',
-    'sass',
-    'postcss:dist',
+    'sass:dev',
+    'postcss:dev',
     'browserSync:livereload',
     'watch'
+  ]);
+
+  grunt.registerTask('build', [
+    'clean',
+    'jade:dist',
+    'sass:dist',
+    'postcss:dist',
+    'imagemin'
   ]);
 
 };

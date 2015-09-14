@@ -1,8 +1,7 @@
 extends ./templates/base.jade
 
-block title
-  title
-    | Resource Watch - Zooming In: “Sustainable” Cocoa Producer Destroys Pristine Forest in Peru
+append vars
+  - var title = 'Zooming In: “Sustainable” Cocoa Producer Destroys Pristine Forest in Peru'
 
 block header
   +header('insights')

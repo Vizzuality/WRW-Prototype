@@ -1,0 +1,76 @@
+extends ./templates/base.jade
+
+append vars
+  - var className = 'is-planet-pulse'
+  - var title = 'Planet Pulse'
+
+block header
+  +header('insights')
+
+block content
+  //- Preloading images
+  img.img-preload(src=path + 'img/planet-pulse/2_no_clouds_4k.jpg', id="basemap1")
+  img.img-preload(src=path + 'img/planet-pulse/basemap-dark_4k.jpg', id="basemap2")
+  img.img-preload(src=path + 'img/planet-pulse/elev_bump_4k.jpg', id="basemap3")
+  img.img-preload(src=path + 'img/planet-pulse/fair_clouds_4k.png', id="basemap4")
+  img.img-preload(src=path + 'img/planet-pulse/galaxy_starfield_4k.png', id="basemap5")
+  img.img-preload(src=path + 'img/planet-pulse/water_4k.png', id="basemap6")
+
+  img.img-preload(src=path + 'img/planet-pulse/layers/fires_4k.png', id="layer1")
+  img.img-preload(src=path + 'img/planet-pulse/layers/protected-areas_4k.png', id="layer2")
+  img.img-preload(src=path + 'img/planet-pulse/layers/umd_4k.png', id="layer3")
+
+  section.planet-pulse
+
+    #globe.planet-pulse--globe
+
+    .planet-pulse--container
+      header.planet-pulse--header
+        h1.planet-pulse--title Planet pulse
+        ul.planet-pulse--main-nav
+          li
+            a(href='#drought') Drought
+            ul
+              li
+                a(href='#drought/spei') SPEI
+              li
+                a(href='#drought/agricultural') Agricultural areas (EarthStat)
+              li
+                a(href='#drought/groundwater') Groundwater depletion (GRACE)
+              li
+                a(href='#drought/forecast') Forecasts / Climate projections
+          li
+            a(href='#forest') Forest
+            ul
+              li
+                a(href='#forest/forma') Forma
+              li
+                a(href='#forest/umd') UMD
+              li
+                a(href='#forest/protected-areas') Protected areas
+              li
+                a(href='#forest/fires') Fires
+          li
+            a(href='#flooding') Flooding
+            ul
+              li
+                a(href='#flooding/current-floods') Current floods
+              li
+                a(href='#flooding/population-data') Population data
+              li
+                a(href='#flooding/climate') Climate projections
+          li
+            a(href='#conflict') Conflict
+            ul
+              li
+                a(href='#conflict/events') Conflict events
+              li
+                a(href='#conflict/protests') Protests
+              li
+                a(href='#conflict/epidemics') Epidemics
+
+        .planet-pulse--toolbar
+          a(href='planet-pulse.html#', id="backBtn") Back
+          button#fullscreenBtn Fullscreen
+
+block footer
