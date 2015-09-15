@@ -48,6 +48,15 @@ img.img-preload {
   margin: 0 auto;
   position: relative;
 
+  .is-planet-pulse &.is-fullscreen {
+    padding: 0 !important;
+    overflow: hidden !important;
+    background-color: black;
+  }
+
+}
+
+#content {
   &.is-fullscreen {
     width: 100% !important;
     height: 100% !important;
@@ -62,32 +71,31 @@ img.img-preload {
       right: 0;
       height: 6px;
       background-color: #C4256B;
+      z-index: $z-index-1;
     }
 
-    .section-header {
-      margin: 0 auto;
-    }
+    .container {
+      width: 100% !important;
 
-    .gridbox {
-      display: block !important;
-      overflow: hidden;
-      margin: 0 auto;
+      .section-header {
+        width: 100% !important;
+      }
 
-      .cell {
-        margin: 0 20px 0 20px !important;
-        float: left !important;
+      .gridbox {
+        display: block !important;
+        overflow: hidden;
+        margin: 0 auto;
+
+        .cell {
+          margin: 0 20px 0 20px !important;
+          float: left !important;
+        }
+
       }
 
     }
 
   }
-
-  .is-planet-pulse &.is-fullscreen {
-    padding: 0 !important;
-    overflow: hidden !important;
-    background-color: black;
-  }
-
 }
 
 a,

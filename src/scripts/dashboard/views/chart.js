@@ -9,7 +9,7 @@ define([
 
   var ChartView = BaseView.extend({
 
-    template: 'HOLA',
+    template: '',
 
     initialize: function() {
     },

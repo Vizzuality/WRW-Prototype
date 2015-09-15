@@ -37,8 +37,22 @@ define([], function() {
     }
   };
 
+  var isFullscreenFunc = function() {
+    return isFullscreen;
+  };
+
+  var setFullscreen = function(bool) {
+    isFullscreen = bool;
+  };
+
   if (fullscreenBtn) {
     fullscreenBtn.addEventListener('click', toggleFullscreen, false);
   }
+
+  return {
+    toggleFullscreen: toggleFullscreen,
+    isFullscreen: isFullscreenFunc,
+    setFullscreen: setFullscreen
+  };
 
 });

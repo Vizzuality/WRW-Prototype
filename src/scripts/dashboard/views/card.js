@@ -9,9 +9,10 @@ define([
   'dashboard/views/chart',
   'dashboard/views/map',
   'dashboard/views/infowindow',
+  'views/fullscreen',
   'text!dashboard/templates/card.handlebars'
 ], function(_, Backbone, bSuper, d3, d3chart, moment, BaseView, ChartView,
-  MapView, Infowindow, TPL) {
+  MapView, Infowindow, fullscreen, TPL) {
 
   'use strict';
 
@@ -93,7 +94,7 @@ define([
     openInfowindow: function() {
       var infowindow = document.createElement('div');
       infowindow.className = 'm-modal-window';
-      if(!isFullscreen) {
+      if(!fullscreen.isFullscreen()) {
         $('body').append(infowindow);
       } else {
         $('.container').append(infowindow);
