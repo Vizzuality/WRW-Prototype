@@ -7,6 +7,7 @@ require([
   'views/search_countries',
   'views/globe',
   'dashboard/app',
+  'views/slideshow',
 
   // Common modules
   // TODO: refactor them
@@ -16,7 +17,7 @@ require([
   'views/empty_links',
   'views/fullscreen'
 ], function(Backbone, Router, auth,
-  LoginView, SearchCountriesView, GlobeView, DashboardView) {
+  LoginView, SearchCountriesView, GlobeView, DashboardView, SlideshowView) {
 
   var App = Backbone.View.extend({
 
@@ -32,6 +33,8 @@ require([
       this.router.on('route:homepage', this.homepage, this);
       this.router.on('route:planetPulse', this.planetPulse, this);
       this.router.on('route:countries', this.countries, this);
+      this.router.on('route:slideshow', this.slideshow, this);
+      this.router.on('route:default', this.default, this);
     },
 
     homepage: function() {
@@ -60,6 +63,16 @@ require([
         var hash = window.location.hash.replace('#', '');
         new DashboardView({ el: '#container', iso: hash });
       });
+    },
+
+    slideshow: function() {
+      this._checkAuth(function() {
+        new SlideshowView();
+      });
+    },
+
+    default: function() {
+      this._checkAuth(function() { return; });
     },
 
     /**
