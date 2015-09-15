@@ -13,6 +13,7 @@ define([
       'planet-pulse.html': 'planetPulse',
       'dashboard.html': 'countries',
       'slideshow.html': 'slideshow',
+      'map.html': 'map',
       '*path': 'default'
     }
 

@@ -8,6 +8,7 @@ require([
   'views/globe',
   'dashboard/app',
   'views/slideshow',
+  'views/map',
 
   // Common modules
   // TODO: refactor them
@@ -16,8 +17,8 @@ require([
   'views/fav',
   'views/empty_links',
   'views/fullscreen'
-], function(Backbone, Router, auth,
-  LoginView, SearchCountriesView, GlobeView, DashboardView, SlideshowView) {
+], function(Backbone, Router, auth, LoginView, SearchCountriesView, GlobeView,
+  DashboardView, SlideshowView, MapView) {
 
   var App = Backbone.View.extend({
 
@@ -34,6 +35,7 @@ require([
       this.router.on('route:planetPulse', this.planetPulse, this);
       this.router.on('route:countries', this.countries, this);
       this.router.on('route:slideshow', this.slideshow, this);
+      this.router.on('route:map', this.map, this);
       this.router.on('route:default', this.default, this);
     },
 
@@ -71,8 +73,14 @@ require([
       });
     },
 
+    map: function() {
+      this._checkAuth(function() {
+        new MapView();
+      });
+    },
+
     default: function() {
-      this._checkAuth(function() { return; });
+      this._checkAuth();
     },
 
     /**
@@ -80,9 +88,11 @@ require([
      */
     _checkAuth: function(next) {
       var isLogged = auth.checkLogin();
-      if (isLogged && next && typeof next === 'function') {
+      if (isLogged) {
         this.$el.addClass('is-logged');
-        next.apply(this);
+        if(next && typeof next === 'function') {
+          next.apply(this);
+        }
       } else {
         window.location.href = 'login.html';
       }
