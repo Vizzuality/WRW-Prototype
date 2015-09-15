@@ -36,3 +36,20 @@
   transform: rotate($deg);
   pointer-events: none;
 }
+
+%center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+%centerx {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+%centery {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
