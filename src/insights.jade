@@ -1,8 +1,7 @@
 extends ./templates/base.jade
 
-block title
-  title
-    | Resource Watch - Insights
+append vars
+  - var title = 'Insights'
 
 block header
   +header('insights')
