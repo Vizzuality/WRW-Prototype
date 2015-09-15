@@ -9,6 +9,7 @@ require([
   'dashboard/app',
   'views/slideshow',
   'views/map',
+  'views/explore',
 
   // Common modules
   // TODO: refactor them
@@ -18,7 +19,7 @@ require([
   'views/empty_links',
   'views/fullscreen'
 ], function(Backbone, Router, auth, LoginView, SearchCountriesView, GlobeView,
-  DashboardView, SlideshowView, MapView) {
+  DashboardView, SlideshowView, MapView, ExploreView) {
 
   var App = Backbone.View.extend({
 
@@ -36,6 +37,7 @@ require([
       this.router.on('route:countries', this.countries, this);
       this.router.on('route:slideshow', this.slideshow, this);
       this.router.on('route:map', this.map, this);
+      this.router.on('route:explore', this.explore, this);
       this.router.on('route:default', this.default, this);
     },
 
@@ -76,6 +78,12 @@ require([
     map: function() {
       this._checkAuth(function() {
         new MapView();
+      });
+    },
+
+    explore: function() {
+      this._checkAuth(function() {
+        new ExploreView();
       });
     },
 

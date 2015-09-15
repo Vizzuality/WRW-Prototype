@@ -93,3 +93,41 @@ mixin card(type)
             img(src=attributes.thumbnail)
         .card-caption
           a(href=attributes.url)= attributes.title
+
+  else if type==='explore'
+    //- Available attributes:
+    //-   url:          link url
+    //-   thumbnail:    image url
+    //-   title:        card's title
+    //-   download_map: show the MAP download link?
+    //-   download_csv: show the CSV download link?
+    //-   sub_title:    cards's subtitle
+    //-   star_count:   'like' count
+    //-   star_active:  is card 'liked'?
+    //-   id_data:      data's id attached to the button
+    //-   button_text:  button's text
+    .cell.data
+      .card.data
+        .card-image
+          a(href=attributes.url)
+            img(src=attributes.thumbnail)
+        .card-content
+          h5.card-title
+            a(href=attributes.url)= attributes.title
+          p.card-sub-title= attributes.sub_title
+        ul.card-info
+          li
+            .card-info-download
+              if attributes.download_map
+                a.link-map(href='#') MAP
+              if attributes.download_csv
+                a.link-csv(href='#') CSV
+          li.card-info-stars(class= attributes.star_active ? 'active' : '')
+            svg.icon.icon-star
+              use(xlink:href='#icon-star')
+            span= attributes.star_count
+        .card-button
+          if attributes.id_data
+            a.button.button-large.button-grey.add-to-map(data-id=attributes.id_data)= attributes.button_text
+          else
+            a.button.button-large.button-grey.explore--disabled-dataset= attributes.button_text

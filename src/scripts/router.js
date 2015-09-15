@@ -14,6 +14,7 @@ define([
       'dashboard.html': 'countries',
       'insights-slideshow.html': 'slideshow',
       'insights-map.html': 'map',
+      'explore.html': 'explore',
       '*path': 'default'
     }
 
