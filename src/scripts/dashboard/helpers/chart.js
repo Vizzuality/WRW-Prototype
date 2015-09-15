@@ -68,10 +68,10 @@ define([
       .data(values)
       .enter().append('rect')
         .attr('class', 'bar '+(className || ''))
-        .attr('x', function(d) { return x(d.x); })
+        .attr('x', function(d) { return x(d.x) || 0; })
         .attr('width', x.rangeBand())
-        .attr('y', function(d) { return y(d.y); })
-        .attr('height', function(d) { return options.innerHeight - options.xAxis.height - y(d.y); });
+        .attr('y', function(d) { return y(d.y) || 0; })
+        .attr('height', function(d) { return options.innerHeight - options.xAxis.height - (y(d.y) || 0); });
   };
 
   var appendLines = function(svg, x, y, values, xOffset, yOffset, className) {
