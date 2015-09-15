@@ -32,6 +32,8 @@ require([
       this.router.on('route:homepage', this.homepage, this);
       this.router.on('route:planetPulse', this.planetPulse, this);
       this.router.on('route:countries', this.countries, this);
+      this.router.on('route:partners', this.partners, this);
+      this.router.on('route:partnersWwf', this.partnersWwf, this);
     },
 
     homepage: function() {
@@ -62,6 +64,20 @@ require([
         new App({ el: '#container', iso: hash[1] || 'BRA'});
       });
     },
+
+    partners: function() {
+      this._checkAuth(function() {
+        new SearchCountriesView({ el: '.choose-country' });
+      });
+    },
+
+    partnersWwf: function() {
+      this._checkAuth(function() {
+        new SearchCountriesView({ el: '.choose-country' });
+      });
+    },
+
+
 
     /**
      * Middleware to check user session

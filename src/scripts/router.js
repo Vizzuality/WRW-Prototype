@@ -11,7 +11,9 @@ define([
       'index.html': 'homepage',
       'login.html': 'login',
       'planet-pulse.html': 'planetPulse',
-      'dashboard.html': 'countries'
+      'dashboard.html': 'countries',
+      'partners.html': 'partners',
+      'partners-wwf.html': 'partnersWwf',
     }
 
   });
