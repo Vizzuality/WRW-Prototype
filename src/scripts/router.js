@@ -14,6 +14,10 @@ define([
       'dashboard.html': 'countries',
       'partners.html': 'partners',
       'partners-wwf.html': 'partnersWwf',
+      'insights-slideshow.html': 'slideshow',
+      'insights-map.html': 'map',
+      'explore.html': 'explore',
+      '*path': 'default'
     }
 
   });

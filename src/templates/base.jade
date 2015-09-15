@@ -15,6 +15,8 @@ html(lang="en")
     link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
     link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Lato:300,400,700')
     link(rel='stylesheet', href='bower_components/normalize-css/normalize.css')
+    link(rel='stylesheet', href='http://libs.cartocdn.com/cartodb.js/v3/3.13/themes/css/cartodb.css')
+    link(rel='stylesheet' href='bower_components/slick-carousel/slick/slick.css')
     link(rel='stylesheet', href='styles/main.css')
 
   body(class=(className || ''))
@@ -36,6 +38,7 @@ html(lang="en")
 
     //- The global scripts to include in every page
     script(src="//cdnjs.cloudflare.com/ajax/libs/three.js/r61/three.min.js")
+    script(src="http://libs.cartocdn.com/cartodb.js/v3/3.13/cartodb.js")
     block scripts
       script(src='bower_components/requirejs/require.js')
       script(src="scripts/config.js")

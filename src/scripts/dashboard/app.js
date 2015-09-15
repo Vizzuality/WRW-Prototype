@@ -7,10 +7,11 @@ define([
   'dashboard/views/card',
   'dashboard/views/tags',
   'dashboard/helpers/helper',
+  'views/fullscreen',
   'dashboard/collections/graphs',
   'dashboard/collections/tags',
   'text!dashboard/templates/app.handlebars'
-], function(_, Backbone, bSuper, Events, BaseView, CardView, TagsView, helper,
+], function(_, Backbone, bSuper, Events, BaseView, CardView, TagsView, helper, fullscreen,
   GraphsCollection, TagsCollection, TPL) {
 
   'use strict';
@@ -21,14 +22,24 @@ define([
 
     events: {
       'click input[type=submit]'   : 'setCountry',
-      'change .choose-country' : 'setCountry'
+      'change .choose-country' : 'setCountry',
+      'click #fullscreenBtn': 'toggleFullscreen'
     },
 
   	initialize: function(options) {
+      this.fullscreenCount = 0;
+      _.bindAll(this, 'fullscreenWatcher');
+      this.setListeners(); // Must be the first instruction
+
       this.iso = options.iso || 'BRA';
+
+      if(!options.iso) {
+        this.appEvents.trigger('route:update', { iso: this.iso });
+      }
+
       /* If we can't find this ISO, we redirect to the homepage */
       if(!_.findWhere(helper.getCountries(), { iso: this.iso })) {
-        Events.trigger('route:update');
+        this.appEvents.trigger('route:update');
         this.iso = null;
         this.render();
         return;
@@ -39,6 +50,16 @@ define([
       this.render();
       this.fetchConfiguration();
   	},
+
+    setListeners: function() {
+      this.listenTo(this.appEvents, 'route:update', this.updateHash);
+      var fullscreenEvents = 'webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange';
+      $(document).on(fullscreenEvents, this.fullscreenWatcher);
+    },
+
+    updateHash: function(o) {
+      window.location.hash = (o && o.iso) ? '#'+o.iso : '';
+    },
 
     setCountry: function(e) {
       e.preventDefault();
@@ -93,15 +114,60 @@ define([
         }.bind(this))
 
         .fail(function(xhr, type, statusText) {
-          var $alertBox = $('div');
-          $alertBox.addClass('alert-box alert');
+          var $alertBox = $('.alert-box');
+          $alertBox.removeClass('is-hidden');
           $alertBox.text('Couldn\'t retrieve the configuration: ' + statusText);
-          this.$el.find('.row').last().append($alertBox);
         }.bind(this))
 
         .always(function() {
           this.$el.removeClass('is-loading');
         }.bind(this));
+    },
+
+    toggleFullscreen: function(e) {
+      e.preventDefault();
+      fullscreen.toggleFullscreen();
+    },
+
+    fullscreenWatcher: function() {
+      var isEnteringFullscreen = this.fullscreenCount % 2 === 0;
+      this.fullscreenCount++;
+
+      if(isEnteringFullscreen && !fullscreen.isFullscreen()) {
+        this.enableFullscreen();
+      } else if(!isEnteringFullscreen && fullscreen.isFullscreen()) {
+        this.disableFullscreen();
+      }
+    },
+
+    enableFullscreen: function() {
+      var container = document.querySelector('#content');
+      var gridbox = container.querySelector('.gridbox');
+      var button = container.querySelector('#fullscreenBtn');
+
+      fullscreen.setFullscreen(true);
+
+      container.className += ' is-fullscreen';
+
+      var innerWidth = container.offsetWidth - parseInt(window.getComputedStyle(container, null).getPropertyValue('padding-left')) - parseInt(window.getComputedStyle(container, null).getPropertyValue('padding-right'));
+      var nbCardsARow = Math.round(innerWidth / (320 + 2 * 20));
+      gridbox.style.width = (320 + 2 * 20) * nbCardsARow + 'px';
+
+      button.textContent = 'Exit Full screen';
+    },
+
+    disableFullscreen: function() {
+      var container = document.querySelector('#content');
+      var gridbox = container.querySelector('.gridbox');
+      var button = container.querySelector('#fullscreenBtn');
+
+      fullscreen.setFullscreen(false);
+
+      container.className = 'container';
+
+      gridbox.style.width = 'auto';
+
+      button.textContent = 'Full screen';
     },
 
   	serialize: function() {

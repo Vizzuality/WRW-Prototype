@@ -10,7 +10,8 @@ require.config({
     'backbone-super': '/bower_components/backbone-super/backbone-super/backbone-super',
     moment: '/bower_components/moment/moment',
     d3: '/bower_components/d3/d3',
-    text: '/bower_components/text/text'
+    text: '/bower_components/text/text',
+    slick: '/bower_components/slick-carousel/slick/slick.min'
   }
 
 });

@@ -7,6 +7,9 @@ require([
   'views/search_countries',
   'views/globe',
   'dashboard/app',
+  'views/slideshow',
+  'views/map',
+  'views/explore',
 
   // Common modules
   // TODO: refactor them
@@ -15,8 +18,8 @@ require([
   'views/fav',
   'views/empty_links',
   'views/fullscreen'
-], function(Backbone, Router, auth,
-  LoginView, SearchCountriesView, GlobeView, DashboardView) {
+], function(Backbone, Router, auth, LoginView, SearchCountriesView, GlobeView,
+  DashboardView, SlideshowView, MapView, ExploreView) {
 
   var App = Backbone.View.extend({
 
@@ -34,6 +37,11 @@ require([
       this.router.on('route:countries', this.countries, this);
       this.router.on('route:partners', this.partners, this);
       this.router.on('route:partnersWwf', this.partnersWwf, this);
+      this.router.on('route:slideshow', this.slideshow, this);
+      this.router.on('route:map', this.map, this);
+      this.router.on('route:explore', this.explore, this);
+      this.router.on('route:default', this.default, this);
+
     },
 
     homepage: function() {
@@ -59,9 +67,8 @@ require([
     countries: function() {
       this._checkAuth(function() {
         new SearchCountriesView({ el: '.choose-country' });
-        console.log('showing countries...');
-        var hash = window.location.hash.split('/');
-        new App({ el: '#container', iso: hash[1] || 'BRA'});
+        var hash = window.location.hash.replace('#', '');
+        new DashboardView({ el: '#container', iso: hash });
       });
     },
 
@@ -77,16 +84,38 @@ require([
       });
     },
 
+    slideshow: function() {
+      this._checkAuth(function() {
+        new SlideshowView();
+      });
+    },
 
+    map: function() {
+      this._checkAuth(function() {
+        new MapView();
+      });
+    },
+
+    explore: function() {
+      this._checkAuth(function() {
+        new ExploreView();
+      });
+    },
+
+    default: function() {
+      this._checkAuth();
+    },
 
     /**
      * Middleware to check user session
      */
     _checkAuth: function(next) {
       var isLogged = auth.checkLogin();
-      if (isLogged && next && typeof next === 'function') {
+      if (isLogged) {
         this.$el.addClass('is-logged');
-        next.apply(this);
+        if(next && typeof next === 'function') {
+          next.apply(this);
+        }
       } else {
         window.location.href = 'login.html';
       }
