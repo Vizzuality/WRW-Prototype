@@ -42,6 +42,7 @@ module.exports = function (grunt) {
     'sass:dist',
     'postcss:dist',
     'imagemin',
+    'svgmin',
     'requirejs'
   ]);
 
