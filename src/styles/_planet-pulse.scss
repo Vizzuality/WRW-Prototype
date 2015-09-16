@@ -53,12 +53,19 @@
     }
 
     a {
+      display: block;
+      padding-bottom: 5px;
+
       color: white;
       font-size: 18px;
       text-decoration: none;
       text-transform: uppercase;
 
       transition: opacity .15s ease;
+
+      &.is-active {
+        border-bottom: 2px solid white;
+      }
     }
 
     &.is-blur a {
@@ -111,7 +118,7 @@
 
           transition: all .15s ease;
 
-          &:hover {
+          &:hover, &.is-active {
             color: #3bb2d0;
             background-color: #f1f2f3;
           }
@@ -172,4 +179,22 @@
   height: 100%;
   top: 0;
   left: 0;
+}
+
+.planet-pulse--content article {
+  display: none;
+  max-width: 30%;
+
+  &.is-active {
+    display: block;
+  }
+
+  h2 {
+    font-size: 48px;
+    font-weight: 200;
+  }
+
+  p {
+    font-size: 18px;
+  }
 }
