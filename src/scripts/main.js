@@ -42,7 +42,7 @@ require([
       this.router.on('route:map', this.map, this);
       this.router.on('route:explore', this.explore, this);
       this.router.on('route:exploreDetail', this.exploreDetail, this);
-      // this.router.on('route:default', this.default, this);
+      this.router.on('route:default', this.default, this);
 
     },
 
@@ -53,7 +53,6 @@ require([
     },
 
     login: function() {
-      console.log('login');
       new LoginView({ el: '#content' });
     },
 
@@ -126,7 +125,7 @@ require([
         if(next && typeof next === 'function') {
           next.apply(this);
         }
-      } else {
+      } else if (!window.location.href.match(/login.html/)) {
         window.location.href = 'login.html';
       }
     },

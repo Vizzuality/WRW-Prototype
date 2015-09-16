@@ -18,7 +18,7 @@ define([
       'insights-map.html': 'map',
       'explore.html': 'explore',
       'explore-detail.html': 'exploreDetail'
-      // '*path': 'default'
+      '*path': 'default'
     }
 
   });
