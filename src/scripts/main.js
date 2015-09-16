@@ -36,11 +36,14 @@ require([
       this.router.on('route:homepage', this.homepage, this);
       this.router.on('route:planetPulse', this.planetPulse, this);
       this.router.on('route:countries', this.countries, this);
+      this.router.on('route:partners', this.partners, this);
+      this.router.on('route:partnersWwf', this.partnersWwf, this);
       this.router.on('route:slideshow', this.slideshow, this);
       this.router.on('route:map', this.map, this);
       this.router.on('route:explore', this.explore, this);
       this.router.on('route:exploreDetail', this.exploreDetail, this);
       this.router.on('route:default', this.default, this);
+
     },
 
     homepage: function() {
@@ -68,6 +71,18 @@ require([
         new SearchCountriesView({ el: '.choose-country' });
         var hash = window.location.hash.replace('#', '');
         new DashboardView({ el: '#container', iso: hash });
+      });
+    },
+
+    partners: function() {
+      this._checkAuth(function() {
+        new SearchCountriesView({ el: '.choose-country' });
+      });
+    },
+
+    partnersWwf: function() {
+      this._checkAuth(function() {
+        new SearchCountriesView({ el: '.choose-country' });
       });
     },
 
