@@ -42,7 +42,7 @@ require([
       this.router.on('route:map', this.map, this);
       this.router.on('route:explore', this.explore, this);
       this.router.on('route:exploreDetail', this.exploreDetail, this);
-      this.router.on('route:default', this.default, this);
+      // this.router.on('route:default', this.default, this);
 
     },
 
@@ -53,6 +53,7 @@ require([
     },
 
     login: function() {
+      console.log('login');
       new LoginView({ el: '#content' });
     },
 
@@ -131,7 +132,8 @@ require([
     },
 
     start: function() {
-      Backbone.history.start({ pushState: true });
+      var path = window.location.hostname === 'localhost' ? '/' : '/WRW-Prototype/';
+      Backbone.history.start({ pushState: true, root: path });
     }
 
   });

@@ -17,8 +17,8 @@ define([
       'insights-slideshow.html': 'slideshow',
       'insights-map.html': 'map',
       'explore.html': 'explore',
-      'explore-detail.html': 'exploreDetail',
-      '*path': 'default'
+      'explore-detail.html': 'exploreDetail'
+      // '*path': 'default'
     }
 
   });
