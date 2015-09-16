@@ -1,5 +1,8 @@
 .DS_Store
-node_modules
-css/styles.css
-js/vendor/
-dist/
+*.log
+/node_modules
+/bower_components
+/dist
+/.tmp
+/.brackets.json
+
