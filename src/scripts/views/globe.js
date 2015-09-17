@@ -1,4 +1,8 @@
-define(['underscore', 'backbone', 'lib/globe'], function(_, Backbone, Globe) {
+define([
+  'underscore',
+  'backbone',
+  'lib/globe'
+], function(_, Backbone, Globe) {
 
   'use strict';
 
@@ -8,7 +12,8 @@ define(['underscore', 'backbone', 'lib/globe'], function(_, Backbone, Globe) {
 
     initialize: function() {
       this.$title = $('.planet-pulse--title');
-      this.$nav = $('.planet-pulse--main-nav')
+      this.$nav = $('.planet-pulse--main-nav');
+      this.$articles = $('#planetPulseContent').find('article');
       this.$backBtn = $('#backBtn');
 
       this.basemaps = {
@@ -42,7 +47,7 @@ define(['underscore', 'backbone', 'lib/globe'], function(_, Backbone, Globe) {
         var w = _this.globe.element.clientWidth;
         var h = _this.globe.element.clientHeight;
         if (_this.currentVis) {
-          _this.globe.camera.setViewOffset( w, h, w * -0.2, h * 0, w, h );
+          _this.globe.camera.setViewOffset( w, h, w * -0.17, h * 0, w, h );
         } else {
           _this.globe.camera.setViewOffset( w, h, 0, 0, w, h );
         }
@@ -51,10 +56,24 @@ define(['underscore', 'backbone', 'lib/globe'], function(_, Backbone, Globe) {
 
     checkHash: function() {
       var hash = window.location.hash.split('/');
-      if (hash && hash[1]) {
+      if (hash.length && hash[0] && hash[1]) {
+        this.setContent(hash[0].substring(1));
         this.setVis(hash[1]);
+      } else if (hash.length && hash[0] && !hash[1]) {
+        this.setContent(hash[0].substring(1));
+        this.setVis(null);
       } else {
+        this.setContent(null);
         this.reset();
+      }
+    },
+
+    setContent: function(section) {
+      this.$nav.find('a').removeClass('is-active');
+      this.$articles.removeClass('is-active');
+      if (section) {
+        $('#' + section + 'Link').addClass('is-active');
+        $('#' + section + 'Content').addClass('is-active');
       }
     },
 
@@ -86,9 +105,13 @@ define(['underscore', 'backbone', 'lib/globe'], function(_, Backbone, Globe) {
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
           this.globe.createLayer(this.currentVis, this.layers.umd);
           break;
+        default:
+          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.satellite);
+          this.globe.ambientLight.color.setHex(0x444444);
+          this.globe.addClouds();
       }
 
-      this.globe.camera.setViewOffset( w, h, w * -0.2, h * 0, w, h );
+      this.globe.camera.setViewOffset( w, h, w * -0.17, h * 0, w, h );
     },
 
     reset: function() {
