@@ -1,2 +1,8 @@
 .DS_Store
-node_modules
+*.log
+/node_modules
+/bower_components
+/dist
+/.tmp
+/.brackets.json
+

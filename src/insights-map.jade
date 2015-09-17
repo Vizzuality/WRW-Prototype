@@ -1,0 +1,78 @@
+extends ./templates/base.jade
+
+append vars
+  - var title = 'Climate change will increase chance of people being affected by floods'
+
+block header
+  +header('insights')
+
+block content
+  .map-navigation
+    .inner
+      p Climate change will increase chance of people being affected by floods
+      ul.scenarios
+        li.current(data-scenario='A')
+          a(href='#') Scenario A
+        li(data-scenario='B')
+          a(href='#') Scenario B
+        li(data-scenario='C')
+          a(href='#') Scenario C
+  .insights-map-container
+    #map
+    .veil
+    .insights--slideshow-container.explore-container
+      .insights--slideshow-content.map.slide-1
+        .container
+          .left-half
+            ul.story--breadcrumbs
+              li
+                a(href='insights.html') Insights
+              li &nbsp;Map
+            .story--metadata
+              .story--metadata-author
+                img(src='img/avatar-wri.png')
+                |                   by
+                a(href='#') &nbsp;World Resources Institute
+                span.story--metadata-date Oct 5, 2015
+              .story--metadata-stars
+                svg.icon.icon-star
+                  use(xlink:href='#icon-star')
+                span 1,531
+            h1.story--title
+              | Climate change will increase chance of people being affected by floods
+            p.story--intro-text
+              | Ethiopia’s Lower Omo Valley, a UNESCO World Heritage site and home to 200,000 agro-pastoralists, is under development for sugar plantations and processing. The early stages of the development have resulted in the loss of land and livelihoods for thousands of Ethiopia’s most vulnerable citizens. The future of 500,000 agro-pastoralists in Ethiopia and Kenya is at risk
+            .controls
+              a.right-control
+                span Explore
+    .insights--slideshow-container.read-more-container.slide-left.is-hidden
+      .insights--slideshow-content.map.read-more
+        .hide-arrow.is-hidden
+        .show-arrow
+        .container
+          .left-half
+            //
+              <ul class="story--breadcrumbs">
+              <li><a href="insights.html">Insights</a></li>
+              <li>Map</li>
+              </ul>
+            h1.story--title
+              | About this map
+            p.story--intro-text
+              | This is a recurrent question for many of us; our biggest towns and cities are often found on the banks of some of the largest rivers in the world. To answer this question we performed an analysis on WRI’s Aqueduct tool (http://floods.wri.org/) to determine wich countries’ population will be more exposed to damages from floods under a range of diferent climate change scenarios.
+            p.story--intro-text
+              | We looked at three different scenarios, using different combinations of pathways identified by the Intergovernmental Panel on Climate Change 5th Assessment Report.
+            ul
+              li
+                p
+                  | Scenario A takes into account a moderate climate change pathway (the IPCC’s RCP 4.5) and a continuation of current trends in socio-economic development (the IPCC’s SSP2)
+              li
+                p
+                  | Scenario B assumes more severe climate change (IPCC’s RCP 8.5) and a continuation of current trends in socio-economic development (the IPCC’s SSP2)
+              li
+                p
+                  | Scenario C also assumes more severe climate change (IPCC’s RCP 8.5) coupled with uncontrolled socio-economic growth (IPCC’s SSP3)
+            p.story--intro-text
+              | The first test we ran assumed there were no protections against flood events at all. We did this by looking at the current population under the flood risk curve, then changing the risk curve depending on projections for 2030. As you can see on the map, the results show that there are winners and losers. Spain and Portugal, for example, have a decrease in population at risk of nearly 8% in Scenario A.
+            p.story--intro-text
+              | We’ve also identified hotspots of population at risk. As you can see in the scatter plot below, what’s particularly worrying is that some countries with the largest risk - some could be facing a threefold increase in population at risk - are those with the highest rates of poverty.

@@ -1,0 +1,190 @@
+extends ./templates/base.jade
+
+append vars
+  - var title = 'Insights Collection'
+
+block header
+  +header('insights')
+
+block content
+  .insights--hero
+    .container
+      ul.insights--breadcrumbs
+        li
+          a(href='insights.html') Insights
+        li &nbsp;Collection
+      p.insights--subtitle Insights Collection
+      h2 The 2015 California Drought
+      p.insights--intro
+        | California farmers produce more than a third of the nation’s vegetables and two-thirds of its fruits and nuts. To do that, they use nearly 80 percent of all the water consumed in the state. It is the most stubborn part of the crisis: to fundamentally alter how much water the state uses, all Americans may have to give something up.
+  .container
+    .insights--star
+      svg.icon.icon-star
+        use(xlink:href='#icon-star')
+      span 6,578
+  .container
+    section
+      header.section-header.insights--results-header
+        | 14 insights
+        ul.insights--results-filters
+          li.active
+            a(href='#')
+              i.fa.fa-th-large
+          li
+            a(href='#')
+              i.fa.fa-th-list
+          li
+            a.button.button-small(href='#') Filter
+      .gridbox
+        include ./templates/card.jade
+        +card('insight')(
+          url='insights-story.html',
+          thumbnail='img/insight-1-th.jpg',
+          sub_title='Story',
+          title='Worldwide Forest Loss in Summer 2015',
+          avatar='img/avatar-wwf.png',
+          author='WWF',
+          star_count='5,230'
+        )
+        +card('insight')(
+          url='insights-map.html',
+          thumbnail='img/insight-2-th.jpg',
+          sub_title='Map',
+          title='The Most Polluted Rivers in the United States',
+          avatar='img/avatar-greenpeace.png',
+          author='Greenpeace',
+          star_count='3,531'
+        )
+        +card('insight')(
+          url='insights-story.html',
+          thumbnail='img/insight-3-th.jpg',
+          sub_title='Story',
+          title='How Train Transport Will Improve our Lives',
+          avatar='img/avatar-wri.png',
+          author='World Resources Institute',
+          star_count='4,345',
+          star_active=true
+        )
+        +card('insight')(
+          url='insights-slideshow.html',
+          thumbnail='img/insight-4-th.jpg',
+          sub_title='Slideshow',
+          title='Worldwide Forest Loss in Summer 2015',
+          avatar='img/avatar-1.jpg',
+          author='Sajjad Malik',
+          star_count='1,349',
+          star_active=true
+        )
+        +card('insight')(
+          url='insights-story.html',
+          thumbnail='img/insight-5-th.jpg',
+          sub_title='Story',
+          title='The Most Polluted Rivers in the United States',
+          avatar='img/avatar-2.jpg',
+          author='Marion Johnson',
+          star_count='9,430'
+        )
+        +card('insight')(
+          url='insights-slideshow.html',
+          thumbnail='img/insight-6-th.jpg',
+          sub_title='Slideshow',
+          title='How Train Transport Will Improve our Lives',
+          avatar='img/avatar-wwf.png',
+          author='WWF',
+          star_count='430'
+        )
+        +card('insight')(
+          url='insights-story.html',
+          thumbnail='img/insight-7-th.jpg',
+          sub_title='Story',
+          title='Worldwide Forest Loss in Summer 2015',
+          avatar='img/avatar-wwf.png',
+          author='WWF',
+          star_count='5,231'
+        )
+        +card('insight')(
+          url='insights-slideshow.html',
+          thumbnail='img/insight-8-th.jpg',
+          sub_title='Slideshow',
+          title='The Most Polluted Rivers in the United States',
+          avatar='img/avatar-greenpeace.png',
+          author='Greenpeace',
+          star_count='3,531'
+        )
+        +card('insight')(
+          url='insights-story.html',
+          thumbnail='img/insight-9-th.jpg',
+          sub_title='Story',
+          title='How Train Transport Will Improve our Lives',
+          avatar='img/avatar-wwf.png',
+          author='WWF',
+          star_count='430'
+        )
+        +card('insight')(
+          url='insights-slideshow.html',
+          thumbnail='img/insight-10-th.jpg',
+          sub_title='Slideshow',
+          title='Worldwide Forest Loss in Summer 2015',
+          avatar='img/avatar-1.jpg',
+          author='Sajjad Malik',
+          star_count='1,349',
+          star_active=true
+        )
+        +card('insight')(
+          url='insights-story.html',
+          thumbnail='img/insight-11-th.jpg',
+          sub_title='Story',
+          title='The Most Polluted Rivers in the United States',
+          avatar='img/avatar-2.jpg',
+          author='Marion Johnson',
+          star_count='9,430'
+        )
+        +card('insight')(
+          url='insights-story.html',
+          thumbnail='img/insight-12-th.jpg',
+          sub_title='Story',
+          title='How Train Transport Will Improve our Lives',
+          avatar='img/avatar-wwf.png',
+          author='WWF',
+          star_count='430'
+        )
+        +card('insight')(
+          url='insights-story.html',
+          thumbnail='img/insight-13-th.jpg',
+          sub_title='Story',
+          title='Worldwide Forest Loss in Summer 2015',
+          avatar='img/avatar-wwf.png',
+          author='WWF',
+          star_count='5,230'
+        )
+        +card('insight')(
+          url='insights-slideshow.html',
+          thumbnail='img/insight-14-th.jpg',
+          sub_title='Slideshow',
+          title='The Most Polluted Rivers in the United States',
+          avatar='img/avatar-greenpeace.png',
+          author='Greenpeace',
+          star_count='3,531'
+        )
+
+    section
+      header.section-header
+        h3 Similar collections
+      .gridbox
+        include ./templates/card.jade
+        each val in [1, 2, 3]
+          +card('category')(
+            url='insights-collection.html',
+            thumbnail='img/collection-'+val+'-th.jpg',
+            title='Worldwide Deforestation'
+          )
+    section
+      header.section-header
+        h3 Planet Pulse
+        a.section-header-link(href='planet-pulse.html')
+          | Launch
+          i.fa.fa-angle-right
+      .banner
+        img.banner-image(src='img/planet-pulse-1.png')
+        h3.banner-header Real-time data monitoring the planet
+        a.banner-button.button.button-large(href='planet-pulse.html') Launch Planet Pulse

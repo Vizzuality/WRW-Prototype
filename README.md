@@ -5,7 +5,8 @@
 Install dependencies:
 
 ```
-npm install -g gulp && npm install
+npm install -g gulp bower && npm install
+bower install
 ```
 
 Run the app:

@@ -1,0 +1,156 @@
+extends ./templates/base.jade
+
+append vars
+  - var title = 'Partners'
+  - var className = 'is-partners'
+  - var className = 'is-partners-wwf'
+
+block content
+  // partners hero
+  .partners--hero
+    .container
+      p.partners--subtitle Resource Watch Partner
+      h2
+        img(src='img/partner-wwf-logo.png')
+      p.partners--intro-left
+        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.
+      p.partners--intro-right
+        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.
+
+  .container
+
+    // insights by wwf
+    section
+      .gridbox
+        include ./templates/card.jade
+        +card('insight')(
+          url='insights-story.html',
+          thumbnail='img/partner-wwf-insight-1.jpg',
+          sub_title='Story',
+          title='Worldwide Forest Loss in Summer 2015',
+          avatar='img/avatar-wwf.png',
+          author='Greenpeace',
+          star_count='6,574'
+        )
+        +card('insight')(
+          url='insights-map.html',
+          thumbnail='img/partner-wwf-insight-2.jpg',
+          sub_title='Map',
+          title='The Most Polluted Rivers in the United States',
+          avatar='img/avatar-wwf.png',
+          author='WWF',
+          star_count='6,574'
+        )
+        +card('insight')(
+          url='insights-story.html',
+          thumbnail='img/partner-wwf-insight-3.jpg',
+          sub_title='Story',
+          title='How Train Transport Will Improve our Lives',
+          avatar='img/avatar-wwf.png',
+          author='WWF',
+          star_count='6,574',
+          star_active=true
+        )
+        +card('insight')(
+          url='insights-slideshow.html',
+          thumbnail='img/partner-wwf-insight-4.jpg',
+          sub_title='Slideshow',
+          title='Worldwide Forest Loss in 2015',
+          avatar='img/avatar-wwf.png',
+          author='WWF',
+          star_count='6,574',
+          star_active=true
+        )
+        +card('insight')(
+          url='insights-story.html',
+          thumbnail='img/partner-wwf-insight-5.jpg',
+          sub_title='Story',
+          title='The Most Polluted Rivers in the United States',
+          avatar='img/avatar-wwf.png',
+          author='WWF',
+          star_count='6,574'
+        )
+        +card('insight')(
+          url='insights-slideshow.html',
+          thumbnail='img/partner-wwf-insight-6.jpg',
+          sub_title='Slideshow',
+          title='How Train Transport Will Improve our Lives',
+          avatar='img/avatar-wwf.png',
+          author='WWF',
+          star_count='6,574'
+        )
+
+
+  // jumbotron
+  .partners--middle
+    .partners--container
+      .middle--intro <strong>WWF</strong> is building a future where human needs are met in harmony with nature.
+      a.button.button-large(href='#') Learn about our work
+
+
+  .container
+    // collections
+    section
+      header.section-header
+        h3 Collections
+      .gridbox
+        include ./templates/card.jade
+        +card('category')(
+          url='insights-collection.html',
+          thumbnail='img/collection-7-th.jpg',
+          title='Worldwide Deforestation'
+          )
+        +card('category')(
+          url='insights-collection.html',
+          thumbnail='img/collection-2-th.jpg',
+          title='Rainforest Observatory'
+          )
+        +card('category')(
+          url='insights-collection.html',
+          thumbnail='img/collection-3-th.jpg',
+          title='Biodiversity Observatory 2015'
+          )
+
+    // data updated by wwf
+    section
+      header.section-header
+        h3 Data updated by WWF
+        a.section-header-link(href='#')
+          | View More
+          i.fa.fa-angle-right
+      .gridbox
+        include ./templates/card.jade
+        +card('data')(
+          url='explore-standalone.html',
+          thumbnail='img/data-1-th.png',
+          title='Water levels in Northern California',
+          download_csv=true,
+          download_map=true,
+          sub_title='Centre for Research on Lorem'
+          star_count='6,575'
+        )
+        +card('data')(
+          url='explore-standalone.html',
+          thumbnail='img/data-2-th.png',
+          title='Total Greenhouse Emissions',
+          download_csv=true,
+          sub_title='Centre for Research on Lorem'
+          star_count='6,575'
+        )
+        +card('data')(
+          url='explore-standalone.html',
+          thumbnail='img/data-3-th.png',
+          title='CO2 emissions intensity',
+          download_csv=true,
+          download_map=true,
+          sub_title='Centre for Research on Lorem'
+          star_count='6,575'
+        )
+        +card('data')(
+          url='explore-standalone.html',
+          thumbnail='img/data-4-th.png',
+          title='Population distribution by age range in the US',
+          download_csv=true,
+          sub_title='Centre for Research on Lorem'
+          star_count='6,575'
+        )

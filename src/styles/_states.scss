@@ -1,0 +1,30 @@
+@mixin is-hidden() {
+  display: none !important;
+  visibility: hidden;
+}
+
+@mixin is-visible() {
+  display: block !important;
+  visibility: visible;
+}
+
+.is-hidden {
+   @include is-hidden;
+}
+
+@media screen and (max-width: $responsive-break--tablet) {
+  .is-mobile-hidden {
+    @include is-hidden;
+  }
+}
+
+@media screen and (min-width: $responsive-break--tablet) {
+  .is-desktop-hidden {
+
+    @include is-hidden;
+  }
+}
+
+.is-link {
+  cursor: pointer;
+}
