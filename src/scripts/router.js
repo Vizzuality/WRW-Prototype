@@ -12,7 +12,7 @@ define([
       'login.html': 'login',
       'planet-pulse.html': 'planetPulse',
       'dashboard.html': 'countries',
-      'partners.html': 'partners',
+      'partners-gp.html': 'partnersGp',
       'partners-wwf.html': 'partnersWwf',
       'insights-slideshow.html': 'slideshow',
       'insights-map.html': 'map',
