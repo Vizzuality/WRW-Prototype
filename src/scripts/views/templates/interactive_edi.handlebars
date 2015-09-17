@@ -1,0 +1,31 @@
+<h2 class="insights--interactive-intro-3-title">{{country}}</h2>
+<div class="insights--interactive-intro-3-subtitle">
+  In {{country}} the laws supporting access to information, public participation, and access to justice in environmental matters are <b>{{strength}}</b>.
+</div>
+
+<div class="insights--interactive-breakdown">
+  <p>Suppose a local plastics manufacturer intends to site a potentially toxic factory in your neighborhood.</p>
+  {{#each sentences}}
+  <p>{{this}}</p>
+  {{/each}}
+</div>
+
+<div class="insights--interactive-edi-data">
+  <div class="insights--interactive-score">
+    <figure>{{score}}</figure>
+    <span>Country Score</span>
+  </div>
+
+  <ul class="insights--interactive-data-list">
+    <li><span>Population</span> {{population}}</li>
+    <li><span>Income level</span> {{grp}}</li>
+    <li><span>Human Development Index</span> {{hdi}}</li>
+    <li><span>Environmental Development Index</span> {{edi}}</li>
+  </ul>
+</div>
+
+<ul class="insights--interactive-footer">
+  <li>Choose another country</li>
+  <li>Explore the data</li>
+  <li>Read about EDI</li>
+</ul>
