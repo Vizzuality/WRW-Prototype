@@ -8,8 +8,9 @@ define([], function() {
   var explore = document.querySelector('.explore-detail--stars');
 
   var doFav = function() {
+    //regex to remove commas at thousands
     var totalFavsContainer = this.querySelector('span'),
-        totalFavs = Number(totalFavsContainer.innerText.replace(',', ''));
+        totalFavs = parseInt(totalFavsContainer.innerText.replace(/,/g, ""))
 
     if(this.classList.contains('active')) {
       totalFavs--;
@@ -19,9 +20,8 @@ define([], function() {
 
     this.classList.toggle('active');
 
-    if(totalFavs / 1000 > 1) {
-      totalFavs = String(totalFavs / 1000).replace('.', ',');
-    }
+    //regex to insert commas at thousands
+    totalFavs = totalFavs.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
     totalFavsContainer.innerText = totalFavs;
   };
