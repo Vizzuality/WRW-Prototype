@@ -174,11 +174,16 @@ define([
             this.countryModel = new CountryModel({ iso: this.iso });
             this.scoreModel = new ScoreModel({ iso: this.iso });
 
+            this.$cardBack.addClass('is-loading');
+
             $.when.apply($, [this.scoreModel.fetch(), this.countryModel.fetch(), this.ediCollection.fetch(), this.insightsCollection.fetch()])
               .then(_.bind(this.renderResult, this))
               .fail(function() {
                 console.log('Error fetching the data');
-              });
+              })
+              .always(_.bind(function() {
+                this.$cardBack.removeClass('is-loading');
+              }, this));
           }
           break;
       }
