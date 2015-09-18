@@ -44,6 +44,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    a {
+      text-decoration: none;
+    }
   }
 
   .card-info-download,
@@ -145,6 +149,8 @@
     .card-info-stars {
       padding-top: 10px;
     }
+
+
 
     .card-button {
       width: calc(100% - 20px);
