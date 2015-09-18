@@ -81,6 +81,25 @@ define([
 
   });
 
+  var CountriesCollection = Backbone.Collection.extend({
+
+    url: 'http://edi.simbiotica.es/countries-by-overall',
+    comparator: 'name',
+
+    initialize: function() {
+      this.fetch();
+    },
+
+    parse: function(data) {
+      return _.map(data, function(row) {
+        return {
+          iso: row.field_iso,
+          name: row.country
+        };
+      });
+    }
+  });
+
   var InteractiveEdi = Backbone.View.extend({
 
     el: 'body',
@@ -101,6 +120,18 @@ define([
       this.$cardFront = $('.insights--interactive-card-front');
       this.$cardBack = $('.insights--interactive-card-back');
       this.$countryInput = $('.js-search-country');
+      this.countriesCollection = new CountriesCollection();
+      this.setListeners();
+    },
+
+    setListeners: function() {
+      this.countriesCollection.on('sync', _.bind(this.updateCountriesList, this));
+    },
+
+    updateCountriesList: function() {
+      _.each(this.countriesCollection.toJSON(), _.bind(function(country) {
+        this.$countryInput.append('<option value="'+country.iso+'">'+country.name+'</option>');
+      }, this));
     },
 
     nextStep: function(e) {
@@ -156,13 +187,8 @@ define([
     previousStep: function() {
       if(this.step === 3) {
         this.$cardBack.html(this.template2());
-        new (SearchCountriesView.extend({
-          el: '.js-search-country',
-          setCountry: function(e) {
-            e.preventDefault();
-          }
-        }))();
         this.$countryInput = $('.js-search-country');
+        this.updateCountriesList();
         $('html, body').animate({
           scrollTop: this.$cardBack.offset().top
         }, 500);

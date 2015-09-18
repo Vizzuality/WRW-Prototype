@@ -103,12 +103,6 @@ require([
 
     interactiveEdi: function() {
       this._checkAuth(function() {
-        new (SearchCountriesView.extend({
-          el: '.js-search-country',
-          setCountry: function(e) {
-            e.preventDefault();
-          }
-        }))();
         new InteractiveEdiView();
       });
     },
