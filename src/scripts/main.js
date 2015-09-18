@@ -146,7 +146,10 @@ require([
     },
 
     start: function() {
-      var path = window.location.hostname === 'localhost' ? '/' : '/WRW-Prototype/';
+      var path = '/WRW-Prototype/';
+      if(window.location.hostname === 'localhost' || /192\.168\.1\.[0-9]{2}/.test(window.location.hostname)) {
+        path = '/';
+      }
       Backbone.history.start({ pushState: true, root: path });
     }
 
