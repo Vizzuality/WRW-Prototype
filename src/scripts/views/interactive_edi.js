@@ -2,8 +2,10 @@ define([
   'backbone',
   'underscore',
   'handlebars',
-  'text!views/templates/interactive_edi.handlebars'
-], function(Backbone, _, Handlebars, TPL) {
+  'views/search_countries',
+  'text!views/templates/interactive_edi_step2.handlebars',
+  'text!views/templates/interactive_edi_step3.handlebars'
+], function(Backbone, _, Handlebars, SearchCountriesView, TPL2, TPL3) {
 
   var EdiCollection = Backbone.Collection.extend({
     initialize: function(options) {
@@ -87,7 +89,8 @@ define([
       'click .js-next': 'nextStep'
     },
 
-    template: Handlebars.compile(TPL),
+    template2: Handlebars.compile(TPL2),
+    template3: Handlebars.compile(TPL3),
 
     initialize: function() {
       this.step = 0;
@@ -132,13 +135,13 @@ define([
           break;
 
         case 2:
-          var iso = this.$countryInput.find('option:selected').val();
+          this.iso = this.$countryInput.find('option:selected').val();
 
-          if(!!iso.length) {
-            this.ediCollection = new EdiCollection({ iso: iso });
+          if(!!this.iso.length) {
+            this.ediCollection = new EdiCollection({ iso: this.iso });
             this.insightsCollection = new InsightsCollection();
-            this.countryModel = new CountryModel({ iso: iso });
-            this.scoreModel = new ScoreModel({ iso: iso });
+            this.countryModel = new CountryModel({ iso: this.iso });
+            this.scoreModel = new ScoreModel({ iso: this.iso });
 
             $.when.apply($, [this.scoreModel.fetch(), this.countryModel.fetch(), this.ediCollection.fetch(), this.insightsCollection.fetch()])
               .then(_.bind(this.renderResult, this))
@@ -147,6 +150,23 @@ define([
               });
           }
           break;
+      }
+    },
+
+    previousStep: function() {
+      if(this.step === 3) {
+        this.$cardBack.html(this.template2());
+        new (SearchCountriesView.extend({
+          el: '.js-search-country',
+          setCountry: function(e) {
+            e.preventDefault();
+          }
+        }))();
+        this.$countryInput = $('.js-search-country');
+        $('html, body').animate({
+          scrollTop: this.$cardBack.offset().top
+        }, 500);
+        this.step--;
       }
     },
 
@@ -182,9 +202,10 @@ define([
 
       this.step++;
       this.$cardBack.children().fadeOut(300, _.bind(function() {
-        this.$cardBack.html(this.template({
+        this.$cardBack.html(this.template3({
           sentences: sentences,
           country: countryData.name,
+          iso: this.iso,
           population: countryData.population,
           grp: countryData.grp,
           hdi: countryData.hdi,
@@ -192,6 +213,7 @@ define([
           score: scoreData.score,
           strength: scoreData.strength
         }));
+        $('.js-back').on('click', _.bind(this.previousStep, this));
       }, this));
     }
 
