@@ -45,6 +45,7 @@ require([
       this.router.on('route:map', this.map, this);
       this.router.on('route:interactiveEdi', this.interactiveEdi, this);
       this.router.on('route:explore', this.explore, this);
+      this.router.on('route:exploreDetail', this.exploreDetail, this);
       this.router.on('route:exploreStandalone', this.exploreStandalone, this);
       this.router.on('route:default', this.default, this);
 
@@ -111,6 +112,13 @@ require([
     explore: function() {
       this._checkAuth(function() {
         new ExploreView();
+      });
+    },
+
+    exploreDetail: function() {
+      this._checkAuth(function() {
+        new ExploreView();
+        new ChartView({el: '.js--detail-visualization'}).render();
       });
     },
 
