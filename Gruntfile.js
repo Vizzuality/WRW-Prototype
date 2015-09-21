@@ -41,7 +41,14 @@ module.exports = function (grunt) {
     'jade:dist',
     'sass:dist',
     'postcss:dist',
-    'imagemin'
+    'imagemin',
+    'svgmin',
+    'requirejs'
+  ]);
+
+  grunt.registerTask('deploy', [
+    'build',
+    'gh-pages'
   ]);
 
 };

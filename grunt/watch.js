@@ -7,7 +7,7 @@ module.exports = {
   },
 
   jade: {
-    files: ['<%= src %>/**/*.jade'],
+    files: ['<%= src %>/*.jade'],
     tasks: ['jade:dev']
   }
 

@@ -1,4 +1,7 @@
-define(['lib/controls/OrbitControls'], function() {
+define([
+  'lib/controls/OrbitControls',
+  'lib/threex.rendererstats'
+], function() {
 
   var Globe = function(elementId) {
 
@@ -12,7 +15,17 @@ define(['lib/controls/OrbitControls'], function() {
     var segments = 32;
     var rotation = 6;
 
+    // var statsRender = stats();
     var layers = {};
+
+    function stats() {
+      var rendererStats = new THREEx.RendererStats();
+      rendererStats.domElement.style.position = 'absolute'
+      rendererStats.domElement.style.left = '0px'
+      rendererStats.domElement.style.bottom   = '0px'
+      document.body.appendChild( rendererStats.domElement );
+      return rendererStats;
+    }
 
     function createEarth(radius, segments) {
       return new THREE.Mesh(
@@ -76,7 +89,7 @@ define(['lib/controls/OrbitControls'], function() {
     var scene = new THREE.Scene();
 
     // Camera
-    var camera = new THREE.PerspectiveCamera(45, w / h, 0.01, 1000);
+    var camera = new THREE.PerspectiveCamera(40, w / h, 0.01, 1000);
     camera.position.z = 2;
 
     // Renderer
@@ -157,6 +170,7 @@ define(['lib/controls/OrbitControls'], function() {
       requestAnimationFrame(render);
       renderer.clear();
       renderer.render(scene, camera);
+      // statsRender.update(renderer);
     }
 
     function onWindowResize() {

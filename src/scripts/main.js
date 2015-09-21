@@ -134,13 +134,14 @@ require([
         if(next && typeof next === 'function') {
           next.apply(this);
         }
-      } else {
+      } else if (!window.location.href.match(/login.html/)) {
         window.location.href = 'login.html';
       }
     },
 
     start: function() {
-      Backbone.history.start({ pushState: true });
+      var path = window.location.hostname === 'localhost' ? '/' : '/WRW-Prototype/';
+      Backbone.history.start({ pushState: true, root: path });
     }
 
   });
