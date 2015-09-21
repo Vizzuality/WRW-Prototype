@@ -3,6 +3,7 @@ extends ./templates/base.jade
 append vars
   - var title = 'Partners'
   - var className = 'is-partners'
+  - var className = 'is-partners-wri'
 
 block content
   // partners hero
@@ -10,7 +11,7 @@ block content
     .container
       p.partners--subtitle Resource Watch Partner
       h2
-        img(src='img/partner-greenpeace-logo.png')
+        img(src='img/partner-wri-logo.png')
       p.partners--intro-left
         | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.
       p.partners--intro-right
@@ -18,64 +19,64 @@ block content
 
   .container
 
-    // insights by greenpeace
+    // insights by wri
     section
       .gridbox
         include ./templates/card.jade
         +card('insight')(
           url='insights-story.html',
-          thumbnail='img/partner-greenpeace-insight-1.jpg',
+          thumbnail='img/partner-wri-insight-1.jpg',
           sub_title='Story',
-          title='Worldwide Forest Loss in Summer 2015',
-          avatar='img/avatar-greenpeace.png',
-          author='Greenpeace',
+          title='China Moves Toward Mandatory Corporate GHG Reporting',
+          avatar='img/avatar-wri.png',
+          author='World Resources Institute',
           star_count='5,230'
         )
         +card('insight')(
           url='insights-map.html',
-          thumbnail='img/partner-greenpeace-insight-2.jpg',
+          thumbnail='img/partner-wri-insight-2.jpg',
           sub_title='Map',
-          title='The Most Polluted Rivers in the United States',
-          avatar='img/avatar-greenpeace.png',
-          author='Greenpeace',
+          title='Green Climate Fund Opens for Business',
+          avatar='img/avatar-wri.png',
+          author='World Resources Institute',
           star_count='3,531'
         )
         +card('insight')(
           url='insights-story.html',
-          thumbnail='img/partner-greenpeace-insight-3.jpg',
+          thumbnail='img/partner-wri-insight-3.jpg',
           sub_title='Story',
-          title='How Train Transport Will Improve our Lives',
-          avatar='img/avatar-greenpeace.png',
-          author='Greenpeace',
+          title='New Climate Economy Report Links Climate Action to Economic Growth',
+          avatar='img/avatar-wri.png',
+          author='World Resources Institute',
           star_count='4,345',
           star_active=true
         )
         +card('insight')(
           url='insights-slideshow.html',
-          thumbnail='img/partner-greenpeace-insight-4.jpg',
+          thumbnail='img/partner-wri-insight-4.jpg',
           sub_title='Slideshow',
-          title='Worldwide Forest Loss in 2015',
-          avatar='img/avatar-greenpeace.png',
-          author='Greenpeace',
+          title='27 Cities in Latin America &amp; China Use New Protocol to Measure GHG Emissions',
+          avatar='img/avatar-wri.png',
+          author='World Resources Institute',
           star_count='1,349',
           star_active=true
         )
         +card('insight')(
           url='insights-story.html',
-          thumbnail='img/partner-greenpeace-insight-5.jpg',
+          thumbnail='img/partner-wri-insight-5.jpg',
           sub_title='Story',
-          title='The Most Polluted Rivers in the United States',
-          avatar='img/avatar-greenpeace.png',
-          author='Greenpeace',
+          title='Fairer and Cleaner Energy in South Africa',
+          avatar='img/avatar-wri.png',
+          author='World Resources Institute',
           star_count='9,430'
         )
         +card('insight')(
           url='insights-slideshow.html',
-          thumbnail='img/partner-greenpeace-insight-6.jpg',
+          thumbnail='img/partner-wri-insight-6.jpg',
           sub_title='Slideshow',
-          title='How Train Transport Will Improve our Lives',
-          avatar='img/avatar-greenpeace.png',
-          author='Greenpeace',
+          title='Global Forest Landscape Restoration Target Set, National Contributions Announced',
+          avatar='img/avatar-wri.png',
+          author='World Resources Institute',
           star_count='430'
         )
 
@@ -83,8 +84,8 @@ block content
   // jumbotron "help us save the arctic"
   .partners--middle
     .partners--container
-      .middle--intro Protecting the Arctic for people, wildlife and the planet.
-      a.button.button-large(href='#') Help us save the arctic
+      .middle--intro <strong>WRI</strong> is a global research organization that turns big ideas into action  at the nexus of environment, economic opportunity and human well-being.
+      a.button.button-large(href='#') Learn About Our Work
 
 
   .container
@@ -113,7 +114,7 @@ block content
     // data updated by wwf
     section
       header.section-header
-        h3 Data updated by Greenpeace
+        h3 Data updated by World Resources Institute
         a.section-header-link(href='#')
           | View More
           i.fa.fa-angle-right

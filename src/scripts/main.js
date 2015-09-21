@@ -39,6 +39,8 @@ require([
       this.router.on('route:countries', this.countries, this);
       this.router.on('route:partnersGp', this.partnersGp, this);
       this.router.on('route:partnersWwf', this.partnersWwf, this);
+      this.router.on('route:partnersVizzuality', this.partnersVizzuality, this);
+      this.router.on('route:partnersWri', this.partnersWri, this);
       this.router.on('route:slideshow', this.slideshow, this);
       this.router.on('route:map', this.map, this);
       this.router.on('route:explore', this.explore, this);
@@ -83,6 +85,18 @@ require([
     },
 
     partnersWwf: function() {
+      this._checkAuth(function() {
+        new SearchCountriesView({ el: '.choose-country' });
+      });
+    },
+
+    partnersVizzuality: function() {
+      this._checkAuth(function() {
+        new SearchCountriesView({ el: '.choose-country' });
+      });
+    },
+
+    partnersWri: function() {
       this._checkAuth(function() {
         new SearchCountriesView({ el: '.choose-country' });
       });
