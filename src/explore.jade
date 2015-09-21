@@ -1,0 +1,134 @@
+extends ./templates/base.jade
+
+append vars
+  - var title = 'Explore'
+
+block header
+  +header('explore')
+
+block content
+  .explore--content-container.js--explore--content
+    .explore--content
+      header
+        h2.explore--title Explore
+      .explore--search
+        input.explore--search-input(type='text', placeholder='Search datasets')
+        a.button.button-large.explore--search-button(href='#') Search
+      section
+        header.section-header.explore--results-header
+          | 14 datasets
+          ul.insights--results-filters
+            li.active
+              a(href='#')
+                i.fa.fa-th-large
+            li
+              a(href='#')
+                i.fa.fa-th-list
+            li
+              a.button.button-small(href='#') Filter
+        .gridbox
+          include ./templates/card.jade
+          +card('explore')(
+            url='explore-detail.html',
+            thumbnail='img/data-9-th.png',
+            title='Energy plants',
+            download_map=true,
+            download_csv=true,
+            sub_title='CARMA',
+            star_count='6,578',
+            id_data='0',
+            button_text='Add to map'
+          )
+          +card('explore')(
+            url='explore-detail.html',
+            thumbnail='img/data-10-th.png',
+            title='Global Water Risk',
+            download_csv=true,
+            sub_title='Aqueduct',
+            star_count='6,578',
+            id_data='1',
+            button_text='Add to map'
+          )
+          +card('explore')(
+            url='#',
+            thumbnail='img/data-3-th.png',
+            title='CO2 emissions by country',
+            download_map=true,
+            download_csv=true,
+            sub_title='CAIT',
+            star_count='6,578',
+            button_text='Not displayable'
+          )
+          +card('explore')(
+            url='#',
+            thumbnail='img/data-4-th.png',
+            title='Countries emissions',
+            download_map=true,
+            download_csv=true,
+            sub_title='CARMA',
+            star_count='6,578',
+            button_text='Not displayable'
+          )
+          +card('explore')(
+            url='explore-detail.html',
+            thumbnail='img/data-11-th.png',
+            title='Country Flood Risk',
+            download_csv=true,
+            sub_title='Aqueduct',
+            star_count='6,578',
+            id_data='2',
+            button_text='Add to map'
+          )
+          +card('explore')(
+            url='#',
+            thumbnail='img/data-6-th.png',
+            title='Energy produced in Spain - Real Time',
+            download_csv=true,
+            sub_title='Centre for Research on Lorem',
+            star_count='6,578',
+            button_text='Not displayable'
+          )
+          +card('explore')(
+            url='#',
+            thumbnail='img/data-7-th.png',
+            title='Water levels in Northern California',
+            download_csv=true,
+            sub_title='Centre for Research on Lorem',
+            star_count='6,578',
+            button_text='Not displayable'
+          )
+          +card('explore')(
+            url='#',
+            thumbnail='img/data-8-th.png',
+            title='Water levels in Northern California',
+            download_csv=true,
+            sub_title='Centre for Research on Lorem',
+            star_count='6,578',
+            button_text='Not displayable'
+          )
+          +card('explore')(
+            url='#',
+            thumbnail='img/data-3-th.png',
+            title='CO2 emissions by country',
+            download_map=true,
+            download_csv=true,
+            sub_title='CAIT',
+            star_count='6,578',
+            button_text='Not displayable'
+          )
+  #map.explore--map.js--explore--map
+    a.js--map-expand.explore--map-button.is-mobile-hidden(href='#')
+      i.fa.fa-chevron-left
+  .explore--map-legend.is-mobile-hidden
+    ul.explore--map-legend-layers
+    ul.explore--map-legend-controls
+      li
+        i.fa.fa-pencil
+        |  Create Insight
+      li
+        i.fa.fa-cog
+      li
+        i.fa.fa-share-alt
+
+block footer
+  | &nbsp;

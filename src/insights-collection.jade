@@ -1,0 +1,198 @@
+extends ./templates/base.jade
+
+append vars
+  - var title = 'Insights Collection'
+
+block header
+  +header('insights')
+
+block content
+  .insights--hero
+    .container
+      ul.insights--breadcrumbs
+        li
+          a(href='insights.html') Insights
+        li &nbsp;Collection
+      p.insights--subtitle Insights Collection
+      h2 Water and Drought
+      p.insights--intro
+        | California farmers produce more than a third of the nation’s vegetables and two-thirds of its fruits and nuts. To do that, they use nearly 80 percent of all the water consumed in the state. It is the most stubborn part of the crisis: to fundamentally alter how much water the state uses, all Americans may have to give something up.
+  .container
+    .insights--star
+      svg.icon.icon-star
+        use(xlink:href='#icon-star')
+      span 6,578
+  .container
+    section
+      header.section-header.insights--results-header
+        | 14 insights
+        ul.insights--results-filters
+          li.active
+            a(href='#')
+              i.fa.fa-th-large
+          li
+            a(href='#')
+              i.fa.fa-th-list
+          li
+            a.button.button-small(href='#') Filter
+      .gridbox
+        include ./templates/card.jade
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-24-th.jpg',
+          sub_title='Story',
+          title='Droughts and Floods Threaten China\'s Economic Growth',
+          avatar='img/avatar-guardian.png',
+          author='The Guardian',
+          star_count='5,230'
+        )
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-25-th.jpg',
+          sub_title='Story',
+          title='Let’s Stop the Drought in Texas',
+          avatar='img/avatar-greenpeace.png',
+          author='Greenpeace',
+          author_url='partners-gp.html',
+          star_count='3,531'
+        )
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-26-th.jpg',
+          sub_title='Slideshow',
+          title='Europe is Facing the Worst Drought in Century',
+          avatar='img/avatar-wri.png',
+          author='World Resources Institute',
+          author_url='partners-wri.html',
+          star_count='4,345',
+          star_active=true
+        )
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-27-th.jpg',
+          sub_title='Slideshow',
+          title='California Drought Pictures',
+          avatar='img/avatar-1.jpg',
+          author='Sajjad Malik',
+          star_count='1,349',
+          star_active=true
+        )
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-28-th.jpg',
+          sub_title='Slideshow',
+          title='The Most Polluted Rivers in the United States',
+          avatar='img/avatar-2.jpg',
+          author='Marion Johnson',
+          star_count='9,430'
+        )
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-29-th.jpg',
+          sub_title='Slideshow',
+          title='All Time Worst Natural Disasters',
+          avatar='img/avatar-wwf.png',
+          author='WWF',
+          star_count='430'
+        )
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-30-th.jpg',
+          sub_title='Slideshow',
+          title='Texas Drought Photos',
+          avatar='img/avatar-wwf.png',
+          author='WWF',
+          author_url='partners-wwf.html',
+          star_count='5,230'
+        )
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-31-th.jpg',
+          sub_title='Story',
+          title='Worst Drought in 80 Years Means São Paulo May Run Out of Water in Two Weeks',
+          avatar='img/avatar-greenpeace.png',
+          author='Greenpeace',
+          author_url='partners-gp.html',
+          star_count='3,531'
+        )
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-32-th.jpg',
+          sub_title='Interactive',
+          title='China\'s Drought and Global Food Prices',
+          avatar='img/avatar-wwf.png',
+          author='WWF',
+          author_url='partners-wwf.html',
+          star_count='430'
+        )
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-33-th.jpg',
+          sub_title='Map',
+          title='Plant Stress Paints Early Picture of Drought',
+          avatar='img/avatar-nasa.png',
+          author='NASA',
+          star_count='1,349',
+          star_active=true
+        )
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-34-th.jpg',
+          sub_title='Story',
+          title='Africa Says Poor Need Billions To Fight Climate',
+          avatar='img/avatar-2.jpg',
+          author='Marion Johnson',
+          star_count='9,430'
+        )
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-35-th.jpg',
+          sub_title='Story',
+          title='How Train Transport Will Improve our Lives',
+          avatar='img/avatar-wwf.png',
+          author_url='partners-wwf.html',
+          author='WWF',
+          star_count='430'
+        )
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-36-th.jpg',
+          sub_title='Story',
+          title='Animals in Desasters',
+          avatar='img/avatar-wwf.png',
+          author='WWF',
+          author_url='partners-wwf.html',
+          star_count='5,230'
+        )
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-37-th.jpg',
+          sub_title='Slideshow',
+          title='In Kenya, Drought Insurance via Cell Phone',
+          avatar='img/avatar-greenpeace.png',
+          author='Greenpeace',
+          author_url='partners-gp.html',
+          star_count='3,531'
+        )
+
+    section
+      header.section-header
+        h3 Similar collections
+      .gridbox
+        include ./templates/card.jade
+        each val in [1, 2, 3]
+          +card('category')(
+            url='insights-collection.html',
+            thumbnail='img/collection-'+val+'-th.jpg',
+            title='Worldwide Deforestation'
+          )
+    section
+      header.section-header
+        h3 Planet Pulse
+        a.section-header-link(href='planet-pulse.html')
+          | Launch
+          i.fa.fa-angle-right
+      .banner
+        img.banner-image(src='img/planet-pulse-1.png')
+        h3.banner-header Real-time data monitoring the planet
+        a.banner-button.button.button-large(href='planet-pulse.html') Launch Planet Pulse

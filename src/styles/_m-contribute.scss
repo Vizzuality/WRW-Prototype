@@ -1,0 +1,15 @@
+.m-contribute {
+  background-color: $lighter-grey;
+  text-align: center;
+  border-radius: 3px;
+
+  a {
+    display: block;
+    padding: 10px;
+    font-size: 13px;
+    color: $silver;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}

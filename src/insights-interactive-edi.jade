@@ -1,0 +1,56 @@
+extends ./templates/base.jade
+
+append vars
+  - var title = 'A factory is being built in your neighborhood. Can you do anything about it?'
+  - var contentClassName = 'insights--interactive-edi-bg'
+
+block header
+  +header('insights')
+
+block content
+  .container
+    ul.story--breadcrumbs.insights--interactive--breacrumbs
+      li
+        a(href='insights.html') Insights
+      li &nbsp;Story
+    .story--metadata.insights--interactive-metadata
+      .story--metadata-author
+        img(src='img/insight-wwf-logo.png')
+        | by&nbsp;
+        a.is-link(href="partners-wri.html") World Resources Institute
+        span.story--metadata-date Oct 5, 2015
+      .story--metadata-stars
+        svg.icon.icon-star
+          use(xlink:href='#icon-star')
+        span 452
+
+  .container
+    h1.insights--interactive-title A factory is being built in your neighborhood. Can you do anything about it?
+    h3.insights--interactive-subtitle Issues of environmental justice happen more frequently than we would like to think.
+
+  .container.insights--interactive-overflow
+    .insights--interactive-card-container
+      .insights--interactive-card.js-card
+        .insights--interactive-card-front.has-dark-background.bg-ramesh-01.js-container
+          .insights--interactive-intro.js-intro-container
+            p Ramesh Agarwal was the owner of a small internet café in Chhattisgarh, India, where coal excavation was rapidly expanding. When he organized villagers to raise objections at public hearing, he was met with threats and intimidation.
+            p Frustrated but undeterred, he brought his complain to India’s National Green Tribunal, and succeeded in shutting down one of the largest proposed coal mines in the region, protecting the health and livelihoods of his community.
+            a.insights--interactive-navigation-btn.js-next(href='#')
+              span Continue
+          .insights--interactive-intro.insights--interactive-intro-2.js-intro-2-container(style="display:none;")
+            p These stories don’t always end happily. Not only was Mr. Agarwal brave, he was lucky enough to be living in a country with laws protecting crucial rights to information and justice.
+            p
+              | When governments, businesses and others make decisions about land and natural resources, they inevitably impact the health, livelihoods and quality-of-life of local communities.
+            a(class="insights--interactive-navigation-btn js-next is-link")
+                span Continue
+        .insights--interactive-card-back.is-hidden
+          .insights--interactive-intro-2-title It’s your turn
+          .insights--interactive-intro-2-subtitle If a similar event happened to you, would you be able to be able to do anything about it? The outcome of such events often depends on the <b>strength of national laws</b>.
+          .insights--interactive-input
+            form
+              select.js-search-country
+                option(value='', disabled='', selected='') Where do you live?
+              input(type="submit", value="Let’s go!", class="button js-next")
+          ul.insights--interactive-footer
+            li
+              a(href="http://environmentaldemocracyindex.org") Visit EDI

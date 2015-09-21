@@ -1,0 +1,138 @@
+.partners--hero {
+  width: 100%;
+  height: 880px;
+
+  padding: 30px;
+  padding-top: 200px;
+
+  position: relative;
+
+  background: url(../img/partner-greenpeace-header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  font-weight: $font--light;
+  color: white;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  margin-bottom: 100px;
+
+  .is-partners-wwf & {
+    background-image: url(../img/partner-wwf-header.jpg);
+  }
+
+  .is-partners-vizzuality & {
+    background-image: url(../img/partner-vizzuality-header.jpg);
+  }
+
+  .is-partners-wri & {
+    height: 800px;
+    background-image: url(../img/partner-wri-header.jpg);
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 62px;
+    color: $insights--title--color;
+    line-height: 82px;
+    text-shadow: 0px 2px 1px rgba(0,0,0,0.26);
+    text-align: center;
+    position: relative;
+    margin-bottom: 100px;
+  }
+
+  .partners--subtitle {
+    margin: 60px 0 10px 0;
+    font-size: 13px;
+    color: $insights--sub-title--color;
+    letter-spacing: 3px;
+    line-height: 16px;
+    font-weight: $font--bold;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .partners--intro-left {
+    font-size: 18px;
+    line-height: 28px;
+    color: $insights--intro-color;
+    font-weight: $font--light;
+    -webkit-font-smoothing: subpixel-antialiased;
+    width: 340px;
+    // should be 395px
+    margin-left: 160px;
+    margin-right: 30px;
+    text-align: left;
+    float: left;
+  }
+
+  .partners--intro-right {
+    font-size: 18px;
+    line-height: 28px;
+    color: $insights--intro-color;
+    font-weight: $font--light;
+    -webkit-font-smoothing: subpixel-antialiased;
+    width: 340px;
+    text-align: left;
+    float: left;
+  }
+}
+
+.partners--container {
+  width: $page--width;
+  margin-top: 100px;
+  margin: 0 auto;
+  margin-top: 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.partners--middle {
+  width: 100%;
+  height: 400px;
+
+  padding: 30px;
+
+  position: relative;
+
+  background: url(../img/partner-greenpeace-middle-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  font-weight: $font--light;
+  color: white;
+  // -webkit-font-smoothing: subpixel-antialiased;
+
+  .is-partners-wwf & {
+    background: url(../img/partner-wwf-middle-bg.jpg);
+  }
+
+  .is-partners-vizzuality & {
+    background: url(../img/partner-vizzuality-middle-bg.jpg);
+  }
+
+  .is-partners-wri & {
+    background: url(../img/partner-wri-middle-bg.jpg);
+  }
+
+
+
+  .middle--intro {
+    font-size: 48px;
+    font-weight: $font--light;
+    color: $insights--intro-color;
+    line-height: 52px;
+    text-align: center;
+    width: 649px;
+    margin-bottom: 20px;
+
+    .is-partners-wri & {
+      font-size: 38px;
+      width: 900px;
+    }
+  }
+}
+
