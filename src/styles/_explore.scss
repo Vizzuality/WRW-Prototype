@@ -207,7 +207,6 @@ $explore--wide-content-width: 1020px;
 .explore--wide-content {
   width: $explore--wide-content-width;
   overflow-x: hidden;
-  z-index: $z-index-2;
   transition: transform 1s ease;
 }
 
@@ -230,9 +229,9 @@ $explore--wide-content-width: 1020px;
 .explore--content-closed {
   width: 0;
 
-  .explore--wide-content {
-    transform: translateX(-100%);
-  }
+//  .explore--wide-content {
+//    transform: translateX(-100%);
+//  }
 }
 
 .explore--breadcrumbs {
