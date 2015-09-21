@@ -1,0 +1,214 @@
+{{#if topic}}
+  <div class="container">
+    <header class="section-header dashboard">
+      <h1 class="story--title">{{{country}}} dashboard</h1>
+
+      <ul class="dashboard--main-menu">
+        <li><a href="#" id="countryToggleBtn" class="section-header-link aligned-bottom is-mobile-hidden">Change country</a></li>
+        <li><a href="#" id="topicsToggleBtn" class="section-header-link aligned-bottom is-mobile-hidden">Topics</a></li>
+        <li><a id="fullscreenBtn" class="section-header-link aligned-bottom is-mobile-hidden">Full screen</a></li>
+      </ul>
+    </header>
+    <!-- country selector -->
+    <section>
+      <div class="m-country-selector dashboard is-hidden" id="countryToggle">
+        <div class="country-selector">
+          <select  class="choose-country">
+            <option value="" disabled selected>Choose country</option>
+            {{#each countries}}
+            <option value="{{iso}}" {{#is iso ../iso}}selected{{/is}}>{{name}}</option>
+            {{/each}}
+          </select>
+          <input class="button is-mobile-hidden" type="submit" value="Let's go!">
+          <input class="button is-desktop-hidden" type="submit" value="Go!">
+        </div>
+      </div>
+      <div class="m-country-selector dashboard is-hidden" id="topicsToggle">
+
+        <div class="m-topic">
+          <div class="m-topic--item">
+            <div class="m-topic--thumb">
+              <a href="dashboard.html#{{iso}}/topic/Un Millenium Goals">
+                <img src="img/topic-1-th.jpg" alt="">
+              </a>
+            </div>
+            <div class="m-topic--caption">
+              <a href="dashboard.html#{{iso}}/topic/Un Millenium Goals">UN Millenium Goals</a>
+            </div>
+          </div>
+
+          <div class="m-topic--item">
+            <div class="m-topic--thumb">
+              <img src="img/topic-2-th.jpg" alt="">
+            </div>
+            <div class="m-topic--caption">
+              <p>Lorem Ipsum</p>
+            </div>
+          </div>
+
+          <div class="m-topic--item">
+            <div class="m-topic--thumb">
+              <img src="img/topic-3-th.jpg" alt="">
+            </div>
+            <div class="m-topic--caption">
+              <p>Lorem Ipsum</p>
+            </div>
+          </div>
+
+          <div class="m-topic--item">
+            <div class="m-topic--thumb">
+              <img src="img/topic-4-th.jpg" alt="">
+            </div>
+            <div class="m-topic--caption">
+              <p>Lorem Ipsum</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  {{!-- HERE --}}
+  <div class="m-topic--container">
+    <div class="container">
+      <h2>{{topic}}</h2>
+      <img src="img/topic-1.jpg" class="m-topic-image" />
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="gridbox">
+      {{#times cardsCount}}
+      <div class="cell">
+        <div class="card dashboard card{{@index}}">
+        </div>
+      </div>
+      {{/times}}
+    </div>
+  </div>
+{{else}}
+  {{#if iso}}
+    <section class="container">
+      <header class="section-header dashboard">
+        <h1 class="story--title">{{{country}}} dashboard</h1>
+
+        <ul class="dashboard--main-menu">
+          <li><a href="#" id="countryToggleBtn" class="section-header-link aligned-bottom is-mobile-hidden">Change country</a></li>
+          <li><a href="#" id="topicsToggleBtn" class="section-header-link aligned-bottom is-mobile-hidden">Topics</a></li>
+          <li><a id="fullscreenBtn" class="section-header-link aligned-bottom is-mobile-hidden">Full screen</a></li>
+        </ul>
+      </header>
+
+      <!-- country selector -->
+      <section>
+        <div class="m-country-selector dashboard is-hidden" id="countryToggle">
+          <div class="country-selector">
+            <select  class="choose-country">
+              <option value="" disabled selected>Choose country</option>
+              {{#each countries}}
+              <option value="{{iso}}" {{#is iso ../iso}}selected{{/is}}>{{name}}</option>
+              {{/each}}
+            </select>
+            <input class="button is-mobile-hidden" type="submit" value="Let's go!">
+            <input class="button is-desktop-hidden" type="submit" value="Go!">
+          </div>
+        </div>
+        <div class="m-country-selector dashboard is-hidden" id="topicsToggle">
+
+          <div class="m-topic">
+            <div class="m-topic--item">
+              <div class="m-topic--thumb">
+                <a href="dashboard.html#{{iso}}/topic/Un Millenium Goals">
+                  <img src="img/topic-1-th.jpg" alt="">
+                </a>
+              </div>
+              <div class="m-topic--caption">
+                <a href="dashboard.html#{{iso}}/topic/Un Millenium Goals">UN Millenium Goals</a>
+              </div>
+            </div>
+
+            <div class="m-topic--item">
+              <div class="m-topic--thumb">
+                <img src="img/topic-2-th.jpg" alt="">
+              </div>
+              <div class="m-topic--caption">
+                <p>Lorem Ipsum</p>
+              </div>
+            </div>
+
+            <div class="m-topic--item">
+              <div class="m-topic--thumb">
+                <img src="img/topic-3-th.jpg" alt="">
+              </div>
+              <div class="m-topic--caption">
+                <p>Lorem Ipsum</p>
+              </div>
+            </div>
+
+            <div class="m-topic--item">
+              <div class="m-topic--thumb">
+                <img src="img/topic-4-th.jpg" alt="">
+              </div>
+              <div class="m-topic--caption">
+                <p>Lorem Ipsum</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <div class="gridbox">
+        {{#times cardsCount}}
+        <div class="cell">
+          <div class="card dashboard card{{@index}}">
+          </div>
+        </div>
+        {{/times}}
+      </div>
+    </section>
+  {{else}}
+    <div class="container">
+      <header class="l-main-header">
+        <div class="wrap">
+          <div class="row is-stretch">
+            <div class="grid-6">
+              <h1>word resources watch</h1>
+            </div>
+            {{#if country}}
+              <div class="grid-6 is-flex">
+                <div class="m-breadcrumbs">
+                  <a href="/" class="btn-back"></a>
+                  <h2>{{{country}}}</h2>
+                </div>
+              </div>
+            {{/if}}
+          </div>
+        </div>
+      </header>
+      <div class="m-modal-window">
+        <div class="modal-wrapper">
+          <div class="modal-container">
+            <h2>Please, select the country <br>you want to analyze</h2>
+            <form>
+            <div class="select-country-wrapper">
+              <select id="country" class="select-country">
+                {{#each countries}}
+                <option value="{{{iso}}}">{{{name}}}</option>
+                {{/each}}
+              </select>
+              <button id="submit" class="button postfix btn-send">Let's go!</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/if}}
+{{/if}}

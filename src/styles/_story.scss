@@ -1,0 +1,493 @@
+.story--breadcrumbs {
+  font-size: 14px;
+  color: $story--breadcrumbs-color;
+  line-height: 17px;
+  margin: 30px 0 60px 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.story--breadcrumbs li {
+  display: inline-block;
+
+  a {
+    text-decoration: none;
+    color: $story--breadcrumbs-color;
+  }
+}
+
+.story--breadcrumbs li:after {
+  content: '›';
+  margin-left: 5px;
+}
+
+.story--breadcrumbs li:last-child:after {
+  content: '';
+}
+
+.story--title {
+  font-size: 48px;
+  font-weight: $font--light;
+  color: $story--title-color;
+  line-height: 52px;
+  text-align: center;
+}
+
+.story--pre-title {
+  font-size: 19px;
+  color: $story--title-color;
+  font-weight: $font--bold;
+  border-bottom: 1px solid $story--title-color;
+  padding-bottom: 10px;
+}
+
+.story--metadata {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  font-weight: $font--light;
+}
+
+.story--metadata-author {
+  font-size: 14px;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.story--metadata-author img {
+  float: left;
+  margin-right: 10px;
+  width: 40px;
+  border-radius: 100%;
+  position: relative;
+  top: -3px;
+}
+
+.story--metadata-date {
+  display: block;
+  color: $story--metadata-date-color;
+  padding-top: 3px;
+}
+
+.story--metadata-stars {
+  color: $story--metadata-stars-color;
+  display: flex;
+  cursor: pointer;
+
+  span {
+    width: 100%;
+    padding-left: 5px;
+    transition: color 0.2s;
+  }
+
+  &.active {
+    .icon-star {
+      fill: $mango;
+    }
+
+    span {
+      color: $story--metadata-stars-active-color !important;
+    }
+  }
+}
+
+.story--author {
+  text-align: center;
+  font-weight: $font--light;
+  position: relative;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 30px;
+    width: calc(50% - 40px);
+    border-bottom: 1px solid #d8d8d8;
+  }
+
+  &:before {
+    left: 0;
+  }
+
+  &:after {
+    right: 0;
+  }
+}
+
+.story--author-image {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+  }
+}
+
+.story--author-location {
+  color: $story--author-location-color;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.story--author-name,
+.story--author-location {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.story--intro-container {
+  width: 100%;
+  background-color: #F4F5F6;
+  margin-top: 70px;
+}
+
+.story--intro {
+  width: $page--width;
+  margin: 0 auto;
+}
+
+.story--intro img {
+  margin-top: -50px;
+  width: 1040px;
+  height: 432px;
+}
+
+.story--intro-text-container {
+  padding: 20px 0;
+  margin-bottom: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.story--intro-text {
+  font-style: italic;
+  font-size: 21px;
+  line-height: 32px;
+  color: $story--intro-color;
+  font-weight: $font--light;
+  -webkit-font-smoothing: subpixel-antialiased;
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.story--intro-button {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: $font--light;
+  width: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  position: relative;
+  bottom: -42px;
+}
+
+.story--media-container {
+  width: 1040px;
+  margin: 0 auto;
+  position: relative;
+
+  .control-left,
+  .control-right {
+    width: 70px;
+    height: 70px;
+    background-color: $story--media-content-arrow-background;
+    position: absolute;
+    top: calc(50% - 35px);
+  }
+
+  .control-left {
+    left: -130px;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: calc(50% - 5px);
+      top: calc(50% - 9px);
+      @include arrow (16px, $story--media-content-arrow-color, 2px, -45deg);
+    }
+  }
+
+  .control-right {
+    right: -130px;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: calc(50% - 5px);
+      top: calc(50% - 9px);
+      @include arrow (16px, $story--media-content-arrow-color, 2px, 135deg);
+    }
+  }
+}
+
+.story--wide-media-container {
+  @extend %story--media-container;
+  width: auto;
+
+  .placeholder {
+    height: 500px;
+    background-color: #d8d8d8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      font-size: 28px;
+      font-weight: $font--light;
+      color: #989898;
+      -webkit-font-smoothing: subpixel-antialiased;
+    }
+  }
+}
+
+.story--wide-media {
+  display: flex;
+  justify-content: center;
+}
+
+.story--wide-media-caption {
+  width: $page--width;
+  margin: 0 auto;
+  padding: 10px 0;
+  font-style: italic;
+  font-weight: $font--light;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  -webkit-font-smoothing: subpixel-antialiased;
+
+  .caption {
+    color: $story--media-caption-color;
+  }
+
+  .pagination {
+    color: $story--media-caption-pagination-color;
+  }
+
+  .link {
+    font-style: normal;
+    color: $story--media-caption-link-color;
+  }
+}
+
+.story--content-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  color: $story--content-color;
+  margin-bottom: 65px;
+}
+
+.story--content-container p:first-child {
+  margin: 0;
+}
+
+.story--content-left-cell {
+  flex: 0 0 180px;
+}
+
+.story--content-cell {
+  flex: 0 0 610px;
+  padding: 0 20px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.story--content-right-cell {
+  flex: 0 0 230px;
+}
+
+.story--share-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+
+    &+li {
+      margin-left: 20px;
+    }
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+}
+
+.story--comments-container {
+  width: 100%;
+  background-color: #F4F5F6;
+  padding: 65px 0;
+}
+
+.story--comments {
+  width: $page--width;
+  margin: 0 auto;
+}
+
+.story--comments-header {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-end;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.story--comment {
+  background: #FFFFFF;
+  border: 1px solid rgba(202,203,207,0.54);
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.09);
+  padding: 60px 50px;
+  color: $story--comment-text;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.story--comment-metadata {
+  flex: 0 0 150px;
+  margin-right: 40px;
+  text-align: right;
+  font-weight: $font--light;
+}
+
+.story--comment-metadata-date {
+  color: $story--metadata-date-color;
+  display: block;
+}
+
+.story--comment-text p {
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+@media screen and (max-width: $responsive-break--tablet) {
+  .story--breadcrumbs {
+    margin-bottom: 30px;
+  }
+
+  .story--intro-container {
+    padding: 0 20px;
+  }
+
+  .story--intro {
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .story--intro-text {
+    width: 100%;
+  }
+
+  .story--content-container {
+    flex-wrap: wrap;
+  }
+
+  .story--content-left-cell,
+  .story--content-cell,
+  .story--content-right-cell {
+    flex-basis: 100%;
+    padding: 0;
+  }
+
+  .story--share-links {
+    margin-bottom: 10px;
+  }
+
+  .story--wide-media-caption {
+    width: 100%;
+    padding: 0 20px;
+    padding-top: 10px;
+    flex-wrap: wrap;
+
+    .caption,
+    .link {
+      flex-basis: 100%;
+    }
+
+    .link {
+      margin-top: 10px;
+    }
+  }
+
+  .story--media-container {
+    width: 100%;
+    padding: 0 20px;
+
+    .control-left {
+      left: 30px;
+    }
+
+    .control-right {
+      right: 30px;
+    }
+  }
+
+  .story--wide-media img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .story--comments {
+    width: 100%;
+  }
+
+  .story--wide-media-container {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .story--author {
+    margin-bottom: 70px;
+  }
+
+  .story--comments-container {
+    padding: 20px;
+  }
+
+  .story--comments-header {
+    margin-top: 0;
+    flex-wrap: wrap;
+  }
+
+  .story--comments-post-button {
+    margin-top: 10px;
+  }
+
+  .story--comment {
+    padding: 20px;
+  }
+
+  .story--comment-metadata {
+    flex-basis: 30%;
+  }
+
+  .story--comment-text {
+    flex-basis: 70%;
+  }
+}
+
+@media screen and (max-width: $responsive-break--tablet) {
+  .story--title {
+    font-size: 36px;
+  }
+}

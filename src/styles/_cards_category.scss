@@ -1,0 +1,66 @@
+.card.category {
+  width: 331px;
+  height: 256px;
+  background-image: url(../img/category-photo-frame.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  a.is-link {
+    cursor: default;
+    transition: filter 0.2s, opacity 0.2s;
+  }
+
+  &:hover {
+    a.is-link {
+      filter: grayscale(100%);
+      opacity: 0.4;
+    }
+  }
+
+  .card-image {
+    height: 226px;
+
+    img {
+      width: 312px;
+      height: 204px;
+      position: relative;
+      top: 10px;
+      left: 9px;
+    }
+  }
+
+  .card-caption {
+    height: 30px;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    color: $category--card-title-color;
+
+    a {
+      text-decoration: none;
+      color: $category--card-title-color;
+    }
+
+  }
+
+  @media screen and (max-width: $responsive-break--tablet) {
+    width: 100%;
+    height: auto;
+
+    .card-image {
+      height: auto;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .card-caption {
+      height: auto;
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,103 @@
+extends ./templates/base.jade
+
+append vars
+  - var title = 'Insights'
+
+block header
+  +header('insights')
+
+block content
+  .container
+    section
+      header.insights--discover-title.section-header
+        h3 Discover Insights
+        a.section-header-link(href='#') advanced search
+      .insights--search-container
+        input.insights--search-input(placeholder='Search topics and places')
+        a.insights--search-submit.button.button-large Search
+    section
+      header.section-header
+        h3 Featured insights
+        // <a href="#" class="section-header-link">View More <i class="fa fa-angle-right"></i></a>
+      .insights--featured
+        a.hero-link-wrap(href='insights-map.html')
+        .insights--featured-title
+          .insights--featured-sub-title
+            | Featured insight
+          a(href='insights-map.html')
+            | Are countries whose water supplies are most at risk from climate change taking action?
+        .insights--featured-info
+          .insights--featured-info-source
+            img(src='img/avatar-wri.png')
+            span
+              | by&nbsp;
+              a(href='#') World Resources Institute
+          .insights--featured-info-stars
+            svg.icon.icon-star
+              use(xlink:href='#icon-star')
+            span 6,578
+      include ./templates/insight_cards.jade
+
+    section
+      header.section-header
+        h3 Insight collections
+      .gridbox
+        include ./templates/card.jade
+        +card('category')(
+          url='insights-collection.html',
+          thumbnail='img/collection-1-th.jpg',
+          title='The 2015 California Drought'
+        )
+        +card('category')(
+          url='#',
+          thumbnail='img/collection-2-th.jpg',
+          title='Rainforest Observatory'
+        )
+        +card('category')(
+          url='#',
+          thumbnail='img/collection-3-th.jpg',
+          title='Biodiversity Observatory 2015'
+        )
+        +card('category')(
+          url='#',
+          thumbnail='img/collection-4-th.jpg',
+          title='BiodWorld’s Overpopulation'
+        )
+        +card('category')(
+          url='#',
+          thumbnail='img/collection-5-th.jpg',
+          title='Oceanic Pollution'
+        )
+        +card('category')(
+          url='#',
+          thumbnail='img/collection-6-th.jpg',
+          title='2015 Nepal Earthquake'
+        )
+        +card('category')(
+          url='#',
+          thumbnail='img/collection-7-th.jpg',
+          title='Worldwide Deforestation'
+        )
+        +card('category')(
+          url='#',
+          thumbnail='img/collection-8-th.jpg',
+          title='Third World Climate Change'
+        )
+        +card('category')(
+          url='#',
+          thumbnail='img/collection-9-th.jpg',
+          title='Extinct Species in the 21st Century'
+        )
+
+    section
+      header.section-header
+        h3 Planet Pulse
+        a.section-header-link(href='planet-pulse.html')
+          | Launch
+          i.fa.fa-angle-right
+      .banner
+        img.banner-image(src='img/planet-pulse-1.png')
+        h3.banner-header Real-time data monitoring the planet
+        a.banner-button.button.button-large(href='planet-pulse.html') Launch Planet Pulse
+
+

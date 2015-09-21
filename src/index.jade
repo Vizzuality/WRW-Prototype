@@ -1,0 +1,181 @@
+extends ./templates/base.jade
+
+append vars
+  - var title = 'Welcome'
+
+block content
+  // hero
+  section.hero
+    a.hero-link-wrap(href='insights-map.html')
+    .hero-content
+      .container
+        .hero-title
+          .hero-sub-title
+            | Featured insight
+          a(href='insights-map.html')
+            | Climate change will increase chance of people being affected by floods
+        .hero-info
+          .hero-info-source
+            img(src='img/insight-wwf-logo.png')
+            span
+              | by &nbsp;
+              a(href="partners-wri.html") World Resources Institute
+          .hero-info-stars
+            svg.icon.icon-star
+              use(xlink:href='#icon-star')
+            span 6,578
+  .container
+    // country selector
+    section
+      .m-country-selector
+        header
+          h2 Country dashboards
+          p Analyze country data easily
+        .country-selector
+          select.choose-country
+            option(value='', disabled='', selected='') Choose country
+          input.button.is-mobile-hidden(type='submit', value="Let's go!")
+          input.button.is-desktop-hidden(type='submit', value='Go!')
+
+    // feature-insights
+    section
+      header.section-header
+        h3 Featured insights
+        a.section-header-link(href='insights.html')
+          | View More
+          i.fa.fa-angle-right
+      include ./templates/insight_cards.jade
+
+    // planet-pulse
+    section
+      header.section-header
+        h3 Planet Pulse
+        a.section-header-link(href='planet-pulse.html')
+          | Launch
+          i.fa.fa-angle-right
+      .banner
+        a(href='planet-pulse.html')
+          img.banner-image(src='img/planet-pulse-1.png')
+        h3.banner-header Real-time data monitoring the planet
+        a.banner-button.button.button-large(href='planet-pulse.html') Launch Planet Pulse
+    // explore the data
+    section
+      header.section-header
+        h3 Explore the data
+        a.section-header-link(href='explore.html')
+          | View More
+          i.fa.fa-angle-right
+      .gridbox
+        include ./templates/card.jade
+        +card('data')(
+          url='explore-standalone.html',
+          thumbnail='img/data-9-th.png',
+          title='Water levels in Northern California',
+          download_csv=true,
+          download_map=true,
+          sub_title='Centre for Research on Lorem'
+          star_count='6,575'
+        )
+        +card('data')(
+          url='#',
+          thumbnail='img/data-2-th.png',
+          title='Total Greenhouse Emissions',
+          download_csv=true,
+          sub_title='Centre for Research on Lorem'
+          star_count='6,575'
+        )
+        +card('data')(
+          url='#',
+          thumbnail='img/data-3-th.png',
+          title='CO2 emissions intensity',
+          download_csv=true,
+          download_map=true,
+          sub_title='Centre for Research on Lorem'
+          star_count='6,575'
+        )
+        +card('data')(
+          url='#',
+          thumbnail='img/data-4-th.png',
+          title='Population distribution by age range in the US',
+          download_csv=true,
+          sub_title='Centre for Research on Lorem'
+          star_count='6,575'
+        )
+        +card('data')(
+          url='#',
+          thumbnail='img/data-5-th.png',
+          title='Water levels in Northern California',
+          download_csv=true,
+          download_map=true,
+          sub_title='Centre for Research on Lorem'
+          star_count='6,575'
+        )
+        +card('data')(
+          url='#',
+          thumbnail='img/data-6-th.png',
+          title='Energy produced in Spain - Real Time',
+          download_csv=true,
+          download_map=true,
+          sub_title='Centre for Research on Lorem'
+          star_count='6,575'
+        )
+        +card('data')(
+          url='#',
+          thumbnail='img/data-7-th.png',
+          title='Water levels in Northern California',
+          download_csv=true,
+          download_map=true,
+          sub_title='Centre for Research on Lorem'
+          star_count='6,575'
+        )
+        +card('data')(
+          url='#',
+          thumbnail='img/data-8-th.png',
+          title='Water levels in Northern California',
+          download_csv=true,
+          download_map=true,
+          sub_title='Centre for Research on Lorem'
+          star_count='6,575'
+        )
+
+    // feature-apps
+    section
+      header.section-header
+        h3 Featured apps
+        a.section-header-link(href='#')
+          | View More
+          i.fa.fa-angle-right
+      .gridbox
+        include ./templates/card.jade
+        +card('app')(
+          url='app-info.html',
+          thumbnail='img/app-4-th.jpg',
+          title='Track Deforestation in Real Time',
+          star_count='6,574',
+          star_active=true
+        )
+        +card('app')(
+          url='#',
+          thumbnail='img/app-5-th.jpg',
+          title='Current and Future Water Security',
+          star_count='6,574'
+        )
+        +card('app')(
+          url='#',
+          thumbnail='img/app-6-th.jpg',
+          title='Flood Risk Analyzer',
+          star_count='6,574'
+        )
+
+    // app-develop
+    section
+      //- header.section-header
+      //-   h3 Title?
+      //-   a.section-header-link(href='#')
+      //-     | Link?
+      //-     i.fa.fa-angle-right
+      .banner
+        a(href='planet-pulse.html')
+          img.banner-image(src='img/banner-2.jpg')
+        h3.banner-header Awesome ideas? <br> Develop your own app
+        a.banner-button.button.button-large(href='#') Learn More
