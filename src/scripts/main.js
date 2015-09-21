@@ -12,6 +12,7 @@ require([
   'views/explore',
   'views/explore_standalone',
   'explore/chart_view',
+  'views/interactive_edi',
 
   // Common modules
   // TODO: refactor them
@@ -21,7 +22,8 @@ require([
   'views/empty_links',
   'views/fullscreen'
 ], function(Backbone, Router, auth, LoginView, SearchCountriesView, GlobeView,
-  DashboardView, SlideshowView, MapView, ExploreView, ExploreStandaloneView, ChartView) {
+    DashboardView, SlideshowView, MapView, ExploreView,
+    ExploreStandaloneView, ChartView, InteractiveEdiView) {
 
   var App = Backbone.View.extend({
 
@@ -41,6 +43,7 @@ require([
       this.router.on('route:partnersWwf', this.partnersWwf, this);
       this.router.on('route:slideshow', this.slideshow, this);
       this.router.on('route:map', this.map, this);
+      this.router.on('route:interactiveEdi', this.interactiveEdi, this);
       this.router.on('route:explore', this.explore, this);
       this.router.on('route:exploreStandalone', this.exploreStandalone, this);
       this.router.on('route:default', this.default, this);
@@ -99,6 +102,18 @@ require([
       });
     },
 
+    interactiveEdi: function() {
+      this._checkAuth(function() {
+        new (SearchCountriesView.extend({
+          el: '.js-search-country',
+          setCountry: function(e) {
+            e.preventDefault();
+          }
+        }))();
+        new InteractiveEdiView();
+      });
+    },
+
     explore: function() {
       this._checkAuth(function() {
         new ExploreView();
@@ -126,13 +141,17 @@ require([
         if(next && typeof next === 'function') {
           next.apply(this);
         }
-      } else {
+      } else if (!window.location.href.match(/login.html/)) {
         window.location.href = 'login.html';
       }
     },
 
     start: function() {
-      Backbone.history.start({ pushState: true });
+      var path = '/WRW-Prototype/';
+      if(window.location.hostname === 'localhost' || /192\.168\.1\.[0-9]{2}/.test(window.location.hostname)) {
+        path = '/';
+      }
+      Backbone.history.start({ pushState: true, root: path });
     }
 
   });

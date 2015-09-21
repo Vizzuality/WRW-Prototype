@@ -29,7 +29,54 @@ block content
         h1.planet-pulse--title Planet pulse
         ul.planet-pulse--main-nav
           li
-            a(href='#drought') Drought
+            a(href='#drought', id="droughtLink") Drought
+            //- ul
+            //-   li
+            //-     a(href='#drought/spei') SPEI
+            //-   li
+            //-     a(href='#drought/agricultural') Agricultural areas (EarthStat)
+            //-   li
+            //-     a(href='#drought/groundwater') Groundwater depletion (GRACE)
+            //-   li
+            //-     a(href='#drought/forecast') Forecasts / Climate projections
+          li
+            a(href='#forest', id="forestLink") Forest
+            //- ul
+            //-   li
+            //-     a(href='#forest/forma') Forma
+            //-   li
+            //-     a(href='#forest/umd') UMD
+            //-   li
+            //-     a(href='#forest/protected-areas') Protected areas
+            //-   li
+            //-     a(href='#forest/fires') Fires
+          li
+            a(href='#flooding', id="floodingLink") Flooding
+            //- ul
+            //-   li
+            //-     a(href='#flooding/current-floods') Current floods
+            //-   li
+            //-     a(href='#flooding/population-data') Population data
+            //-   li
+            //-     a(href='#flooding/climate') Climate projections
+          li
+            a(href='#conflict', id="conflictLink") Conflict
+            //- ul
+            //-   li
+            //-     a(href='#conflict/events') Conflict events
+            //-   li
+            //-     a(href='#conflict/protests') Protests
+            //-   li
+            //-     a(href='#conflict/epidemics') Epidemics
+
+        .planet-pulse--toolbar
+          a(href='planet-pulse.html#', id="backBtn") Back
+          button#fullscreenBtn Fullscreen
+
+      .planet-pulse--content#planetPulseContent
+          article#droughtContent
+            h2 Drought
+            p Water is a fundamental resource. Globally, 70 percent of freshwater use is for agriculture, 22 percent for industry, and 8 percent for household activities. Understanding how this resource changes over time can help us ensure robust economy and sustainable food supply for all.
             ul
               li
                 a(href='#drought/spei') SPEI
@@ -39,8 +86,9 @@ block content
                 a(href='#drought/groundwater') Groundwater depletion (GRACE)
               li
                 a(href='#drought/forecast') Forecasts / Climate projections
-          li
-            a(href='#forest') Forest
+          article#forestContent
+            h2 Forest
+            p Forest ecosystems also play a critical role in stabilizing the climate; providing food, water, wood products, and medicines; and supporting much of the world’s biodiversity. Though an estimated 30% of potential forest cover has been lost, we can still productively and sustainably manage the world’s remaining forests.
             ul
               li
                 a(href='#forest/forma') Forma
@@ -50,8 +98,9 @@ block content
                 a(href='#forest/protected-areas') Protected areas
               li
                 a(href='#forest/fires') Fires
-          li
-            a(href='#flooding') Flooding
+          article#floodingContent
+            h2 Flooding
+            p Flooding and other extreme weather events are one of the most direct ways in which a changing climate will affect our lives. Tens of millions of people are affected by flooding each year. The future of flooding depends on how we choose to develop our rivers and coasts, and how we affect the Earth’s climate.
             ul
               li
                 a(href='#flooding/current-floods') Current floods
@@ -59,8 +108,9 @@ block content
                 a(href='#flooding/population-data') Population data
               li
                 a(href='#flooding/climate') Climate projections
-          li
-            a(href='#conflict') Conflict
+          article#conflictContent
+            h3 Conflict
+            p Fair and effective governance is critical to ensure that development benefits people and the planet. Yet in many regions around the world, communities are regularly subjected to injustices.
             ul
               li
                 a(href='#conflict/events') Conflict events
@@ -68,9 +118,8 @@ block content
                 a(href='#conflict/protests') Protests
               li
                 a(href='#conflict/epidemics') Epidemics
-
-        .planet-pulse--toolbar
-          a(href='planet-pulse.html#', id="backBtn") Back
-          button#fullscreenBtn Fullscreen
-
+      .planet-pulse--legend
+        h3 Legend title
+        div.planet-pulse--legend-transition
+        a(href="#") Explore the data
 block footer
