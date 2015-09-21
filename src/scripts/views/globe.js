@@ -89,7 +89,7 @@ define([
       this.globe.removeClouds();
       this.globe.removeLayer(this.currentVis);
       this.currentVis = vis;
-      this.$legend.addClass('is-hidden');
+      this.resetLegend();
       this.resetLayersList();
 
       switch(vis) {
@@ -123,8 +123,28 @@ define([
       this.globe.camera.setViewOffset( w, h, w * -0.17, h * 0, w, h );
     },
 
+    resetLegend: function() {
+      this.$legend.addClass('is-hidden');
+      this.$legend.find('h3').removeClass();
+    },
+
     setLegend: function(vis) {
       this.$legend.removeClass('is-hidden');
+      var $title = this.$legend.find('h3');
+      switch(vis) {
+        case 'fires':
+          $title.text('Fires');
+          $title.addClass('color-fires');
+          break;
+        case 'protected-areas':
+          $title.text('Protected areas');
+          $title.addClass('color-protected-areas');
+          break;
+        case 'umd':
+          $title.text('UMD');
+          $title.addClass('color-umd');
+          break;
+      }
     },
 
     resetLayersList: function() {
@@ -142,7 +162,7 @@ define([
       this.$title.show(100);
       this.$nav.removeClass('is-blur');
       this.$backBtn.hide(100);
-      this.$legend.addClass('is-hidden');
+      this.resetLegend();
 
       this.globe.removeLayer(this.currentVis);
       this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.satellite);
