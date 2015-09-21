@@ -187,15 +187,20 @@ $explore--wide-content-width: 1020px;
 }
 
 .explore-detail--wide-visualization {
-  background: url('../img/chart-line-hover.png') no-repeat center center;
-  width: 1500px;
-  height: 560px;
-  margin: 0 auto;
+//  background: url('../img/chart-line-hover.png') no-repeat center center;
+//  width: 1500px;
+//  height: 560px;
+//  margin: 0 auto;
   margin-bottom: 50px;
   left: 0;
+  width: 100%;
 
-  &.pie {
-    background: url('../img/chart-pie.png') no-repeat center center;
+//  &.pie {
+//    background: url('../img/chart-pie.png') no-repeat center center;
+//  }
+
+  label {
+    right: 0;
   }
 }
 
