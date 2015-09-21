@@ -1,0 +1,125 @@
+extends ./templates/base.jade
+
+append vars
+  - var className = 'is-planet-pulse'
+  - var title = 'Planet Pulse'
+
+block header
+  +header('planet-pulse')
+
+block content
+  //- Preloading images
+  img.img-preload(src=path + 'img/planet-pulse/2_no_clouds_4k.jpg', id="basemap1")
+  img.img-preload(src=path + 'img/planet-pulse/basemap-dark_4k.jpg', id="basemap2")
+  img.img-preload(src=path + 'img/planet-pulse/elev_bump_4k.jpg', id="basemap3")
+  img.img-preload(src=path + 'img/planet-pulse/fair_clouds_4k.png', id="basemap4")
+  img.img-preload(src=path + 'img/planet-pulse/galaxy_starfield_4k.png', id="basemap5")
+  img.img-preload(src=path + 'img/planet-pulse/water_4k.png', id="basemap6")
+
+  img.img-preload(src=path + 'img/planet-pulse/layers/fires_4k.png', id="layer1")
+  img.img-preload(src=path + 'img/planet-pulse/layers/protected-areas_4k.png', id="layer2")
+  img.img-preload(src=path + 'img/planet-pulse/layers/umd_4k.png', id="layer3")
+
+  section.planet-pulse
+
+    #globe.planet-pulse--globe
+
+    .planet-pulse--container
+      header.planet-pulse--header
+        h1.planet-pulse--title Planet pulse
+        ul.planet-pulse--main-nav
+          li
+            a(href='#drought', id="droughtLink") Drought
+            //- ul
+            //-   li
+            //-     a(href='#drought/spei') SPEI
+            //-   li
+            //-     a(href='#drought/agricultural') Agricultural areas (EarthStat)
+            //-   li
+            //-     a(href='#drought/groundwater') Groundwater depletion (GRACE)
+            //-   li
+            //-     a(href='#drought/forecast') Forecasts / Climate projections
+          li
+            a(href='#forest', id="forestLink") Forest
+            //- ul
+            //-   li
+            //-     a(href='#forest/forma') Forma
+            //-   li
+            //-     a(href='#forest/umd') UMD
+            //-   li
+            //-     a(href='#forest/protected-areas') Protected areas
+            //-   li
+            //-     a(href='#forest/fires') Fires
+          li
+            a(href='#flooding', id="floodingLink") Flooding
+            //- ul
+            //-   li
+            //-     a(href='#flooding/current-floods') Current floods
+            //-   li
+            //-     a(href='#flooding/population-data') Population data
+            //-   li
+            //-     a(href='#flooding/climate') Climate projections
+          li
+            a(href='#conflict', id="conflictLink") Conflict
+            //- ul
+            //-   li
+            //-     a(href='#conflict/events') Conflict events
+            //-   li
+            //-     a(href='#conflict/protests') Protests
+            //-   li
+            //-     a(href='#conflict/epidemics') Epidemics
+
+        .planet-pulse--toolbar
+          a(href='planet-pulse.html#', id="backBtn") Back
+          button#fullscreenBtn Fullscreen
+
+      .planet-pulse--content#planetPulseContent
+          article#droughtContent
+            h2 Drought
+            p Water is a fundamental resource. Globally, 70 percent of freshwater use is for agriculture, 22 percent for industry, and 8 percent for household activities. Understanding how this resource changes over time can help us ensure robust economy and sustainable food supply for all.
+            ul
+              li
+                a(href='#drought/spei') SPEI
+              li
+                a(href='#drought/agricultural') Agricultural areas (EarthStat)
+              li
+                a(href='#drought/groundwater') Groundwater depletion (GRACE)
+              li
+                a(href='#drought/forecast') Forecasts / Climate projections
+          article#forestContent
+            h2 Forest
+            p Forest ecosystems also play a critical role in stabilizing the climate; providing food, water, wood products, and medicines; and supporting much of the world’s biodiversity. Though an estimated 30% of potential forest cover has been lost, we can still productively and sustainably manage the world’s remaining forests.
+            ul
+              li
+                a(href='#forest/forma') Forma
+              li
+                a(href='#forest/umd') UMD
+              li
+                a(href='#forest/protected-areas') Protected areas
+              li
+                a(href='#forest/fires') Fires
+          article#floodingContent
+            h2 Flooding
+            p Flooding and other extreme weather events are one of the most direct ways in which a changing climate will affect our lives. Tens of millions of people are affected by flooding each year. The future of flooding depends on how we choose to develop our rivers and coasts, and how we affect the Earth’s climate.
+            ul
+              li
+                a(href='#flooding/current-floods') Current floods
+              li
+                a(href='#flooding/population-data') Population data
+              li
+                a(href='#flooding/climate') Climate projections
+          article#conflictContent
+            h3 Conflict
+            p Fair and effective governance is critical to ensure that development benefits people and the planet. Yet in many regions around the world, communities are regularly subjected to injustices.
+            ul
+              li
+                a(href='#conflict/events') Conflict events
+              li
+                a(href='#conflict/protests') Protests
+              li
+                a(href='#conflict/epidemics') Epidemics
+      .planet-pulse--legend
+        h3 Legend title
+        div.planet-pulse--legend-transition
+        a(href="#") Explore the data
+block footer

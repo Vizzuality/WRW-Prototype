@@ -1,0 +1,259 @@
+.chart {
+
+  .line {
+    fill: none;
+  }
+
+  .axis {
+    text {
+      fill: #9AA2A9;
+      font-size: 10px;
+    }
+
+    path {
+      fill: none;
+      shape-rendering: crispEdges;
+    }
+
+    &.y,
+    &.y2 {
+      path {
+        display: none;
+      }
+    }
+  }
+
+  .ruler {
+    line {
+      stroke: rgba(#9AA2A9, .5);
+    }
+  }
+
+  .point {
+    fill: #3BB2D0;
+  }
+
+  .label {
+    font-weight: 700;
+  }
+
+  .compare-bar-chart {
+    .bar.cat-1 {
+      fill: #9AA2A9;
+    }
+
+    .bar.cat-2 {
+      fill: #3BB2D0;
+    }
+
+    .x.axis {
+      text {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .textual-chart {
+    .value {
+      font-size: 21px;
+      fill: #3BB2D0;
+
+      .relevant-2 & {
+        fill: #fff;
+        // -webkit-font-smoothing: subpixel-antialiased;
+      }
+
+      &.big {
+        font-size: 52px;
+        font-weight: 700;
+
+        .relevant-2 & {
+          fill: #fff;
+          -webkit-font-smoothing: subpixel-antialiased;
+        }
+      }
+    }
+
+    .label {
+      font-size: 11px;
+      fill: #9AA2A9;
+
+      .relevant-2 & {
+        fill: #fff;
+        -webkit-font-smoothing: subpixel-antialiased;
+      }
+    }
+
+    .unit {
+      font-size: 15px;
+      fill: #3BB2D0;
+
+      .relevant-2 & {
+        fill: #fff;
+      }
+
+      &.big {
+        -webkit-font-smoothing: subpixel-antialiased;
+        font-weight: 700;
+      }
+    }
+
+    .bg-arc {
+      fill: none;
+      stroke: #F4F5F6;
+      stroke-width: 15px;
+      stroke-linecap: round;
+    }
+
+    .fg-arc {
+      fill: none;
+      stroke: #3BB2D0;
+      stroke-width: 15px;
+      stroke-linecap: round;
+    }
+  }
+
+  .bar-chart {
+    .bar {
+      fill: #3BB2D0;
+    }
+  }
+
+  .barline-chart {
+    .bar {
+      fill: rgba(#C32D7B, .25);
+    }
+
+    .line {
+      stroke-width: 2px;
+      stroke: #C32D7B;
+    }
+  }
+
+  .line-chart {
+    .line {
+      stroke-width: 2px;
+      stroke: #3BB2D0;
+
+      &.cat-0 { stroke: #3BB2D0; }
+      &.cat-1 { stroke: #C32D7B; }
+      &.cat-2 { stroke: #65B60D; }
+      &.cat-3 { stroke: #FAB72E; }
+
+      .relevant-1 & {
+        stroke: #fff;
+      }
+    }
+
+    .relevant-1 & {
+      text {
+        fill: #fff;
+        -webkit-font-smoothing: subpixel-antialiased;
+      }
+
+      .ruler line {
+        stroke: rgba(#fff, .65);
+      }
+    }
+
+  }
+
+  .pie-chart {
+    path {
+      &.cat-0 { fill: #3BB2D0; }
+      &.cat-1 { fill: #C32D7B; }
+      &.cat-2 { fill: #65B60D; }
+      &.cat-3 { fill: #FAB72E; }
+    }
+
+    .label {
+      font-size: 10px;
+      fill: #9AA2A9;
+    }
+  }
+
+  .legend  {
+    circle {
+      &.cat-0 { fill: #3BB2D0; }
+      &.cat-1 { fill: #C32D7B; }
+      &.cat-2 { fill: #65B60D; }
+      &.cat-3 { fill: #FAB72E; }
+    }
+
+    line {
+      stroke-width: 2px;
+
+      &.cat-0 { stroke: #3BB2D0; }
+      &.cat-1 { stroke: #C32D7B; }
+      &.cat-2 { stroke: #65B60D; }
+      &.cat-3 { stroke: #FAB72E; }
+
+      .relevant-1 & {
+        stroke: #fff;
+      }
+    }
+
+    text {
+      font-size: 11px;
+      fill: #9AA2A9;
+      text-transform: capitalize;
+    }
+  }
+
+  .rank-chart {
+    .bottom-line {
+      shape-rendering: crispEdges;
+      stroke: #9EDBEB;
+    }
+
+    .text {
+      fill: #9EDBEB;
+      font-size: 13px;
+
+      &.rank {
+        font-weight: 400;
+      }
+
+      &.country {
+        -webkit-font-smoothing: subpixel-antialiased;
+      }
+    }
+
+    .rank-value {
+      fill: #9EDBEB;
+    }
+
+    g.selected {
+      .text {
+        fill: #fff;
+      }
+
+      .rank-value {
+        fill: #fff;
+      }
+    }
+
+    .relevant-1 & {
+      .text {
+        fill: #E4B0C9;
+      }
+      .rank-value {
+        fill: #E4B0C9;
+      }
+    }
+
+
+  }
+}
+
+
+.l-map {
+  position: absolute;
+  top: 75px;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  border-bottom-left-radius: rem(4px);
+  border-bottom-right-radius: rem(4px);
+  overflow: hidden;
+}
