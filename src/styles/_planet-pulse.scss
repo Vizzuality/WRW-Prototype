@@ -148,13 +148,14 @@
     button, a {
       display: block;
       border: 0;
-      margin-left: 10px;
+      margin-left: 40px;
       padding: 0;
 
       color: white;
       font-size: 12px;
       text-transform: uppercase;
       text-decoration: none;
+      letter-spacing: 2px;
 
       background-color: transparent;
 
@@ -191,10 +192,88 @@
 
   h2 {
     font-size: 48px;
-    font-weight: 200;
+    font-weight: $font--light;
+  }
+
+  h3 {
+    font-size: 26px;
+    font-weight: $font--light;
+    margin-top: 40px;
+    margin-bottom: 15px;
   }
 
   p {
     font-size: 18px;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  li {
+    font-size: 18px;
+    line-height: 28px;
+
+    a {
+      position: relative;
+      color: white;
+      text-decoration: none;
+      padding-left: 22px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 6px;
+        width: 13px;
+        height: 13px;
+        border-radius: 100%;
+        background-color: rgba(white, 0.4);
+      }
+
+      &:hover:before {
+        background-color: rgba(white, 0.7);
+      }
+
+      &:hover:after {
+        content: '';
+        position: absolute;
+        left: 3px;
+        top: 9px;
+        width: 7px;
+        height: 7px;
+        border-radius: 100%;
+        background-color: rgba(#c32d7b, .4);
+      }
+
+      &.is-link {
+        cursor: default;
+
+        &:hover:before {
+          background-color: rgba(white, 0.4);
+        }
+
+        &:hover:after {
+          content: none;
+        }
+      }
+
+      &.is-active:before {
+        background-color: rgba(white, 0.7);
+      }
+
+      &.is-active:after {
+        content: '';
+        position: absolute;
+        left: 3px;
+        top: 9px;
+        width: 7px;
+        height: 7px;
+        border-radius: 100%;
+        background-color: #c32d7b;
+      }
+    }
   }
 }

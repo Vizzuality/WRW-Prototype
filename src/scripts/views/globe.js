@@ -15,6 +15,7 @@ define([
       this.$nav = $('.planet-pulse--main-nav');
       this.$articles = $('#planetPulseContent').find('article');
       this.$backBtn = $('#backBtn');
+      this.$legend = $('.planet-pulse--legend');
 
       this.basemaps = {
         satellite: document.getElementById('basemap1').src,
@@ -88,22 +89,30 @@ define([
       this.globe.removeClouds();
       this.globe.removeLayer(this.currentVis);
       this.currentVis = vis;
+      this.$legend.addClass('is-hidden');
+      this.resetLayersList();
 
       switch(vis) {
         case 'fires':
           this.globe.ambientLight.color.setHex(0xcccccc);
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
           this.globe.createLayer(this.currentVis, this.layers.fires);
+          this.setLegend(vis);
+          this.updateLayersList();
           break;
         case 'protected-areas':
           this.globe.ambientLight.color.setHex(0xcccccc);
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
           this.globe.createLayer(this.currentVis, this.layers.protectedAreas);
+          this.setLegend(vis);
+          this.updateLayersList();
           break;
         case 'umd':
           this.globe.ambientLight.color.setHex(0xcccccc);
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
           this.globe.createLayer(this.currentVis, this.layers.umd);
+          this.setLegend(vis);
+          this.updateLayersList();
           break;
         default:
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.satellite);
@@ -114,6 +123,18 @@ define([
       this.globe.camera.setViewOffset( w, h, w * -0.17, h * 0, w, h );
     },
 
+    setLegend: function(vis) {
+      this.$legend.removeClass('is-hidden');
+    },
+
+    resetLayersList: function() {
+      $('article a.is-active').removeClass('is-active');
+    },
+
+    updateLayersList: function() {
+      $('article a[href="'+window.location.hash+'"]').addClass('is-active');
+    },
+
     reset: function() {
       var w = this.globe.element.clientWidth;
       var h = this.globe.element.clientHeight;
@@ -121,6 +142,7 @@ define([
       this.$title.show(100);
       this.$nav.removeClass('is-blur');
       this.$backBtn.hide(100);
+      this.$legend.addClass('is-hidden');
 
       this.globe.removeLayer(this.currentVis);
       this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.satellite);
