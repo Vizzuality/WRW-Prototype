@@ -23,7 +23,9 @@ define([
     events: {
       'click input[type=submit]'   : 'setCountry',
       'change .choose-country' : 'setCountry',
-      'click #fullscreenBtn': 'toggleFullscreen'
+      'click #fullscreenBtn': 'toggleFullscreen',
+      'click #countryToggleBtn': 'countryToggle',
+      'click #topicsToggleBtn': 'topicsToggle'
     },
 
   	initialize: function(options) {
@@ -31,25 +33,61 @@ define([
       _.bindAll(this, 'fullscreenWatcher');
       this.setListeners(); // Must be the first instruction
 
-      this.iso = options.iso || 'BRA';
+      this.iso = options.iso;
+      this.topic = options.topic;
 
-      if(!options.iso) {
-        this.appEvents.trigger('route:update', { iso: this.iso });
+      if (this.iso) {
+        /* If we can't find this ISO, we redirect to the homepage */
+        if(!_.findWhere(helper.getCountries(), { iso: this.iso })) {
+          this.appEvents.trigger('route:update');
+          this.iso = null;
+          this.render();
+          return;
+        }
       }
 
-      /* If we can't find this ISO, we redirect to the homepage */
-      if(!_.findWhere(helper.getCountries(), { iso: this.iso })) {
-        this.appEvents.trigger('route:update');
-        this.iso = null;
-        this.render();
-        return;
-      }
+      // if(!options.iso) {
+      //   this.appEvents.trigger('route:update', { iso: this.iso });
+      // }
+      var _this = this;
+
       this.graphs = new GraphsCollection();
       this.tags   = new TagsCollection();
 
-      this.render();
-      this.fetchConfiguration();
+      if (this.iso || this.topic) {
+        this.render();
+        this.fetchConfiguration();
+
+        this.$toolbars = $('.m-country-selector');
+        this.$countryToggle = $('#countryToggle');
+      }
+
+      $(window).on('hashchange', function() {
+        if (window.location.hash.match(/topic/)) {
+          var hash = window.location.hash.replace('#', '');
+          hash = hash.split('/topic/');
+          _this.iso = hash[0];
+          _this.topic = hash[1];
+          _this.render();
+          _this.fetchConfiguration();
+
+          _this.$toolbars = $('.m-country-selector');
+          _this.$countryToggle = $('#countryToggle');
+        }
+      });
   	},
+
+    countryToggle: function(e) {
+      e.preventDefault();
+      $('#topicsToggle').addClass('is-hidden');
+      $('#countryToggle').toggleClass('is-hidden');
+    },
+
+    topicsToggle: function(e) {
+      e.preventDefault();
+      $('#countryToggle').addClass('is-hidden');
+      $('#topicsToggle').toggleClass('is-hidden');
+    },
 
     setListeners: function() {
       this.listenTo(this.appEvents, 'route:update', this.updateHash);
@@ -171,14 +209,14 @@ define([
     },
 
   	serialize: function() {
-      if(!this.iso) {
+      if(!this.iso && !this.topic) {
         return { countries: helper.getCountries() };
       }
-
       return {
         countries: helper.getCountries(),
         country: _.findWhere(helper.getCountries(), { iso: this.iso }).name,
         iso: this.iso,
+        topic: this.topic,
         cardsCount: this.cardsCount
       };
   	},

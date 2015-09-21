@@ -187,22 +187,26 @@ $explore--wide-content-width: 1020px;
 }
 
 .explore-detail--wide-visualization {
-  background: url('../img/chart-line-hover.png') no-repeat center center;
-  width: 1500px;
-  height: 560px;
-  margin: 0 auto;
+//  background: url('../img/chart-line-hover.png') no-repeat center center;
+//  width: 1500px;
+//  height: 560px;
+//  margin: 0 auto;
   margin-bottom: 50px;
   left: 0;
+  width: 100%;
 
-  &.pie {
-    background: url('../img/chart-pie.png') no-repeat center center;
+//  &.pie {
+//    background: url('../img/chart-pie.png') no-repeat center center;
+//  }
+
+  label {
+    right: 0;
   }
 }
 
 .explore--wide-content {
   width: $explore--wide-content-width;
   overflow-x: hidden;
-  z-index: $z-index-2;
   transition: transform 1s ease;
 }
 
@@ -225,9 +229,9 @@ $explore--wide-content-width: 1020px;
 .explore--content-closed {
   width: 0;
 
-  .explore--wide-content {
-    transform: translateX(-100%);
-  }
+//  .explore--wide-content {
+//    transform: translateX(-100%);
+//  }
 }
 
 .explore--breadcrumbs {
@@ -411,7 +415,7 @@ $explore--wide-content-width: 1020px;
 
   background: #000;
 
-  transition: left 1s ease;
+  transition: left .5s ease;
 }
 
 .explore--narrow-map {

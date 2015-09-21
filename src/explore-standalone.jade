@@ -22,19 +22,7 @@ block content
         li Centre for Research on Lorem Ipsum
         li Last update: May 12, 2015
         li.icon-verified Verified
-  script.
-    var toggleChart = function(index) {
-    var vizzClass = 'explore-detail--visualization explore-detail--wide-visualization';
-    var vizz = document.querySelector('.' + vizzClass.split(' ')[0]);
-    vizz.className = vizzClass + (!!index ? ' pie' : '');
-    };
-  .explore-detail--visualization.explore-detail--wide-visualization
-    label(for='menu') Configure
-    input#menu(type='checkbox')
-    .menu
-      select(onchange='toggleChart(this.selectedIndex);')
-        option(selected='') Line chart
-        option Pie chart
+  .explore-detail--visualization.explore-detail--wide-visualization.js--detail-visualization
   .container
     .gridbox.story--content-container
       .story--content-left-cell
@@ -56,16 +44,7 @@ block content
       .gridbox
         include ./templates/card.jade
         +card('data')(
-          url='',
-          thumbnail='img/data-1-th.png',
-          title='Water levels in Northern California'
-          download_map=true,
-          download_csv=true,
-          sub_title='Centre for Research on Lorem'
-          star_count='6,574'
-        )
-        +card('data')(
-          url='',
+          url='#',
           thumbnail='img/data-2-th.png',
           title='Total Greenhouse Emissions'
           download_csv=true,
@@ -73,7 +52,7 @@ block content
           star_count='6,574'
         )
         +card('data')(
-          url='',
+          url='#',
           thumbnail='img/data-3-th.png',
           title='CO2 emissions intensity'
           download_map=true,
@@ -82,13 +61,22 @@ block content
           star_count='6,574'
         )
         +card('data')(
-          url='',
+          url='#',
           thumbnail='img/data-4-th.png',
           title='Population distribution by age range in the US'
           download_map=true,
           download_csv=true,
           sub_title='Centre for Research on Lorem'
           star_count='6,574'
+        )
+        +card('data')(
+          url='#',
+          thumbnail='img/data-5-th.png',
+          title='Water levels in Northern California',
+          download_csv=true,
+          download_map=true,
+          sub_title='Centre for Research on Lorem'
+          star_count='6,575'
         )
 
     section

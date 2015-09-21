@@ -30,6 +30,8 @@ mixin card(type)
                 a(href='partners-gp.html')= 'Greenpeace'
               else if attributes.author == 'WWF'
                 a(href='partners-wwf.html')= 'WWF'
+              else if attributes.author_url
+                a(href=attributes.author_url)= attributes.author
               else
                 a(href='#')= attributes.author
           li.card-info-stars(class= attributes.star_active ? 'active' : '')
@@ -47,7 +49,10 @@ mixin card(type)
     //-   sub_title:    cards's subtitle
     //-   star_count:   'like' count
     //-   star_active:  is card 'liked'?
-    - var cardUrl = attributes.url + "?title=" + encodeURIComponent(attributes.title)
+    if attributes.url != '#'
+      - var cardUrl = attributes.url + "?title=" + encodeURIComponent(attributes.title)
+    else
+      - var cardUrl = attributes.url
     //- if attributes.url.indexOf("?title=") > -1
     //-   cutUrl = attributes.url.substring(0, currUrl.indexOf("?title="))
     //-   cardUrl = cutUrl + "?title=" + encodeURIComponent(attributes.title)

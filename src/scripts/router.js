@@ -18,6 +18,7 @@ define([
       'partners-wri.html': 'partnersWri',
       'insights-slideshow.html': 'slideshow',
       'insights-map.html': 'map',
+      'insights-interactive-edi.html': 'interactiveEdi',
       'explore.html': 'explore',
       'explore-detail.html': 'exploreDetail',
       'explore-standalone.html': 'exploreStandalone',
