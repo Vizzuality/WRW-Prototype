@@ -23,7 +23,7 @@ require([
   'views/fullscreen'
 ], function(Backbone, Router, auth, LoginView, SearchCountriesView, GlobeView,
     DashboardView, SlideshowView, MapView, ExploreView,
-    ExploreStandaloneView, AppInfoView, ChartView, InteractiveEdiView) {
+    ExploreStandaloneView, ChartView, InteractiveEdiView) {
 
   var App = Backbone.View.extend({
 
@@ -150,9 +150,7 @@ require([
     },
 
     appInfo: function() {
-      this._checkAuth(function() {
-        new AppInfoView();
-      });
+      this._checkAuth();
     },
 
     default: function() {
