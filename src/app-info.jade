@@ -4,24 +4,47 @@ append vars
   - var title = 'Track Deforestation In Real Time'
 
 block content
-
+  .container
+    ul.story--breadcrumbs
+      li
+        a(href='#') Apps
+      li App info
+  .container
+    h1.story--title
+      | Track Deforestation In Real Time
+    p.apps--title-metadata
+      | by &nbsp;
+      a(href='#') Global Forest Watch
 
   .container
     //description
     section
       header.section-header
         h3 Description
+      .container.container-description
+        p.app-info--description
+          | Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing vitae est. Sed nec felis pellentesque, lacinia dui sed, ultricies sapien. Pellentesque orci lectus, consectetur vel posuere posuere, rutrum eu ipsum. Aliquam eget odio sed ligula iaculis consequat at eget orci. Mauris molestie sit amet metus mattis varius.
+        .description-buttons
+          a.button.button-large.story--intro-button(href='#')
+            | AVAILABLE FOR IOS
+          a.button.button-large.story--intro-button(href='#')
+            | AVAILABLE FOR ANDROID
+      .container.container-pictures
+        img.app-image(src='img/app-1-c.png')
+        img.app-image(src='img/app-1-b.png')
+        img.app-image(src='img/app-1-a.png')
 
     // details
     section
       header.section-header
         h3 Details
-      .container
-        p.app-info--details
-          | Requires iOS 6.0 or later. Compatible with iPhone, iPad, and iPod touch. This app is optimized for iPhone 5, iPhone 6, and iPhone 6 Plus.
-          | Languages: English, Spanish, French, German, Russian
 
-
+      p.app-info--details
+        | Requires iOS 6.0 or later. Compatible with iPhone, iPad, and iPod touch. This app is optimized for iPhone 5, iPhone 6, and iPhone 6 Plus.
+      p.app-info--details
+        | Languages: English, Spanish, French, German, Russian
+      p.app-info--details
+        a(href='#')= 'Contact the developer'
 
     // explore the data
     section
