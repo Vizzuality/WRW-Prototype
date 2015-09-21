@@ -64,6 +64,7 @@ define([
 
       $(window).on('hashchange', function() {
         if (window.location.hash.match(/topic/)) {
+          var hash = window.location.hash.replace('#', '');
           hash = hash.split('/topic/');
           _this.iso = hash[0];
           _this.topic = hash[1];
@@ -211,7 +212,6 @@ define([
       if(!this.iso && !this.topic) {
         return { countries: helper.getCountries() };
       }
-      console.log(this.iso, this.topic);
       return {
         countries: helper.getCountries(),
         country: _.findWhere(helper.getCountries(), { iso: this.iso }).name,
