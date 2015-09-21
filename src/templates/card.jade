@@ -30,6 +30,8 @@ mixin card(type)
                 a(href='partners-gp.html')= 'Greenpeace'
               else if attributes.author == 'WWF'
                 a(href='partners-wwf.html')= 'WWF'
+              else if attributes.author_url
+                a(href=attributes.author_url)= attributes.author
               else
                 a(href='#')= attributes.author
           li.card-info-stars(class= attributes.star_active ? 'active' : '')
