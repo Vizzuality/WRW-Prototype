@@ -22,19 +22,7 @@ block content
         li Centre for Research on Lorem Ipsum
         li Last update: May 12, 2015
         li.icon-verified Verified
-  script.
-    var toggleChart = function(index) {
-    var vizzClass = 'explore-detail--visualization explore-detail--wide-visualization';
-    var vizz = document.querySelector('.' + vizzClass.split(' ')[0]);
-    vizz.className = vizzClass + (!!index ? ' pie' : '');
-    };
-  .explore-detail--visualization.explore-detail--wide-visualization
-    label(for='menu') Configure
-    input#menu(type='checkbox')
-    .menu
-      select(onchange='toggleChart(this.selectedIndex);')
-        option(selected='') Line chart
-        option Pie chart
+  .explore-detail--visualization.explore-detail--wide-visualization.js--detail-visualization
   .container
     .gridbox.story--content-container
       .story--content-left-cell

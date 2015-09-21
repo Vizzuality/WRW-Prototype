@@ -18,6 +18,7 @@ var LineChart = function(options) {
   this.data = options.data;
 
   this.sizing = options.sizing;
+  this.innerPadding = options.innerPadding;
 
   this.parentWidth = $(this.options.el).outerWidth();
   this.parentHeight = $(this.options.el).outerHeight();
@@ -53,10 +54,10 @@ LineChart.prototype._createScales = function() {
   xKey = this.options.keys.x;
   yKey = this.options.keys.y;
 
-  x = d3.time.scale().range([0, this.width]);
+  x = d3.time.scale().range([this.options.innerPadding.left, this.width - this.options.innerPadding.right]);
   x.domain(d3.extent(this.data.map(function(d) { return d[xKey]; })));
 
-  y = d3.scale.linear().range([this.height, 10]);
+  y = d3.scale.linear().range([this.height - this.options.innerPadding.bottom, 10 + this.options.innerPadding.top]);
   y.domain([0, d3.max(this.data.map(function(d) { return d[yKey]; }))]);
 };
 
@@ -129,6 +130,7 @@ LineChart.prototype._setupHandlers = function() {
     width: this.width,
     height: this.height,
     sizing: this.sizing,
+    innerPadding: this.innerPadding,
     data: this.data,
     keys: this.options.keys,
     interceptor: eventInterceptor,
