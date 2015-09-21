@@ -5,7 +5,7 @@ define([
 
   'use strict';
 
-  var PASSWORD = 'password123';
+  var PASSWORD = atob('Y0dGemMzZHZjbVF4TWpNPQ==');
 
   var LoginPage = Backbone.View.extend({
 
@@ -16,7 +16,7 @@ define([
     onSubmit: function(e) {
       e.preventDefault();
       var passwordEl = document.getElementById('password');
-      if (passwordEl.value === PASSWORD) {
+      if (passwordEl.value === atob(PASSWORD)) {
         auth.setLogin();
         window.location.href = 'index.html';
       }
