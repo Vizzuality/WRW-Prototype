@@ -21,7 +21,7 @@ require([
   'views/empty_links',
   'views/fullscreen'
 ], function(Backbone, Router, auth, LoginView, SearchCountriesView, GlobeView,
-  DashboardView, SlideshowView, MapView, ExploreView, ExploreStandaloneView, ChartView) {
+  DashboardView, SlideshowView, MapView, ExploreView, ExploreStandaloneView, AppInfoView, ChartView) {
 
   var App = Backbone.View.extend({
 
@@ -46,6 +46,7 @@ require([
       this.router.on('route:explore', this.explore, this);
       this.router.on('route:exploreDetail', this.exploreDetail, this);
       this.router.on('route:exploreStandalone', this.exploreStandalone, this);
+      this.router.on('route:appInfo', this.appInfo, this);
       this.router.on('route:default', this.default, this);
 
     },
@@ -131,6 +132,12 @@ require([
       this._checkAuth(function() {
         new ExploreStandaloneView();
         new ChartView({el: '.js--detail-visualization'}).render();
+      });
+    },
+
+    appInfo: function() {
+      this._checkAuth(function() {
+        new AppInfoView();
       });
     },
 

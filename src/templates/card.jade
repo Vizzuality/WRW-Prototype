@@ -76,16 +76,20 @@ mixin card(type)
 
   else if type=='app'
     //- Available attributes:
+    //-   url:          link url
     //-   thumbnail:    image url
     //-   title:        card's title
     //-   star_count:   'like' count
     //-   star_active:  is card 'liked'?
+
     .cell
       .card.app
         .card-image
-          img(src=attributes.thumbnail)
+          a(href=attributes.url)
+            img(src=attributes.thumbnail)
         .card-caption-container
-          .card-caption= attributes.title
+          .card-caption
+            a(href=attributes.url)= attributes.title
           .card-info-stars(class= attributes.star_active ? 'active' : '')
             svg.icon.icon-star
               use(xlink:href='#icon-star')
