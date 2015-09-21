@@ -61,6 +61,7 @@ define([
           data: data,
           el: this.el,
           sizing: {top: 10, right: 0, bottom: 100, left: 0},
+          innerPadding: { top: 25, right: 20, bottom: 0, left: 45 },
           keys: keys
         });
 
