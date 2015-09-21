@@ -19,7 +19,6 @@ p.apps--title-metadata {
 .container-description {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
 
   margin-bottom: 50px;
@@ -48,7 +47,6 @@ p.apps--title-metadata {
 .container-pictures {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
 
   img.app-image {
