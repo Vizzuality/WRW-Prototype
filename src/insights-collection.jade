@@ -14,7 +14,7 @@ block content
           a(href='insights.html') Insights
         li &nbsp;Collection
       p.insights--subtitle Insights Collection
-      h2 The 2015 California Drought
+      h2 Water and Drought
       p.insights--intro
         | California farmers produce more than a third of the nation’s vegetables and two-thirds of its fruits and nuts. To do that, they use nearly 80 percent of all the water consumed in the state. It is the most stubborn part of the crisis: to fundamentally alter how much water the state uses, all Americans may have to give something up.
   .container
@@ -35,58 +35,113 @@ block content
               i.fa.fa-th-list
           li
             a.button.button-small(href='#') Filter
-      include ./templates/insight_cards.jade
       .gridbox
         include ./templates/card.jade
-          +card('insight')(
-          url='insights-story.html',
-          thumbnail='img/insight-7-th.jpg',
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-24-th.jpg',
           sub_title='Story',
-          title='Worldwide Forest Loss in Summer 2015',
-          avatar='img/avatar-wwf.png',
-          author='WWF',
-          star_count='5,231'
+          title='Droughts and Floods Threaten China\'s Economic Growth',
+          avatar='img/avatar-guardian.png',
+          author='The Guardian',
+          star_count='5,230'
         )
         +card('insight')(
-          url='insights-slideshow.html',
-          thumbnail='img/insight-8-th.jpg',
-          sub_title='Slideshow',
-          title='The Most Polluted Rivers in the United States',
+          url='#',
+          thumbnail='img/insight-25-th.jpg',
+          sub_title='Story',
+          title='Let’s Stop the Drought in Texas',
           avatar='img/avatar-greenpeace.png',
           author='Greenpeace',
           star_count='3,531'
         )
         +card('insight')(
-          url='insights-story.html',
-          thumbnail='img/insight-9-th.jpg',
-          sub_title='Story',
-          title='How Train Transport Will Improve our Lives',
-          avatar='img/avatar-wwf.png',
-          author='WWF',
-          star_count='430'
+          url='#',
+          thumbnail='img/insight-26-th.jpg',
+          sub_title='Slideshow',
+          title='Europe is Facing the Worst Drought in Century',
+          avatar='img/avatar-wri.png',
+          author='World Resources Institute',
+          star_count='4,345',
+          star_active=true
         )
         +card('insight')(
-          url='insights-slideshow.html',
-          thumbnail='img/insight-10-th.jpg',
+          url='#',
+          thumbnail='img/insight-27-th.jpg',
           sub_title='Slideshow',
-          title='Worldwide Forest Loss in Summer 2015',
+          title='California Drought Pictures',
           avatar='img/avatar-1.jpg',
           author='Sajjad Malik',
           star_count='1,349',
           star_active=true
         )
         +card('insight')(
-          url='insights-story.html',
-          thumbnail='img/insight-11-th.jpg',
-          sub_title='Story',
+          url='#',
+          thumbnail='img/insight-28-th.jpg',
+          sub_title='Slideshow',
           title='The Most Polluted Rivers in the United States',
           avatar='img/avatar-2.jpg',
           author='Marion Johnson',
           star_count='9,430'
         )
         +card('insight')(
-          url='insights-story.html',
-          thumbnail='img/insight-12-th.jpg',
+          url='#',
+          thumbnail='img/insight-29-th.jpg',
+          sub_title='Slideshow',
+          title='All Time Worst Natural Disasters',
+          avatar='img/avatar-wwf.png',
+          author='WWF',
+          star_count='430'
+        )
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-30-th.jpg',
+          sub_title='Slideshow',
+          title='Texas Drought Photos',
+          avatar='img/avatar-wwf.png',
+          author='WWF',
+          star_count='5,230'
+        )
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-31-th.jpg',
+          sub_title='Story',
+          title='Worst Drought in 80 Years Means São Paulo May Run Out of Water in Two Weeks',
+          avatar='img/avatar-greenpeace.png',
+          author='Greenpeace',
+          star_count='3,531'
+        )
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-32-th.jpg',
+          sub_title='Interactive',
+          title='China\'s Drought and Global Food Prices',
+          avatar='img/avatar-wwf.png',
+          author='WWF',
+          star_count='430'
+        )
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-33-th.jpg',
+          sub_title='Map',
+          title='Plant Stress Paints Early Picture of Drought',
+          avatar='img/avatar-nasa.png',
+          author='NASA',
+          star_count='1,349',
+          star_active=true
+        )
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-34-th.jpg',
+          sub_title='Story',
+          title='Africa Says Poor Need Billions To Fight Climate',
+          avatar='img/avatar-2.jpg',
+          author='Marion Johnson',
+          star_count='9,430'
+        )
+        +card('insight')(
+          url='#',
+          thumbnail='img/insight-35-th.jpg',
           sub_title='Story',
           title='How Train Transport Will Improve our Lives',
           avatar='img/avatar-wwf.png',
@@ -94,19 +149,19 @@ block content
           star_count='430'
         )
         +card('insight')(
-          url='insights-story.html',
-          thumbnail='img/insight-13-th.jpg',
+          url='#',
+          thumbnail='img/insight-36-th.jpg',
           sub_title='Story',
-          title='Worldwide Forest Loss in Summer 2015',
+          title='Animals in Desasters',
           avatar='img/avatar-wwf.png',
           author='WWF',
           star_count='5,230'
         )
         +card('insight')(
-          url='insights-slideshow.html',
-          thumbnail='img/insight-14-th.jpg',
+          url='#',
+          thumbnail='img/insight-37-th.jpg',
           sub_title='Slideshow',
-          title='The Most Polluted Rivers in the United States',
+          title='In Kenya, Drought Insurance via Cell Phone',
           avatar='img/avatar-greenpeace.png',
           author='Greenpeace',
           star_count='3,531'
