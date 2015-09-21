@@ -103,6 +103,7 @@ define([
       e.preventDefault();
 
       this.iso = $('.choose-country').val();
+      this.topic = null;
       this.appEvents.trigger('route:update', { iso: this.iso });
       this.fetchConfiguration();
     },
