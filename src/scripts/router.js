@@ -22,6 +22,7 @@ define([
       'explore.html': 'explore',
       'explore-detail.html': 'exploreDetail',
       'explore-standalone.html': 'exploreStandalone',
+      'app-info.html': 'appInfo',
       '*path': 'default'
     }
 
