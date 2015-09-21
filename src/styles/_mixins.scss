@@ -1,0 +1,113 @@
+@mixin placeholder() {
+  &::-webkit-input-placeholder { @content}
+  &:-moz-placeholder { @content}
+  &::-moz-placeholder { @content}
+  &:-ms-input-placeholder { @content}
+}
+
+@mixin equi-triangle ($width, $color, $direction) {
+  width: 0;
+  height: 0;
+  @if $direction == 'top' {
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-bottom: $width solid $color;
+  } @else if $direction == 'bottom' {
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-top: $width solid $color;
+  } @else if $direction == 'left' {
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-right: $width solid $color;
+  } @if $direction == 'right' {
+    border-top: $width solid transparent;
+    border-bottom: $width solid transparent;
+    border-left: $width solid $color;
+  }
+}
+
+@mixin arrow ($width, $color, $border-width, $deg) {
+  width: $width;
+  height: $width;
+  border-top: $border-width solid $color;
+  border-left: $border-width solid $color;
+  -webkit-transform: rotate($deg);
+  transform: rotate($deg);
+  pointer-events: none;
+}
+
+%center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+%centerx {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+%centery {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+//Loader
+@mixin spinner($size, $border-width){
+
+  &:before {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .6;
+  }
+
+  &:after {
+    z-index: 2;
+    content: '';
+    height: $size;
+    width: $size;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px;
+    border-radius: 100%;
+    border-top: $border-width solid $grey;
+    border-right: $border-width solid $light-grey;
+    border-bottom: $border-width solid $light-grey;
+    border-left: $border-width solid $light-grey;
+    animation: spinner .75s infinite linear;
+    -webkit-animation: standard .75s infinite linear;
+    transform-origin: center;
+  }
+}
+
+@-webkit-keyframes standard {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes standard {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

@@ -1,29 +1,30 @@
 {
-  "name": "wrw",
-  "version": "0.0.0",
+  "name": "wrw-prototype",
+  "version": "0.1.0",
   "main": "index.html",
   "authors": [
-    "Vizzuality"
+    "Vizzuality <http://vizzuality.com>"
   ],
   "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
-    "js/vendor"
+    "bower_components"
   ],
   "dependencies": {
-    "jquery": "~2.1.4",
-    "underscore": "~1.8.3",
-    "backbone": "~1.2.1",
-    "handlebars": "~3.0.3",
-    "text": "requirejs/text#~2.0.14",
-    "backbone-super": "~1.0.4",
-    "requirejs": "~2.1.18",
-    "foundation": "~5.5.2",
-    "moment": "~2.10.3",
-    "d3": "~3.5.5",
     "almond": "~0.3.1",
+    "backbone": "~1.2.1",
+    "backbone-super": "~1.0.4",
+    "d3": "~3.5.5",
+    "foundation": "~5.5.2",
+    "handlebars": "~3.0.3",
+    "jquery": "~2.1.4",
+    "moment": "~2.10.3",
+    "mustache": "~2.1.3",
     "normalize-css": "~3.0.3",
-    "slick-carousel": "~1.5.8"
+    "requirejs": "~2.1.18",
+    "slick-carousel": "~1.5.8",
+    "text": "requirejs/text#~2.0.14",
+    "underscore": "~1.8.3"
   }
 }

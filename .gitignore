@@ -1,4 +1,8 @@
 .DS_Store
-node_modules
-css/styles.css
-js/vendor/
+*.log
+/node_modules
+/bower_components
+/dist
+/.tmp
+/.brackets.json
+/.grunt
