@@ -1,11 +1,59 @@
+h1.story--title {
+  text-align: left;
+}
+
+p.apps--title-metadata {
+  padding-top: 0;
+}
+
 .app-info--details {
   width: 610px;
 
   font-size: 18px;
   line-height: 28px;
-  color: $insights--intro-color;
-  font-weight: $font--light;
   -webkit-font-smoothing: subpixel-antialiased;
-
   text-align: left;
 }
+
+
+.container-description {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  margin-bottom: 50px;
+
+  .app-info--description {
+    width: 610px;
+    font-size: 18px;
+    line-height: 28px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    text-align: left;
+  }
+
+  .description-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    a.button {
+      min-width: 260px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.container-pictures {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  img.app-image {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
