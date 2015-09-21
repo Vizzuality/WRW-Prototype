@@ -14,6 +14,8 @@ define([
       'dashboard.html': 'countries',
       'partners-gp.html': 'partnersGp',
       'partners-wwf.html': 'partnersWwf',
+      'partners-vizzuality.html': 'partnersVizzuality',
+      'partners-wri.html': 'partnersWri',
       'insights-slideshow.html': 'slideshow',
       'insights-map.html': 'map',
       'insights-interactive-edi.html': 'interactiveEdi',

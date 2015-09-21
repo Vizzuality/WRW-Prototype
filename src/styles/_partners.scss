@@ -21,6 +21,15 @@
     background: url(../img/partner-wwf-header.jpg);
   }
 
+  .is-partners-vizzuality & {
+    background: url(../img/partner-vizzuality-header.jpg);
+  }
+
+  .is-partners-wri & {
+    height: 800px;
+    background: url(../img/partner-wri-header.jpg);
+  }
+
   h2 {
     margin: 0;
     font-size: 62px;
@@ -101,6 +110,14 @@
     background: url(../img/partner-wwf-middle-bg.jpg);
   }
 
+  .is-partners-vizzuality & {
+    background: url(../img/partner-vizzuality-middle-bg.jpg);
+  }
+
+  .is-partners-wri & {
+    background: url(../img/partner-wri-middle-bg.jpg);
+  }
+
 
 
   .middle--intro {
@@ -111,6 +128,11 @@
     text-align: center;
     width: 649px;
     margin-bottom: 20px;
+
+    .is-partners-wri & {
+      font-size: 38px;
+      width: 900px;
+    }
   }
 }
 
