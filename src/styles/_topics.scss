@@ -1,0 +1,34 @@
+.m-topic {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.m-topic--item {
+  width: 22%;
+}
+.m-topic--thumb {
+  padding: 3px;
+  border: 1px solid #ccc;
+  background: white;
+
+  img {
+    display: block;
+    height: 200px;
+  }
+}
+
+.m-topic--caption {
+  color: #333;
+  text-align: center;
+  font-weight: 700;
+  a, p {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    text-align: center;
+    font-size: 13px;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
