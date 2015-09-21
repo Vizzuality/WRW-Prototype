@@ -94,7 +94,7 @@ block content
           star_count='6,575'
         )
         +card('data')(
-          url='explore-standalone.html',
+          url='#',
           thumbnail='img/data-4-th.png',
           title='Population distribution by age range in the US',
           download_csv=true,
@@ -102,7 +102,7 @@ block content
           star_count='6,575'
         )
         +card('data')(
-          url='explore-standalone.html',
+          url='#',
           thumbnail='img/data-5-th.png',
           title='Water levels in Northern California',
           download_csv=true,
@@ -111,7 +111,7 @@ block content
           star_count='6,575'
         )
         +card('data')(
-          url='explore-standalone.html',
+          url='#',
           thumbnail='img/data-6-th.png',
           title='Energy produced in Spain - Real Time',
           download_csv=true,
@@ -120,7 +120,7 @@ block content
           star_count='6,575'
         )
         +card('data')(
-          url='explore-standalone.html',
+          url='#',
           thumbnail='img/data-7-th.png',
           title='Water levels in Northern California',
           download_csv=true,
@@ -129,7 +129,7 @@ block content
           star_count='6,575'
         )
         +card('data')(
-          url='explore-standalone.html',
+          url='#',
           thumbnail='img/data-8-th.png',
           title='Water levels in Northern California',
           download_csv=true,
@@ -148,23 +148,31 @@ block content
       .gridbox
         include ./templates/card.jade
         +card('app')(
-          thumbnail='img/app-1.png',
-          title='Worldwide Deforestation',
+          thumbnail='img/app-4-th.jpg',
+          title='Track Deforestation in Real Time',
           star_count='6,574',
           star_active=true
         )
         +card('app')(
-          thumbnail='img/app-2.png',
-          title='World Resources Watch AI',
+          thumbnail='img/app-5-th.jpg',
+          title='Current and Future Water Security',
           star_count='6,574'
         )
         +card('app')(
-          thumbnail='img/app-3.png',
-          title='Android Wearable Environmental Alerts',
+          thumbnail='img/app-6-th.jpg',
+          title='Flood Risk Analyzer',
           star_count='6,574'
         )
-    // contribute
+
+    // app-develop
     section
-      .m-contribute
-        a(href='#')
-          | AWESOME IDEAS? DEVELOP YOUR OWN APP
+      //- header.section-header
+      //-   h3 Title?
+      //-   a.section-header-link(href='#')
+      //-     | Link?
+      //-     i.fa.fa-angle-right
+      .banner
+        a(href='planet-pulse.html')
+          img.banner-image(src='img/banner-2.jpg')
+        h3.banner-header Awesome ideas? </br> Develop your own app
+        a.banner-button.button.button-large(href='#') Learn More
