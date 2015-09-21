@@ -75,7 +75,12 @@ require([
       this._checkAuth(function() {
         new SearchCountriesView({ el: '.choose-country' });
         var hash = window.location.hash.replace('#', '');
-        new DashboardView({ el: '#container', iso: hash });
+        if (hash.length > 3 && hash.match(/topic/)) {
+          hash = hash.split('/topic/');
+          new DashboardView({ el: '#container', iso: hash[0], topic: hash[1] });
+        } else {
+          new DashboardView({ el: '#container', iso: hash });
+        }
       });
     },
 
@@ -105,12 +110,6 @@ require([
 
     interactiveEdi: function() {
       this._checkAuth(function() {
-        new (SearchCountriesView.extend({
-          el: '.js-search-country',
-          setCountry: function(e) {
-            e.preventDefault();
-          }
-        }))();
         new InteractiveEdiView();
       });
     },
