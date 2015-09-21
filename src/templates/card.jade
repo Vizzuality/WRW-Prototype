@@ -27,7 +27,12 @@ mixin card(type)
             img(src=attributes.avatar)
             span
               | by &nbsp;
-              a(href='#')= attributes.author
+              if attributes.author == 'Greenpeace'
+                a(href='partners-gp.html')= 'Greenpeace'
+              else if attributes.author == 'WWF'
+                a(href='partners-wwf.html')= 'WWF'
+              else
+                a(href='#')= attributes.author
           li.card-info-stars(class= attributes.star_active ? 'active' : '')
             svg.icon.icon-star
               use(xlink:href='#icon-star')
@@ -46,7 +51,8 @@ mixin card(type)
     .cell.data
       .card.data
         .card-image
-          a(href=attributes.url)
+          //- appends the title to the url (but does not work on 2nd level)
+          a(href=(attributes.url += "?title=#{encodeURIComponent(attributes.title)}"))
             img(src=attributes.thumbnail)
         .card-content
           h5.card-title

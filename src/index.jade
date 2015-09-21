@@ -13,7 +13,7 @@ block content
           .hero-sub-title
             | Featured insight
           a(href='insights-map.html')
-            | Are countries whose water supplies are most at risk from climate change taking action?
+            | Climate change will increase chance of people being affected by floods
         .hero-info
           .hero-info-source
             img(src='img/insight-wwf-logo.png')
@@ -41,7 +41,9 @@ block content
     section
       header.section-header
         h3 Featured insights
-        // <a href="#" class="section-header-link">View More <i class="fa fa-angle-right"></i></a>
+        a.section-header-link(href='insights.html')
+          | View More
+          i.fa.fa-angle-right
       include ./templates/insight_cards.jade
 
     // planet-pulse
@@ -60,7 +62,7 @@ block content
     section
       header.section-header
         h3 Explore the data
-        a.section-header-link(href='#')
+        a.section-header-link(href='explore.html')
           | View More
           i.fa.fa-angle-right
       .gridbox
