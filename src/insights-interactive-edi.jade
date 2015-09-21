@@ -16,7 +16,7 @@ block content
     .story--metadata.insights--interactive-metadata
       .story--metadata-author
         img(src='img/insight-wwf-logo.png')
-        | by
+        | by&nbsp;
         a.is-link World Resources Institute
         span.story--metadata-date Oct 5, 2015
       .story--metadata-stars
@@ -47,9 +47,10 @@ block content
           .insights--interactive-intro-2-title It’s your turn
           .insights--interactive-intro-2-subtitle If a similar event happened to you, would you be able to be able to do anything about it? The outcome of such events often depends on the <b>strength of national laws</b>.
           .insights--interactive-input
-            select.js-search-country
-              option(value='', disabled='', selected='') Where do you live?
-            input(type="submit", value="Let’s go!", class="button js-next")
+            form
+              select.js-search-country
+                option(value='', disabled='', selected='') Where do you live?
+              input(type="submit", value="Let’s go!", class="button js-next")
           ul.insights--interactive-footer
-            li Explore the data
-            li Read about EDI
+            li
+              a(href="http://environmentaldemocracyindex.org") Read about EDI

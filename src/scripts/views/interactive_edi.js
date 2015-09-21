@@ -2,8 +2,10 @@ define([
   'backbone',
   'underscore',
   'handlebars',
-  'text!views/templates/interactive_edi.handlebars'
-], function(Backbone, _, Handlebars, TPL) {
+  'views/search_countries',
+  'text!views/templates/interactive_edi_step2.handlebars',
+  'text!views/templates/interactive_edi_step3.handlebars'
+], function(Backbone, _, Handlebars, SearchCountriesView, TPL2, TPL3) {
 
   var EdiCollection = Backbone.Collection.extend({
     initialize: function(options) {
@@ -79,6 +81,25 @@ define([
 
   });
 
+  var CountriesCollection = Backbone.Collection.extend({
+
+    url: 'http://edi.simbiotica.es/countries-by-overall',
+    comparator: 'name',
+
+    initialize: function() {
+      this.fetch();
+    },
+
+    parse: function(data) {
+      return _.map(data, function(row) {
+        return {
+          iso: row.field_iso,
+          name: row.country
+        };
+      });
+    }
+  });
+
   var InteractiveEdi = Backbone.View.extend({
 
     el: 'body',
@@ -87,7 +108,8 @@ define([
       'click .js-next': 'nextStep'
     },
 
-    template: Handlebars.compile(TPL),
+    template2: Handlebars.compile(TPL2),
+    template3: Handlebars.compile(TPL3),
 
     initialize: function() {
       this.step = 0;
@@ -98,6 +120,18 @@ define([
       this.$cardFront = $('.insights--interactive-card-front');
       this.$cardBack = $('.insights--interactive-card-back');
       this.$countryInput = $('.js-search-country');
+      this.countriesCollection = new CountriesCollection();
+      this.setListeners();
+    },
+
+    setListeners: function() {
+      this.countriesCollection.on('sync', _.bind(this.updateCountriesList, this));
+    },
+
+    updateCountriesList: function() {
+      _.each(this.countriesCollection.toJSON(), _.bind(function(country) {
+        this.$countryInput.append('<option value="'+country.iso+'">'+country.name+'</option>');
+      }, this));
     },
 
     nextStep: function(e) {
@@ -132,21 +166,38 @@ define([
           break;
 
         case 2:
-          var iso = this.$countryInput.find('option:selected').val();
+          this.iso = this.$countryInput.find('option:selected').val();
 
-          if(!!iso.length) {
-            this.ediCollection = new EdiCollection({ iso: iso });
+          if(!!this.iso.length) {
+            this.ediCollection = new EdiCollection({ iso: this.iso });
             this.insightsCollection = new InsightsCollection();
-            this.countryModel = new CountryModel({ iso: iso });
-            this.scoreModel = new ScoreModel({ iso: iso });
+            this.countryModel = new CountryModel({ iso: this.iso });
+            this.scoreModel = new ScoreModel({ iso: this.iso });
+
+            this.$cardBack.addClass('is-loading');
 
             $.when.apply($, [this.scoreModel.fetch(), this.countryModel.fetch(), this.ediCollection.fetch(), this.insightsCollection.fetch()])
               .then(_.bind(this.renderResult, this))
               .fail(function() {
                 console.log('Error fetching the data');
-              });
+              })
+              .always(_.bind(function() {
+                this.$cardBack.removeClass('is-loading');
+              }, this));
           }
           break;
+      }
+    },
+
+    previousStep: function() {
+      if(this.step === 3) {
+        this.$cardBack.html(this.template2());
+        this.$countryInput = $('.js-search-country');
+        this.updateCountriesList();
+        $('html, body').animate({
+          scrollTop: this.$cardBack.offset().top
+        }, 500);
+        this.step--;
       }
     },
 
@@ -182,9 +233,10 @@ define([
 
       this.step++;
       this.$cardBack.children().fadeOut(300, _.bind(function() {
-        this.$cardBack.html(this.template({
+        this.$cardBack.html(this.template3({
           sentences: sentences,
           country: countryData.name,
+          iso: this.iso,
           population: countryData.population,
           grp: countryData.grp,
           hdi: countryData.hdi,
@@ -192,6 +244,7 @@ define([
           score: scoreData.score,
           strength: scoreData.strength
         }));
+        $('.js-back').on('click', _.bind(this.previousStep, this));
       }, this));
     }
 
