@@ -1,9 +1,9 @@
 module.exports = {
 
-  scripts: {
+  data: {
     expand: true,
     cwd: '<%= src %>/scripts',
-    src: '**/*',
+    src: '{,*/}{,*/}{,*/}*.{csv,json}',
     dest: '<%= build %>/scripts'
   }
 
