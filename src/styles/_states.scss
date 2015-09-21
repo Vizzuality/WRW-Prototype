@@ -28,3 +28,7 @@
 .is-link {
   cursor: pointer;
 }
+
+.is-loading {
+  @include spinner(40px, 5px);
+}

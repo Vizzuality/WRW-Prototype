@@ -1,7 +1,8 @@
 block vars
   - var className = 'is-default'
   - var title = null
-  - var path = env == 'development' ? '' : '/WRW-Prototype/'
+  - var path = env == 'development' ? '' : '/WRW-prototype/'
+  - var contentClassName = ''
 
 doctype html
 html(lang="en")
@@ -33,7 +34,7 @@ html(lang="en")
       +header
 
     //- The main content
-    #content
+    #content(class=(contentClassName))
       block content
 
     //- The global footer

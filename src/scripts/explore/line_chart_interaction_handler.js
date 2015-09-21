@@ -3,7 +3,7 @@ define(['d3', 'handlebars'], function(d3, Handlebars) {
     '<div class="tooltip"><h4></h4><h5></h5></div>'
   );
 
-  var group, eventInterceptor, xKey, yKey, x, y, data, sizing, height;
+  var group, eventInterceptor, xKey, yKey, x, y, data, sizing, innerPadding, height, width;
 
   var bisectDate = d3.bisector(function(d) { return d[xKey]; }).left;
 
@@ -16,12 +16,14 @@ define(['d3', 'handlebars'], function(d3, Handlebars) {
 
     data = options.data;
     sizing = options.sizing;
+    innerPadding = options.innerPadding;
     eventInterceptor = options.interceptor;
     xKey = options.keys.x;
     yKey = options.keys.y;
     x = options.x;
     y = options.y;
     height = options.height;
+    width = options.width;
 
     this._setupTooltip(svg);
     this.render();
@@ -63,6 +65,12 @@ define(['d3', 'handlebars'], function(d3, Handlebars) {
         var left = xVal - ($tooltip.width()/2),
             top = yVal - $tooltip.height() - 20;
         if (top <= sizing.top) { top = yVal + $tooltip.height() - 10; }
+        if(left + $tooltip.width() > width - innerPadding.right) {
+          left = width - $tooltip.width() - innerPadding.right;
+        }
+        if(left < innerPadding.left) {
+          left = innerPadding.left;
+        }
         $tooltip.css({ left: left+"px", top: top+"px" });
         $tooltip.find('h4').text(d[yKey]);
 

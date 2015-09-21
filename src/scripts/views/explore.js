@@ -226,7 +226,7 @@ define([
       $el.addClass("explore--active-dataset");
 
       var layerUrl = this.mapVisualisations[id].url;
-      cartodb.createLayer(this.map, layerUrl)
+      cartodb.createLayer(this.map, layerUrl, { legends: false })
         .addTo(this.map)
         .on('done', _.bind(function(layer) {
           this.selectedVisualisations[id] = layer;

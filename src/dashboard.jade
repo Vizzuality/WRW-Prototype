@@ -5,18 +5,19 @@ block vars
 
 block content
 
-  .container#container
-    section
-      header.section-header.dashboard
-        h1.story--title Dashboard
-        a#fullscreenBtn.section-header-link.aligned-bottom.is-mobile-hidden Full screen
+  #container
+    .container
+      section
+        header.section-header.dashboard
+          h1.story--title Dashboard
+          a#fullscreenBtn.section-header-link.aligned-bottom.is-mobile-hidden Full screen
 
-    // country selector
-    section
-      .alert-box.alert.is-hidden
-      .m-country-selector.dashboard
-        .country-selector
-          select.choose-country
-            option(value='', disabled='', selected='') Choose country
-          input.button.is-mobile-hidden(type='submit', value="Let's go!")
-          input.button.is-desktop-hidden(type='submit', value='Go!')
+      // country selector
+      section
+        .alert-box.alert.is-hidden
+        .m-country-selector.dashboard
+          .country-selector
+            select.choose-country
+              option(value='', disabled='', selected='') Choose country
+            input.button.is-mobile-hidden(type='submit', value="Let's go!")
+            input.button.is-desktop-hidden(type='submit', value='Go!')
