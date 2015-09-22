@@ -421,12 +421,14 @@
     letter-spacing: 2px;
     font-size: 12px;
     font-weight: $font--bold;
+    cursor: pointer;
   }
 }
 
 .insights--interactive-map-container {
   width: 100%;
   height: 100%;
+  background-color: black;
 
   .leaflet-control-zoom {
     margin: 0;
