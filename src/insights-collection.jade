@@ -180,12 +180,21 @@ block content
         h3 Similar collections
       .gridbox
         include ./templates/card.jade
-        each val in [1, 2, 3]
-          +card('category')(
-            url='insights-collection.html',
-            thumbnail='img/collection-'+val+'-th.jpg',
-            title='Worldwide Deforestation'
-          )
+        +card('category')(
+          url='#',
+          thumbnail='img/collection-7-th.jpg',
+          title='Worldwide Deforestation'
+        )
+        +card('category')(
+          url='#',
+          thumbnail='img/collection-2-th.jpg',
+          title='Worldwide Deforestation'
+        )
+        +card('category')(
+          url='#',
+          thumbnail='img/collection-3-th.jpg',
+          title='Worldwide Deforestation'
+        )
     section
       header.section-header
         h3 Planet Pulse

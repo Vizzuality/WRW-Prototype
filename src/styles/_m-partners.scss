@@ -29,6 +29,19 @@
 		list-style: none;
 		float: left;
 		margin-right: 60px;
+
+    a.is-link {
+      cursor: default;
+      transition: filter 0.2s, opacity 0.2s;
+    }
+
+    &:hover {
+      a.is-link {
+        filter: grayscale(100%);
+        opacity: 0.4;
+      }
+    }
+
 	}
 
   @media screen and (max-width: $responsive-break--tablet) {
