@@ -22,6 +22,8 @@ block content
   img.img-preload(src=path + 'img/planet-pulse/layers/temperature_4k.png', id="layer4")
   img.img-preload(src=path + 'img/planet-pulse/layers/population_4k.png', id="layer5")
   img.img-preload(src=path + 'img/planet-pulse/layers/conflicts_4k.png', id="layer6")
+  img.img-preload(src=path + 'img/planet-pulse/layers/grace_4k.png', id="layer7")
+  img.img-preload(src=path + 'img/planet-pulse/layers/protests_4k.png', id="layer8")
 
   section.planet-pulse
 
@@ -31,17 +33,7 @@ block content
       header.planet-pulse--header
         h1.planet-pulse--title Planet pulse
         ul.planet-pulse--main-nav
-          li
-            a(href='#drought', id="droughtLink") Drought
-            //- ul
-            //-   li
-            //-     a(href='#drought/spei') SPEI
-            //-   li
-            //-     a(href='#drought/agricultural') Agricultural areas (EarthStat)
-            //-   li
-            //-     a(href='#drought/groundwater') Groundwater depletion (GRACE)
-            //-   li
-            //-     a(href='#drought/forecast') Forecasts / Climate projections
+          
           li
             a(href='#forest', id="forestLink") Forest
             //- ul
@@ -53,6 +45,17 @@ block content
             //-     a(href='#forest/protected-areas') Protected areas
             //-   li
             //-     a(href='#forest/fires') Fires
+          li
+            a(href='#drought', id="droughtLink") Drought
+            //- ul
+            //-   li
+            //-     a(href='#drought/spei') SPEI
+            //-   li
+            //-     a(href='#drought/agricultural') Agricultural areas (EarthStat)
+            //-   li
+            //-     a(href='#drought/groundwater') Groundwater depletion (GRACE)
+            //-   li
+            //-     a(href='#drought/forecast') Forecasts / Climate projections
           li
             a(href='#flooding', id="floodingLink") Flooding
             //- ul

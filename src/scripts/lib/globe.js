@@ -195,14 +195,17 @@ define([
     };
 
     this.camera = camera;
+    this.scene = scene;
 
     this.resize = onWindowResize;
 
     this.createLayer = createLayer;
     this.removeLayer = removeLayer;
 
+    this.light = light;
     this.ambientLight = ambientLight;
     this.sphere = sphere;
+    this.space = space;
 
     this.element = webglEl;
 

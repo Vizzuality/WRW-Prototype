@@ -29,9 +29,9 @@ define([
         temperature: document.getElementById('layer4').src,
         population: document.getElementById('layer5').src,
         conflicts: document.getElementById('layer6').src,
-        grace: document.getElementById('layer4').src,
-        epidemic: document.getElementById('layer5').src,
-        protests: document.getElementById('layer6').src
+        grace: document.getElementById('layer7').src,
+        epidemic: document.getElementById('layer7').src,
+        protests: document.getElementById('layer8').src
       };
 
       this.createGlobe();
@@ -87,6 +87,8 @@ define([
     setVis: function(vis) {
       var w = this.globe.element.clientWidth;
       var h = this.globe.element.clientHeight;
+      var isSpaceRemoved = false;
+      var isLightRemoved = false;
 
       this.$title.hide(100)
       this.$nav.addClass('is-blur');
@@ -97,6 +99,8 @@ define([
       this.currentVis = vis;
       this.resetLegend();
       this.resetLayersList();
+
+      this.$el.removeClass('is-grace');
 
       switch(vis) {
         case 'population':
@@ -121,7 +125,9 @@ define([
           this.updateLayersList();
           break;
         case 'grace':
-          this.globe.ambientLight.color.setHex(0xcccccc);
+          isSpaceRemoved = true;
+          isLightRemoved = true;
+          this.$el.addClass('is-grace');
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
           this.globe.createLayer(this.currentVis, this.layers.grace);
           this.setLegend(vis);
@@ -156,7 +162,7 @@ define([
           this.updateLayersList();
           break;
         case 'protests':
-          this.globe.ambientLight.color.setHex(0xcccccc);
+          isLightRemoved = true;
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
           this.globe.createLayer(this.currentVis, this.layers.protests);
           this.setLegend(vis);
@@ -166,6 +172,17 @@ define([
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.satellite);
           this.globe.ambientLight.color.setHex(0x444444);
           this.globe.addClouds();
+      }
+
+      if (isLightRemoved) {
+        this.globe.ambientLight.color.setHex(0xffffff);
+        this.globe.scene.remove(this.globe.light);
+      }
+
+      if (isSpaceRemoved) {
+        this.globe.scene.remove(this.globe.space);
+      } else {
+        this.globe.scene.add(this.globe.space);
       }
 
       this.globe.camera.setViewOffset( w, h, w * -0.17, h * 0, w, h );
@@ -191,6 +208,14 @@ define([
         case 'umd':
           $title.text('UMD');
           $title.addClass('color-umd');
+          break;
+        case 'grace':
+          $title.text('Groundwater depletion (GRACE)');
+          $title.addClass('color-grace');
+          break;
+        case 'protests':
+          $title.text('Protests');
+          $title.addClass('color-protests');
           break;
       }
     },
