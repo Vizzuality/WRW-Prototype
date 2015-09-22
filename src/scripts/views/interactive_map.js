@@ -1,9 +1,10 @@
 define([
   'backbone',
   'underscore',
+  'views/fullscreen',
   'text!views/templates/interactive_map_infowindow.handlebars',
   'jqueryUi'
-], function(Backbone, _, infowindowTPL) {
+], function(Backbone, _, fullscreen, infowindowTPL) {
 
   var InteractiveMap = Backbone.View.extend({
 
@@ -11,7 +12,9 @@ define([
       this.$map = $('#js-map');
       this.$slider = $('.slider');
       this.$switch = $('.onoffswitch');
+      this.$container = $('.insights--interactive-map');
 
+      this.fullscreenCount = 0;
       this.availableYears = [20, 30, 40];
       this.yearSelection = this.availableYears[0];
       this.scenario = 28;
@@ -35,6 +38,9 @@ define([
 
     setListeners: function() {
       this.$switch.on('click', _.bind(this.toggleLayer, this));
+
+      var fullscreenEvents = 'webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange';
+      $(document).on(fullscreenEvents, _.bind(this.fullscreenWatcher, this));
     },
 
     getStressScenario: function(year, scenario) {
@@ -72,6 +78,8 @@ define([
           center: [8.928487062665504, 39.5947265625,],
           zoom: 3,
           zoomControl: false,
+          minZoom: 3,
+          maxZoom: 6,
           layers:[this.baseMaps.Basemap]
         });
 
@@ -127,6 +135,28 @@ define([
 
     renderInfowindowTemplate: function() {
       return infowindowTPL.replace(/\%year\%/gi, '20' + this.yearSelection);
+    },
+
+    fullscreenWatcher: function() {
+      var isEnteringFullscreen = this.fullscreenCount % 2 === 0;
+      this.fullscreenCount++;
+
+      if(isEnteringFullscreen && !fullscreen.isFullscreen()) {
+        this.enableFullscreen();
+      } else if(!isEnteringFullscreen && fullscreen.isFullscreen()) {
+        this.disableFullscreen();
+      }
+    },
+
+    enableFullscreen: function() {
+      this.$container.css({
+        width: '100%',
+        height: '100%'
+      });
+    },
+
+    disableFullscreen: function() {
+      this.$container.attr('style', '');
     }
 
   });
