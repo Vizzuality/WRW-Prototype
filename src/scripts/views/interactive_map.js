@@ -78,6 +78,8 @@ define([
           center: [8.928487062665504, 39.5947265625,],
           zoom: 3,
           zoomControl: false,
+          minZoom: 3,
+          maxZoom: 6,
           layers:[this.baseMaps.Basemap]
         });
 
