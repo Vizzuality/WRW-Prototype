@@ -1,6 +1,6 @@
 .card.app {
   width: $card--large-width;
-  height: 210px;
+  height: 218px;
 
   a.is-link {
     cursor: default;
@@ -65,15 +65,19 @@
 .card-caption-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   flex-wrap: nowrap;
+
+  .card-info-stars {
+    width: 60px;
+  }
 }
 
 @media screen and (max-width : $responsive-break--tablet) {
   .card.app {
     width: 100%;
-    height: auto;
+    height: 218px;
 
     .card-image {
       overflow: hidden;
@@ -93,5 +97,6 @@
     .card-caption-container {
       padding-top: 10px;
     }
+
   }
 }
