@@ -1,0 +1,49 @@
+extends ./templates/base.jade
+
+append vars
+  - var title = 'A factory is being built in your neighborhood. Can you do anything about it?'
+  - var contentClassName = 'insights--interactive-map'
+
+block header
+  +header('insights')
+
+block content
+  #js-map.insights--interactive-map-container
+  ul.story--breadcrumbs.insights--interactive--breacrumbs
+    li
+      a(href='insights.html') Insights
+    li &nbsp;Interactive
+  .insights--interactive-scenario-legend
+    h2 Scenario 1
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    hr
+    .slider
+    .slider-values
+      span 2020
+      span 2030
+      span 2040
+  .insights--interactive-layers-legend
+    h3 Layers
+    ul.explore--map-legend-layers
+      li Change in water stress
+        span.onoffswitch
+          span
+    .chloropleth
+      span
+      span
+      span
+      span
+      span
+      span
+      span
+      div
+        span > 2.8x increase
+        span > 2.8x decrease
+    ul.explore--map-legend-controls.insights--interactive-map-legend-controls
+      li Open in data map
+      li
+        i.fa.fa-cog
+      li
+        i.fa.fa-share-alt
+
+block footer
