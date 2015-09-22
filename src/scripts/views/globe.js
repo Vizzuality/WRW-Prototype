@@ -30,7 +30,7 @@ define([
         population: document.getElementById('layer5').src,
         conflicts: document.getElementById('layer6').src,
         grace: document.getElementById('layer7').src,
-        epidemic: document.getElementById('layer7').src,
+        epidemic: document.getElementById('layer9').src,
         protests: document.getElementById('layer8').src
       };
 
