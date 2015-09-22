@@ -1,0 +1,24 @@
+<div class="insights--interactive-map-infowindow">
+  <a href="#close" class="quit-button close"></a>
+  <h2>{{content.data.name}}</h2>
+  <div class="insights--interactive-map-infowindow-data">
+    <h3>Agricultural GDB</h3>
+    <span class="value">{{#content.data.avg}}{{content.data.avg}}{{/content.data.avg}}{{^content.data.avg}}-{{/content.data.avg}}%</span>
+  </div>
+  <div class="insights--interactive-map-infowindow-data">
+    <h3>Water Stress Prevision</h3>
+    <div class="value">{{#content.data.prev_%year%_t}}{{content.data.prev_%year%_t}}{{/content.data.prev_%year%_t}}{{^content.data.prev_%year%_t}}-{{/content.data.prev_%year%_t}}</div>
+  </div>
+  <div class="insights--interactive-map-infowindow-data">
+    <h3>Crop production</h3>
+    <div class="value">{{#content.data.production}}{{content.data.production}}{{/content.data.production}}{{^content.data.production}}-{{/content.data.production}} <span>tons</span></div>
+  </div>
+  <div class="insights--interactive-map-infowindow-data">
+    <h3>Crop consumption</h3>
+    <div class="value">{{#content.data.consumption}}{{content.data.consumption}}{{/content.data.consumption}}{{^content.data.consumption}}-{{/content.data.consumption}} <span>tons</span></div>
+  </div>
+  <div class="insights--interactive-map-infowindow-data">
+    <h3>Crop exports</h3>
+    <div class="value">{{#content.data.net_exports}}{{content.data.net_exports}}{{/content.data.net_exports}}{{^content.data.net_exports}}-{{/content.data.net_exports}} <span>tons</span></div>
+  </div>
+</div>

@@ -17,6 +17,8 @@ html(lang="en")
     link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Lato:300,400,700')
     link(rel='stylesheet', href='http://libs.cartocdn.com/cartodb.js/v3/3.13/themes/css/cartodb.css')
 
+    link(rel="icon", href="favicon.ico")
+
     if env === 'production'
       link(rel='stylesheet', href='styles/main.css')
     else
@@ -43,7 +45,7 @@ html(lang="en")
 
     //- The global scripts to include in every page
     script(src="//cdnjs.cloudflare.com/ajax/libs/three.js/r61/three.min.js")
-    script(src="http://libs.cartocdn.com/cartodb.js/v3/3.13/cartodb.js")
+    script(src="http://libs.cartocdn.com/cartodb.js/v3/3.15.1/cartodb.js")
     block scripts
       if env == 'production'
         script(src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.js", data-main="scripts/main")
