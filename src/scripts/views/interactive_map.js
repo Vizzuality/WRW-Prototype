@@ -50,7 +50,7 @@ define([
           '[ws' + year + scenario + 'cl="2.8x or greater decrease"] { polygon-fill:#0099cc; }'+
           '[ws' + year + scenario + 'cl="2x decrease"]   { polygon-fill:#73afd1;  }'+
           '[ws' + year + scenario + 'cl="1.4x decrease"] { polygon-fill:#abc7d9;  }'+
-          '[ws' + year + scenario + 'cl="Near normal"]   { polygon-fill:#ddd; }'+
+          '[ws' + year + scenario + 'cl="Near normal"]   { polygon-fill:#7f8487; }'+
           '[ws' + year + scenario + 'cl="1.4x increase"] { polygon-fill:#f8ab95;  }'+
           '[ws' + year + scenario + 'cl="2x increase"]   { polygon-fill:#ff7351;  }'+
           '[ws' + year + scenario + 'cl="2.8x or greater increase"] { polygon-fill:#ff1900; }}'

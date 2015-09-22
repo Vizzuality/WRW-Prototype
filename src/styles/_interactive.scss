@@ -521,7 +521,7 @@
       flex-basis: #{100% / 8}%;
       height: 8px;
 
-      $chloropleth-colors: #d9300b, #da7f6b, #f1c4ba, #e2e2e2, #b5ddea, #70c4e1, #30aad1;
+      $chloropleth-colors: #d9300b, #da7f6b, #f1c4ba, #7f8487, #b5ddea, #70c4e1, #30aad1;
       @for $i from 1 through length($chloropleth-colors) {
         &:nth-child(#{$i}) {
           background-color: nth($chloropleth-colors, $i);
@@ -586,17 +586,14 @@
     font-weight: $font--bold;
     color: #393f44;
     margin: 0;
-    /* Clearfix */
-    overflow: auto;
-    zoom: 1;
+  }
 
-    span {
-      float: right;
-      font-size: 11px;
-      font-weight: $font--normal;
-      padding-top: 5px;
-      display: block;
-    }
+  .quit-button {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    text-decoration: none;
   }
 }
 
