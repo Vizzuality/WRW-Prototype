@@ -410,6 +410,18 @@
     top: 0;
     left: 30px;
   }
+
+  #fullscreenBtn {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: $font--bold;
+  }
 }
 
 .insights--interactive-map-container {
