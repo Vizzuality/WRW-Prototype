@@ -2,6 +2,7 @@ extends ./templates/base.jade
 
 append vars
   - var title = 'Track Deforestation In Real Time'
+  - var className = 'is-app-info'
 
 block content
   .container
@@ -12,7 +13,7 @@ block content
   .container
     h1.story--title
       | Track Deforestation In Real Time
-    p.apps--title-metadata
+    p.app-info--title-metadata
       | by &nbsp;
       a(href='#') Global Forest Watch
 
@@ -21,18 +22,18 @@ block content
     section
       header.section-header
         h3 Description
-      .container.container-description
+      .container.app-info--container-description
         p.app-info--description
           | Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing vitae est. Sed nec felis pellentesque, lacinia dui sed, ultricies sapien. Pellentesque orci lectus, consectetur vel posuere posuere, rutrum eu ipsum. Aliquam eget odio sed ligula iaculis consequat at eget orci. Mauris molestie sit amet metus mattis varius.
-        .description-buttons
+        .app-info--description-buttons
           a.button.button-large.story--intro-button(href='#')
             | AVAILABLE FOR IOS
           a.button.button-large.story--intro-button(href='#')
             | AVAILABLE FOR ANDROID
-      .container.container-pictures
-        img.app-image(src='img/app-1-c.png')
-        img.app-image(src='img/app-1-b.png')
-        img.app-image(src='img/app-1-a.png')
+      .container.app-info--container-pictures
+        img.app-info--image(src='img/app-1-c.png')
+        img.app-info--image(src='img/app-1-b.png')
+        img.app-info--image(src='img/app-1-a.png')
 
     // details
     section
