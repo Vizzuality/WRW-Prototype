@@ -175,23 +175,84 @@
         background-size: cover;
       }
 
+      .is-peru & {
+        background: url('../img/insight-peru-slides-1.jpg') no-repeat;
+        background-size: cover;
+      }
     }
 
     &.slide-2 {
       background: url('../img/insight-slides-2.jpg') no-repeat;
       background-size: cover;
+
+      .is-peru & {
+        background: url('../img/insight-peru-slides-2.jpg') no-repeat;
+        background-size: cover;
+      }
     }
 
     &.slide-3 {
       background: url('../img/insight-slides-3.jpg') no-repeat;
       background-size: cover;
+
+      .is-peru & {
+        background: url('../img/insight-peru-slides-3.jpg') no-repeat;
+        background-size: cover;
+      }
     }
 
 
     &.slide-4 {
       background: url('../img/insight-slides-4.jpg') no-repeat;
       background-size: cover;
+
+      .is-peru & {
+        background: url('../img/insight-peru-slides-4.jpg') no-repeat;
+        background-size: cover;
+      }
     }
+
+    //
+    //  hard-coded further down, this does not want to be interpreted
+    //
+
+    // &.slide-5 {
+    //   background: url('../img/insight-peru-slides-5.jpg') no-repeat !important;
+    //   background-size: cover;
+
+    //   .is-peru & {
+    //     background: url('../img/insight-peru-slides-5.jpg') no-repeat;
+    //     background-size: cover;
+    //   }
+    // }
+
+    // &.slide-6 {
+    //   background: url('../img/insight-peru-slides-6.jpg') no-repeat;
+    //   background-size: cover;
+
+    //   .is-peru & {
+    //     background: url('../img/insight-peru-slides-6.jpg') no-repeat;
+    //     background-size: cover;
+    //   }
+    // }
+
+    // &.slide-7 {
+    //   background: url('../img/insight-peru-slides-7.jpg') no-repeat;
+    //   background-size: cover;
+    //   .is-peru & {
+    //     background: url('../img/insight-peru-slides-7.jpg') no-repeat;
+    //     background-size: cover;
+    //   }
+    // }
+
+    // &.slide-8 {
+    //   background: url('../img/insight-peru-slides-8.jpg') no-repeat;
+    //   background-size: cover;
+    //   .is-peru & {
+    //     background: url('../img/insight-peru-slides-8.jpg') no-repeat;
+    //     background-size: cover;
+    //   }
+    // }
 
     .container {
       overflow: hidden;
@@ -256,6 +317,22 @@
       line-height: 1.6em;
     }
 
+    .story--intro-text-container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 0px;
+
+      .story--intro-text {
+        width: 500px;
+        text-align: left;
+        font-style: normal;
+        font-size: 18px;
+        line-height: 1.6em;
+        margin-left: 0px;
+      }
+    }
+
     .story--pre-title {
       margin-top: 80px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -265,6 +342,37 @@
     .story--title {
       text-align: left;
     }
+
+
+
+    .story--credit-box {
+      background-color: rgba(0, 0, 0, 0.43);
+      z-index: $z-index-1;
+      padding: 25px;
+
+      h2 {
+        color: $insights--intro-color;
+        font-weight: $font--light;
+        font-size: 26px;
+        line-height: 36px;
+        margin-top: 0px;
+        margin-bottom: 14px;
+
+      }
+
+      ul {
+        color: $insights--intro-color;
+        li {
+          font-size: 18px;
+          line-height: 21px;
+          margin-top: 2px;
+          margin-bottom: 2px;
+        }
+      }
+    }
+
+
+
 
     blockquote {
       text-transform: uppercase;
@@ -389,6 +497,13 @@
       }
     }
 
+    .is-peru & {
+      .slide-5 {
+        background: url('../img/insight-peru-slides-5.jpg') no-repeat;
+        background-size: cover;
+      }
+    }
+
   }
 
   @media screen and (max-width: $responsive-break--tablet) {
@@ -404,6 +519,18 @@
 
       &.slide-4 {
         background: none;
+
+        .is-peru & {
+          background: url('../img/insight-peru-slides-4.jpg') no-repeat;
+          background-size: cover;
+        }
+      }
+
+      &.slide-5 {
+        .is-peru & {
+          background: url('../img/insight-peru-slides-5.jpg') no-repeat;
+          background-size: cover;
+        }
       }
 
       .black-overlay {
@@ -439,6 +566,30 @@
       }
     }
   }
+}
+
+//
+//  hard-coded because no background appears after slide 4
+//
+
+.is-peru .insights--slideshow-container .insights--slideshow-content.slide-5 {
+  background: url('../img/insight-peru-slides-5.jpg') no-repeat;
+  background-size: cover;
+}
+
+.is-peru .insights--slideshow-container .insights--slideshow-content.slide-6 {
+  background: url('../img/insight-peru-slides-6.jpg') no-repeat;
+  background-size: cover;
+}
+
+.is-peru .insights--slideshow-container .insights--slideshow-content.slide-7 {
+  background: url('../img/insight-peru-slides-7.jpg') no-repeat;
+  background-size: cover;
+}
+
+.is-peru .insights--slideshow-container .insights--slideshow-content.slide-8 {
+  background: url('../img/insight-peru-slides-8.jpg') no-repeat;
+  background-size: cover;
 }
 
 .insights--featured {
@@ -652,3 +803,4 @@
     }
   }
 }
+

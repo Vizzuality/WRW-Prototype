@@ -1,22 +1,35 @@
-h1.story--title {
+.app-info--title {
+  font-size: 48px;
+  font-weight: $font--light;
+  color: $story--title-color;
+  line-height: 52px;
   text-align: left;
+  margin-bottom: 12px;
 }
 
-p.apps--title-metadata {
+p.app-info--title-metadata {
   padding-top: 0;
+  color: $story--content-color
+}
+
+p.app-info--description {
+  margin-top: 0;
+  color: $story--content-color;
 }
 
 .app-info--details {
   width: 610px;
-
+  margin-top: 0;
+  color: $story--content-color;
   font-size: 18px;
   line-height: 28px;
   -webkit-font-smoothing: subpixel-antialiased;
   text-align: left;
+
 }
 
 
-.container-description {
+.app-info--container-description {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -31,7 +44,7 @@ p.apps--title-metadata {
     text-align: left;
   }
 
-  .description-buttons{
+  .app-info--description-buttons{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -44,12 +57,12 @@ p.apps--title-metadata {
   }
 }
 
-.container-pictures {
+.app-info--container-pictures {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
-  img.app-image {
+  img.app-info--image {
     margin-top: 5px;
     margin-bottom: 5px;
   }

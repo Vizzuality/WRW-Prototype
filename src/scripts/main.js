@@ -44,6 +44,7 @@ require([
       this.router.on('route:partnersVizzuality', this.partnersVizzuality, this);
       this.router.on('route:partnersWri', this.partnersWri, this);
       this.router.on('route:slideshow', this.slideshow, this);
+      this.router.on('route:slideshowPeru', this.slideshowPeru, this);
       this.router.on('route:map', this.map, this);
       this.router.on('route:interactiveEdi', this.interactiveEdi, this);
       this.router.on('route:explore', this.explore, this);
@@ -112,6 +113,12 @@ require([
     },
 
     slideshow: function() {
+      this._checkAuth(function() {
+        new SlideshowView();
+      });
+    },
+
+    slideshowPeru: function() {
       this._checkAuth(function() {
         new SlideshowView();
       });
