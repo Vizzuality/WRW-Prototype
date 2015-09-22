@@ -25,7 +25,10 @@ define([
       this.layers = {
         fires: document.getElementById('layer1').src,
         protectedAreas: document.getElementById('layer2').src,
-        umd: document.getElementById('layer3').src
+        umd: document.getElementById('layer3').src,
+        temperature: document.getElementById('layer4').src,
+        population: document.getElementById('layer5').src,
+        conflicts: document.getElementById('layer6').src
       };
 
       this.createGlobe();
@@ -93,6 +96,27 @@ define([
       this.resetLayersList();
 
       switch(vis) {
+        case 'population':
+          this.globe.ambientLight.color.setHex(0xcccccc);
+          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
+          this.globe.createLayer(this.currentVis, this.layers.population);
+          this.setLegend(vis);
+          this.updateLayersList();
+          break;
+        case 'temperature':
+          this.globe.ambientLight.color.setHex(0xcccccc);
+          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
+          this.globe.createLayer(this.currentVis, this.layers.temperature);
+          this.setLegend(vis);
+          this.updateLayersList();
+          break;
+        case 'conflicts':
+          this.globe.ambientLight.color.setHex(0xcccccc);
+          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
+          this.globe.createLayer(this.currentVis, this.layers.conflicts);
+          this.setLegend(vis);
+          this.updateLayersList();
+          break;
         case 'fires':
           this.globe.ambientLight.color.setHex(0xcccccc);
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
