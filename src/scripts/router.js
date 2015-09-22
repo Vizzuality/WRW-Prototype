@@ -20,6 +20,7 @@ define([
       'insights-map.html': 'map',
       'insights-interactive-edi.html': 'interactiveEdi',
       'insights-slideshow-peru.html': 'slideshowPeru',
+      'insights-interactive-map.html': 'interactiveMap',
       'explore.html': 'explore',
       'explore-detail.html': 'exploreDetail',
       'explore-standalone.html': 'exploreStandalone',

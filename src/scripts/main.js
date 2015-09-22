@@ -13,6 +13,7 @@ require([
   'views/explore_standalone',
   'explore/chart_view',
   'views/interactive_edi',
+  'views/interactive_map',
 
   // Common modules
   // TODO: refactor them
@@ -23,7 +24,7 @@ require([
   'views/fullscreen'
 ], function(Backbone, Router, auth, LoginView, SearchCountriesView, GlobeView,
     DashboardView, SlideshowView, MapView, ExploreView,
-    ExploreStandaloneView, ChartView, InteractiveEdiView) {
+    ExploreStandaloneView, ChartView, InteractiveEdiView, InteractiveMapView) {
 
   var App = Backbone.View.extend({
 
@@ -47,6 +48,7 @@ require([
       this.router.on('route:slideshowPeru', this.slideshowPeru, this);
       this.router.on('route:map', this.map, this);
       this.router.on('route:interactiveEdi', this.interactiveEdi, this);
+      this.router.on('route:interactiveMap', this.interactiveMap, this);
       this.router.on('route:explore', this.explore, this);
       this.router.on('route:exploreDetail', this.exploreDetail, this);
       this.router.on('route:exploreStandalone', this.exploreStandalone, this);
@@ -133,6 +135,12 @@ require([
     interactiveEdi: function() {
       this._checkAuth(function() {
         new InteractiveEdiView();
+      });
+    },
+
+    interactiveMap: function() {
+      this._checkAuth(function() {
+        new InteractiveMapView();
       });
     },
 
