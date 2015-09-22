@@ -28,7 +28,10 @@ define([
         umd: document.getElementById('layer3').src,
         temperature: document.getElementById('layer4').src,
         population: document.getElementById('layer5').src,
-        conflicts: document.getElementById('layer6').src
+        conflicts: document.getElementById('layer6').src,
+        grace: document.getElementById('layer4').src,
+        epidemic: document.getElementById('layer5').src,
+        protests: document.getElementById('layer6').src
       };
 
       this.createGlobe();
@@ -117,10 +120,10 @@ define([
           this.setLegend(vis);
           this.updateLayersList();
           break;
-        case 'fires':
+        case 'grace':
           this.globe.ambientLight.color.setHex(0xcccccc);
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
-          this.globe.createLayer(this.currentVis, this.layers.fires);
+          this.globe.createLayer(this.currentVis, this.layers.grace);
           this.setLegend(vis);
           this.updateLayersList();
           break;
@@ -135,6 +138,27 @@ define([
           this.globe.ambientLight.color.setHex(0xcccccc);
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
           this.globe.createLayer(this.currentVis, this.layers.umd);
+          this.setLegend(vis);
+          this.updateLayersList();
+          break;
+        case 'fires':
+          this.globe.ambientLight.color.setHex(0xcccccc);
+          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
+          this.globe.createLayer(this.currentVis, this.layers.fires);
+          this.setLegend(vis);
+          this.updateLayersList();
+          break;
+        case 'epidemic':
+          this.globe.ambientLight.color.setHex(0xcccccc);
+          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
+          this.globe.createLayer(this.currentVis, this.layers.epidemic);
+          this.setLegend(vis);
+          this.updateLayersList();
+          break;
+        case 'protests':
+          this.globe.ambientLight.color.setHex(0xcccccc);
+          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
+          this.globe.createLayer(this.currentVis, this.layers.protests);
           this.setLegend(vis);
           this.updateLayersList();
           break;
