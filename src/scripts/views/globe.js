@@ -209,13 +209,29 @@ define([
           $title.text('UMD');
           $title.addClass('color-umd');
           break;
+        case 'temperature':
+          $title.text('Temperature');
+          $title.addClass('color-temperature');
+          break;
         case 'grace':
           $title.text('Groundwater depletion (GRACE)');
           $title.addClass('color-grace');
           break;
+        case 'population':
+          $title.text('Population data');
+          $title.addClass('color-population');
+          break;
+        case 'conflicts':
+          $title.text('Conflicts events');
+          $title.addClass('color-conflicts');
+          break;
         case 'protests':
           $title.text('Protests');
           $title.addClass('color-protests');
+          break;
+        case 'epidemic':
+          $title.text('Epidemics');
+          $title.addClass('color-epidemic');
           break;
       }
     },
