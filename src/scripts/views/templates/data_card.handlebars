@@ -1,13 +1,13 @@
 <div class="cell data">
   <div class="card data">
     <div class="card-image">
-      <a href="explore-standalone.html#{{cartodb_id}}">
+      <a href="{{#if explore}}explore-detail.html{{else}}explore-standalone.html{{/if}}#{{cartodb_id}}">
         <img src="img/data-explore-{{cartodb_id}}-th.png"/>
       </a>
     </div>
     <div class="card-content">
       <h5 class="card-title">
-        <a href="explore-standalone.html#{{cartodb_id}}">{{name}}</a>
+        <a href="{{#if explore}}explore-detail.html{{else}}explore-standalone.html{{/if}}#{{cartodb_id}}">{{name}}</a>
       </h5>
       <p class="card-sub-title">{{author}}</p>
     </div>
