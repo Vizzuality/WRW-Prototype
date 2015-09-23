@@ -10,7 +10,7 @@ require([
   'views/slideshow',
   'views/map',
   'views/explore',
-  'views/explore_standalone',
+  'views/explore_content',
   'explore/chart_view',
   'views/interactive_edi',
   'views/interactive_map',
@@ -25,7 +25,7 @@ require([
   'views/fullscreen'
 ], function(Backbone, Router, auth, LoginView, SearchCountriesView, GlobeView,
     DashboardView, SlideshowView, MapView, ExploreView,
-    ExploreStandaloneView, ChartView, InteractiveEdiView, InteractiveMapView,
+    ExploreContentView, ChartView, InteractiveEdiView, InteractiveMapView,
     ExploreDatasetsView) {
 
   var App = Backbone.View.extend({
@@ -156,14 +156,15 @@ require([
 
     exploreDetail: function() {
       this._checkAuth(function() {
-        new ExploreView();
+        new ExploreContentView();
+        setTimeout(function() { new ExploreView(); }, 1000);
         new ChartView({el: '.js--detail-visualization'}).render();
       });
     },
 
     exploreStandalone: function() {
       this._checkAuth(function() {
-        new ExploreStandaloneView();
+        new ExploreContentView();
         new ChartView({el: '.js--detail-visualization'}).render();
       });
     },

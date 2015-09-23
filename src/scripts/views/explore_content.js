@@ -64,6 +64,7 @@ define([
       $('.js-likes').toggleClass('is-active', contentData.is_liked);
       $('.js-likes-count').text(contentData.likes_count);
       $('.js-content').html(contentData.content);
+      $('title').text(contentData.name + ' | Resource Watch');
     }
 
   });
