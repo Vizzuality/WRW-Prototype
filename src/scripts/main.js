@@ -54,7 +54,8 @@ require([
       this.router.on('route:explore', this.explore, this);
       this.router.on('route:exploreDetail', this.exploreDetail, this);
       this.router.on('route:exploreStandalone', this.exploreStandalone, this);
-      this.router.on('route:appInfo', this.appInfo, this);
+      this.router.on('route:appDeforestation', this.appDeforestation, this);
+      this.router.on('route:appSkydipper', this.appSkydipper, this);
       this.router.on('route:default', this.default, this);
 
     },
@@ -156,6 +157,7 @@ require([
 
     exploreDetail: function() {
       this._checkAuth(function() {
+        new ExploreView();
         new ExploreContentView({ el: '.js-similar-datasets', explore: true });
         setTimeout(function() { new ExploreView(); }, 1000);
         new ChartView({el: '.js--detail-visualization'}).render();
@@ -169,7 +171,11 @@ require([
       });
     },
 
-    appInfo: function() {
+    appDeforestation: function() {
+      this._checkAuth();
+    },
+
+    appSkydipper: function() {
       this._checkAuth();
     },
 

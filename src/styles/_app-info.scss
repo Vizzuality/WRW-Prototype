@@ -1,20 +1,17 @@
-.app-info--title {
-  font-size: 48px;
-  font-weight: $font--light;
-  color: $story--title-color;
-  line-height: 52px;
-  text-align: left;
-  margin-bottom: 12px;
-}
+.app-info--container-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
 
-p.app-info--title-metadata {
-  padding-top: 0;
-  color: $story--content-color
-}
-
-p.app-info--description {
-  margin-top: 0;
-  color: $story--content-color;
+  .app-info--title {
+    font-size: 48px;
+    font-weight: $font--light;
+    color: $story--title-color;
+    line-height: 52px;
+    text-align: left;
+    margin-bottom: 12px;
+  }
 }
 
 .app-info--details {
@@ -26,6 +23,11 @@ p.app-info--description {
   -webkit-font-smoothing: subpixel-antialiased;
   text-align: left;
 
+}
+
+p.app-info--description {
+  margin-top: 0;
+  color: $story--content-color;
 }
 
 

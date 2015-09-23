@@ -10,10 +10,15 @@ block content
       li
         a(href='#') Apps
       li App info
-  .container
+  .container.app-info--container-title
     h1.app-info--title
-      | Track Deforestation In Real Time
-    p.app-info--title-metadata
+      | Track Deforestation in Real Time
+    .story--metadata-stars.active
+      svg.icon.icon-star
+        use(xlink:href='#icon-star')
+      span 1,522
+  .container
+    .story--metadata-author
       | by &nbsp;
       a(href='#') Global Forest Watch
 

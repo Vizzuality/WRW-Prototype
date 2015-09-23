@@ -57,11 +57,7 @@ mixin card(type)
       - var cardUrl = attributes.url + "?title=" + encodeURIComponent(attributes.title)
     else
       - var cardUrl = attributes.url
-    //- if attributes.url.indexOf("?title=") > -1
-    //-   cutUrl = attributes.url.substring(0, currUrl.indexOf("?title="))
-    //-   cardUrl = cutUrl + "?title=" + encodeURIComponent(attributes.title)
-    //- else
-    //-   cardUrl = attributes.url + "?title=" + encodeURIComponent(attributes.title)
+
     .cell.data
       .card.data
         .card-image
@@ -129,14 +125,20 @@ mixin card(type)
     //-   star_active:  is card 'liked'?
     //-   id_data:      data's id attached to the button
     //-   button_text:  button's text
+
+    if attributes.url == '#'
+      - var cardUrl = attributes.url
+    else
+      - var cardUrl = attributes.url + "?title=" + encodeURIComponent(attributes.title)
+
     .cell.data
       .card.data
         .card-image
-          a(href=attributes.url)
+          a(href=cardUrl)
             img(src=attributes.thumbnail)
         .card-content
           h5.card-title
-            a(href=attributes.url)= attributes.title
+            a(href=cardUrl)= attributes.title
           p.card-sub-title= attributes.sub_title
         ul.card-info
           li
