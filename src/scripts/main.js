@@ -14,6 +14,7 @@ require([
   'explore/chart_view',
   'views/interactive_edi',
   'views/interactive_map',
+  'views/explore_datasets',
 
   // Common modules
   // TODO: refactor them
@@ -24,7 +25,8 @@ require([
   'views/fullscreen'
 ], function(Backbone, Router, auth, LoginView, SearchCountriesView, GlobeView,
     DashboardView, SlideshowView, MapView, ExploreView,
-    ExploreStandaloneView, ChartView, InteractiveEdiView, InteractiveMapView) {
+    ExploreStandaloneView, ChartView, InteractiveEdiView, InteractiveMapView,
+    ExploreDatasetsView) {
 
   var App = Backbone.View.extend({
 
@@ -60,6 +62,7 @@ require([
     homepage: function() {
       this._checkAuth(function() {
         new SearchCountriesView({ el: '.choose-country' });
+        new ExploreDatasetsView({ el: '.js-explore-datasets' });
       });
     },
 
