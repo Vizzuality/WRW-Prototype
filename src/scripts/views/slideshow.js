@@ -16,17 +16,13 @@ define([
     },
 
     initialize: function() {
-      $(document).ready(_.bind(function() {
-
-        this.$el.slick({
-          arrows: false,
-          draggable: false,
-          infinite: false,
-          fade: true,
-          adaptiveHeight: true
-        });
-
-      }, this));
+      this.$el.slick({
+        arrows: false,
+        draggable: false,
+        infinite: false,
+        fade: true,
+        adaptiveHeight: false
+      });
 
       this.$asideWideContainer = $('.insights--slideshow-wide-aside');
 
