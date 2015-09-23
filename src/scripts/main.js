@@ -157,7 +157,6 @@ require([
 
     exploreDetail: function() {
       this._checkAuth(function() {
-        new ExploreView();
         new ExploreContentView({ el: '.js-similar-datasets', explore: true });
         setTimeout(function() { new ExploreView(); }, 1000);
         new ChartView({el: '.js--detail-visualization'}).render();
