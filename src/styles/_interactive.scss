@@ -114,6 +114,10 @@
   opacity: 1;
   transition: opacity 300ms;
   backface-visibility: hidden; /* For Safari */
+
+  a {
+    color: white;
+  }
 }
 
 .insights--interactive-intro-2 {
