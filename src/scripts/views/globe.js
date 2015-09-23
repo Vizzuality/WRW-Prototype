@@ -195,42 +195,52 @@ define([
     setLegend: function(vis) {
       this.$legend.removeClass('is-hidden');
       var $title = this.$legend.find('h3');
+      var $link = this.$legend.find('a');
       switch(vis) {
         case 'fires':
           $title.text('Fires');
           $title.addClass('color-fires');
+          $link.attr('href', 'explore-detail.html#11');
           break;
         case 'protected-areas':
           $title.text('Protected areas');
           $title.addClass('color-protected-areas');
+          $link.attr('href', 'explore-detail.html#10');
           break;
         case 'umd':
           $title.text('UMD');
           $title.addClass('color-umd');
+          $link.attr('href', 'explore-detail.html#9');
           break;
         case 'temperature':
           $title.text('Temperature');
           $title.addClass('color-temperature');
+          $link.attr('href', 'explore-detail.html#13');
           break;
         case 'grace':
           $title.text('Groundwater depletion (GRACE)');
           $title.addClass('color-grace');
+          $link.attr('href', 'explore-detail.html#12');
           break;
         case 'population':
           $title.text('Population data');
           $title.addClass('color-population');
+          $link.attr('href', 'explore-detail.html#14');
           break;
         case 'conflicts':
           $title.text('Conflicts events');
           $title.addClass('color-conflicts');
+          $link.attr('href', 'explore-detail.html#17');
           break;
         case 'protests':
           $title.text('Protests');
           $title.addClass('color-protests');
+          $link.attr('href', 'explore-detail.html#16');
           break;
         case 'epidemic':
           $title.text('Epidemics');
           $title.addClass('color-epidemic');
+          $link.attr('href', 'explore-detail.html#15');
           break;
       }
     },

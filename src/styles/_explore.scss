@@ -591,6 +591,11 @@ a.explore--map-button {
   li:first-of-type {
     width: 190px;
   }
+
+  a {
+    color: #9aa2a9;
+    text-decoration: none;
+  }
 }
 
 @media screen and (max-width: $responsive-break--tablet) {
