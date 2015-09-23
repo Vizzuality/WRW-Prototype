@@ -73,7 +73,7 @@ define([
       $('.js-author').text(contentData.author);
       $('.js-date').text(date);
       $('.js-likes').toggleClass('is-active', contentData.is_liked);
-      $('.js-likes-count').text(contentData.likes_count);
+      $('.js-likes-count').text(('' + contentData.likes_count).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
       $('.js-content').html(contentData.content);
       $('title').text(contentData.name + ' | Resource Watch');
 

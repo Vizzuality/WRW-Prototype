@@ -32,7 +32,8 @@ define([
       _.each(data, function(card) {
         this.$el.append(this.template(_.extend(card, {
           explore: this.areExploreCards,
-          data_id: card.cartodb_id <= 3 ? '' + (card.cartodb_id - 1) : null
+          data_id: card.cartodb_id <= 3 ? '' + (card.cartodb_id - 1) : null,
+          likes_count: ('' + card.likes_count).replace(/\B(?=(\d{3})+(?!\d))/g, ",")
         })));
       }, this);
     }
