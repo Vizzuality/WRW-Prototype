@@ -88,7 +88,7 @@ define([
       var w = this.globe.element.clientWidth;
       var h = this.globe.element.clientHeight;
       var isSpaceRemoved = false;
-      var isLightRemoved = false;
+      var isLightRemoved = true;
 
       this.$title.hide(100)
       this.$nav.addClass('is-blur');
@@ -126,7 +126,6 @@ define([
           break;
         case 'grace':
           isSpaceRemoved = true;
-          isLightRemoved = true;
           this.$el.addClass('is-grace');
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
           this.globe.createLayer(this.currentVis, this.layers.grace);
@@ -162,13 +161,13 @@ define([
           this.updateLayersList();
           break;
         case 'protests':
-          isLightRemoved = true;
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
           this.globe.createLayer(this.currentVis, this.layers.protests);
           this.setLegend(vis);
           this.updateLayersList();
           break;
         default:
+          isLightRemoved = false;
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.satellite);
           this.globe.ambientLight.color.setHex(0x444444);
           this.globe.addClouds();

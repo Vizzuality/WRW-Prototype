@@ -114,6 +114,10 @@
   opacity: 1;
   transition: opacity 300ms;
   backface-visibility: hidden; /* For Safari */
+
+  a {
+    color: white;
+  }
 }
 
 .insights--interactive-intro-2 {
@@ -532,7 +536,7 @@
     flex-wrap: wrap;
 
     & > span {
-      flex-basis: #{100% / 8}%;
+      flex-basis: #{100% / 8};
       height: 8px;
 
       $chloropleth-colors: #d9300b, #da7f6b, #f1c4ba, #7f8487, #b5ddea, #70c4e1, #30aad1;
