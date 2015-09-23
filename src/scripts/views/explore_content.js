@@ -53,6 +53,9 @@ define([
         .then(_.bind(this.render, this))
         .fail(function() {
           console.log('Error fetching the data');
+        })
+        .always(function() {
+          $('.is-loading').removeClass('is-loading');
         });
     },
 

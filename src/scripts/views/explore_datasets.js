@@ -9,7 +9,14 @@ define([
 
   var ExploreCollection = Backbone.Collection.extend({
 
-    url: 'https://insights.cartodb.com/api/v2/sql?q=SELECT * FROM explore_table_config',
+    initialize: function(options) {
+      this.limit = options && options.limit;
+    },
+
+    url: function() {
+      var limit = this.limit ? ' LIMIT ' + this.limit : '';
+      return 'https://insights.cartodb.com/api/v2/sql?q=SELECT * FROM explore_table_config' + limit;
+    },
 
     parse: function(data) {
       return data && data.rows;
@@ -23,7 +30,7 @@ define([
 
     initialize: function(options) {
       this.areExploreCards = options && options.explore;
-      this.exploreCollection = new ExploreCollection();
+      this.exploreCollection = new ExploreCollection({ limit: options && options.limit });
       this.exploreCollection.fetch().done(_.bind(this.render, this));
     },
 
