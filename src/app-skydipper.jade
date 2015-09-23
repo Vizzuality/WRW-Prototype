@@ -1,7 +1,7 @@
 extends ./templates/base.jade
 
 append vars
-  - var title = 'Track Deforestation In Real Time'
+  - var title = 'Skydipper'
   - var className = 'is-app-info'
 
 block content
@@ -10,12 +10,17 @@ block content
       li
         a(href='#') Apps
       li App info
-  .container
+  .container.app-info--container-title
     h1.app-info--title
-      | Track Deforestation In Real Time
-    p.app-info--title-metadata
+      | Skydipper
+    .story--metadata-stars.active
+      svg.icon.icon-star
+        use(xlink:href='#icon-star')
+      span 2,530
+  .container
+    .story--metadata-author
       | by &nbsp;
-      a(href='#') Global Forest Watch
+      a(href='partners-vizzuality.html') vizzuality
 
   .container
     //description
@@ -26,14 +31,12 @@ block content
         p.app-info--description
           | Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing vitae est. Sed nec felis pellentesque, lacinia dui sed, ultricies sapien. Pellentesque orci lectus, consectetur vel posuere posuere, rutrum eu ipsum. Aliquam eget odio sed ligula iaculis consequat at eget orci. Mauris molestie sit amet metus mattis varius.
         .app-info--description-buttons
-          a.button.button-large.story--intro-button(href='#')
-            | AVAILABLE FOR IOS
-          a.button.button-large.story--intro-button(href='#')
-            | AVAILABLE FOR ANDROID
+          a.button.button-large.story--intro-button(href='http://vizzuality.github.io/skydipper/')
+            | LEARN MORE
       .container.app-info--container-pictures
-        img.app-info--image(src='img/app-1-c.png')
-        img.app-info--image(src='img/app-1-b.png')
-        img.app-info--image(src='img/app-1-a.png')
+        img.app-info--image(src='img/app-2-a.png')
+        img.app-info--image(src='img/app-2-b.png')
+        img.app-info--image(src='img/app-2-c.png')
 
     // details
     section
@@ -101,16 +104,17 @@ block content
         )
         +card('app')(
           url='#',
-          thumbnail='img/app-2-th.jpg',
-          title='World Resources Watch AI',
-          star_count='6,574'
-        )
-        +card('app')(
-          url='#',
           thumbnail='img/app-3-th.jpg',
           title='Android Wearable Environmental Alerts',
           star_count='6,574'
         )
+        +card('app')(
+          url='app-deforestation.html',
+          thumbnail='img/app-4-th.jpg',
+          title='Track Deforestation in Real Time',
+          star_count='6,574'
+        )
+        
 
     // planet-pulse
     section
