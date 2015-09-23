@@ -10,10 +10,11 @@ require([
   'views/slideshow',
   'views/map',
   'views/explore',
-  'views/explore_standalone',
+  'views/explore_content',
   'explore/chart_view',
   'views/interactive_edi',
   'views/interactive_map',
+  'views/explore_datasets',
 
   // Common modules
   // TODO: refactor them
@@ -24,7 +25,8 @@ require([
   'views/fullscreen'
 ], function(Backbone, Router, auth, LoginView, SearchCountriesView, GlobeView,
     DashboardView, SlideshowView, MapView, ExploreView,
-    ExploreStandaloneView, ChartView, InteractiveEdiView, InteractiveMapView) {
+    ExploreContentView, ChartView, InteractiveEdiView, InteractiveMapView,
+    ExploreDatasetsView) {
 
   var App = Backbone.View.extend({
 
@@ -60,6 +62,7 @@ require([
     homepage: function() {
       this._checkAuth(function() {
         new SearchCountriesView({ el: '.choose-country' });
+        new ExploreDatasetsView({ el: '.js-explore-datasets' });
       });
     },
 
@@ -146,20 +149,22 @@ require([
 
     explore: function() {
       this._checkAuth(function() {
-        new ExploreView();
+        new ExploreDatasetsView({ el: '.js-explore-datasets', explore: true });
+        setTimeout(function() { new ExploreView(); }, 1000);
       });
     },
 
     exploreDetail: function() {
       this._checkAuth(function() {
-        new ExploreView();
+        new ExploreContentView({ el: '.js-similar-datasets', explore: true });
+        setTimeout(function() { new ExploreView(); }, 1000);
         new ChartView({el: '.js--detail-visualization'}).render();
       });
     },
 
     exploreStandalone: function() {
       this._checkAuth(function() {
-        new ExploreStandaloneView();
+        new ExploreContentView({ el: '.js-similar-datasets' });
         new ChartView({el: '.js--detail-visualization'}).render();
       });
     },
