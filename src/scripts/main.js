@@ -153,6 +153,7 @@ require([
     exploreDetail: function() {
       this._checkAuth(function() {
         new ExploreView();
+        new ExploreStandaloneView();
         new ChartView({el: '.js--detail-visualization'}).render();
       });
     },
