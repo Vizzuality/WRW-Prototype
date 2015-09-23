@@ -62,7 +62,7 @@ require([
     homepage: function() {
       this._checkAuth(function() {
         new SearchCountriesView({ el: '.choose-country' });
-        new ExploreDatasetsView({ el: '.js-explore-datasets' });
+        new ExploreDatasetsView({ el: '.js-explore-datasets', limit: 8 });
       });
     },
 
