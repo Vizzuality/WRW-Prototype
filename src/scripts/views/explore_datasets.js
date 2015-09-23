@@ -21,7 +21,8 @@ define([
 
     template: Handlebars.compile(TPL),
 
-    initialize: function() {
+    initialize: function(options) {
+      this.areExploreCards = options && options.explore;
       this.exploreCollection = new ExploreCollection();
       this.exploreCollection.fetch().done(_.bind(this.render, this));
     },
@@ -29,7 +30,10 @@ define([
     render: function() {
       var data = this.exploreCollection.toJSON();
       _.each(data, function(card) {
-        this.$el.append(this.template(card));
+        this.$el.append(this.template(_.extend(card, {
+          explore: this.areExploreCards,
+          data_id: card.cartodb_id <= 3 ? '' + (card.cartodb_id - 1) : null
+        })));
       }, this);
     }
 

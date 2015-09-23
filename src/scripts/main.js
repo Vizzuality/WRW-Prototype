@@ -149,7 +149,8 @@ require([
 
     explore: function() {
       this._checkAuth(function() {
-        new ExploreView();
+        new ExploreDatasetsView({ el: '.js-explore-datasets', explore: true });
+        setTimeout(function() { new ExploreView(); }, 1000);
       });
     },
 
