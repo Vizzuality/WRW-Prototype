@@ -336,9 +336,21 @@
     background: linear-gradient(90deg, #FEFB00, #FF3C00);
   }
   .color-grace:after {
-    background: linear-gradient(90deg, #0078A4, #169BCB);
+    background: linear-gradient(90deg, #1d4ad8, #c7ffff);
   }
   .color-protests:after {
-    background: linear-gradient(90deg, #B362D8, #040306);
+    background: linear-gradient(90deg, #B362D8, #030206);
+  }
+  .color-conflicts:after {
+    background: linear-gradient(90deg, #2c2da1, #60fffe);
+  }
+  .color-epidemics:after {
+    background: linear-gradient(90deg, #9c2d42, #fef6a5);
+  }
+  .color-population:after {
+    background: linear-gradient(90deg, #f9f681, #be722a);
+  }
+  .color-temperature:after {
+    background: linear-gradient(90deg, #260058, #feeb3c);
   }
 }
