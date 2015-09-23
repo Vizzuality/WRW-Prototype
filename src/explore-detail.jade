@@ -40,39 +40,7 @@ block content
       section.explore-datasets
         header.section-header.explore--results-header
           h3 Similar datasets
-        .gridbox
-          include ./templates/card.jade
-          +card('explore')(
-            url='explore-detail.html',
-            thumbnail='img/data-9-th.png',
-            title='Energy plants',
-            download_map=true,
-            download_csv=true,
-            sub_title='CARMA',
-            star_count='6,578',
-            id_data='0',
-            button_text='Add to map'
-          )
-          +card('explore')(
-            url='explore-detail.html',
-            thumbnail='img/data-10-th.png',
-            title='Global Water Risk',
-            download_csv=true,
-            sub_title='Aqueduct',
-            star_count='6,578',
-            id_data='1',
-            button_text='Add to map'
-          )
-          +card('explore')(
-            url='explore-detail.html',
-            thumbnail='img/data-11-th.png',
-            title='Country Flood Risk',
-            download_csv=true,
-            sub_title='Aqueduct',
-            star_count='6,578',
-            id_data='2',
-            button_text='Add to map'
-          )
+        .gridbox.js-similar-datasets
 
   #map.explore--map.explore--narrow-map.js--explore--map
     a.js--map-expand.explore--map-button.is-mobile-hidden(href='#')
