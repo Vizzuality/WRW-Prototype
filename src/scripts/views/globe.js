@@ -1,8 +1,9 @@
 define([
   'underscore',
   'backbone',
-  'lib/globe'
-], function(_, Backbone, Globe) {
+  'lib/globe',
+  'views/fullscreen'
+], function(_, Backbone, Globe, fullscreen) {
 
   'use strict';
 
@@ -16,6 +17,8 @@ define([
       this.$articles = $('#planetPulseContent').find('article');
       this.$backBtn = $('#backBtn');
       this.$legend = $('.planet-pulse--legend');
+      this.fullscreenCount = 0;
+      this.$planetPulse = $('.planet-pulse');
 
       this.basemaps = {
         satellite: document.getElementById('basemap1').src,
@@ -47,6 +50,7 @@ define([
       fullscreenEvents.split(' ').forEach(function(e) {
         document.addEventListener(e, function() {
           _this.globe.resize();
+          _this.fullscreenWatcher();
         });
       });
 
@@ -59,6 +63,17 @@ define([
           _this.globe.camera.setViewOffset( w, h, 0, 0, w, h );
         }
       }, 30));
+    },
+
+    fullscreenWatcher: function() {
+      var isEnteringFullscreen = this.fullscreenCount % 2 === 0;
+      this.fullscreenCount++;
+
+      if(isEnteringFullscreen && !fullscreen.isFullscreen()) {
+        this.$planetPulse.addClass('is-fullscreen');
+      } else if(!isEnteringFullscreen && fullscreen.isFullscreen()) {
+        this.$planetPulse.removeClass('is-fullscreen');
+      }
     },
 
     checkHash: function() {
