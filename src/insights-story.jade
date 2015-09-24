@@ -136,12 +136,21 @@ block content
         h3 Found in these collections
       .gridbox
         include ./templates/card.jade
-        each val in [1, 2, 3]
-          +card('category')(
-            url='insights-collection.html',
-            thumbnail='img/collection-'+val+'-th.jpg',
-            title='Worldwide Deforestation'
-          )
+        +card('category')(
+          url='insights-collection.html',
+          thumbnail='img/collection-1-th.jpg',
+          title='Water and Drought'
+        )
+        +card('category')(
+          url='#',
+          thumbnail='img/collection-2-th.jpg',
+          title='Rainforest Observatory'
+        )
+        +card('category')(
+          url='#',
+          thumbnail='img/collection-3-th.jpg',
+          title='Biodiversity Observatory 2015'
+        )
     section
       header.section-header
         h3 Planet Pulse
