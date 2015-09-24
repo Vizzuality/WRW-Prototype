@@ -38,5 +38,20 @@ p.login--description {
 }
 
 .login--info-container {
+  padding-left: 15px;
+  padding-right: 15px;
   margin-top: 50px;
+
+    a.is-link {
+    cursor: default;
+    transition: filter 0.2s, opacity 0.2s;
+  }
+
+  &:hover {
+    a.is-link {
+      filter: grayscale(100%);
+      opacity: 0.4;
+    }
+
+
 }
