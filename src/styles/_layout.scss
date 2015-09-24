@@ -148,6 +148,18 @@ section {
   }
 }
 
+.is-disabled {
+  filter: grayscale(0%);
+  opacity: 1;
+  transition: filter 0.3s, opacity 0.3s;
+
+  &.is-disabled:hover {
+    filter: grayscale(100%);
+    opacity: 0.4;
+    cursor: default;
+  }
+}
+
 @media screen and (max-width: $responsive-break--tablet) {
   .container {
     width: $responsive-page--width;
