@@ -30,3 +30,13 @@ input.button.button-large.login--container-button {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
+
+p.login--description {
+  margin-top: 0px;
+  font-size: 18px;
+  color: $story--intro-color;
+}
+
+.login--info-container {
+  margin-top: 50px;
+}
