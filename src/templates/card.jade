@@ -107,7 +107,7 @@ mixin card(type)
     //-   thumbnail:    image url
     //-   title:        card's title
     .cell
-      .card.category
+      .card.category(class= attributes.url == '#' ? 'is-disabled' : '')
         .card-image
           a(href=attributes.url)
             img(src=attributes.thumbnail)

@@ -19,5 +19,9 @@
     .card-title a {
       border: none !important;
     }
+
+    a.is-link {
+      cursor: default !important;
+    }
   }
 }

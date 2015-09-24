@@ -11,10 +11,10 @@ block content
     section
       header.insights--discover-title.section-header
         h3 Discover Insights
-        a.section-header-link(href='#') advanced search
+        a.section-header-link.is-disabled(href='#') advanced search
       .insights--search-container
         input.insights--search-input(placeholder='Search topics and places')
-        a.insights--search-submit.button.button-large Search
+        a.insights--search-submit.button.button-large.is-disabled Search
     section
       header.section-header
         h3 Featured insights
@@ -89,6 +89,7 @@ block content
           title='Extinct Species in the 21st Century'
         )
 
+    // planet-pulse
     section
       header.section-header
         h3 Planet Pulse
@@ -96,7 +97,8 @@ block content
           | Launch
           i.fa.fa-angle-right
       .banner
-        img.banner-image(src='img/planet-pulse-1.png')
+        a(href='planet-pulse.html')
+          img.banner-image(src='img/planet-pulse-1.png')
         h3.banner-header Real-time data monitoring the planet
         a.banner-button.button.button-large(href='planet-pulse.html') Launch Planet Pulse
 
