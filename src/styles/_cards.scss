@@ -3,5 +3,21 @@
   overflow: hidden;
   margin: $element-top-margin 0 $element-bottom-margin 0;
   background-color: $card-bg-color;
+  filter: grayscale(0%);
+  opacity: 1;
+  transition: filter 0.3s, opacity 0.3s;
 
+  &.is-disabled:hover {
+    filter: grayscale(100%);
+    opacity: 0.4;
+
+    .card-info-source,
+    .card-info-stars {
+      pointer-events: none;
+    }
+
+    .card-title a {
+      border: none !important;
+    }
+  }
 }
