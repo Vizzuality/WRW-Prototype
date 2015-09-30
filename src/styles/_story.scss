@@ -248,10 +248,12 @@
   }
 }
 
-.story--wide-media {
-  display: flex;
-  justify-content: center;
+.story--wide-media img {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
 }
+
 
 .story--wide-media-caption {
   width: $page--width;
@@ -442,9 +444,8 @@
     }
   }
 
-  .story--wide-media img {
-    width: 100%;
-    height: 100%;
+  .story--wide-media {
+
   }
 
   .story--comments {
