@@ -5,18 +5,6 @@
   background-size: 100%;
   background-repeat: no-repeat;
 
-  a.is-link {
-    cursor: default;
-    transition: filter 0.2s, opacity 0.2s;
-  }
-
-  &:hover {
-    a.is-link {
-      filter: grayscale(100%);
-      opacity: 0.4;
-    }
-  }
-
   .card-image {
     height: 226px;
 

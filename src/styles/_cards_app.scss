@@ -1,17 +1,10 @@
 .card.app {
   width: $card--large-width;
-  height: 218px;
+  height: 228px;
 
   a.is-link {
     cursor: default;
     transition: filter 0.2s, opacity 0.2s;
-  }
-
-  &:hover {
-    a.is-link {
-      filter: grayscale(100%);
-      opacity: 0.4;
-    }
   }
 
   .card-image {
@@ -27,17 +20,15 @@
   .card-info-stars {
     display: inline-block;
     cursor: pointer;
+    margin-top: 10px;
   }
 
   .card-caption a {
     height: 30px;
-    margin-top: 10px;
     font-size: 14px;
     font-weight: $font--bold;
     color: $app--card-title-color;
     text-decoration: none;
-
-
   }
 
   .card-info-stars {
