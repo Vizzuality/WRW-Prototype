@@ -46,6 +46,11 @@ html(lang="en")
     //- The global scripts to include in every page
     script(src="//cdnjs.cloudflare.com/ajax/libs/three.js/r61/three.min.js")
     script(src="http://libs.cartocdn.com/cartodb.js/v3/3.15.1/cartodb.js")
+    script.
+      window.liveSettings={api_key:"231005c33bc44acf860e19993f578893"};
+      
+    script(src="//cdn.transifex.com/live.js")
+      
     block scripts
       if env == 'production'
         script(src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.js", data-main="scripts/main")
