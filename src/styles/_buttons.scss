@@ -14,6 +14,20 @@ a.button.button-grey:hover {
   text-align: center;
 }
 
+input.button,
+a.button {
+  filter: grayscale(0%);
+  opacity: 1;
+  transition: filter 0.3s, opacity 0.3s;
+
+  &.is-disabled:hover,
+  &.is-disabled:active{
+    filter: grayscale(100%);
+    opacity: 0.4;
+    cursor: default !important;
+  }
+}
+
 a.button.button-small {
   font-size: 12px;
   height: 30px;

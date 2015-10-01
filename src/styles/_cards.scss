@@ -4,4 +4,18 @@
   margin: $element-top-margin 0 $element-bottom-margin 0;
   background-color: $card-bg-color;
 
+  &.is-disabled:hover {
+    .card-info-source,
+    .card-info-stars {
+      pointer-events: none;
+    }
+
+    .card-title a {
+      border: none !important;
+    }
+
+    a.is-link {
+      cursor: default !important;
+    }
+  }
 }

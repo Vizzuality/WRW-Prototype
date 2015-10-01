@@ -13,7 +13,7 @@ mixin card(type)
     //-   star_count:  'like' count
     //-   star_active: is card 'liked'?
     .cell
-      .card.insight
+      .card.insight(class= attributes.url == '#' ? 'is-disabled' : '')
         .card-image
           a(href=attributes.url)
             img(src=attributes.thumbnail)
@@ -89,7 +89,7 @@ mixin card(type)
     //-   star_active:  is card 'liked'?
 
     .cell
-      .card.app
+      .card.app(class= attributes.url == '#' ? 'is-disabled' : '')
         .card-image
           a(href=attributes.url)
             img(src=attributes.thumbnail)
@@ -107,7 +107,7 @@ mixin card(type)
     //-   thumbnail:    image url
     //-   title:        card's title
     .cell
-      .card.category
+      .card.category(class= attributes.url == '#' ? 'is-disabled' : '')
         .card-image
           a(href=attributes.url)
             img(src=attributes.thumbnail)

@@ -13,11 +13,11 @@ block content
         h2.explore--title Explore
       .explore--search
         input.explore--search-input(type='text', placeholder='Search datasets')
-        a.button.button-large.explore--search-button(href='#') Search
+        a.button.button-large.explore--search-button.is-disabled(href='#') Search
       section
         header.section-header.explore--results-header
           | 14 datasets
-          ul.insights--results-filters
+          ul.insights--results-filters.is-disabled
             li.active
               a(href='#')
                 i.fa.fa-th-large
@@ -32,7 +32,7 @@ block content
       i.fa.fa-chevron-left
   .explore--map-legend.is-mobile-hidden
     ul.explore--map-legend-layers
-    ul.explore--map-legend-controls
+    ul.explore--map-legend-controls.is-disabled
       li
         i.fa.fa-pencil
         |  Create Insight

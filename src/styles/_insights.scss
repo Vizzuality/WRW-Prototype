@@ -157,6 +157,7 @@
 .insights--slideshow-container {
   position: relative;
   height: 1040px;
+  // height: calc(100vh - 130px);
 
   .slick-list,
   .slick-track {
@@ -164,6 +165,7 @@
   }
 
   .insights--slideshow-content {
+    float: left;
     height: 100%;
 
     &.slide-1 {
