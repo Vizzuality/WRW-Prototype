@@ -10,5 +10,12 @@ block content
     form#login
       input#password.login--container-password(type='password', name='password', placeholder='Type your secret password')
       input.button.button-large.login--container-button(type='submit', value='Submit')
+    .login--info-container
+      section
+        header.section-header
+          h3 Please note
+        p.login--description
+          | This is a prototype and currently under development. To request access, please
+          a(href='#')= ' contact us.' 
 
 block footer
