@@ -228,6 +228,18 @@
   }
 }
 
+@media screen and (max-width: 1340px) {
+  .story--media-container {
+    .control-left {
+      left: -50px;
+    }
+
+    .control-right {
+      right: -50px;
+    }
+  }
+}
+
 .story--wide-media-container {
   @extend %story--media-container;
   width: auto;
@@ -254,6 +266,9 @@
   display: block;
 }
 
+.story--wide-media img {
+  width: 100%;
+}
 
 .story--wide-media-caption {
   width: $page--width;
