@@ -103,7 +103,7 @@ define([
       new Infowindow({
         el: '.m-modal-window',
         title: configuration.info.title || '',
-        content: configuration.info.content || ''
+        content: configuration.info.content ? '<p>' + configuration.info.content + '</p><p class="explore--credits"><a href="' + configuration.info.link + '">Online source</a><br>' + configuration.info.source + '</p>' : ''
       });
     },
 
