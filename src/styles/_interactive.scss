@@ -444,6 +444,7 @@
 }
 
 .insights--interactive-scenario-legend {
+  @include is-not-selectable();
   width: 360px;
   background-color: white;
   border-radius: 3px;

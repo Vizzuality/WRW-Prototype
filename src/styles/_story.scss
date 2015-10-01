@@ -260,9 +260,10 @@
   }
 }
 
-.story--wide-media {
-  display: flex;
-  justify-content: center;
+.story--wide-media img {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
 }
 
 .story--wide-media img {
@@ -458,8 +459,8 @@
     }
   }
 
-  .story--wide-media img {
-    height: 100%;
+  .story--wide-media {
+
   }
 
   .story--comments {
