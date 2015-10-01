@@ -51,7 +51,7 @@ define([
             };
           }
 
-          this.addLayerToMap(id, $el, _.bind(callback, this));
+          this.addLayerToMap(id, $el, !!callback ? _.bind(callback, this) : null);
         }, this));
       }
 
