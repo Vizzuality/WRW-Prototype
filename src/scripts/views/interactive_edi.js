@@ -54,7 +54,7 @@ define([
     parse: function(data) {
       return {
         score: data[0].score,
-        strength: parseFloat(data[0].score) < 1 ? 'weak' : (parseFloat(data[0].score)  > 2 ? 'strong' : 'average')
+        strength: parseFloat(data[0].score) < 1 ? 'relatively weak' : (parseFloat(data[0].score)  > 2 ? 'strong' : 'relatively average')
       }
     }
   });
