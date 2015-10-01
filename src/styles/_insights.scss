@@ -156,6 +156,7 @@
 
 .insights--slideshow-container {
   position: relative;
+  overflow: hidden;
   transition: all 0.5s ease-in-out;
   // height: 1040px;
   // height: calc(100vh - 130px);
