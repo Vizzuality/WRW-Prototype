@@ -78,6 +78,7 @@ define([
       $('.js-likes').toggleClass('is-active', contentData.is_liked);
       $('.js-likes-count').text(('' + contentData.likes_count).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
       $('.js-content').html(contentData.content);
+      $('.js-credits').html('<a href="' + contentData.url_author + '">Online source</a><br>' + contentData.long_citation);
       $('title').text(contentData.name + ' | Resource Watch');
 
       _.each(similarData, function(card) {
