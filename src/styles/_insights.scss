@@ -156,60 +156,55 @@
 
 .insights--slideshow-container {
   position: relative;
-  height: 1040px;
+  transition: all 0.5s ease-in-out;
+  // height: 1040px;
   // height: calc(100vh - 130px);
-
-  .slick-list,
-  .slick-track {
-    height: 100%;
-  }
 
   .insights--slideshow-content {
     float: left;
-    height: 100%;
 
     &.slide-1 {
-      background: url('../img/insight-slides-1.jpg') no-repeat;
+      background: url('../img/insight-slides-1.jpg') no-repeat center;
       background-size: cover;
 
       &.map {
-        background: url('../img/insight-map-1.jpg') no-repeat;
+        background: url('../img/insight-map-1.jpg') no-repeat center;
         background-size: cover;
       }
 
       .is-peru & {
-        background: url('../img/insight-peru-slides-1.jpg') no-repeat;
+        background: url('../img/insight-peru-slides-1.jpg') no-repeat center;
         background-size: cover;
       }
     }
 
     &.slide-2 {
-      background: url('../img/insight-slides-2.jpg') no-repeat;
+      background: url('../img/insight-slides-2.jpg') no-repeat center;
       background-size: cover;
 
       .is-peru & {
-        background: url('../img/insight-peru-slides-2.jpg') no-repeat;
+        background: url('../img/insight-peru-slides-2.jpg') no-repeat center;
         background-size: cover;
       }
     }
 
     &.slide-3 {
-      background: url('../img/insight-slides-3.jpg') no-repeat;
+      background: url('../img/insight-slides-3.jpg') no-repeat center;
       background-size: cover;
 
       .is-peru & {
-        background: url('../img/insight-peru-slides-3.jpg') no-repeat;
+        background: url('../img/insight-peru-slides-3.jpg') no-repeat center;
         background-size: cover;
       }
     }
 
 
     &.slide-4 {
-      background: url('../img/insight-slides-4.jpg') no-repeat;
+      background: url('../img/insight-slides-4.jpg') no-repeat center;
       background-size: cover;
 
       .is-peru & {
-        background: url('../img/insight-peru-slides-4.jpg') no-repeat;
+        background: url('../img/insight-peru-slides-4.jpg') no-repeat center;
         background-size: cover;
       }
     }

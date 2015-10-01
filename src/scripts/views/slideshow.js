@@ -21,8 +21,10 @@ define([
         draggable: false,
         infinite: false,
         fade: true,
-        adaptiveHeight: false
+        adaptiveHeight: false,
       });
+
+      this.updateHeight(0);
 
       this.$asideWideContainer = $('.insights--slideshow-wide-aside');
 
@@ -44,12 +46,20 @@ define([
     },
 
     update: function(e, slick, currentSlide, nextSlide ) {
+      this.updateHeight(nextSlide);
       if(!!navigator.userAgent.match(/iPad|iPhone|iPod|Android|BlackBerry|webOS/i) ||
         window.innerWidth <= 540) {
         $('html, body').animate({
           scrollTop: $('.insights--slideshow-container').offset().top
         }, 300);
       }
+    },
+
+    updateHeight: function(index) {
+      var h = $("[data-slick-index='" +index+ "']").height();
+      this.$el.css({
+        height: h
+      })
     }
 
   });
