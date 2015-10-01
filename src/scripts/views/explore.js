@@ -232,6 +232,7 @@ define([
       cartodb.createLayer(this.map, layerUrl, { legends: false })
         .addTo(this.map)
         .on('done', _.bind(function(layer) {
+          layer.setZIndex(id === 1 ? 10 : id);
           this.selectedVisualisations[id] = layer;
           this.renderLegend();
           sessionStorage.setItem('layers', JSON.stringify(this.getSelectedVisualisationsIndex()));
