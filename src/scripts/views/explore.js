@@ -21,12 +21,12 @@ define([
 
     initialize: function() {
       this.map = L.map('map', {zoomControl: false}).setView([0,-30], 3);
-      this.selectedVisualisations = [];
       this.mapVisualisations = [
         {name: "Energy Plants", url: "https://insights.cartodb.com/api/v2/viz/c572a394-3cda-11e5-9e01-0e4fddd5de28/viz.json"},
         {name: "Global Water Risk", url: "https://insights.cartodb.com/api/v2/viz/bf63525c-3cdd-11e5-afd4-0e4fddd5de28/viz.json"},
         {name: "Country Flood Risk", url: "https://insights.cartodb.com/api/v2/viz/7676a37a-3ce0-11e5-a016-0e0c41326911/viz.json"}
       ];
+      this.selectedVisualisations = _.map(_.range(this.mapVisualisations.length), function() { return null; });
       this.cachedLayers = JSON.parse(sessionStorage.getItem('layers') || '[]');
 
       new L.Control.Zoom({ position: 'topright' }).addTo(this.map);
@@ -165,7 +165,8 @@ define([
         var $el = $(e.currentTarget),
             id = $el.data('id');
 
-        if (this.selectedVisualisations[id] === undefined) {
+        if (this.selectedVisualisations[id] === undefined ||
+          this.selectedVisualisations[id] == null) {
           this.addLayerToMap(id, $el);
         } else {
           this.removeLayerFromMap(id, $el);
@@ -193,7 +194,7 @@ define([
 
     renderLegend: function() {
       var $legendEl = $('.explore--map-legend');
-      if (!this.selectedVisualisations.length) {
+      if (!_.compact(this.selectedVisualisations).length) {
         $legendEl.hide();
         return;
       }
@@ -202,14 +203,16 @@ define([
       $list.empty();
 
       this.selectedVisualisations.forEach(_.bind(function(value, key) {
-        var layerId = this.mapVisualisations.indexOf(this.mapVisualisations[key]);
-        var isLayerVisible = this.selectedVisualisations[layerId].isVisible();
+        if(!!value) {
+          var layerId = this.mapVisualisations.indexOf(this.mapVisualisations[key]);
+          var isLayerVisible = this.selectedVisualisations[layerId].isVisible();
 
-        var li = '<li><!--<span class="bullet">--></span>'+this.mapVisualisations[key].name;
-        li += '<span class="onoffswitch' + (!isLayerVisible ? ' off"' : '"');
-        li += 'data-id="'+this.mapVisualisations.indexOf(this.mapVisualisations[key])+'"><span></span></span></li>';
+          var li = '<li><!--<span class="bullet">--></span>'+this.mapVisualisations[key].name;
+          li += '<span class="onoffswitch' + (!isLayerVisible ? ' off"' : '"');
+          li += 'data-id="'+this.mapVisualisations.indexOf(this.mapVisualisations[key])+'"><span></span></span></li>';
 
-        $list.append(li);
+          $list.append(li);
+        }
       }, this));
 
       $list.find('.onoffswitch').off().on('click', _.bind(function(e) {
@@ -244,7 +247,7 @@ define([
       $el.text("Add to map");
       $el.removeClass("explore--active-dataset");
 
-      delete this.selectedVisualisations[id];
+      this.selectedVisualisations[id] = null;
       this.renderLegend();
       sessionStorage.setItem('layers', JSON.stringify(this.getSelectedVisualisationsIndex()));
     },
