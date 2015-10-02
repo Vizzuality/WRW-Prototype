@@ -57,7 +57,13 @@ define([
             var isEmpty;
 
             if (data.hasOwnProperty('rows') && data.rows.length === 0||
-              Object.keys(data).length === 0) {
+              Object.keys(data).length === 0 || _.compact(_.map(data.rows, function(o) {
+                var isNull = false;
+                _.each(o, function(v) {
+                  isNull = isNull || v === null || v === undefined;
+                });
+                return isNull;
+              })).length > 0) {
               isEmpty = true;
             }
 
