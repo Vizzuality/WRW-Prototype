@@ -90,13 +90,20 @@ block content
             ul
               li
                 a.is-disabled(href='#') SPEI
-                //- a(href='#drought/spei') SPEI
               li
                 a.is-disabled(href='#') Agricultural areas (EarthStat)
               li
                 a(href='#drought/grace') Groundwater depletion (GRACE)
+                  span(class="btn-info modal-link" data-modal="grace")
+                    svg
+                      use(xlink:href='#icon-info')
+
               li
                 a(href='#drought/temperature') Forecasts / Climate projections
+                  span(class="btn-info modal-link" data-modal="forecasts")
+                    svg
+                      use(xlink:href='#icon-info')
+
           article#forestContent
             h2 Forest
             p Forest ecosystems also play a critical role in stabilizing the climate; providing food, water, wood products, and medicines; and supporting much of the world’s biodiversity. Though an estimated 30% of potential forest cover has been lost, we can still productively and sustainably manage the world’s remaining forests.
@@ -135,6 +142,10 @@ block content
                 //- a(href='#flooding/current-floods') Current floods
               li
                 a(href='#flooding/population') Population data
+                  span(class="btn-info modal-link" data-modal="population")
+                    svg
+                      use(xlink:href='#icon-info')
+
                 //- a(href='#flooding/population-data') Population data
               li
                 a.is-disabled(href='#') Climate projections
@@ -146,11 +157,19 @@ block content
             ul
               li
                 a(href='#conflict/conflicts') Conflict events
-                //- a(href='#conflict/events') Conflict events
+                  span(class="btn-info modal-link" data-modal="conflict-events")
+                    svg
+                      use(xlink:href='#icon-info')
               li
                 a(href='#conflict/protests') Protests
+                  span(class="btn-info modal-link" data-modal="protest")
+                    svg
+                      use(xlink:href='#icon-info')
               li
                 a(href='#conflict/epidemic') Epidemics
+                  span(class="btn-info modal-link" data-modal="epidemics")
+                    svg
+                      use(xlink:href='#icon-info')
       .planet-pulse--legend.is-hidden
         h3 Legend title
         a(href="#") Explore the data
