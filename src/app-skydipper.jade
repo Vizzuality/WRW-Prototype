@@ -9,7 +9,7 @@ block content
     ul.story--breadcrumbs
       li
         a(href='#') Apps
-      li App info
+      li &nbsp;App info
   .container.app-info--container-title
     h1.app-info--title
       | SkyDipper
@@ -31,7 +31,7 @@ block content
         p.app-info--description
           | Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing vitae est. Sed nec felis pellentesque, lacinia dui sed, ultricies sapien. Pellentesque orci lectus, consectetur vel posuere posuere, rutrum eu ipsum. Aliquam eget odio sed ligula iaculis consequat at eget orci. Mauris molestie sit amet metus mattis varius.
         .app-info--description-buttons
-          a.button.button-large.story--intro-button(href='http://vizzuality.github.io/skydipper/')
+          a.button.button-large.story--intro-button(href='http://vizzuality.github.io/skydipper/' target='_blank')
             | LEARN MORE
       .container.app-info--container-pictures
         img.app-info--image(src='img/app-2-a.png')
@@ -60,30 +60,30 @@ block content
       .gridbox
         include ./templates/card.jade
         +card('data')(
-          url='explore-standalone.html',
-          thumbnail='img/data-1-th.png',
-          title='Water levels in Northern California',
+            url='explore-standalone.html#1',
+            thumbnail='img/data-explore-1-th.png',
+            title='Water levels in Northern California',
+            sub_title='USGS Center for Integrated Data Analytics',
+            download_csv=true,
+            star_count='6,500',
+            star_active=true
+          )
+        +card('data')(
+          url='explore-standalone.html#9',
+          thumbnail='img/data-explore-9-th.png',
+          title='Tree cover loss',
+          sub_title='Matthew C. Hansen - University of Maryland',
           download_csv=true,
-          download_map=true,
-          sub_title='Centre for Research on Lorem'
-          star_count='6,575'
+          star_count='12,000',
+          star_active=true
         )
         +card('data')(
-          url='explore-standalone.html',
-          thumbnail='img/data-2-th.png',
-          title='Total Greenhouse Emissions',
+          url='explore-standalone.html#10',
+          thumbnail='img/data-explore-10-th.png',
+          title='Protected Areas',
+          sub_title='UCN and UNEP',
           download_csv=true,
-          sub_title='Centre for Research on Lorem'
-          star_count='6,575'
-        )
-        +card('data')(
-          url='explore-standalone.html',
-          thumbnail='img/data-3-th.png',
-          title='CO2 emissions intensity',
-          download_csv=true,
-          download_map=true,
-          sub_title='Centre for Research on Lorem'
-          star_count='6,575'
+          star_count='3,045'
         )
 
     // feature-apps
