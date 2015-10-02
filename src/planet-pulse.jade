@@ -8,6 +8,8 @@ block header
   +header('planet-pulse')
 
 block content
+  include ./templates/infowindows.jade
+
   //- Preloading images
   img.img-preload(src=path + 'img/planet-pulse/2_no_clouds_4k.jpg', id="basemap1")
   img.img-preload(src=path + 'img/planet-pulse/basemap-dark_4k.jpg', id="basemap2")
@@ -102,13 +104,27 @@ block content
             ul
               li
                 a.is-disabled(href='#') Forma
-                //- a(href='#forest/forma') Forma
+                  span(class="btn-info modal-link" data-modal="forma")
+                    svg
+                      use(xlink:href='#icon-info')
               li
                 a(href='#forest/umd') UMD
+                  span(class="btn-info modal-link" data-modal="umd")
+                    svg
+                      use(xlink:href='#icon-info')
+
               li
                 a(href='#forest/protected-areas') Protected areas
+                  span(class="btn-info modal-link" data-modal="protected-areas")
+                    svg
+                      use(xlink:href='#icon-info')
+
               li
                 a(href='#forest/fires') Fires
+                  span(class="btn-info modal-link" data-modal="fires")
+                    svg
+                      use(xlink:href='#icon-info')
+
           article#floodingContent
             h2 Flooding
             p Flooding and other extreme weather events are one of the most direct ways in which a changing climate will affect our lives. Tens of millions of people are affected by flooding each year. The future of flooding depends on how we choose to develop our rivers and coasts, and how we affect the Earth’s climate.
@@ -138,4 +154,6 @@ block content
       .planet-pulse--legend.is-hidden
         h3 Legend title
         a(href="#") Explore the data
+
 block footer
+
