@@ -19,7 +19,9 @@ define([
 
   var ExploreView = Backbone.View.extend({
 
-    initialize: function() {
+    initialize: function(options) {
+      this.hideLegend = options && options.hideLegend;
+
       this.map = L.map('map', {zoomControl: false}).setView([0,-30], 3);
       this.mapVisualisations = [
         {name: "Global Water Risk", url: "https://insights.cartodb.com/api/v2/viz/bf63525c-3cdd-11e5-afd4-0e4fddd5de28/viz.json"},
@@ -177,6 +179,10 @@ define([
     mapExpandButton: function(e) {
       e.preventDefault();
 
+      if(this.hideLegend) {
+        this.renderLegend({ force: !$('.js--explore--map').hasClass('explore--map-open') });
+      }
+
       $('.js--explore--map').toggleClass('explore--map-open');
       $('.js--explore--content').toggleClass('explore--content-closed');
 
@@ -192,9 +198,10 @@ define([
       setTimeout(this.map.invalidateSize.bind(this.map), 1100);
     },
 
-    renderLegend: function() {
+    renderLegend: function(options) {
       var $legendEl = $('.explore--map-legend');
-      if (!_.compact(this.selectedVisualisations).length) {
+      if (!_.compact(this.selectedVisualisations).length ||
+        this.hideLegend && !(options && options.force)) {
         $legendEl.hide();
         return;
       }
