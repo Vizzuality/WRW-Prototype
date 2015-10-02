@@ -34,7 +34,8 @@ define([
         conflicts: document.getElementById('layer6').src,
         grace: document.getElementById('layer7').src,
         epidemic: document.getElementById('layer9').src,
-        protests: document.getElementById('layer8').src
+        protests: document.getElementById('layer8').src,
+        forma: document.getElementById('layer10').src
       };
 
       this.createGlobe();
@@ -161,6 +162,13 @@ define([
           this.setLegend(vis);
           this.updateLayersList();
           break;
+        case 'forma':
+          this.globe.ambientLight.color.setHex(0xcccccc);
+          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
+          this.globe.createLayer(this.currentVis, this.layers.forma);
+          this.setLegend(vis);
+          this.updateLayersList();
+          break;
         case 'fires':
           this.globe.ambientLight.color.setHex(0xcccccc);
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
@@ -226,6 +234,11 @@ define([
           $title.text('UMD');
           $title.addClass('color-umd');
           $link.attr('href', 'explore-detail.html#9');
+          break;
+        case 'forma':
+          $title.text('Forma');
+          $title.addClass('color-forma');
+          $link.attr('href', 'explore-detail.html#10');
           break;
         case 'temperature':
           $title.text('Temperature');
