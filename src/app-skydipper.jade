@@ -9,18 +9,18 @@ block content
     ul.story--breadcrumbs
       li
         a(href='#') Apps
-      li App info
+      li &nbsp;App info
   .container.app-info--container-title
     h1.app-info--title
       | SkyDipper
     .story--metadata-stars.active
       svg.icon.icon-star
         use(xlink:href='#icon-star')
-      span 2,530
+      span 5,230
   .container
-    .story--metadata-author
+    .story--metadata-author.app--metadata-author
       | by &nbsp;
-      a(href='partners-vizzuality.html') vizzuality
+      a(href='partners-vizzuality.html') Vizzuality
 
   .container
     //description
@@ -31,7 +31,7 @@ block content
         p.app-info--description
           | Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing vitae est. Sed nec felis pellentesque, lacinia dui sed, ultricies sapien. Pellentesque orci lectus, consectetur vel posuere posuere, rutrum eu ipsum. Aliquam eget odio sed ligula iaculis consequat at eget orci. Mauris molestie sit amet metus mattis varius.
         .app-info--description-buttons
-          a.button.button-large.story--intro-button(href='http://vizzuality.github.io/skydipper/')
+          a.button.button-large.story--intro-button(href='http://vizzuality.github.io/skydipper/', target='_blank')
             | LEARN MORE
       .container.app-info--container-pictures
         img.app-info--image(src='img/app-2-a.png')
@@ -48,7 +48,7 @@ block content
       p.app-info--details
         | Languages: English, Spanish, French, German, Russian
       p.app-info--details
-        a(href='#')= 'Contact the developer'
+        a.is-disabled(href='#')= 'Contact the developer'
 
     // explore the data
     section
@@ -60,8 +60,8 @@ block content
       .gridbox
         include ./templates/card.jade
         +card('data')(
-          url='explore-standalone.html',
-          thumbnail='img/data-1-th.png',
+          url='#',
+          thumbnail='img/data-explore-1-th.png',
           title='Water levels in Northern California',
           download_csv=true,
           download_map=true,
@@ -69,16 +69,16 @@ block content
           star_count='6,575'
         )
         +card('data')(
-          url='explore-standalone.html',
-          thumbnail='img/data-2-th.png',
+          url='#',
+          thumbnail='img/data-explore-2-th.png',
           title='Total Greenhouse Emissions',
           download_csv=true,
           sub_title='Centre for Research on Lorem'
           star_count='6,575'
         )
         +card('data')(
-          url='explore-standalone.html',
-          thumbnail='img/data-3-th.png',
+          url='#',
+          thumbnail='img/data-explore-3-th.png',
           title='CO2 emissions intensity',
           download_csv=true,
           download_map=true,

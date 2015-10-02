@@ -27,10 +27,11 @@ define([
 
     initialize: function(options) {
       this.id = options && options.id;
+      this.cardsCount = options.cardsCount + 1;
     },
 
     url: function() {
-      return 'https://insights.cartodb.com/api/v2/sql?q=with r as (SELECT max(cartodb_id) as max_num FROM explore_table_config), f as (select distinct  x  from (select round(random() * max_num) as x from  generate_series(1,200), r) q where x != ' + this.id + ' limit 5) select * from explore_table_config, f where cartodb_id = f.x';
+      return 'https://insights.cartodb.com/api/v2/sql?q=with r as (SELECT max(cartodb_id) as max_num FROM explore_table_config), f as (select distinct  x  from (select round(random() * max_num) as x from  generate_series(1,200), r) q where x != ' + this.id + ' limit ' + this.cardsCount + ') select * from explore_table_config, f where cartodb_id = f.x';
     },
 
     parse: function(data) {
@@ -47,7 +48,10 @@ define([
       this.areExploreCards = options && options.explore;
 
       this.exploreModel = new ExploreModel({ id: window.location.hash.replace('#', '') });
-      this.similarCollection = new SimilarCollection({ id: window.location.hash.replace('#', '') });
+      this.similarCollection = new SimilarCollection({
+        id: window.location.hash.replace('#', ''),
+        cardsCount: options.similarCardsCount || 4
+      });
 
       $.when.apply($, [this.exploreModel.fetch(), this.similarCollection.fetch()])
         .then(_.bind(this.render, this))
@@ -78,6 +82,10 @@ define([
       $('.js-likes').toggleClass('is-active', contentData.is_liked);
       $('.js-likes-count').text(('' + contentData.likes_count).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
       $('.js-content').html(contentData.content);
+      if(!!contentData.url_author && !!contentData.long_citation) {
+        $('.js-credits').html('<a href="' + contentData.url_author + '">Online source</a><br>' + contentData.long_citation);
+      }
+      $('.js-add-to-map').attr('href', 'explore-detail.html' + window.location.hash);
       $('title').text(contentData.name + ' | Resource Watch');
 
       _.each(similarData, function(card) {

@@ -1,7 +1,7 @@
 extends ./templates/base.jade
 
 append vars
-  - var title = 'Partners'
+  - var title = 'Greenpeace'
   - var className = 'is-partners'
 
 block content
@@ -115,7 +115,7 @@ block content
     section
       header.section-header
         h3 Data updated by Greenpeace
-        a.section-header-link(href='#')
+        a.section-header-link.is-disabled(href='#')
           | View More
           i.fa.fa-angle-right
       .gridbox
