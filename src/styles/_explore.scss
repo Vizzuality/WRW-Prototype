@@ -598,6 +598,21 @@ a.explore--map-button {
   }
 }
 
+.explore--credits {
+  padding-top: 20px;
+  font-size: 14px;
+  font-style: italic;
+  color: lighten($story--media-caption-color, 20%);
+
+  a {
+    font-size: 18px;
+    font-style: normal;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+}
+
 @media screen and (max-width: $responsive-break--tablet) {
   .explore-detail--wide-visualization {
     width: 100%;
