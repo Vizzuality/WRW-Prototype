@@ -82,7 +82,9 @@ define([
       $('.js-likes').toggleClass('is-active', contentData.is_liked);
       $('.js-likes-count').text(('' + contentData.likes_count).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
       $('.js-content').html(contentData.content);
-      $('.js-credits').html('<a href="' + contentData.url_author + '">Online source</a><br>' + contentData.long_citation);
+      if(!!contentData.url_author && !!contentData.long_citation) {
+        $('.js-credits').html('<a href="' + contentData.url_author + '">Online source</a><br>' + contentData.long_citation);
+      }
       $('.js-add-to-map').attr('href', 'explore-detail.html' + window.location.hash);
       $('title').text(contentData.name + ' | Resource Watch');
 
