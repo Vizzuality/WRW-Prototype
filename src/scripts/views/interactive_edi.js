@@ -13,16 +13,12 @@ define([
     },
 
     url: function() {
-      return 'http://edi.simbiotica.es/indicators-by/' + this.iso;
+      return 'https://insights.cartodb.com/api/v2/sql?q=SELECT indicatorid, ' +
+        'score FROM edi_data where field_iso=\'' + this.iso + '\'';
     },
 
     parse: function(data) {
-      return _.map(data, function(row) {
-        return {
-          indicatorId: parseInt(row['indicator-id']),
-          score: parseInt(row.score) > 1
-        }
-      });
+      return data.rows;
     }
   });
 
@@ -54,7 +50,7 @@ define([
     parse: function(data) {
       return {
         score: data[0].score,
-        strength: parseFloat(data[0].score) < 1 ? 'weak' : (parseFloat(data[0].score)  > 2 ? 'strong' : 'average')
+        strength: parseFloat(data[0].score) < 1 ? 'relatively weak' : (parseFloat(data[0].score)  > 2 ? 'strong' : 'relatively average')
       }
     }
   });
@@ -213,7 +209,7 @@ define([
         var indicator, condition;
         for(var i = 0, j = conditions.length; i < j; i++) {
           condition = conditions[i];
-          indicator = _.findWhere(ediData, { indicatorId: condition.indicatorid });
+          indicator = _.findWhere(ediData, { indicatorid: condition.indicatorid });
           if(indicator.score !== condition.value) {
             return false;
           }

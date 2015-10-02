@@ -8,6 +8,13 @@
   visibility: visible;
 }
 
+@mixin is-not-selectable() {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
 .is-hidden {
    @include is-hidden;
 }

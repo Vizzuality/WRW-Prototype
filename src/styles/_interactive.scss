@@ -316,6 +316,7 @@
 
   a {
     text-decoration: none;
+    cursor: pointer;
   }
 
   p {
@@ -323,6 +324,12 @@
     line-height: 1.5;
     font-size: 16px;
   }
+}
+
+.insights--interactive-breakdown-note {
+  font-style: italic;
+  font-size: 14px !important;
+  color: lighten($story--media-caption-color, 20%);
 }
 
 .insights--interactive-edi-data {
@@ -444,6 +451,7 @@
 }
 
 .insights--interactive-scenario-legend {
+  @include is-not-selectable();
   width: 360px;
   background-color: white;
   border-radius: 3px;
