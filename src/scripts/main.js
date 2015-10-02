@@ -15,18 +15,21 @@ require([
   'views/interactive_edi',
   'views/interactive_map',
   'views/explore_datasets',
+  'views/modal',
 
   // Common modules
   // TODO: refactor them
+  'views/footer_carousel',
   'views/user_menu',
   'views/mobile_menu',
   'views/fav',
   'views/empty_links',
-  'views/fullscreen'
+  'views/fullscreen',
+
 ], function(Backbone, Router, auth, LoginView, SearchCountriesView, GlobeView,
     DashboardView, SlideshowView, MapView, ExploreView,
     ExploreContentView, ChartView, InteractiveEdiView, InteractiveMapView,
-    ExploreDatasetsView) {
+    ExploreDatasetsView, ModalView, FooterCarousel) {
 
   var App = Backbone.View.extend({
 
@@ -34,7 +37,12 @@ require([
 
     initialize: function() {
       this.router = new Router();
+      this.initGlobalViews();
       this.setListeners();
+    },
+
+    initGlobalViews: function() {
+      new FooterCarousel();
     },
 
     setListeners: function() {
@@ -74,6 +82,7 @@ require([
     planetPulse: function() {
       this._checkAuth(function() {
         var globe = new GlobeView({ el: '#globe' });
+        var modal = new ModalView({ el: '#modal' });
         globe.checkHash();
         $(window).on('hashchange', function() {
           globe.checkHash();
