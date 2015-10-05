@@ -231,7 +231,7 @@ define([
       var curves = [];
       for(var i = 0, j = configuration.y.length; i < j; i++) {
         var values = [];
-        var serieLength = (!!x) ? x.length : y.length;
+        var serieLength = (!!x) ? x.length : (y[0].type === 'textual') ? y.length : 1;
         for(var k = 0, l = serieLength; k < l; k++) {
           values.push({ x: !!x ? x[k] : null, y: y[i][k] });
         }
