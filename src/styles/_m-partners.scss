@@ -6,29 +6,50 @@
 	margin-top: 35px;
 
 	.partners-title {
-		position: relative;
+		position: absolute;
 		text-transform: uppercase;
 		text-align: center;
 		color: #b9bfc4;
 		font-size: 12px;
-        font-weight: bold;
+    font-weight: bold;
 		background-color: #fff;
 		width: 100px;
 		margin: 0 auto;
+    left: 50%;
 		transform: translatey(-50%);
+
+      a {
+        color: #b9bfc4;
+        text-decoration: none;
+      }
 	}
 
 	ul {
-		padding: 0;
-		display: flex;
-		justify-content: space-between;
-        align-items: center;
+    margin: 0;
+    padding: 30px 0;
+		// display: flex;
+    .slick-arrow {
+      position: absolute;
+      display: none;
+      visibility: hidden;
+      opacity: 0;
+    }
 	}
 
 	li {
 		list-style: none;
 		float: left;
-		margin-right: 60px;
+		// margin-right: 60px;
+
+    a {
+      display: flex;
+      align-items: center;
+      min-height: 50px;
+      img{
+        display: block;
+        margin: 0 auto;
+      }
+    }
 
     a.is-link {
       cursor: default;

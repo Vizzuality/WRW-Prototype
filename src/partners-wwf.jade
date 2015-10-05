@@ -1,7 +1,7 @@
 extends ./templates/base.jade
 
 append vars
-  - var title = 'Partners'
+  - var title = 'WWF'
   - var className = 'is-partners'
   - var className = 'is-partners-wwf'
 
@@ -86,7 +86,7 @@ block content
   .partners--middle
     .partners--container
       .middle--intro <strong>WWF</strong> is building a future where human needs are met in harmony with nature.
-      a.button.button-large(href='#') Learn about our work
+      a.button.button-large(href='http://www.wri.org/' target="_blank") Learn about our work
 
 
   .container
@@ -116,14 +116,14 @@ block content
     section
       header.section-header
         h3 Data updated by WWF
-        a.section-header-link(href='#')
+        a.section-header-link.is-disabled(href='#')
           | View More
           i.fa.fa-angle-right
       .gridbox
         include ./templates/card.jade
         +card('data')(
-          url='explore-standalone.html',
-          thumbnail='img/data-1-th.png',
+          url='#',
+          thumbnail='img/data-explore-1-th.png',
           title='Water levels in Northern California',
           download_csv=true,
           download_map=true,
@@ -131,16 +131,16 @@ block content
           star_count='6,575'
         )
         +card('data')(
-          url='explore-standalone.html',
-          thumbnail='img/data-2-th.png',
+          url='#',
+          thumbnail='img/data-explore-2-th.png',
           title='Total Greenhouse Emissions',
           download_csv=true,
           sub_title='Centre for Research on Lorem'
           star_count='6,575'
         )
         +card('data')(
-          url='explore-standalone.html',
-          thumbnail='img/data-3-th.png',
+          url='#',
+          thumbnail='img/data-explore-3-th.png',
           title='CO2 emissions intensity',
           download_csv=true,
           download_map=true,
@@ -148,8 +148,8 @@ block content
           star_count='6,575'
         )
         +card('data')(
-          url='explore-standalone.html',
-          thumbnail='img/data-4-th.png',
+          url='#',
+          thumbnail='img/data-explore-4-th.png',
           title='Population distribution by age range in the US',
           download_csv=true,
           sub_title='Centre for Research on Lorem'

@@ -2,6 +2,18 @@
   position: relative;
   overflow: hidden;
   height: 280px;
+  filter: grayscale(0%);
+  opacity: 1;
+  transition: filter 0.3s, opacity 0.3s;
+
+  &.is-disabled:hover {
+    filter: grayscale(100%);
+    opacity: 0.4;
+
+    a.is-link {
+      cursor: default;
+    }
+  }
 }
 
 .banner-image {

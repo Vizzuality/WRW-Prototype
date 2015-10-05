@@ -139,6 +139,25 @@ section {
     align-self: flex-end;
     margin-bottom: 2.67em;
   }
+
+  i {
+    font-size: 26px;
+    position: relative;
+    top: 4px;
+    padding-left: 10px;
+  }
+}
+
+.is-disabled {
+  filter: grayscale(0%);
+  opacity: 1;
+  transition: filter 0.3s, opacity 0.3s;
+
+  &.is-disabled:hover {
+    filter: grayscale(100%);
+    opacity: 0.4;
+    cursor: default;
+  }
 }
 
 @media screen and (max-width: $responsive-break--tablet) {

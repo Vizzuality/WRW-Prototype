@@ -8,6 +8,8 @@ block header
   +header('planet-pulse')
 
 block content
+  include ./templates/infowindows.jade
+
   //- Preloading images
   img.img-preload(src=path + 'img/planet-pulse/2_no_clouds_4k.jpg', id="basemap1")
   img.img-preload(src=path + 'img/planet-pulse/basemap-dark_4k.jpg', id="basemap2")
@@ -25,6 +27,7 @@ block content
   img.img-preload(src=path + 'img/planet-pulse/layers/grace_4k.png', id="layer7")
   img.img-preload(src=path + 'img/planet-pulse/layers/protests_4k.png', id="layer8")
   img.img-preload(src=path + 'img/planet-pulse/layers/epidemics_4k.png', id="layer9")
+  img.img-preload(src=path + 'img/planet-pulse/layers/forma_4k.png', id="layer10")
 
   section.planet-pulse
 
@@ -87,55 +90,90 @@ block content
             h3 Displayed layers
             ul
               li
-                a(href='#') SPEI
-                //- a(href='#drought/spei') SPEI
+                a.is-disabled(href='#') SPEI
               li
-                a(href='#drought/agriculture') Agricultural areas (EarthStat)
+                a.is-disabled(href='#') Agricultural areas (EarthStat)
               li
                 a(href='#drought/grace') Groundwater depletion (GRACE)
+                  span(class="btn-info modal-link" data-modal="grace")
+                    svg
+                      use(xlink:href='#icon-info')
+
               li
                 a(href='#drought/temperature') Forecasts / Climate projections
+                  span(class="btn-info modal-link" data-modal="forecasts")
+                    svg
+                      use(xlink:href='#icon-info')
+
           article#forestContent
             h2 Forest
             p Forest ecosystems also play a critical role in stabilizing the climate; providing food, water, wood products, and medicines; and supporting much of the world’s biodiversity. Though an estimated 30% of potential forest cover has been lost, we can still productively and sustainably manage the world’s remaining forests.
             h3 Displayed layers
             ul
               li
-                a(href='#') Forma
-                //- a(href='#forest/forma') Forma
+                a(href='#forest/forma') Forma alerts
+                  span(class="btn-info modal-link" data-modal="forma")
+                    svg
+                      use(xlink:href='#icon-info')
               li
-                a(href='#forest/umd') UMD
+                a(href='#forest/umd') Tree cover loss
+                  span(class="btn-info modal-link" data-modal="umd")
+                    svg
+                      use(xlink:href='#icon-info')
+
               li
                 a(href='#forest/protected-areas') Protected areas
+                  span(class="btn-info modal-link" data-modal="protected-areas")
+                    svg
+                      use(xlink:href='#icon-info')
+
               li
                 a(href='#forest/fires') Fires
+                  span(class="btn-info modal-link" data-modal="fires")
+                    svg
+                      use(xlink:href='#icon-info')
+
           article#floodingContent
             h2 Flooding
             p Flooding and other extreme weather events are one of the most direct ways in which a changing climate will affect our lives. Tens of millions of people are affected by flooding each year. The future of flooding depends on how we choose to develop our rivers and coasts, and how we affect the Earth’s climate.
             h3 Displayed layers
             ul
               li
-                a(href='#') Current floods
+                a.is-disabled(href='#') Current floods
                 //- a(href='#flooding/current-floods') Current floods
               li
                 a(href='#flooding/population') Population data
+                  span(class="btn-info modal-link" data-modal="population")
+                    svg
+                      use(xlink:href='#icon-info')
+
                 //- a(href='#flooding/population-data') Population data
               li
-                a(href='#') Climate projections
+                a.is-disabled(href='#') Climate projections
                 //- a(href='#flooding/climate') Climate projections
           article#conflictContent
-            h3 Conflict
+            h2 Conflict
             p Fair and effective governance is critical to ensure that development benefits people and the planet. Yet in many regions around the world, communities are regularly subjected to injustices.
             h3 Displayed layers
             ul
               li
                 a(href='#conflict/conflicts') Conflict events
-                //- a(href='#conflict/events') Conflict events
+                  span(class="btn-info modal-link" data-modal="conflict-events")
+                    svg
+                      use(xlink:href='#icon-info')
               li
                 a(href='#conflict/protests') Protests
+                  span(class="btn-info modal-link" data-modal="protest")
+                    svg
+                      use(xlink:href='#icon-info')
               li
                 a(href='#conflict/epidemic') Epidemics
+                  span(class="btn-info modal-link" data-modal="epidemics")
+                    svg
+                      use(xlink:href='#icon-info')
       .planet-pulse--legend.is-hidden
         h3 Legend title
         a(href="#") Explore the data
+
 block footer
+

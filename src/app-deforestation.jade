@@ -9,11 +9,16 @@ block content
     ul.story--breadcrumbs
       li
         a(href='#') Apps
-      li App info
-  .container
+      li &nbsp;App info
+  .container.app-info--container-title
     h1.app-info--title
-      | Track Deforestation In Real Time
-    p.app-info--title-metadata
+      | Track Deforestation in Real Time
+    .story--metadata-stars.active
+      svg.icon.icon-star
+        use(xlink:href='#icon-star')
+      span 1,522
+  .container
+    .story--metadata-author
       | by &nbsp;
       a(href='#') Global Forest Watch
 
@@ -102,7 +107,7 @@ block content
         +card('app')(
           url='#',
           thumbnail='img/app-2-th.jpg',
-          title='World Resources Watch AI',
+          title='Resource Watch AI',
           star_count='6,574'
         )
         +card('app')(

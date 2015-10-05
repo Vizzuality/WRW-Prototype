@@ -591,6 +591,26 @@ a.explore--map-button {
   li:first-of-type {
     width: 190px;
   }
+
+  a {
+    color: #9aa2a9;
+    text-decoration: none;
+  }
+}
+
+.explore--credits {
+  padding-top: 20px;
+  font-size: 14px;
+  font-style: italic;
+  color: lighten($story--media-caption-color, 20%);
+
+  a {
+    font-size: 18px;
+    font-style: normal;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
 }
 
 @media screen and (max-width: $responsive-break--tablet) {

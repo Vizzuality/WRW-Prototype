@@ -1,0 +1,130 @@
+extends ./templates/base.jade
+
+append vars
+  - var title = 'SkyDipper'
+  - var className = 'is-app-info'
+
+block content
+  .container
+    ul.story--breadcrumbs
+      li
+        a(href='#') Apps
+      li &nbsp;App info
+  .container.app-info--container-title
+    h1.app-info--title
+      | SkyDipper
+    .story--metadata-stars.active
+      svg.icon.icon-star
+        use(xlink:href='#icon-star')
+      span 5,230
+  .container
+    .story--metadata-author.app--metadata-author
+      | by &nbsp;
+      a(href='partners-vizzuality.html') Vizzuality
+
+  .container
+    //description
+    section
+      header.section-header
+        h3 Description
+      .container.app-info--container-description
+        p.app-info--description
+          | Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing vitae est. Sed nec felis pellentesque, lacinia dui sed, ultricies sapien. Pellentesque orci lectus, consectetur vel posuere posuere, rutrum eu ipsum. Aliquam eget odio sed ligula iaculis consequat at eget orci. Mauris molestie sit amet metus mattis varius.
+        .app-info--description-buttons
+          a.button.button-large.story--intro-button(href='http://vizzuality.github.io/skydipper/', target='_blank')
+            | LEARN MORE
+      .container.app-info--container-pictures
+        img.app-info--image(src='img/app-2-a.png')
+        img.app-info--image(src='img/app-2-b.png')
+        img.app-info--image(src='img/app-2-c.png')
+
+    // details
+    section
+      header.section-header
+        h3 Details
+
+      p.app-info--details
+        | Requires iOS 6.0 or later. Compatible with iPhone, iPad, and iPod touch. This app is optimized for iPhone 5, iPhone 6, and iPhone 6 Plus.
+      p.app-info--details
+        | Languages: English, Spanish, French, German, Russian
+      p.app-info--details
+        a.is-disabled(href='#')= 'Contact the developer'
+
+    // explore the data
+    section
+      header.section-header
+        h3 Data used
+        a.section-header-link(href='explore.html')
+          | View More
+          i.fa.fa-angle-right
+      .gridbox
+        include ./templates/card.jade
+        +card('data')(
+          url='#',
+          thumbnail='img/data-explore-1-th.png',
+          title='Water levels in Northern California',
+          download_csv=true,
+          download_map=true,
+          sub_title='Centre for Research on Lorem'
+          star_count='6,575'
+        )
+        +card('data')(
+          url='#',
+          thumbnail='img/data-explore-2-th.png',
+          title='Total Greenhouse Emissions',
+          download_csv=true,
+          sub_title='Centre for Research on Lorem'
+          star_count='6,575'
+        )
+        +card('data')(
+          url='#',
+          thumbnail='img/data-explore-3-th.png',
+          title='CO2 emissions intensity',
+          download_csv=true,
+          download_map=true,
+          sub_title='Centre for Research on Lorem'
+          star_count='6,575'
+        )
+
+    // feature-apps
+    section
+      header.section-header
+        h3 Similar apps
+        //- a.section-header-link(href='#')
+        //-   | View More
+        //-   i.fa.fa-angle-right
+      .gridbox
+        include ./templates/card.jade
+        +card('app')(
+          url='#',
+          thumbnail='img/app-1-th.jpg',
+          title='Carbon Footprint Calculator',
+          star_count='6,574',
+          star_active=true
+        )
+        +card('app')(
+          url='#',
+          thumbnail='img/app-3-th.jpg',
+          title='Android Wearable Environmental Alerts',
+          star_count='6,574'
+        )
+        +card('app')(
+          url='#',
+          thumbnail='img/app-6-th.jpg',
+          title='Flood Risk Analyzer',
+          star_count='2,324'
+        )
+        
+
+    // planet-pulse
+    section
+      header.section-header
+        h3 Planet Pulse
+        a.section-header-link(href='planet-pulse.html')
+          | Launch
+          i.fa.fa-angle-right
+      .banner
+        a(href='planet-pulse.html')
+          img.banner-image(src='img/planet-pulse-1.png')
+        h3.banner-header Real-time data monitoring the planet
+        a.banner-button.button.button-large(href='planet-pulse.html') Launch Planet Pulse

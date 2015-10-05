@@ -1,14 +1,17 @@
 <h2 class="insights--interactive-intro-3-title">{{country}}</h2>
 <div class="insights--interactive-intro-3-subtitle">
-  In {{country}} the laws supporting access to information, public participation, and access to justice in environmental matters are <b>{{strength}}</b>.
+  In {{country}} the laws supporting access to information, public participation, and access to justice in environmental matters are relatively <b>{{strength}}</b>.
 </div>
 
 <div class="insights--interactive-breakdown">
-  <p>Suppose a local plastics manufacturer intends to site a potentially toxic factory in your neighborhood.</p>
+  <p>Suppose that’s where you live, and that a local plastics manufacturer intends to site a potentially toxic factory in your neighborhood.</p>
   {{#each sentences}}
   <p>{{this}}</p>
   {{/each}}
-</div>
+  <p>These laws differ from country to country. See how things would look if you lived in <a class="js-back">another country</a>.</p>
+  <p class="insights--interactive-breakdown-note">Text based on the 10 indicators of EDI.</p>
+  <p class="insights--interactive-breakdown-note">The Access Initiative and World Resources Institute. 2015. “The Environmental Democracy Index.” Available online at: www.environmentaldemocracyindex.org.</p>
+  </div>
 
 <div class="insights--interactive-edi-data">
   <div class="insights--interactive-score">
@@ -26,6 +29,6 @@
 
 <ul class="insights--interactive-footer">
   <li><a class="is-link js-back">Choose another country</a></li>
-  <li><a>Explore the data</a></li>
+  <li><a href="explore-detail.html#7">Explore the data</a></li>
   <li><a href="http://environmentaldemocracyindex.org/country/{{iso}}">Read on EDI</a></li>
 </ul>

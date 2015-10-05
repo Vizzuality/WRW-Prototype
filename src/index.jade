@@ -6,7 +6,7 @@ append vars
 block content
   // hero
   section.hero
-    a.hero-link-wrap(href='insights-map.html')
+    a.hero-link-wrap(href='insights-interactive-map.html')
     .hero-content
       .container
         .hero-title
@@ -65,78 +65,7 @@ block content
         a.section-header-link(href='explore.html')
           | View More
           i.fa.fa-angle-right
-      .gridbox
-        include ./templates/card.jade
-        +card('data')(
-          url='explore-standalone.html',
-          thumbnail='img/data-9-th.png',
-          title='Water levels in Northern California',
-          download_csv=true,
-          download_map=true,
-          sub_title='Centre for Research on Lorem'
-          star_count='6,575'
-        )
-        +card('data')(
-          url='#',
-          thumbnail='img/data-2-th.png',
-          title='Total Greenhouse Emissions',
-          download_csv=true,
-          sub_title='Centre for Research on Lorem'
-          star_count='6,575'
-        )
-        +card('data')(
-          url='#',
-          thumbnail='img/data-3-th.png',
-          title='CO2 emissions intensity',
-          download_csv=true,
-          download_map=true,
-          sub_title='Centre for Research on Lorem'
-          star_count='6,575'
-        )
-        +card('data')(
-          url='#',
-          thumbnail='img/data-4-th.png',
-          title='Population distribution by age range in the US',
-          download_csv=true,
-          sub_title='Centre for Research on Lorem'
-          star_count='6,575'
-        )
-        +card('data')(
-          url='#',
-          thumbnail='img/data-5-th.png',
-          title='Water levels in Northern California',
-          download_csv=true,
-          download_map=true,
-          sub_title='Centre for Research on Lorem'
-          star_count='6,575'
-        )
-        +card('data')(
-          url='#',
-          thumbnail='img/data-6-th.png',
-          title='Energy produced in Spain - Real Time',
-          download_csv=true,
-          download_map=true,
-          sub_title='Centre for Research on Lorem'
-          star_count='6,575'
-        )
-        +card('data')(
-          url='#',
-          thumbnail='img/data-7-th.png',
-          title='Water levels in Northern California',
-          download_csv=true,
-          download_map=true,
-          sub_title='Centre for Research on Lorem'
-          star_count='6,575'
-        )
-        +card('data')(
-          url='#',
-          thumbnail='img/data-8-th.png',
-          title='Water levels in Northern California',
-          download_csv=true,
-          download_map=true,
-          sub_title='Centre for Research on Lorem'
-          star_count='6,575'
-        )
+      .gridbox.js-explore-datasets
 
     // feature-apps
     section
@@ -148,11 +77,16 @@ block content
       .gridbox
         include ./templates/card.jade
         +card('app')(
-          url='app-info.html',
-          thumbnail='img/app-4-th.jpg',
-          title='Track Deforestation in Real Time',
-          star_count='1,325',
-          star_active=true
+          url='app-skydipper.html',
+          thumbnail='img/app-2-th.jpg',
+          title='SkyDipper',
+          star_count='6,332'
+        )
+        +card('app')(
+          url='#',
+          thumbnail='img/app-1-th.jpg',
+          title='Carbon Footprint Calculator',
+          star_count='6,574'
         )
         +card('app')(
           url='#',
@@ -178,12 +112,7 @@ block content
           title='Index of Environmental Rights',
           star_count='5,439'
         )
-        +card('app')(
-          url='#',
-          thumbnail='img/app-9-th.jpg',
-          title='Resource Watch AI',
-          star_count='6,332'
-        )
+        
 
     // app-develop
     section
@@ -192,8 +121,8 @@ block content
       //-   a.section-header-link(href='#')
       //-     | Link?
       //-     i.fa.fa-angle-right
-      .banner
-        a(href='planet-pulse.html')
+      .banner.is-disabled
+        a(href='#')
           img.banner-image(src='img/banner-2.jpg')
         h3.banner-header Awesome ideas? <br> Develop your own app
         a.banner-button.button.button-large(href='#') Learn More

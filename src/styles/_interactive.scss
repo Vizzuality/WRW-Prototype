@@ -114,6 +114,10 @@
   opacity: 1;
   transition: opacity 300ms;
   backface-visibility: hidden; /* For Safari */
+
+  a {
+    color: white;
+  }
 }
 
 .insights--interactive-intro-2 {
@@ -305,18 +309,27 @@
   color: $story--media-caption-color;
   column-count: 2;
   column-gap: 40px;
-  height: 300px;
+  // height: 330px;
   font-size: 18px;
   line-height: 28px;
   margin-top: 40px;
 
   a {
     text-decoration: none;
+    cursor: pointer;
   }
 
   p {
     margin-top: 0;
+    line-height: 1.5;
+    font-size: 16px;
   }
+}
+
+.insights--interactive-breakdown-note {
+  font-style: italic;
+  font-size: 14px !important;
+  color: lighten($story--media-caption-color, 20%);
 }
 
 .insights--interactive-edi-data {
@@ -438,6 +451,7 @@
 }
 
 .insights--interactive-scenario-legend {
+  @include is-not-selectable();
   width: 360px;
   background-color: white;
   border-radius: 3px;
@@ -532,7 +546,7 @@
     flex-wrap: wrap;
 
     & > span {
-      flex-basis: #{100% / 8}%;
+      flex-basis: #{100% / 8};
       height: 8px;
 
       $chloropleth-colors: #d9300b, #da7f6b, #f1c4ba, #7f8487, #b5ddea, #70c4e1, #30aad1;

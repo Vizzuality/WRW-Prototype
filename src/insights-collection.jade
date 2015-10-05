@@ -28,13 +28,13 @@ block content
         | 14 insights
         ul.insights--results-filters
           li.active
-            a(href='#')
+            a.is-disabled(href='#')
               i.fa.fa-th-large
           li
-            a(href='#')
+            a.is-disabled(href='#')
               i.fa.fa-th-list
           li
-            a.button.button-small(href='#') Filter
+            a.button.button-small.is-disabled(href='#') Filter
       .gridbox
         include ./templates/card.jade
         +card('insight')(
@@ -188,13 +188,14 @@ block content
         +card('category')(
           url='#',
           thumbnail='img/collection-2-th.jpg',
-          title='Worldwide Deforestation'
+          title='Rainforest Observatory'
         )
         +card('category')(
           url='#',
           thumbnail='img/collection-3-th.jpg',
-          title='Worldwide Deforestation'
+          title='Biodiversity Observatory 2015'
         )
+    // planet-pulse
     section
       header.section-header
         h3 Planet Pulse
@@ -202,6 +203,7 @@ block content
           | Launch
           i.fa.fa-angle-right
       .banner
-        img.banner-image(src='img/planet-pulse-1.png')
+        a(href='planet-pulse.html')
+          img.banner-image(src='img/planet-pulse-1.png')
         h3.banner-header Real-time data monitoring the planet
         a.banner-button.button.button-large(href='planet-pulse.html') Launch Planet Pulse

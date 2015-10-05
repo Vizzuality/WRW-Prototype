@@ -13,7 +13,7 @@ mixin card(type)
     //-   star_count:  'like' count
     //-   star_active: is card 'liked'?
     .cell
-      .card.insight
+      .card.insight(class= attributes.url == '#' ? 'is-disabled' : '')
         .card-image
           a(href=attributes.url)
             img(src=attributes.thumbnail)
@@ -53,10 +53,7 @@ mixin card(type)
     //-   sub_title:    cards's subtitle
     //-   star_count:   'like' count
     //-   star_active:  is card 'liked'?
-    if attributes.url != '#'
-      - var cardUrl = attributes.url + "?title=" + encodeURIComponent(attributes.title)
-    else
-      - var cardUrl = attributes.url
+    - var cardUrl = attributes.url
     //- if attributes.url.indexOf("?title=") > -1
     //-   cutUrl = attributes.url.substring(0, currUrl.indexOf("?title="))
     //-   cardUrl = cutUrl + "?title=" + encodeURIComponent(attributes.title)
@@ -92,7 +89,7 @@ mixin card(type)
     //-   star_active:  is card 'liked'?
 
     .cell
-      .card.app
+      .card.app(class= attributes.url == '#' ? 'is-disabled' : '')
         .card-image
           a(href=attributes.url)
             img(src=attributes.thumbnail)
@@ -110,7 +107,7 @@ mixin card(type)
     //-   thumbnail:    image url
     //-   title:        card's title
     .cell
-      .card.category
+      .card.category(class= attributes.url == '#' ? 'is-disabled' : '')
         .card-image
           a(href=attributes.url)
             img(src=attributes.thumbnail)
@@ -129,14 +126,20 @@ mixin card(type)
     //-   star_active:  is card 'liked'?
     //-   id_data:      data's id attached to the button
     //-   button_text:  button's text
+
+    if attributes.url == '#'
+      - var cardUrl = attributes.url
+    else
+      - var cardUrl = attributes.url + "?title=" + encodeURIComponent(attributes.title)
+
     .cell.data
       .card.data
         .card-image
-          a(href=attributes.url)
+          a(href=cardUrl)
             img(src=attributes.thumbnail)
         .card-content
           h5.card-title
-            a(href=attributes.url)= attributes.title
+            a(href=cardUrl)= attributes.title
           p.card-sub-title= attributes.sub_title
         ul.card-info
           li

@@ -1,0 +1,63 @@
+extends ./templates/base.jade
+
+append vars
+  - var title = 'Partners'
+  - var className = 'is-partners'
+
+block content
+  .container
+    header.partners--title
+      h3  Partners
+  .partners--intro
+    .container
+      h3 We have a massive opportunity <br> to build a sustainable society
+      p Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing vitae est. Sed nec felis pellentesque, lacinia dui sed, ultricies sapien. Pellentesque orci lectus, consectetur vel posuere posuere, rutrum eu ipsum. Aliquam eget odio sed ligula iaculis consequat at eget orci. Mauris molestie sit amet metus mattis varius.  Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing vitae est. Sed nec felis pellentesque.
+  .container.partners--cards
+    .partners--card
+      a(href='partners-wri.html')
+        img(src='img/logo-1-th.png')
+      p The World Resources Institute (WRI) is a global research organization that spans more than 50 countries. We convene over 450 experts to work closely with leaders to turn big ideas into actions that sustain our natural resources—the foundation of economic opportunity and human well-being.
+      a(href='partners-wri.html') Read more
+
+    .partners--card
+      a(href='partners-vizzuality.html')
+        img(src='img/logo-2-th.png')
+      p Vizzuality is a world-renowned digital agency, delivering bespoke, beautiful visualisations and tools to the most important organisations in the world. Pushing the boundaries of how data is stored, shared and visualised, we help to improve our world one visualisation at a time.
+      a(href='partners-vizzuality.html') Read more
+
+    .partners--card
+      a.is-disabled(href='#')
+        img(src='img/logo-3-th.png')
+      p Google Earth Engine brings together the world's satellite imagery and makes it available online alongside tools for scientists, independent researchers and nations to mine this massive warehouse of data.
+      a.is-disabled(href='#') Read more
+
+    .partners--card
+      a.is-disabled(href='#')
+        img(src='img/logo-4-th.png')
+      p The easiest way to make maps online. Since launching in 2012 over 130,000 people have used it to create data-driven maps, which enable visual discovery of trends and patterns, and make better, faster decisions.
+      a.is-disabled(href='#') Read more
+
+    .partners--card
+      a.is-disabled(href='#')
+        img(src='img/logo-5-th.png')
+      p DigitalGlobe is a leading provider of high‑resolution Earth imagery products and services. Sourced from our own advanced satellite constellation, our imagery solutions support a wide variety of uses, including environmental monitoring.
+      a.is-disabled(href='#') Read more
+
+    .partners--card
+      a.is-disabled(href='#')
+        img(src='img/logo-6-th.png')
+      p The Earth Genome is enabling the world's key institutions to fully account for natural capital in all their decisions. We are connecting the world's best earth data, scientists, and technology providers to drive insight and innovation for governments, NGOs, corporations, and investors.
+      a.is-disabled(href='#') Read more
+
+  .container
+    section
+      //- header.section-header
+      //-   h3 Title?
+      //-   a.section-header-link(href='#')
+      //-     | Link?
+      //-     i.fa.fa-angle-right
+      .banner.is-disabled
+        a(href='#')
+          img.banner-image(src='img/banner-3.jpg')
+        h3.banner-header See yourself as part of this team?
+        a.banner-button.button.button-large(href='#') GET IN TOUCH

@@ -1,0 +1,44 @@
+<div class="cell data">
+  <div class="card data">
+    <div class="card-image">
+      <a href="{{#if explore}}explore-detail.html{{else}}explore-standalone.html{{/if}}#{{cartodb_id}}">
+        <img src="img/data-explore-{{cartodb_id}}-th.png"/>
+      </a>
+    </div>
+    <div class="card-content">
+      <h5 class="card-title">
+        <a href="{{#if explore}}explore-detail.html{{else}}explore-standalone.html{{/if}}#{{cartodb_id}}">{{name}}</a>
+      </h5>
+      <p class="card-sub-title">{{author}}</p>
+    </div>
+    <ul class="card-info">
+      <li>
+        <div class="card-info-download">
+          {{#if map_config}}<a class="link-map" href="#">MAP</a>{{/if}}
+          {{#if sql_lg}}
+            <a class="link-csv is-link" href="#">CSV</a>
+          {{else}}
+            {{#if sql_pg}}
+              <a class="link-csv is-link" href="#">CSV</a>
+            {{/if}}
+          {{/if}}
+        </div>
+      </li>
+      <li class="card-info-stars {{#if is_liked}}active{{/if}}">
+        <svg class="icon icon-star">
+          <use xlink:href="#icon-star"></use>
+        </svg>
+        <span>{{likes_count}}</span>
+      </li>
+    </ul>
+    {{#if explore}}
+    <div class="card-button">
+      {{#if data_id}}
+      <a class="button button-large button-grey add-to-map" data-id="{{data_id}}">ADD TO MAP</a>
+      {{else}}
+      <a class="button button-large button-grey explore--disabled-dataset">NOT DISPLAYABLE</a>
+      {{/if}}
+    </div>
+    {{/if}}
+  </div>
+</div>

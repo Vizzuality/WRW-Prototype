@@ -10,21 +10,26 @@ require([
   'views/slideshow',
   'views/map',
   'views/explore',
-  'views/explore_standalone',
+  'views/explore_content',
   'explore/chart_view',
   'views/interactive_edi',
   'views/interactive_map',
+  'views/explore_datasets',
+  'views/modal',
 
   // Common modules
   // TODO: refactor them
+  'views/footer_carousel',
   'views/user_menu',
   'views/mobile_menu',
   'views/fav',
   'views/empty_links',
-  'views/fullscreen'
+  'views/fullscreen',
+
 ], function(Backbone, Router, auth, LoginView, SearchCountriesView, GlobeView,
     DashboardView, SlideshowView, MapView, ExploreView,
-    ExploreStandaloneView, ChartView, InteractiveEdiView, InteractiveMapView) {
+    ExploreContentView, ChartView, InteractiveEdiView, InteractiveMapView,
+    ExploreDatasetsView, ModalView, FooterCarousel) {
 
   var App = Backbone.View.extend({
 
@@ -32,7 +37,12 @@ require([
 
     initialize: function() {
       this.router = new Router();
+      this.initGlobalViews();
       this.setListeners();
+    },
+
+    initGlobalViews: function() {
+      new FooterCarousel();
     },
 
     setListeners: function() {
@@ -52,7 +62,8 @@ require([
       this.router.on('route:explore', this.explore, this);
       this.router.on('route:exploreDetail', this.exploreDetail, this);
       this.router.on('route:exploreStandalone', this.exploreStandalone, this);
-      this.router.on('route:appInfo', this.appInfo, this);
+      this.router.on('route:appDeforestation', this.appDeforestation, this);
+      this.router.on('route:appSkydipper', this.appSkydipper, this);
       this.router.on('route:default', this.default, this);
 
     },
@@ -60,6 +71,7 @@ require([
     homepage: function() {
       this._checkAuth(function() {
         new SearchCountriesView({ el: '.choose-country' });
+        new ExploreDatasetsView({ el: '.js-explore-datasets', limit: 8 });
       });
     },
 
@@ -70,6 +82,7 @@ require([
     planetPulse: function() {
       this._checkAuth(function() {
         var globe = new GlobeView({ el: '#globe' });
+        var modal = new ModalView({ el: '#modal' });
         globe.checkHash();
         $(window).on('hashchange', function() {
           globe.checkHash();
@@ -146,25 +159,31 @@ require([
 
     explore: function() {
       this._checkAuth(function() {
-        new ExploreView();
+        new ExploreDatasetsView({ el: '.js-explore-datasets', explore: true });
+        setTimeout(function() { new ExploreView(); }, 1000);
       });
     },
 
     exploreDetail: function() {
       this._checkAuth(function() {
-        new ExploreView();
+        new ExploreContentView({ el: '.js-similar-datasets', explore: true, similarCardsCount: 3 });
+        setTimeout(function() { new ExploreView({ hideLegend: true }); }, 1000);
         new ChartView({el: '.js--detail-visualization'}).render();
       });
     },
 
     exploreStandalone: function() {
       this._checkAuth(function() {
-        new ExploreStandaloneView();
+        new ExploreContentView({ el: '.js-similar-datasets' });
         new ChartView({el: '.js--detail-visualization'}).render();
       });
     },
 
-    appInfo: function() {
+    appDeforestation: function() {
+      this._checkAuth();
+    },
+
+    appSkydipper: function() {
       this._checkAuth();
     },
 

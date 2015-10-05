@@ -36,6 +36,13 @@ module.exports = function (grunt) {
     'watch'
   ]);
 
+  grunt.registerTask('compile', [
+    'jade:dev',
+    'sass:dev',
+    'postcss:dev',
+  ]);
+
+
   grunt.registerTask('build', [
     'clean',
     'copy',

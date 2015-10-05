@@ -24,7 +24,8 @@ define([
       'explore.html': 'explore',
       'explore-detail.html': 'exploreDetail',
       'explore-standalone.html': 'exploreStandalone',
-      'app-info.html': 'appInfo',
+      'app-deforestation.html': 'appDeforestation',
+      'app-skydipper.html': 'appSkydipper',
       '*path': 'default'
     }
 

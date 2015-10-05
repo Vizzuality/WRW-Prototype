@@ -11,13 +11,13 @@ mixin header(activeTab)
                 ul.language-menu.is-hide
                   li
                     h4
-                      a(href='') English
+                      a(href='#') English
                   li
                     h4
-                      a(href='') Español
+                      a(href='#') Español
                   li
                     h4
-                      a(href='') Français
+                      a(href='#') Français
       .down-header
         a.header-title-link(href='index.html')
           h1.header-title
@@ -42,19 +42,19 @@ mixin header(activeTab)
                 h4 Notifications
                 ul
                   li.unread
-                    a(href='#') New insight from World Resources Institute
+                    a.is-disabled(href='#') New insight from World Resources Institute
                   li.unread
-                    a(href='#') 'Total Greenhouse Emissions' dataset updated
+                    a.is-disabled(href='#') 'Total Greenhouse Emissions' dataset updated
                   li
-                    a(href='#') 'Flower pollination in the United States' dataset updated
+                    a.is-disabled(href='#') 'Flower pollination in the United States' dataset updated
               .user-settings
                 ul
                   li
                     h4
-                      a(href='#') Your profile
+                      a.is-disabled(href='#') Your profile
                   li
                     h4
-                      a(href='#') Settings
+                      a.is-disabled(href='#') Settings
                   li
                     h4
-                      a(href='#') Logout
+                      a.is-disabled(href='#') Logout
