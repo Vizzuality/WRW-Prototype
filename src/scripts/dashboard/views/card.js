@@ -106,10 +106,18 @@ define([
         $('.container').append(infowindow);
       }
       var configuration = JSON.parse(this.configuration.configuration);
+      var content = configuration.info.content ? configuration.info.content : '';
+      if(configuration.info.link && configuration.info.source) {
+        content += '<p class="explore--credits"><a href="' + configuration.info.link + '">Online source</a><br>' + configuration.info.source + '</p>';
+      } else if(configuration.info.link && !configuration.info.source) {
+        content += '<p class="explore--credits"><a href="' + configuration.info.link + '">Online source</a>';
+      } else if(!configuration.info.link && configuration.info.source) {
+        content += '<p class="explore--credits">' + configuration.info.source + '</p>';
+      }
       new Infowindow({
         el: '.m-modal-window',
         title: configuration.info.title || '',
-        content: configuration.info.content ? '<p>' + configuration.info.content + '</p><p class="explore--credits"><a href="' + configuration.info.link + '">Online source</a><br>' + configuration.info.source + '</p>' : ''
+        content: content
       });
     },
 
