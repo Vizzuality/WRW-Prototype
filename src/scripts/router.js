@@ -16,6 +16,7 @@ define([
       'partners-wwf.html': 'partnersWwf',
       'partners-vizzuality.html': 'partnersVizzuality',
       'partners-wri.html': 'partnersWri',
+      'partners.html': 'partners',
       'insights-slideshow.html': 'slideshow',
       'insights-map.html': 'map',
       'insights-interactive-edi.html': 'interactiveEdi',

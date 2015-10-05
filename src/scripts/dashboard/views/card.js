@@ -106,10 +106,18 @@ define([
         $('.container').append(infowindow);
       }
       var configuration = JSON.parse(this.configuration.configuration);
+      var content = configuration.info.content ? configuration.info.content : '';
+      if(configuration.info.link && configuration.info.source) {
+        content += '<p class="explore--credits"><a href="' + configuration.info.link + '">Online source</a><br>' + configuration.info.source + '</p>';
+      } else if(configuration.info.link && !configuration.info.source) {
+        content += '<p class="explore--credits"><a href="' + configuration.info.link + '">Online source</a>';
+      } else if(!configuration.info.link && configuration.info.source) {
+        content += '<p class="explore--credits">' + configuration.info.source + '</p>';
+      }
       new Infowindow({
         el: '.m-modal-window',
         title: configuration.info.title || '',
-        content: configuration.info.content ? '<p>' + configuration.info.content + '</p><p class="explore--credits"><a href="' + configuration.info.link + '">Online source</a><br>' + configuration.info.source + '</p>' : ''
+        content: content
       });
     },
 
@@ -223,7 +231,7 @@ define([
       var curves = [];
       for(var i = 0, j = configuration.y.length; i < j; i++) {
         var values = [];
-        var serieLength = (!!x) ? x.length : y.length;
+        var serieLength = (!!x) ? x.length : (y[0].type === 'textual') ? y.length : 1;
         for(var k = 0, l = serieLength; k < l; k++) {
           values.push({ x: !!x ? x[k] : null, y: y[i][k] });
         }
@@ -287,7 +295,7 @@ define([
       // }
       /* We define the number of color categories for the pie chart */
       if(options.type === 'Pie') {
-        options.colorCount = 4;
+        options.colorCount = 5;
       }
 
       if(this.configuration.graph_name === 'Deforestation - Alerts') {

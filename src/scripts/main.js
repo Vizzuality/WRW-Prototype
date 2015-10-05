@@ -16,6 +16,7 @@ require([
   'views/interactive_map',
   'views/explore_datasets',
   'views/modal',
+  'views/signup',
 
   // Common modules
   // TODO: refactor them
@@ -29,7 +30,7 @@ require([
 ], function(Backbone, Router, auth, LoginView, SearchCountriesView, GlobeView,
     DashboardView, SlideshowView, MapView, ExploreView,
     ExploreContentView, ChartView, InteractiveEdiView, InteractiveMapView,
-    ExploreDatasetsView, ModalView, FooterCarousel) {
+    ExploreDatasetsView, ModalView, SignUpView, FooterCarousel) {
 
   var App = Backbone.View.extend({
 
@@ -54,6 +55,7 @@ require([
       this.router.on('route:partnersWwf', this.partnersWwf, this);
       this.router.on('route:partnersVizzuality', this.partnersVizzuality, this);
       this.router.on('route:partnersWri', this.partnersWri, this);
+      this.router.on('route:partners', this.partners, this);
       this.router.on('route:slideshow', this.slideshow, this);
       this.router.on('route:slideshowPeru', this.slideshowPeru, this);
       this.router.on('route:map', this.map, this);
@@ -124,6 +126,12 @@ require([
     partnersWri: function() {
       this._checkAuth(function() {
         new SearchCountriesView({ el: '.choose-country' });
+      });
+    },
+
+    partners: function() {
+      this._checkAuth(function() {
+        new SignUpView();
       });
     },
 

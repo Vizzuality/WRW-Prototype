@@ -88,6 +88,10 @@
     text-align: center;
   }
 
+  .cartodb-logo {
+    z-index: $z-index-1 !important;
+  }
+
 }
 
 @media screen and (max-width : $responsive-break--tablet) {

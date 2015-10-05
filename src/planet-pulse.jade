@@ -90,11 +90,11 @@ block content
             h3 Displayed layers
             ul
               li
-                a.is-disabled(href='#') SPEI
+                a.is-disabled(href='#') Droughts (SPEI)
               li
                 a.is-disabled(href='#') Agricultural areas (EarthStat)
               li
-                a(href='#drought/grace') Groundwater depletion (GRACE)
+                a(href='#drought/grace') GRACE Groundwater trend
                   span(class="btn-info modal-link" data-modal="grace")
                     svg
                       use(xlink:href='#icon-info')
@@ -111,12 +111,12 @@ block content
             h3 Displayed layers
             ul
               li
-                a(href='#forest/forma') Forma alerts
+                a(href='#forest/forma') Deforestation alerts (Forma)
                   span(class="btn-info modal-link" data-modal="forma")
                     svg
                       use(xlink:href='#icon-info')
               li
-                a(href='#forest/umd') Tree cover loss
+                a(href='#forest/umd') Forest loss since 2000 (UMD/Google)
                   span(class="btn-info modal-link" data-modal="umd")
                     svg
                       use(xlink:href='#icon-info')
@@ -142,7 +142,7 @@ block content
                 a.is-disabled(href='#') Current floods
                 //- a(href='#flooding/current-floods') Current floods
               li
-                a(href='#flooding/population') Population data
+                a(href='#flooding/population') Population density
                   span(class="btn-info modal-link" data-modal="population")
                     svg
                       use(xlink:href='#icon-info')
@@ -172,8 +172,6 @@ block content
                     svg
                       use(xlink:href='#icon-info')
       .planet-pulse--legend.is-hidden
-        h3 Legend title
-        a(href="#") Explore the data
 
 block footer
 

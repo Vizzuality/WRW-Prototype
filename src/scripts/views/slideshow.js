@@ -19,9 +19,9 @@ define([
       this.$el.slick({
         arrows: false,
         draggable: false,
-        infinite: false,
+        infinite: true,
         fade: true,
-        adaptiveHeight: false,
+        adaptiveHeight: true,
       });
 
       this.updateHeight(0);
