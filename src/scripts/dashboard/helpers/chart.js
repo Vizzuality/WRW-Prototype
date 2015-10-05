@@ -716,7 +716,7 @@ define([
       if(options.series[i].type === 'bars') {
         var yBarDomain = d3.extent(options.series[i].values.map(function(d) { return d.y; }));
         /* We inscrease the y domain by 20% (10 up, 10 down) so we could see all the values */
-        yBarDomain[0] = yBarDomain[0] - (yBarDomain[1] - yBarDomain[0]) * 0.1;
+        yBarDomain[0] = yBarDomain[0] > 0 ? yBarDomain[0] - (yBarDomain[1] - yBarDomain[0]) * 0.1 : yBarDomain[0];
         yBarDomain[1] = yBarDomain[1] + (yBarDomain[1] - yBarDomain[0]) * 0.1;
         yBar.domain(yBarDomain);
         /* We compute the number of time we can divide the ticks by 1000 */
