@@ -202,6 +202,7 @@ define([
       }
 
       this.isLightRemoved = isLightRemoved;
+      this.isSpaceRemoved = isSpaceRemoved;
 
       if (isSpaceRemoved) {
         this.globe.scene.remove(this.globe.space);
@@ -294,6 +295,9 @@ define([
 
       if (this.isLightRemoved) {
         this.globe.scene.add(this.globe.light);
+      }
+      if (this.isSpaceRemoved) {
+        this.globe.scene.add(this.globe.space);
       }
       this.globe.removeLayer(this.currentVis);
       this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.satellite);
