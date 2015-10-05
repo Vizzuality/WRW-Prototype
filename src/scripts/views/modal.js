@@ -36,12 +36,6 @@ define([
       };
     },
 
-
-    events: {
-      'click .modal-close' : 'hide',
-      'click .modal-shadow' : 'hide',
-    },
-
     cacheVars: function() {
       this.$document = $(document);
       this.$body = $('body');
