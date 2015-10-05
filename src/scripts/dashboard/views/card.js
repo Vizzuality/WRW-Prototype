@@ -295,7 +295,7 @@ define([
       // }
       /* We define the number of color categories for the pie chart */
       if(options.type === 'Pie') {
-        options.colorCount = 4;
+        options.colorCount = 5;
       }
 
       if(this.configuration.graph_name === 'Deforestation - Alerts') {

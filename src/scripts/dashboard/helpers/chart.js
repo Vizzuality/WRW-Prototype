@@ -46,7 +46,7 @@ define([
     options.pointType = configuration.pointType || null;
     options.pointSize = configuration.pointSize || 0;
     options.showTrail = configuration.showTrail || false;
-    options.colorCount = configuration.colorCount || 4;
+    options.colorCount = configuration.colorCount || 5;
 
     if(!configuration.el) {
       console.warn('A container for the chart must be specified.');
