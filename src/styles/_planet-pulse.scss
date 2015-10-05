@@ -202,7 +202,8 @@
 
 .planet-pulse--content article {
   display: none;
-  max-width: 30%;
+  max-width: 35%;
+  min-width: 400px;
 
   &.is-active {
     display: block;

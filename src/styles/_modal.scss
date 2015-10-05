@@ -1,4 +1,4 @@
-$modal-width: 500px;
+$modal-width: 740px;
 $modal-height: auto;
 
 
@@ -117,7 +117,18 @@ $modal-height: auto;
     @media (min-width: $responsive-break--mobile){
       max-height: 450px;
     }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #393F44;
+      @media (min-width: $responsive-break--mobile){
+        font-size: 32px;
+      }
+    }
+
     p{
+      color: #6C7379;
       &.credits{
         font-style: italic;
         font-size: 14px;
