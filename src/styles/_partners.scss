@@ -205,3 +205,143 @@
   align-items: flex-end;
 }
 
+.js-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 640px;
+  padding: 30px;
+  z-index: $z-index-10;
+
+  border: 1px solid #666;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+  border-radius: 5px;
+
+  h2 {
+    color: #c32d7b;
+    text-align: center;
+  }
+}
+
+#mc_embed_signup {
+  font-family: 'Lato', 'Helevetica', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+
+  h2 {
+    text-align: center;
+    margin-top: 0px;
+
+    @media only screen and (max-width: 1280px) {
+      font-size: 36px;
+    }
+  }
+}
+
+
+#mc-embedded-subscribe.button {
+  margin: 0px auto;
+  display: block;
+  padding: 13px 75px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 3px;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2) inset;
+  background-image: linear-gradient(-180deg, #C32D7B 0%, #B6216E 100%);
+  color: #fff;
+  letter-spacing: 2px;
+  height: 55px;
+  font-family: 'Lato', 'Helevetica', sans-serif;
+  border: none;
+}
+
+#mc-embedded-subscribe.button:hover {
+  background-image: linear-gradient(-180deg, #ae286e 0%, #a01d61 100%);
+}
+
+#mc-embedded-subscribe.button.small {
+  padding: 15px;
+}
+
+.mc-field-group {
+  width: 500px;
+  margin: 0px auto;
+
+  color: #6c7379;
+
+  .mc-label-group {
+    display: block;
+    text-transform: uppercase;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1px;
+
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+
+    .indicates-required {
+      color: $pink;
+    }
+  }
+
+  input {
+    width: inherit;
+    line-height: 50px;
+    padding-left: 10px;
+
+    border-radius: 5px;
+    border: 1px solid #999;
+
+    text-transform: none;
+    font-size: 18px;
+    color: #6c7379;
+
+    &:focus {
+      color: #6c7379;
+    }
+
+    @media only screen and (max-width: 1280px) {
+      line-height: 36px;
+      font-size: 14px;
+    }
+  }
+
+  input.mce_inline_error {
+    border-color: $pink;
+  }
+
+  div.mce_inline_error {
+    background-color: #fff;
+    color: $pink;
+
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    border-color: $pink;
+
+  }
+
+}
+
+.js-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, .45);
+  z-index: $z-index-10;
+}
