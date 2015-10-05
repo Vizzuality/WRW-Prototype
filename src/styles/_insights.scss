@@ -160,10 +160,11 @@
   margin-bottom: 0;
   transition: all 0.5s ease-in-out;
   // height: 1040px;
-  // height: calc(100vh - 130px);
+  min-height: calc(100vh - 130px);
 
   .insights--slideshow-content {
     float: left;
+    min-height: calc(100vh - 130px);
 
     &.slide-1 {
       background: url('../img/insight-slides-1.jpg') no-repeat center;

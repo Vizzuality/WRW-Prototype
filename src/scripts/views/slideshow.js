@@ -21,7 +21,7 @@ define([
         draggable: false,
         infinite: true,
         fade: true,
-        adaptiveHeight: false,
+        adaptiveHeight: true,
       });
 
       this.updateHeight(0);
