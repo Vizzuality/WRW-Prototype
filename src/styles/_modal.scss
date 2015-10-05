@@ -125,6 +125,11 @@ $modal-height: auto;
       @media (min-width: $responsive-break--mobile){
         font-size: 32px;
       }
+      span{
+        display: block;
+        color: #a0a6ab;
+        font-size: 18px;
+      }
     }
 
     p{
