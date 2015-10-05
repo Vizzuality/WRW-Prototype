@@ -522,8 +522,13 @@ define([
     var yFactor, yAxisUnit;
     var yDomain = d3.extent(options.series[0].values.map(function(d) { return d.y; }));
     /* We inscrease the y domain by 20% (10 up, 10 down) so we could see all the values */
-    yDomain[0] = yDomain[0] - (yDomain[1] - yDomain[0]) * 0.1;
-    yDomain[1] = yDomain[1] + (yDomain[1] - yDomain[0]) * 0.1;
+    if(yDomain[0] !== yDomain[1]) {
+      yDomain[0] = yDomain[0] - (yDomain[1] - yDomain[0]) * 0.1;
+      yDomain[1] = yDomain[1] + (yDomain[1] - yDomain[0]) * 0.1;
+    } else {
+      yDomain[0] = yDomain[0] !== 0 ? yDomain[0] * 0.9 : -0.2;
+      yDomain[1] = yDomain[1] !== 0 ? yDomain[1] * 1.1 : 10;
+    }
     y.domain(yDomain);
     /* We compute the number of time we can divide the ticks by 1000 */
     yFactor = getFactor(d3.median(options.series[0].values.map(function(d) { return d.y; })));
