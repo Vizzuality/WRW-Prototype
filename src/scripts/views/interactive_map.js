@@ -46,6 +46,7 @@ define([
     getStressScenario: function(year, scenario) {
       return {
         user_name: 'insights',
+        attribution: '| WRI Aqueduct, 2013. Siebert et al. 2013 Global Map of Irrigation Areas',
         type: 'cartodb',
         sublayers: [{
             sql: 'SELECT * FROM aqueduct_projections_20150309',
