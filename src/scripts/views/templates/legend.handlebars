@@ -1,0 +1,16 @@
+<h3>{{this.title}}</h3>
+<div class="planet-pulse--legend-type">
+  {{#if this.category}}
+  <ul class="category">
+    {{#each this.legend}}
+      <li><span style="background-color: {{this.color}};"></span>{{this.name}}</li>
+    {{/each}}
+  </ul>
+  {{else}}
+  <div class="choropleth {{this.classname}}">
+    <span class="min">{{this.min}}</span>
+    <span class="max">{{this.max}}</span>
+  </div>
+  {{/if}}
+</div>
+<a href="{{this.link}}">Explore the data</a>

@@ -1,9 +1,10 @@
 define([], function() {
 
-  var legends = [
-    umd : {
+  var legends = {
+    'umd' : {
       title: 'Forest loss since 2000 (UMD/Google)',
       type: 'category',
+      category: true,
       legend: [
         {
           name: 'Tree cover loss',
@@ -11,9 +12,10 @@ define([], function() {
         }
       ]
     },
-    forma : {
+    'forma' : {
       title: ' Deforestation alerts (Forma)',
       type: 'category',
+      category: true,
       legend: [
         {
           name: 'Deforestation alerts',
@@ -21,9 +23,10 @@ define([], function() {
         }
       ]
     },
-    protected-areas : {
+    'protected-areas' : {
       title: ' Protected areas',
       type: 'category',
+      category: true,
       legend: [
         {
           name: 'Protected areas',
@@ -31,9 +34,10 @@ define([], function() {
         }
       ]
     },
-    agriculture : {
+    'agriculture' : {
       title: 'Global cropland extent',
       type: 'category',
+      category: true,
       legend: [
         {
           name: 'Irrigated: Wheat and Rice Dominant',
@@ -73,56 +77,63 @@ define([], function() {
         }
       ]
     },
-    fires : {
+    'fires' : {
       title: 'Fires',
       type: 'choropleth',
+      classname: 'fires',
       legend: ['#FEFB00', '#FF3C00'],
       min: 'less',
       max: 'more'
     },
-    grace : {
+    'grace' : {
       title: 'GRACE Groundwater trend',
       type: 'choropleth',
+      classname: 'grace',
       legend: ['#FEFB00', '#FF3C00'],
       min: '-100%',
       max: '100'
     },
-    conflicts : {
+    'conflicts' : {
       title: 'Conflicts reported on mass media',
       type: 'choropleth',
+      classname: 'conflicts',
       legend: ['#FEFB00', '#FF3C00'],
       min: 'less',
       max: 'more'
     },
-    protests : {
+    'protests' : {
       title: 'Protests reported on mass media',
       type: 'choropleth',
+      classname: 'protests',
       legend: ['#FEFB00', '#FF3C00'],
       min: 'less',
       max: 'more'
     },
-    epidemic : {
+    'epidemic' : {
       title: 'Epidemics reported on mass media',
       type: 'choropleth',
+      classname: 'epidemic',
       legend: ['#FEFB00', '#FF3C00'],
       min: 'less',
       max: 'more'
     },
-    population : {
+    'population' : {
       title: 'Population density',
       type: 'choropleth',
+      classname: 'population',
       legend: ['#fcc06d', '#c4a93b', '#998e20'],
       min: '0 people/km2',
       max: '1000 people/km2'
     },
-    temperature : {
+    'temperature' : {
       title: 'Temperature',
       type: 'choropleth',
+      classname: 'temperature',
       legend: ['#260058','#62009f','#ce0eb8','#e5381b','#f16a00','#ffc700', '#feeb3c'],
       min: '-40ºC',
       max: '40ºC'
     }
-  ]
+  };
   return legends;
 
 });
