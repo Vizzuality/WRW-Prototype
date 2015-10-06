@@ -106,32 +106,37 @@ require([
     },
 
     partnersGp: function() {
-      this.$el.addClass('is-public');
-      new SearchCountriesView({ el: '.choose-country' });
-      new SignUpView();
+      this._makePublic(function() {
+        new SearchCountriesView({ el: '.choose-country' });
+        new SignUpView();
+      });
     },
 
     partnersWwf: function() {
-      this.$el.addClass('is-public');
-      new SearchCountriesView({ el: '.choose-country' });
-      new SignUpView();
+      this._makePublic(function() {
+        new SearchCountriesView({ el: '.choose-country' });
+        new SignUpView();
+      });
     },
 
     partnersVizzuality: function() {
-      this.$el.addClass('is-public');
-      new SearchCountriesView({ el: '.choose-country' });
-      new SignUpView();
+      this._makePublic(function() {
+        new SearchCountriesView({ el: '.choose-country' });
+        new SignUpView();
+      });
     },
 
     partnersWri: function() {
-      this.$el.addClass('is-public');
-      new SearchCountriesView({ el: '.choose-country' });
-      new SignUpView();
+      this._makePublic(function() {
+        new SearchCountriesView({ el: '.choose-country' });
+        new SignUpView();
+      });
     },
 
     partners: function() {
-      this.$el.addClass('is-public');
-      new SignUpView();
+      this._makePublic(function() {
+        new SignUpView();
+      });
     },
 
     slideshow: function() {
@@ -196,6 +201,18 @@ require([
 
     default: function() {
       this._checkAuth();
+    },
+
+    _makePublic: function() {
+      var isLogged = auth.checkLogin();
+      if (isLogged) {
+        this.$el.addClass('is-logged');
+      } else {
+        this.$el.addClass('is-public');
+      }
+      if(next && typeof next === 'function') {
+        next.apply(this);
+      }
     },
 
     /**
