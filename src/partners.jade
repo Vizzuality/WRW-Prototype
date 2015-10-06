@@ -6,55 +6,76 @@ append vars
 
 append header
   link(href='//cdn-images.mailchimp.com/embedcode/classic-081711.css', rel='stylesheet', type='text/css')
+
   style(type='text/css').
-    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-    #mc_embed_signup h2{
-    font-family: 'Lato', 'Helevetica', sans-serif;
-    font-weight: 300;
-    font-size: 32px;
-    }
-    div#mc_embed_signup {
-    font-family: 'Lato', 'Helevetica', sans-serif;
-    }
     #mc-embedded-subscribe.button{
-    margin: 0px auto;
-    display: block;
-    padding: 13px 75px;
-    font-size: 14px;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-    border-radius: 3px;
-    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2) inset;
-    background-image: linear-gradient(-180deg, #C32D7B 0%, #B6216E 100%);
-    color: #fff;
-    letter-spacing: 2px;
-    height: 55px;
-    font-family: 'Lato', 'Helevetica', sans-serif;
+      margin: 15px auto 30px;
+      display: block;
+      padding: 13px 75px;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      border-radius: 3px;
+      box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2) inset;
+      background-image: linear-gradient(-180deg, #C32D7B 0%, #B6216E 100%);
+      color: #fff;
+      letter-spacing: 2px;
+      height: 55px;
+      font-family: 'Lato', 'Helevetica', sans-serif;
     }
+
     #mc-embedded-subscribe.button:hover {
-    linear-gradient(-180deg, #ae286e 0%, #a01d61 100%);
+      linear-gradient(-180deg, #ae286e 0%, #a01d61 100%);
     }
+
     #mc-embedded-subscribe.button.small {
-    padding: 15px;
+      padding: 15px;
     }
-  style(type='text/css').
-    #mc_embed_signup input.mce_inline_error {
-    border: 2px solid #F00;
+
+    #mc_embed_signup h2 {
+      font-family: 'Lato', 'Helevetica', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      text-align: center;
+      font-size: 32px;
+      color: #c32d7b;
     }
-    #mc_embed_signup div.mce_inline_error {
-    background-color: #FFF;
-    color: #F00;
+
+    @media only screen and (min-width: 1280px) {
+      #mc_embed_signup h2 {
+        font-size: 48px;
+        margin-bottom: 35px;
+      }
     }
-    .response {
-    text-align: center;
-    font-family: 'Lato', 'Helevetica', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 23px;
-    color: #6c7379;
-    width: 520px;
-    margin: 20px auto;
+
+    #mc_embed_signup form {
+      padding: 0;
+    }
+
+    #mce-responses {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #mce-responses .response {
+      padding: 0;
+      width: 500px;
+      margin: 15px auto;
+      size: 16px;
+      font-weight: 400;
+      text-align: center;
+      color: #6c7379;
+    }
+
+    @media only screen and (min-width: 1280px) {
+      #mce-responses .response {
+        width: 520px;
+      }
     }
 
 block content
