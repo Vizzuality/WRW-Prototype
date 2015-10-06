@@ -3,13 +3,17 @@
     display: none;
   }
 
+  .is-public & {
+    display: flex;
+  }
+
   #altLogo {
     width: 301px;
     height: 52px;
   }
 
   position: relative;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 100%;

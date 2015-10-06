@@ -1,5 +1,5 @@
 .l-footer-public {
-  display: flex;
+  display: none;
   width: 100%;
   justify-content: center;
   background: #000;
@@ -17,6 +17,10 @@
 
   .is-logged & {
     display: none;
+  }
+
+  .is-public & {
+    display: flex;
   }
 }
 
