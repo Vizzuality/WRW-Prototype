@@ -104,27 +104,23 @@ require([
     },
 
     partnersGp: function() {
-      this._checkAuth(function() {
-        new SearchCountriesView({ el: '.choose-country' });
-      });
+      this.$el.addClass('is-logged');
+      new SearchCountriesView({ el: '.choose-country' });
     },
 
     partnersWwf: function() {
-      this._checkAuth(function() {
-        new SearchCountriesView({ el: '.choose-country' });
-      });
+      this.$el.addClass('is-logged');
+      new SearchCountriesView({ el: '.choose-country' });
     },
 
     partnersVizzuality: function() {
-      this._checkAuth(function() {
-        new SearchCountriesView({ el: '.choose-country' });
-      });
+      this.$el.addClass('is-logged');
+      new SearchCountriesView({ el: '.choose-country' });
     },
 
     partnersWri: function() {
-      this._checkAuth(function() {
-        new SearchCountriesView({ el: '.choose-country' });
-      });
+      this.$el.addClass('is-logged');
+      new SearchCountriesView({ el: '.choose-country' });
     },
 
     slideshow: function() {
