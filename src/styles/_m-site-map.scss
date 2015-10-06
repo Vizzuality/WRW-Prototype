@@ -1,4 +1,9 @@
 .m-site-map {
+
+  .is-public & {
+    display: none;
+  }
+
 	.site-sections {
 		display: flex;
 		flex-direction: row;

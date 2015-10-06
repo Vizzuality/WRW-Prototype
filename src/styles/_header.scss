@@ -1,4 +1,43 @@
+.l-header {
+  .is-logged & {
+    display: none;
+  }
+
+  #altLogo {
+    width: 301px;
+    height: 52px;
+  }
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  padding: 15px 0;
+  z-index: 5;
+  transition: all .5s ease;
+  box-shadow: 0 0 10px rgba(0,0,0, .2);
+
+  .l-header-container {
+    max-width: 1040px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .icon-logo {
+    height: 52px;
+  }
+}
+
 .header-container {
+
+  .is-public & {
+    display: none;
+  }
+
   position: relative;
   width: 100%;
   height: $page--header-height;

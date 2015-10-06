@@ -106,29 +106,32 @@ require([
     },
 
     partnersGp: function() {
-      this.$el.addClass('is-logged');
+      this.$el.addClass('is-public');
       new SearchCountriesView({ el: '.choose-country' });
+      new SignUpView();
     },
 
     partnersWwf: function() {
-      this.$el.addClass('is-logged');
+      this.$el.addClass('is-public');
       new SearchCountriesView({ el: '.choose-country' });
+      new SignUpView();
     },
 
     partnersVizzuality: function() {
-      this.$el.addClass('is-logged');
+      this.$el.addClass('is-public');
       new SearchCountriesView({ el: '.choose-country' });
+      new SignUpView();
     },
 
     partnersWri: function() {
-      this.$el.addClass('is-logged');
+      this.$el.addClass('is-public');
       new SearchCountriesView({ el: '.choose-country' });
+      new SignUpView();
     },
 
     partners: function() {
-      this._checkAuth(function() {
-        new SignUpView();
-      });
+      this.$el.addClass('is-public');
+      new SignUpView();
     },
 
     slideshow: function() {
