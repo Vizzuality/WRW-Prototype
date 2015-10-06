@@ -203,7 +203,7 @@ require([
       this._checkAuth();
     },
 
-    _makePublic: function() {
+    _makePublic: function(next) {
       var isLogged = auth.checkLogin();
       if (isLogged) {
         this.$el.addClass('is-logged');
