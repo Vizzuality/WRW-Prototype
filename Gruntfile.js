@@ -44,7 +44,7 @@ module.exports = function (grunt) {
 
 
   grunt.registerTask('build', [
-    // 'clean',
+    'clean',
     'copy',
     'jade:dist',
     'sass:dist',
