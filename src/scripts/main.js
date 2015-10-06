@@ -16,6 +16,7 @@ require([
   'views/interactive_map',
   'views/explore_datasets',
   'views/modal',
+  'views/signup',
 
   // Common modules
   // TODO: refactor them
@@ -29,7 +30,7 @@ require([
 ], function(Backbone, Router, auth, LoginView, SearchCountriesView, GlobeView,
     DashboardView, SlideshowView, MapView, ExploreView,
     ExploreContentView, ChartView, InteractiveEdiView, InteractiveMapView,
-    ExploreDatasetsView, ModalView, FooterCarousel) {
+    ExploreDatasetsView, ModalView, SignUpView, FooterCarousel) {
 
   var App = Backbone.View.extend({
 
@@ -54,6 +55,7 @@ require([
       this.router.on('route:partnersWwf', this.partnersWwf, this);
       this.router.on('route:partnersVizzuality', this.partnersVizzuality, this);
       this.router.on('route:partnersWri', this.partnersWri, this);
+      this.router.on('route:partners', this.partners, this);
       this.router.on('route:slideshow', this.slideshow, this);
       this.router.on('route:slideshowPeru', this.slideshowPeru, this);
       this.router.on('route:map', this.map, this);
@@ -104,26 +106,36 @@ require([
     },
 
     partnersGp: function() {
-      this._checkAuth(function() {
+      this._makePublic(function() {
         new SearchCountriesView({ el: '.choose-country' });
+        new SignUpView();
       });
     },
 
     partnersWwf: function() {
-      this._checkAuth(function() {
+      this._makePublic(function() {
         new SearchCountriesView({ el: '.choose-country' });
+        new SignUpView();
       });
     },
 
     partnersVizzuality: function() {
-      this._checkAuth(function() {
+      this._makePublic(function() {
         new SearchCountriesView({ el: '.choose-country' });
+        new SignUpView();
       });
     },
 
     partnersWri: function() {
-      this._checkAuth(function() {
+      this._makePublic(function() {
         new SearchCountriesView({ el: '.choose-country' });
+        new SignUpView();
+      });
+    },
+
+    partners: function() {
+      this._makePublic(function() {
+        new SignUpView();
       });
     },
 
@@ -191,6 +203,18 @@ require([
       this._checkAuth();
     },
 
+    _makePublic: function(next) {
+      var isLogged = auth.checkLogin();
+      if (isLogged) {
+        this.$el.addClass('is-logged');
+      } else {
+        this.$el.addClass('is-public');
+      }
+      if(next && typeof next === 'function') {
+        next.apply(this);
+      }
+    },
+
     /**
      * Middleware to check user session
      */
@@ -207,8 +231,10 @@ require([
     },
 
     start: function() {
-      var path = '/WRW-Prototype/';
-      if(window.location.hostname === 'localhost' || /192\.168\.1\.[0-9]{2}/.test(window.location.hostname)) {
+      var path = '/';
+      if (window.location.host === 'vizzuality.github.io') {
+        path = '/' + window.location.pathname.split('/')[1] + '/';
+      } else if(window.location.hostname === 'localhost' || /192\.168\.1\.[0-9]{2}/.test(window.location.hostname)) {
         path = '/';
       }
       Backbone.history.start({ pushState: true, root: path });

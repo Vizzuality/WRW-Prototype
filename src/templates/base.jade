@@ -32,6 +32,7 @@ html(lang="en")
 
     //- The global header
     include ./header.jade
+    include ./header-public.jade
     include ./modal.jade
 
     block header
@@ -44,6 +45,7 @@ html(lang="en")
     //- The global footer
     block footer
       include ./footer.jade
+      include ./footer-public.jade
 
     //- The global scripts to include in every page
     script(src="//cdnjs.cloudflare.com/ajax/libs/three.js/r61/three.min.js")

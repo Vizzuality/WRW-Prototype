@@ -46,7 +46,7 @@ define([
     options.pointType = configuration.pointType || null;
     options.pointSize = configuration.pointSize || 0;
     options.showTrail = configuration.showTrail || false;
-    options.colorCount = configuration.colorCount || 4;
+    options.colorCount = configuration.colorCount || 5;
 
     if(!configuration.el) {
       console.warn('A container for the chart must be specified.');
@@ -522,8 +522,13 @@ define([
     var yFactor, yAxisUnit;
     var yDomain = d3.extent(options.series[0].values.map(function(d) { return d.y; }));
     /* We inscrease the y domain by 20% (10 up, 10 down) so we could see all the values */
-    yDomain[0] = yDomain[0] - (yDomain[1] - yDomain[0]) * 0.1;
-    yDomain[1] = yDomain[1] + (yDomain[1] - yDomain[0]) * 0.1;
+    if(yDomain[0] !== yDomain[1]) {
+      yDomain[0] = yDomain[0] - (yDomain[1] - yDomain[0]) * 0.1;
+      yDomain[1] = yDomain[1] + (yDomain[1] - yDomain[0]) * 0.1;
+    } else {
+      yDomain[0] = yDomain[0] !== 0 ? yDomain[0] * 0.9 : -0.2;
+      yDomain[1] = yDomain[1] !== 0 ? yDomain[1] * 1.1 : 10;
+    }
     y.domain(yDomain);
     /* We compute the number of time we can divide the ticks by 1000 */
     yFactor = getFactor(d3.median(options.series[0].values.map(function(d) { return d.y; })));
@@ -716,7 +721,7 @@ define([
       if(options.series[i].type === 'bars') {
         var yBarDomain = d3.extent(options.series[i].values.map(function(d) { return d.y; }));
         /* We inscrease the y domain by 20% (10 up, 10 down) so we could see all the values */
-        yBarDomain[0] = yBarDomain[0] - (yBarDomain[1] - yBarDomain[0]) * 0.1;
+        yBarDomain[0] = yBarDomain[0] > 0 ? yBarDomain[0] - (yBarDomain[1] - yBarDomain[0]) * 0.1 : yBarDomain[0];
         yBarDomain[1] = yBarDomain[1] + (yBarDomain[1] - yBarDomain[0]) * 0.1;
         yBar.domain(yBarDomain);
         /* We compute the number of time we can divide the ticks by 1000 */
