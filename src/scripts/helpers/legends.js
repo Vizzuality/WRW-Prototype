@@ -132,6 +132,14 @@ define([], function() {
       legend: ['#260058','#62009f','#ce0eb8','#e5381b','#f16a00','#ffc700', '#feeb3c'],
       min: '-40ºC',
       max: '40ºC'
+    },
+    'current-floods' : {
+      title: 'Current floods',
+      type: 'choropleth',
+      classname: 'floods',
+      legend: ['#FFFFCC','#A1DAB4','#41B6C4','#2C7FB8', '#253494'],
+      min: 'less',
+      max: 'more'
     }
   };
   return legends;
