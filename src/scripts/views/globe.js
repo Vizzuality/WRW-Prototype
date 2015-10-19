@@ -198,15 +198,15 @@ define([
           this.setLegend(vis);
           this.updateLayersList();
           break;
-<<<<<<< HEAD
-        case 'current-floods':
+         case 'current-floods':
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
           this.globe.createLayer(this.currentVis, this.layers.floods);
-=======
+          this.setLegend(vis);
+          this.updateLayersList();
+          break;
         case 'agriculture':
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
           this.globe.createLayer(this.currentVis, this.layers.agriculture);
->>>>>>> develop
           this.setLegend(vis);
           this.updateLayersList();
           break;
