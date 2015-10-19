@@ -40,7 +40,8 @@ define([
         grace: document.getElementById('layer7').src,
         epidemic: document.getElementById('layer9').src,
         protests: document.getElementById('layer8').src,
-        forma: document.getElementById('layer10').src
+        forma: document.getElementById('layer10').src,
+        agriculture: document.getElementById('layer11').src
       };
 
       this.legends = legends;
@@ -193,6 +194,12 @@ define([
         case 'protests':
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
           this.globe.createLayer(this.currentVis, this.layers.protests);
+          this.setLegend(vis);
+          this.updateLayersList();
+          break;
+        case 'agriculture':
+          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
+          this.globe.createLayer(this.currentVis, this.layers.agriculture);
           this.setLegend(vis);
           this.updateLayersList();
           break;
