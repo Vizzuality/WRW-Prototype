@@ -41,7 +41,8 @@ define([
         epidemic: document.getElementById('layer9').src,
         protests: document.getElementById('layer8').src,
         forma: document.getElementById('layer10').src,
-        floods: document.getElementById('layer11').src
+        floods: document.getElementById('layer11').src,
+        agriculture: document.getElementById('layer12').src
       };
 
       this.legends = legends;
@@ -197,9 +198,15 @@ define([
           this.setLegend(vis);
           this.updateLayersList();
           break;
+<<<<<<< HEAD
         case 'current-floods':
           this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
           this.globe.createLayer(this.currentVis, this.layers.floods);
+=======
+        case 'agriculture':
+          this.globe.sphere.material.map = THREE.ImageUtils.loadTexture(this.basemaps.dark);
+          this.globe.createLayer(this.currentVis, this.layers.agriculture);
+>>>>>>> develop
           this.setLegend(vis);
           this.updateLayersList();
           break;
