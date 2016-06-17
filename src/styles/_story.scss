@@ -241,7 +241,7 @@
 }
 
 .story--wide-media-container {
-  @extend %story--media-container;
+  @extend %story--media-container!optional;
   width: auto;
 
   .placeholder {
